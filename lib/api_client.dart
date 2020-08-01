@@ -155,7 +155,7 @@ class ApiClient {
           return ZebraTeam.fromJson(value);
         default:
           {
-            var match;
+            Match match;
             if (value is List &&
                 (match = _regList.firstMatch(targetType)) != null) {
               var newTargetType = match[1];

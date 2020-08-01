@@ -1,5 +1,5 @@
 name: tba_api_client
-version: 1.0.0
+version: 0.0.1
 description: (Unofficial) dart library for the TheBlueAlliance.com API
 authors:
   - Aidan Mundy <amboyscout@aol.com>
