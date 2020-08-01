@@ -1,0 +1,13 @@
+name: tba_dart_api_client
+version: 1.0.0
+description: (Unofficial) dart library for the TheBlueAlliance.com API
+environment:
+    sdk: ">=2.3.0 <3.0.0"
+dependencies:
+    dio: ^3.0.9
+    built_value: ^7.1.0
+    built_collection: ^4.3.2
+dev_dependencies:
+    built_value_generator: ^7.1.0
+    build_runner: ^1.7.1
+
