@@ -1,33 +1,64 @@
-        import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+part of tba_dart_api_client.api;
 
-part 'webcast.g.dart';
+class Webcast {
+  /* Type of webcast, typically descriptive of the streaming provider. */
+  String type = null;
+  //enum typeEnum {  youtube,  twitch,  ustream,  iframe,  html5,  rtmp,  livestream,  direct_link,  mms,  justin,  stemtv,  dacast,  };{
+  /* Type specific channel information. May be the YouTube stream, or Twitch channel name. In the case of iframe types, contains HTML to embed the stream in an HTML iframe. */
+  String channel = null;
+  /* The date for the webcast in `yyyy-mm-dd` format. May be null. */
+  String date = null;
+  /* File identification as may be required for some types. May be null. */
+  String file = null;
+  Webcast();
 
-abstract class Webcast implements Built<Webcast, WebcastBuilder> {
+  @override
+  String toString() {
+    return 'Webcast[type=$type, channel=$channel, date=$date, file=$file, ]';
+  }
 
-    /* Type of webcast, typically descriptive of the streaming provider. */
-        @nullable
-    @BuiltValueField(wireName: r'type')
-    String get type;
-        //enum typeEnum {  youtube,  twitch,  ustream,  iframe,  html5,  rtmp,  livestream,  direct_link,  mms,  justin,  stemtv,  dacast,  };
-    /* Type specific channel information. May be the YouTube stream, or Twitch channel name. In the case of iframe types, contains HTML to embed the stream in an HTML iframe. */
-        @nullable
-    @BuiltValueField(wireName: r'channel')
-    String get channel;
-    /* The date for the webcast in `yyyy-mm-dd` format. May be null. */
-        @nullable
-    @BuiltValueField(wireName: r'date')
-    String get date;
-    /* File identification as may be required for some types. May be null. */
-        @nullable
-    @BuiltValueField(wireName: r'file')
-    String get file;
+  Webcast.fromJson(Map<String, dynamic> json) {
+    if (json == null) return;
+    type = json['type'];
+    channel = json['channel'];
+    date = json['date'];
+    file = json['file'];
+  }
 
-    // Boilerplate code needed to wire-up generated code
-    Webcast._();
+  Map<String, dynamic> toJson() {
+    Map <String, dynamic> json = {};
+    if (type != null)
+      json['type'] = type;
+    if (channel != null)
+      json['channel'] = channel;
+    if (date != null)
+      json['date'] = date;
+    if (file != null)
+      json['file'] = file;
+    return json;
+  }
 
-    factory Webcast([updates(WebcastBuilder b)]) = _$Webcast;
-    static Serializer<Webcast> get serializer => _$webcastSerializer;
+  static List<Webcast> listFromJson(List<dynamic> json) {
+    return json == null ? List<Webcast>() : json.map((value) => Webcast.fromJson(value)).toList();
+  }
 
+  static Map<String, Webcast> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, Webcast>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) => map[key] = Webcast.fromJson(value));
+    }
+    return map;
+  }
+
+  // maps a json object with a list of Webcast-objects as value to a dart map
+  static Map<String, List<Webcast>> mapListFromJson(Map<String, dynamic> json) {
+    var map = Map<String, List<Webcast>>();
+     if (json != null && json.isNotEmpty) {
+       json.forEach((String key, dynamic value) {
+         map[key] = Webcast.listFromJson(value);
+       });
+     }
+     return map;
+  }
 }
 

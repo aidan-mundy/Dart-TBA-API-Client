@@ -1,39 +1,76 @@
-            import 'package:tba_dart_api_client/model/elimination_alliance_backup.dart';
-            import 'package:tba_dart_api_client/model/elimination_alliance_status.dart';
-            import 'package:built_collection/built_collection.dart';
-        import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+part of tba_dart_api_client.api;
 
-part 'elimination_alliance.g.dart';
+class EliminationAlliance {
+  /* Alliance name, may be null. */
+  String name = null;
+  
+  EliminationAllianceBackup backup = null;
+  /* List of teams that declined the alliance. */
+  List<String> declines = [];
+  /* List of team keys picked for the alliance. First pick is captain. */
+  List<String> picks = [];
+  
+  EliminationAllianceStatus status = null;
+  EliminationAlliance();
 
-abstract class EliminationAlliance implements Built<EliminationAlliance, EliminationAllianceBuilder> {
+  @override
+  String toString() {
+    return 'EliminationAlliance[name=$name, backup=$backup, declines=$declines, picks=$picks, status=$status, ]';
+  }
 
-    /* Alliance name, may be null. */
-        @nullable
-    @BuiltValueField(wireName: r'name')
-    String get name;
-    
-        @nullable
-    @BuiltValueField(wireName: r'backup')
-    EliminationAllianceBackup get backup;
-    /* List of teams that declined the alliance. */
-        @nullable
-    @BuiltValueField(wireName: r'declines')
-    BuiltList<String> get declines;
-    /* List of team keys picked for the alliance. First pick is captain. */
-        @nullable
-    @BuiltValueField(wireName: r'picks')
-    BuiltList<String> get picks;
-    
-        @nullable
-    @BuiltValueField(wireName: r'status')
-    EliminationAllianceStatus get status;
+  EliminationAlliance.fromJson(Map<String, dynamic> json) {
+    if (json == null) return;
+    name = json['name'];
+    backup = (json['backup'] == null) ?
+      null :
+      EliminationAllianceBackup.fromJson(json['backup']);
+    declines = (json['declines'] == null) ?
+      null :
+      (json['declines'] as List).cast<String>();
+    picks = (json['picks'] == null) ?
+      null :
+      (json['picks'] as List).cast<String>();
+    status = (json['status'] == null) ?
+      null :
+      EliminationAllianceStatus.fromJson(json['status']);
+  }
 
-    // Boilerplate code needed to wire-up generated code
-    EliminationAlliance._();
+  Map<String, dynamic> toJson() {
+    Map <String, dynamic> json = {};
+    if (name != null)
+      json['name'] = name;
+    if (backup != null)
+      json['backup'] = backup;
+    if (declines != null)
+      json['declines'] = declines;
+    if (picks != null)
+      json['picks'] = picks;
+    if (status != null)
+      json['status'] = status;
+    return json;
+  }
 
-    factory EliminationAlliance([updates(EliminationAllianceBuilder b)]) = _$EliminationAlliance;
-    static Serializer<EliminationAlliance> get serializer => _$eliminationAllianceSerializer;
+  static List<EliminationAlliance> listFromJson(List<dynamic> json) {
+    return json == null ? List<EliminationAlliance>() : json.map((value) => EliminationAlliance.fromJson(value)).toList();
+  }
 
+  static Map<String, EliminationAlliance> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, EliminationAlliance>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) => map[key] = EliminationAlliance.fromJson(value));
+    }
+    return map;
+  }
+
+  // maps a json object with a list of EliminationAlliance-objects as value to a dart map
+  static Map<String, List<EliminationAlliance>> mapListFromJson(Map<String, dynamic> json) {
+    var map = Map<String, List<EliminationAlliance>>();
+     if (json != null && json.isNotEmpty) {
+       json.forEach((String key, dynamic value) {
+         map[key] = EliminationAlliance.listFromJson(value);
+       });
+     }
+     return map;
+  }
 }
 

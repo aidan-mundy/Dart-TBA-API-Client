@@ -1,24 +1,53 @@
-        import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+part of tba_dart_api_client.api;
 
-part 'event_ranking_sort_order_info.g.dart';
+class EventRankingSortOrderInfo {
+  /* Integer expressing the number of digits of precision in the number provided in `sort_orders`. */
+  int precision = null;
+  /* Name of the field used in the `sort_order` array. */
+  String name = null;
+  EventRankingSortOrderInfo();
 
-abstract class EventRankingSortOrderInfo implements Built<EventRankingSortOrderInfo, EventRankingSortOrderInfoBuilder> {
+  @override
+  String toString() {
+    return 'EventRankingSortOrderInfo[precision=$precision, name=$name, ]';
+  }
 
-    /* Integer expressing the number of digits of precision in the number provided in `sort_orders`. */
-        @nullable
-    @BuiltValueField(wireName: r'precision')
-    int get precision;
-    /* Name of the field used in the `sort_order` array. */
-        @nullable
-    @BuiltValueField(wireName: r'name')
-    String get name;
+  EventRankingSortOrderInfo.fromJson(Map<String, dynamic> json) {
+    if (json == null) return;
+    precision = json['precision'];
+    name = json['name'];
+  }
 
-    // Boilerplate code needed to wire-up generated code
-    EventRankingSortOrderInfo._();
+  Map<String, dynamic> toJson() {
+    Map <String, dynamic> json = {};
+    if (precision != null)
+      json['precision'] = precision;
+    if (name != null)
+      json['name'] = name;
+    return json;
+  }
 
-    factory EventRankingSortOrderInfo([updates(EventRankingSortOrderInfoBuilder b)]) = _$EventRankingSortOrderInfo;
-    static Serializer<EventRankingSortOrderInfo> get serializer => _$eventRankingSortOrderInfoSerializer;
+  static List<EventRankingSortOrderInfo> listFromJson(List<dynamic> json) {
+    return json == null ? List<EventRankingSortOrderInfo>() : json.map((value) => EventRankingSortOrderInfo.fromJson(value)).toList();
+  }
 
+  static Map<String, EventRankingSortOrderInfo> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, EventRankingSortOrderInfo>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) => map[key] = EventRankingSortOrderInfo.fromJson(value));
+    }
+    return map;
+  }
+
+  // maps a json object with a list of EventRankingSortOrderInfo-objects as value to a dart map
+  static Map<String, List<EventRankingSortOrderInfo>> mapListFromJson(Map<String, dynamic> json) {
+    var map = Map<String, List<EventRankingSortOrderInfo>>();
+     if (json != null && json.isNotEmpty) {
+       json.forEach((String key, dynamic value) {
+         map[key] = EventRankingSortOrderInfo.listFromJson(value);
+       });
+     }
+     return map;
+  }
 }
 

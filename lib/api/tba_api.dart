@@ -1,64 +1,66 @@
-import 'dart:async';
-import 'dart:io';
-import 'dart:convert';
-import 'package:dio/dio.dart';
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/serializer.dart';
+part of tba_dart_api_client.api;
 
-import 'package:tba_dart_api_client/model/api_status.dart';
+
 
 class TBAApi {
-    final Dio _dio;
-    Serializers _serializers;
+  final ApiClient apiClient;
 
-    TBAApi(this._dio, this._serializers);
+  TBAApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
-        /// 
-        ///
-        /// Returns API status, and TBA status information.
-        Future<Response<APIStatus>>getStatus({ String ifModifiedSince,CancelToken cancelToken, Map<String, String> headers,}) async {
+  ///  with HTTP info returned
+  ///
+  /// Returns API status, and TBA status information.
+  Future<Response> getStatusWithHttpInfo({ String ifModifiedSince }) async {
+    Object postBody;
 
-        String _path = "/status";
+    // verify required params are set
 
-        Map<String, dynamic> queryParams = {};
-        Map<String, String> headerParams = Map.from(headers ?? {});
-        dynamic bodyData;
+    // create path and map variables
+    String path = "/status".replaceAll("{format}","json");
 
-                headerParams[r'If-Modified-Since'] = ifModifiedSince;
-        queryParams.removeWhere((key, value) => value == null);
-        headerParams.removeWhere((key, value) => value == null);
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+    headerParams["If-Modified-Since"] = ifModifiedSince;
 
-        List<String> contentTypes = [];
+    List<String> contentTypes = [];
 
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
+    List<String> authNames = ["apiKey"];
 
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = MultipartRequest(null, null);
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+    }
 
-            return _dio.request(
-            _path,
-            queryParameters: queryParams,
-            data: bodyData,
-            options: Options(
-            method: 'get'.toUpperCase(),
-            headers: headerParams,
-            extra: {
-                'secure': [ {"type": "apiKey", "name": "apiKey", "keyName": "X-TBA-Auth-Key", "where": "header" }],
-            },
-            contentType: contentTypes.isNotEmpty ? contentTypes[0] : "application/json",
-            ),
-            cancelToken: cancelToken,
-            ).then((response) {
+    var response = await apiClient.invokeAPI(path,
+                                             'GET',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             nullableContentType,
+                                             authNames);
+    return response;
+  }
 
-        var serializer = _serializers.serializerForType(APIStatus);
-        var data = _serializers.deserializeWith<APIStatus>(serializer, response.data is String ? jsonDecode(response.data) : response.data);
+  /// 
+  ///
+  /// Returns API status, and TBA status information.
+  Future<APIStatus> getStatus({ String ifModifiedSince }) async {
+    Response response = await getStatusWithHttpInfo( ifModifiedSince: ifModifiedSince );
+    if(response.statusCode >= 400) {
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+    } else if(response.body != null) {
+      return apiClient.deserialize(_decodeBodyBytes(response), 'APIStatus') as APIStatus;
+    } else {
+      return null;
+    }
+  }
 
-            return Response<APIStatus>(
-                data: data,
-                headers: response.headers,
-                request: response.request,
-                redirects: response.redirects,
-                statusCode: response.statusCode,
-                statusMessage: response.statusMessage,
-                extra: response.extra,
-            );
-            });
-            }
-        }
+}

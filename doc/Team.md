@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **website** | **String** | Official website associated with the team. | [optional] [default to null]
 **rookieYear** | **int** | First year the team officially competed. | [optional] [default to null]
 **motto** | **String** | Team&#39;s motto as provided by FIRST. This field is deprecated and will return null - will be removed at end-of-season in 2019. | [optional] [default to null]
-**homeChampionship** | [**JsonObject**](.md) | Location of the team&#39;s home championship each year as a key-value pair. The year (as a string) is the key, and the city is the value. | [optional] [default to null]
+**homeChampionship** | [**Object**](.md) | Location of the team&#39;s home championship each year as a key-value pair. The year (as a string) is the key, and the city is the value. | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

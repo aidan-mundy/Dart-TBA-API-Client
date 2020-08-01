@@ -1,28 +1,58 @@
-        import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+part of tba_dart_api_client.api;
 
-part 'wlt_record.g.dart';
+class WLTRecord {
+  /* Number of losses. */
+  int losses = null;
+  /* Number of wins. */
+  int wins = null;
+  /* Number of ties. */
+  int ties = null;
+  WLTRecord();
 
-abstract class WLTRecord implements Built<WLTRecord, WLTRecordBuilder> {
+  @override
+  String toString() {
+    return 'WLTRecord[losses=$losses, wins=$wins, ties=$ties, ]';
+  }
 
-    /* Number of losses. */
-        @nullable
-    @BuiltValueField(wireName: r'losses')
-    int get losses;
-    /* Number of wins. */
-        @nullable
-    @BuiltValueField(wireName: r'wins')
-    int get wins;
-    /* Number of ties. */
-        @nullable
-    @BuiltValueField(wireName: r'ties')
-    int get ties;
+  WLTRecord.fromJson(Map<String, dynamic> json) {
+    if (json == null) return;
+    losses = json['losses'];
+    wins = json['wins'];
+    ties = json['ties'];
+  }
 
-    // Boilerplate code needed to wire-up generated code
-    WLTRecord._();
+  Map<String, dynamic> toJson() {
+    Map <String, dynamic> json = {};
+    if (losses != null)
+      json['losses'] = losses;
+    if (wins != null)
+      json['wins'] = wins;
+    if (ties != null)
+      json['ties'] = ties;
+    return json;
+  }
 
-    factory WLTRecord([updates(WLTRecordBuilder b)]) = _$WLTRecord;
-    static Serializer<WLTRecord> get serializer => _$wLTRecordSerializer;
+  static List<WLTRecord> listFromJson(List<dynamic> json) {
+    return json == null ? List<WLTRecord>() : json.map((value) => WLTRecord.fromJson(value)).toList();
+  }
 
+  static Map<String, WLTRecord> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, WLTRecord>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) => map[key] = WLTRecord.fromJson(value));
+    }
+    return map;
+  }
+
+  // maps a json object with a list of WLTRecord-objects as value to a dart map
+  static Map<String, List<WLTRecord>> mapListFromJson(Map<String, dynamic> json) {
+    var map = Map<String, List<WLTRecord>>();
+     if (json != null && json.isNotEmpty) {
+       json.forEach((String key, dynamic value) {
+         map[key] = WLTRecord.listFromJson(value);
+       });
+     }
+     return map;
+  }
 }
 

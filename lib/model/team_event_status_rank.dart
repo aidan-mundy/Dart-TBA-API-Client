@@ -1,35 +1,67 @@
-            import 'package:tba_dart_api_client/model/team_event_status_rank_sort_order_info.dart';
-            import 'package:built_collection/built_collection.dart';
-            import 'package:tba_dart_api_client/model/team_event_status_rank_ranking.dart';
-        import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+part of tba_dart_api_client.api;
 
-part 'team_event_status_rank.g.dart';
+class TeamEventStatusRank {
+  /* Number of teams ranked. */
+  int numTeams = null;
+  
+  TeamEventStatusRankRanking ranking = null;
+  /* Ordered list of names corresponding to the elements of the `sort_orders` array. */
+  List<TeamEventStatusRankSortOrderInfo> sortOrderInfo = [];
+  
+  String status = null;
+  TeamEventStatusRank();
 
-abstract class TeamEventStatusRank implements Built<TeamEventStatusRank, TeamEventStatusRankBuilder> {
+  @override
+  String toString() {
+    return 'TeamEventStatusRank[numTeams=$numTeams, ranking=$ranking, sortOrderInfo=$sortOrderInfo, status=$status, ]';
+  }
 
-    /* Number of teams ranked. */
-        @nullable
-    @BuiltValueField(wireName: r'num_teams')
-    int get numTeams;
-    
-        @nullable
-    @BuiltValueField(wireName: r'ranking')
-    TeamEventStatusRankRanking get ranking;
-    /* Ordered list of names corresponding to the elements of the `sort_orders` array. */
-        @nullable
-    @BuiltValueField(wireName: r'sort_order_info')
-    BuiltList<TeamEventStatusRankSortOrderInfo> get sortOrderInfo;
-    
-        @nullable
-    @BuiltValueField(wireName: r'status')
-    String get status;
+  TeamEventStatusRank.fromJson(Map<String, dynamic> json) {
+    if (json == null) return;
+    numTeams = json['num_teams'];
+    ranking = (json['ranking'] == null) ?
+      null :
+      TeamEventStatusRankRanking.fromJson(json['ranking']);
+    sortOrderInfo = (json['sort_order_info'] == null) ?
+      null :
+      TeamEventStatusRankSortOrderInfo.listFromJson(json['sort_order_info']);
+    status = json['status'];
+  }
 
-    // Boilerplate code needed to wire-up generated code
-    TeamEventStatusRank._();
+  Map<String, dynamic> toJson() {
+    Map <String, dynamic> json = {};
+    if (numTeams != null)
+      json['num_teams'] = numTeams;
+    if (ranking != null)
+      json['ranking'] = ranking;
+    if (sortOrderInfo != null)
+      json['sort_order_info'] = sortOrderInfo;
+    if (status != null)
+      json['status'] = status;
+    return json;
+  }
 
-    factory TeamEventStatusRank([updates(TeamEventStatusRankBuilder b)]) = _$TeamEventStatusRank;
-    static Serializer<TeamEventStatusRank> get serializer => _$teamEventStatusRankSerializer;
+  static List<TeamEventStatusRank> listFromJson(List<dynamic> json) {
+    return json == null ? List<TeamEventStatusRank>() : json.map((value) => TeamEventStatusRank.fromJson(value)).toList();
+  }
 
+  static Map<String, TeamEventStatusRank> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, TeamEventStatusRank>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) => map[key] = TeamEventStatusRank.fromJson(value));
+    }
+    return map;
+  }
+
+  // maps a json object with a list of TeamEventStatusRank-objects as value to a dart map
+  static Map<String, List<TeamEventStatusRank>> mapListFromJson(Map<String, dynamic> json) {
+    var map = Map<String, List<TeamEventStatusRank>>();
+     if (json != null && json.isNotEmpty) {
+       json.forEach((String key, dynamic value) {
+         map[key] = TeamEventStatusRank.listFromJson(value);
+       });
+     }
+     return map;
+  }
 }
 

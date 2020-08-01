@@ -1,171 +1,236 @@
-        import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+part of tba_dart_api_client.api;
 
-part 'match_score_breakdown2016_alliance.g.dart';
+class MatchScoreBreakdown2016Alliance {
+  
+  int autoPoints = null;
+  
+  int teleopPoints = null;
+  
+  int breachPoints = null;
+  
+  int foulPoints = null;
+  
+  int capturePoints = null;
+  
+  int adjustPoints = null;
+  
+  int totalPoints = null;
+  
+  String robot1Auto = null;
+  //enum robot1AutoEnum {  Crossed,  Reached,  None,  };{
+  
+  String robot2Auto = null;
+  //enum robot2AutoEnum {  Crossed,  Reached,  None,  };{
+  
+  String robot3Auto = null;
+  //enum robot3AutoEnum {  Crossed,  Reached,  None,  };{
+  
+  int autoReachPoints = null;
+  
+  int autoCrossingPoints = null;
+  
+  int autoBouldersLow = null;
+  
+  int autoBouldersHigh = null;
+  
+  int autoBoulderPoints = null;
+  
+  int teleopCrossingPoints = null;
+  
+  int teleopBouldersLow = null;
+  
+  int teleopBouldersHigh = null;
+  
+  int teleopBoulderPoints = null;
+  
+  bool teleopDefensesBreached = null;
+  
+  int teleopChallengePoints = null;
+  
+  int teleopScalePoints = null;
+  
+  int teleopTowerCaptured = null;
+  
+  String towerFaceA = null;
+  
+  String towerFaceB = null;
+  
+  String towerFaceC = null;
+  
+  int towerEndStrength = null;
+  
+  int techFoulCount = null;
+  
+  int foulCount = null;
+  
+  String position2 = null;
+  
+  String position3 = null;
+  
+  String position4 = null;
+  
+  String position5 = null;
+  
+  int position1crossings = null;
+  
+  int position2crossings = null;
+  
+  int position3crossings = null;
+  
+  int position4crossings = null;
+  
+  int position5crossings = null;
+  MatchScoreBreakdown2016Alliance();
 
-abstract class MatchScoreBreakdown2016Alliance implements Built<MatchScoreBreakdown2016Alliance, MatchScoreBreakdown2016AllianceBuilder> {
+  @override
+  String toString() {
+    return 'MatchScoreBreakdown2016Alliance[autoPoints=$autoPoints, teleopPoints=$teleopPoints, breachPoints=$breachPoints, foulPoints=$foulPoints, capturePoints=$capturePoints, adjustPoints=$adjustPoints, totalPoints=$totalPoints, robot1Auto=$robot1Auto, robot2Auto=$robot2Auto, robot3Auto=$robot3Auto, autoReachPoints=$autoReachPoints, autoCrossingPoints=$autoCrossingPoints, autoBouldersLow=$autoBouldersLow, autoBouldersHigh=$autoBouldersHigh, autoBoulderPoints=$autoBoulderPoints, teleopCrossingPoints=$teleopCrossingPoints, teleopBouldersLow=$teleopBouldersLow, teleopBouldersHigh=$teleopBouldersHigh, teleopBoulderPoints=$teleopBoulderPoints, teleopDefensesBreached=$teleopDefensesBreached, teleopChallengePoints=$teleopChallengePoints, teleopScalePoints=$teleopScalePoints, teleopTowerCaptured=$teleopTowerCaptured, towerFaceA=$towerFaceA, towerFaceB=$towerFaceB, towerFaceC=$towerFaceC, towerEndStrength=$towerEndStrength, techFoulCount=$techFoulCount, foulCount=$foulCount, position2=$position2, position3=$position3, position4=$position4, position5=$position5, position1crossings=$position1crossings, position2crossings=$position2crossings, position3crossings=$position3crossings, position4crossings=$position4crossings, position5crossings=$position5crossings, ]';
+  }
 
-    
-        @nullable
-    @BuiltValueField(wireName: r'autoPoints')
-    int get autoPoints;
-    
-        @nullable
-    @BuiltValueField(wireName: r'teleopPoints')
-    int get teleopPoints;
-    
-        @nullable
-    @BuiltValueField(wireName: r'breachPoints')
-    int get breachPoints;
-    
-        @nullable
-    @BuiltValueField(wireName: r'foulPoints')
-    int get foulPoints;
-    
-        @nullable
-    @BuiltValueField(wireName: r'capturePoints')
-    int get capturePoints;
-    
-        @nullable
-    @BuiltValueField(wireName: r'adjustPoints')
-    int get adjustPoints;
-    
-        @nullable
-    @BuiltValueField(wireName: r'totalPoints')
-    int get totalPoints;
-    
-        @nullable
-    @BuiltValueField(wireName: r'robot1Auto')
-    String get robot1Auto;
-        //enum robot1AutoEnum {  Crossed,  Reached,  None,  };
-    
-        @nullable
-    @BuiltValueField(wireName: r'robot2Auto')
-    String get robot2Auto;
-        //enum robot2AutoEnum {  Crossed,  Reached,  None,  };
-    
-        @nullable
-    @BuiltValueField(wireName: r'robot3Auto')
-    String get robot3Auto;
-        //enum robot3AutoEnum {  Crossed,  Reached,  None,  };
-    
-        @nullable
-    @BuiltValueField(wireName: r'autoReachPoints')
-    int get autoReachPoints;
-    
-        @nullable
-    @BuiltValueField(wireName: r'autoCrossingPoints')
-    int get autoCrossingPoints;
-    
-        @nullable
-    @BuiltValueField(wireName: r'autoBouldersLow')
-    int get autoBouldersLow;
-    
-        @nullable
-    @BuiltValueField(wireName: r'autoBouldersHigh')
-    int get autoBouldersHigh;
-    
-        @nullable
-    @BuiltValueField(wireName: r'autoBoulderPoints')
-    int get autoBoulderPoints;
-    
-        @nullable
-    @BuiltValueField(wireName: r'teleopCrossingPoints')
-    int get teleopCrossingPoints;
-    
-        @nullable
-    @BuiltValueField(wireName: r'teleopBouldersLow')
-    int get teleopBouldersLow;
-    
-        @nullable
-    @BuiltValueField(wireName: r'teleopBouldersHigh')
-    int get teleopBouldersHigh;
-    
-        @nullable
-    @BuiltValueField(wireName: r'teleopBoulderPoints')
-    int get teleopBoulderPoints;
-    
-        @nullable
-    @BuiltValueField(wireName: r'teleopDefensesBreached')
-    bool get teleopDefensesBreached;
-    
-        @nullable
-    @BuiltValueField(wireName: r'teleopChallengePoints')
-    int get teleopChallengePoints;
-    
-        @nullable
-    @BuiltValueField(wireName: r'teleopScalePoints')
-    int get teleopScalePoints;
-    
-        @nullable
-    @BuiltValueField(wireName: r'teleopTowerCaptured')
-    int get teleopTowerCaptured;
-    
-        @nullable
-    @BuiltValueField(wireName: r'towerFaceA')
-    String get towerFaceA;
-    
-        @nullable
-    @BuiltValueField(wireName: r'towerFaceB')
-    String get towerFaceB;
-    
-        @nullable
-    @BuiltValueField(wireName: r'towerFaceC')
-    String get towerFaceC;
-    
-        @nullable
-    @BuiltValueField(wireName: r'towerEndStrength')
-    int get towerEndStrength;
-    
-        @nullable
-    @BuiltValueField(wireName: r'techFoulCount')
-    int get techFoulCount;
-    
-        @nullable
-    @BuiltValueField(wireName: r'foulCount')
-    int get foulCount;
-    
-        @nullable
-    @BuiltValueField(wireName: r'position2')
-    String get position2;
-    
-        @nullable
-    @BuiltValueField(wireName: r'position3')
-    String get position3;
-    
-        @nullable
-    @BuiltValueField(wireName: r'position4')
-    String get position4;
-    
-        @nullable
-    @BuiltValueField(wireName: r'position5')
-    String get position5;
-    
-        @nullable
-    @BuiltValueField(wireName: r'position1crossings')
-    int get position1crossings;
-    
-        @nullable
-    @BuiltValueField(wireName: r'position2crossings')
-    int get position2crossings;
-    
-        @nullable
-    @BuiltValueField(wireName: r'position3crossings')
-    int get position3crossings;
-    
-        @nullable
-    @BuiltValueField(wireName: r'position4crossings')
-    int get position4crossings;
-    
-        @nullable
-    @BuiltValueField(wireName: r'position5crossings')
-    int get position5crossings;
+  MatchScoreBreakdown2016Alliance.fromJson(Map<String, dynamic> json) {
+    if (json == null) return;
+    autoPoints = json['autoPoints'];
+    teleopPoints = json['teleopPoints'];
+    breachPoints = json['breachPoints'];
+    foulPoints = json['foulPoints'];
+    capturePoints = json['capturePoints'];
+    adjustPoints = json['adjustPoints'];
+    totalPoints = json['totalPoints'];
+    robot1Auto = json['robot1Auto'];
+    robot2Auto = json['robot2Auto'];
+    robot3Auto = json['robot3Auto'];
+    autoReachPoints = json['autoReachPoints'];
+    autoCrossingPoints = json['autoCrossingPoints'];
+    autoBouldersLow = json['autoBouldersLow'];
+    autoBouldersHigh = json['autoBouldersHigh'];
+    autoBoulderPoints = json['autoBoulderPoints'];
+    teleopCrossingPoints = json['teleopCrossingPoints'];
+    teleopBouldersLow = json['teleopBouldersLow'];
+    teleopBouldersHigh = json['teleopBouldersHigh'];
+    teleopBoulderPoints = json['teleopBoulderPoints'];
+    teleopDefensesBreached = json['teleopDefensesBreached'];
+    teleopChallengePoints = json['teleopChallengePoints'];
+    teleopScalePoints = json['teleopScalePoints'];
+    teleopTowerCaptured = json['teleopTowerCaptured'];
+    towerFaceA = json['towerFaceA'];
+    towerFaceB = json['towerFaceB'];
+    towerFaceC = json['towerFaceC'];
+    towerEndStrength = json['towerEndStrength'];
+    techFoulCount = json['techFoulCount'];
+    foulCount = json['foulCount'];
+    position2 = json['position2'];
+    position3 = json['position3'];
+    position4 = json['position4'];
+    position5 = json['position5'];
+    position1crossings = json['position1crossings'];
+    position2crossings = json['position2crossings'];
+    position3crossings = json['position3crossings'];
+    position4crossings = json['position4crossings'];
+    position5crossings = json['position5crossings'];
+  }
 
-    // Boilerplate code needed to wire-up generated code
-    MatchScoreBreakdown2016Alliance._();
+  Map<String, dynamic> toJson() {
+    Map <String, dynamic> json = {};
+    if (autoPoints != null)
+      json['autoPoints'] = autoPoints;
+    if (teleopPoints != null)
+      json['teleopPoints'] = teleopPoints;
+    if (breachPoints != null)
+      json['breachPoints'] = breachPoints;
+    if (foulPoints != null)
+      json['foulPoints'] = foulPoints;
+    if (capturePoints != null)
+      json['capturePoints'] = capturePoints;
+    if (adjustPoints != null)
+      json['adjustPoints'] = adjustPoints;
+    if (totalPoints != null)
+      json['totalPoints'] = totalPoints;
+    if (robot1Auto != null)
+      json['robot1Auto'] = robot1Auto;
+    if (robot2Auto != null)
+      json['robot2Auto'] = robot2Auto;
+    if (robot3Auto != null)
+      json['robot3Auto'] = robot3Auto;
+    if (autoReachPoints != null)
+      json['autoReachPoints'] = autoReachPoints;
+    if (autoCrossingPoints != null)
+      json['autoCrossingPoints'] = autoCrossingPoints;
+    if (autoBouldersLow != null)
+      json['autoBouldersLow'] = autoBouldersLow;
+    if (autoBouldersHigh != null)
+      json['autoBouldersHigh'] = autoBouldersHigh;
+    if (autoBoulderPoints != null)
+      json['autoBoulderPoints'] = autoBoulderPoints;
+    if (teleopCrossingPoints != null)
+      json['teleopCrossingPoints'] = teleopCrossingPoints;
+    if (teleopBouldersLow != null)
+      json['teleopBouldersLow'] = teleopBouldersLow;
+    if (teleopBouldersHigh != null)
+      json['teleopBouldersHigh'] = teleopBouldersHigh;
+    if (teleopBoulderPoints != null)
+      json['teleopBoulderPoints'] = teleopBoulderPoints;
+    if (teleopDefensesBreached != null)
+      json['teleopDefensesBreached'] = teleopDefensesBreached;
+    if (teleopChallengePoints != null)
+      json['teleopChallengePoints'] = teleopChallengePoints;
+    if (teleopScalePoints != null)
+      json['teleopScalePoints'] = teleopScalePoints;
+    if (teleopTowerCaptured != null)
+      json['teleopTowerCaptured'] = teleopTowerCaptured;
+    if (towerFaceA != null)
+      json['towerFaceA'] = towerFaceA;
+    if (towerFaceB != null)
+      json['towerFaceB'] = towerFaceB;
+    if (towerFaceC != null)
+      json['towerFaceC'] = towerFaceC;
+    if (towerEndStrength != null)
+      json['towerEndStrength'] = towerEndStrength;
+    if (techFoulCount != null)
+      json['techFoulCount'] = techFoulCount;
+    if (foulCount != null)
+      json['foulCount'] = foulCount;
+    if (position2 != null)
+      json['position2'] = position2;
+    if (position3 != null)
+      json['position3'] = position3;
+    if (position4 != null)
+      json['position4'] = position4;
+    if (position5 != null)
+      json['position5'] = position5;
+    if (position1crossings != null)
+      json['position1crossings'] = position1crossings;
+    if (position2crossings != null)
+      json['position2crossings'] = position2crossings;
+    if (position3crossings != null)
+      json['position3crossings'] = position3crossings;
+    if (position4crossings != null)
+      json['position4crossings'] = position4crossings;
+    if (position5crossings != null)
+      json['position5crossings'] = position5crossings;
+    return json;
+  }
 
-    factory MatchScoreBreakdown2016Alliance([updates(MatchScoreBreakdown2016AllianceBuilder b)]) = _$MatchScoreBreakdown2016Alliance;
-    static Serializer<MatchScoreBreakdown2016Alliance> get serializer => _$matchScoreBreakdown2016AllianceSerializer;
+  static List<MatchScoreBreakdown2016Alliance> listFromJson(List<dynamic> json) {
+    return json == null ? List<MatchScoreBreakdown2016Alliance>() : json.map((value) => MatchScoreBreakdown2016Alliance.fromJson(value)).toList();
+  }
 
+  static Map<String, MatchScoreBreakdown2016Alliance> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, MatchScoreBreakdown2016Alliance>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) => map[key] = MatchScoreBreakdown2016Alliance.fromJson(value));
+    }
+    return map;
+  }
+
+  // maps a json object with a list of MatchScoreBreakdown2016Alliance-objects as value to a dart map
+  static Map<String, List<MatchScoreBreakdown2016Alliance>> mapListFromJson(Map<String, dynamic> json) {
+    var map = Map<String, List<MatchScoreBreakdown2016Alliance>>();
+     if (json != null && json.isNotEmpty) {
+       json.forEach((String key, dynamic value) {
+         map[key] = MatchScoreBreakdown2016Alliance.listFromJson(value);
+       });
+     }
+     return map;
+  }
 }
 

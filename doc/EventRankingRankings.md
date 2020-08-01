@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **matchesPlayed** | **int** | Number of matches played by this team. | [default to null]
 **qualAverage** | **int** | The average match score during qualifications. Year specific. May be null if not relevant for a given year. | [optional] [default to null]
-**extraStats** | **BuiltList&lt;num&gt;** | Additional special data on the team&#39;s performance calculated by TBA. | [optional] [default to const []]
-**sortOrders** | **BuiltList&lt;num&gt;** | Additional year-specific information, may be null. See parent &#x60;sort_order_info&#x60; for details. | [optional] [default to const []]
+**extraStats** | **List&lt;num&gt;** | Additional special data on the team&#39;s performance calculated by TBA. | [optional] [default to []]
+**sortOrders** | **List&lt;num&gt;** | Additional year-specific information, may be null. See parent &#x60;sort_order_info&#x60; for details. | [optional] [default to []]
 **record** | [**WLTRecord**](WLTRecord.md) |  | [default to null]
 **rank** | **int** | The team&#39;s rank at the event as provided by FIRST. | [default to null]
 **dq** | **int** | Number of times disqualified. | [default to null]

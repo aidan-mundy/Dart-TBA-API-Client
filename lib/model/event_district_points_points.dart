@@ -1,36 +1,68 @@
-        import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+part of tba_dart_api_client.api;
 
-part 'event_district_points_points.g.dart';
+class EventDistrictPointsPoints {
+  /* Total points awarded at this event. */
+  int total = null;
+  /* Points awarded for alliance selection */
+  int alliancePoints = null;
+  /* Points awarded for elimination match performance. */
+  int elimPoints = null;
+  /* Points awarded for event awards. */
+  int awardPoints = null;
+  /* Points awarded for qualification match performance. */
+  int qualPoints = null;
+  EventDistrictPointsPoints();
 
-abstract class EventDistrictPointsPoints implements Built<EventDistrictPointsPoints, EventDistrictPointsPointsBuilder> {
+  @override
+  String toString() {
+    return 'EventDistrictPointsPoints[total=$total, alliancePoints=$alliancePoints, elimPoints=$elimPoints, awardPoints=$awardPoints, qualPoints=$qualPoints, ]';
+  }
 
-    /* Total points awarded at this event. */
-        @nullable
-    @BuiltValueField(wireName: r'total')
-    int get total;
-    /* Points awarded for alliance selection */
-        @nullable
-    @BuiltValueField(wireName: r'alliance_points')
-    int get alliancePoints;
-    /* Points awarded for elimination match performance. */
-        @nullable
-    @BuiltValueField(wireName: r'elim_points')
-    int get elimPoints;
-    /* Points awarded for event awards. */
-        @nullable
-    @BuiltValueField(wireName: r'award_points')
-    int get awardPoints;
-    /* Points awarded for qualification match performance. */
-        @nullable
-    @BuiltValueField(wireName: r'qual_points')
-    int get qualPoints;
+  EventDistrictPointsPoints.fromJson(Map<String, dynamic> json) {
+    if (json == null) return;
+    total = json['total'];
+    alliancePoints = json['alliance_points'];
+    elimPoints = json['elim_points'];
+    awardPoints = json['award_points'];
+    qualPoints = json['qual_points'];
+  }
 
-    // Boilerplate code needed to wire-up generated code
-    EventDistrictPointsPoints._();
+  Map<String, dynamic> toJson() {
+    Map <String, dynamic> json = {};
+    if (total != null)
+      json['total'] = total;
+    if (alliancePoints != null)
+      json['alliance_points'] = alliancePoints;
+    if (elimPoints != null)
+      json['elim_points'] = elimPoints;
+    if (awardPoints != null)
+      json['award_points'] = awardPoints;
+    if (qualPoints != null)
+      json['qual_points'] = qualPoints;
+    return json;
+  }
 
-    factory EventDistrictPointsPoints([updates(EventDistrictPointsPointsBuilder b)]) = _$EventDistrictPointsPoints;
-    static Serializer<EventDistrictPointsPoints> get serializer => _$eventDistrictPointsPointsSerializer;
+  static List<EventDistrictPointsPoints> listFromJson(List<dynamic> json) {
+    return json == null ? List<EventDistrictPointsPoints>() : json.map((value) => EventDistrictPointsPoints.fromJson(value)).toList();
+  }
 
+  static Map<String, EventDistrictPointsPoints> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, EventDistrictPointsPoints>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) => map[key] = EventDistrictPointsPoints.fromJson(value));
+    }
+    return map;
+  }
+
+  // maps a json object with a list of EventDistrictPointsPoints-objects as value to a dart map
+  static Map<String, List<EventDistrictPointsPoints>> mapListFromJson(Map<String, dynamic> json) {
+    var map = Map<String, List<EventDistrictPointsPoints>>();
+     if (json != null && json.isNotEmpty) {
+       json.forEach((String key, dynamic value) {
+         map[key] = EventDistrictPointsPoints.listFromJson(value);
+       });
+     }
+     return map;
+  }
 }
 

@@ -1,34 +1,68 @@
-            import 'package:tba_dart_api_client/model/match_score_breakdown2015_alliance.dart';
-        import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+part of tba_dart_api_client.api;
 
-part 'match_score_breakdown2015.g.dart';
+class MatchScoreBreakdown2015 {
+  
+  MatchScoreBreakdown2015Alliance blue = null;
+  
+  MatchScoreBreakdown2015Alliance red = null;
+  
+  String coopertition = null;
+  //enum coopertitionEnum {  None,  Unknown,  Stack,  };{
+  
+  int coopertitionPoints = null;
+  MatchScoreBreakdown2015();
 
-abstract class MatchScoreBreakdown2015 implements Built<MatchScoreBreakdown2015, MatchScoreBreakdown2015Builder> {
+  @override
+  String toString() {
+    return 'MatchScoreBreakdown2015[blue=$blue, red=$red, coopertition=$coopertition, coopertitionPoints=$coopertitionPoints, ]';
+  }
 
-    
-        @nullable
-    @BuiltValueField(wireName: r'blue')
-    MatchScoreBreakdown2015Alliance get blue;
-    
-        @nullable
-    @BuiltValueField(wireName: r'red')
-    MatchScoreBreakdown2015Alliance get red;
-    
-        @nullable
-    @BuiltValueField(wireName: r'coopertition')
-    String get coopertition;
-        //enum coopertitionEnum {  None,  Unknown,  Stack,  };
-    
-        @nullable
-    @BuiltValueField(wireName: r'coopertition_points')
-    int get coopertitionPoints;
+  MatchScoreBreakdown2015.fromJson(Map<String, dynamic> json) {
+    if (json == null) return;
+    blue = (json['blue'] == null) ?
+      null :
+      MatchScoreBreakdown2015Alliance.fromJson(json['blue']);
+    red = (json['red'] == null) ?
+      null :
+      MatchScoreBreakdown2015Alliance.fromJson(json['red']);
+    coopertition = json['coopertition'];
+    coopertitionPoints = json['coopertition_points'];
+  }
 
-    // Boilerplate code needed to wire-up generated code
-    MatchScoreBreakdown2015._();
+  Map<String, dynamic> toJson() {
+    Map <String, dynamic> json = {};
+    if (blue != null)
+      json['blue'] = blue;
+    if (red != null)
+      json['red'] = red;
+    if (coopertition != null)
+      json['coopertition'] = coopertition;
+    if (coopertitionPoints != null)
+      json['coopertition_points'] = coopertitionPoints;
+    return json;
+  }
 
-    factory MatchScoreBreakdown2015([updates(MatchScoreBreakdown2015Builder b)]) = _$MatchScoreBreakdown2015;
-    static Serializer<MatchScoreBreakdown2015> get serializer => _$matchScoreBreakdown2015Serializer;
+  static List<MatchScoreBreakdown2015> listFromJson(List<dynamic> json) {
+    return json == null ? List<MatchScoreBreakdown2015>() : json.map((value) => MatchScoreBreakdown2015.fromJson(value)).toList();
+  }
 
+  static Map<String, MatchScoreBreakdown2015> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, MatchScoreBreakdown2015>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) => map[key] = MatchScoreBreakdown2015.fromJson(value));
+    }
+    return map;
+  }
+
+  // maps a json object with a list of MatchScoreBreakdown2015-objects as value to a dart map
+  static Map<String, List<MatchScoreBreakdown2015>> mapListFromJson(Map<String, dynamic> json) {
+    var map = Map<String, List<MatchScoreBreakdown2015>>();
+     if (json != null && json.isNotEmpty) {
+       json.forEach((String key, dynamic value) {
+         map[key] = MatchScoreBreakdown2015.listFromJson(value);
+       });
+     }
+     return map;
+  }
 }
 

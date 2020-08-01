@@ -1,42 +1,79 @@
-            import 'package:built_collection/built_collection.dart';
-            import 'package:tba_dart_api_client/model/api_status_app_version.dart';
-        import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+part of tba_dart_api_client.api;
 
-part 'api_status.g.dart';
+class APIStatus {
+  /* Year of the current FRC season. */
+  int currentSeason = null;
+  /* Maximum FRC season year for valid queries. */
+  int maxSeason = null;
+  /* True if the entire FMS API provided by FIRST is down. */
+  bool isDatafeedDown = null;
+  /* An array of strings containing event keys of any active events that are no longer updating. */
+  List<String> downEvents = [];
+  
+  APIStatusAppVersion ios = null;
+  
+  APIStatusAppVersion android = null;
+  APIStatus();
 
-abstract class APIStatus implements Built<APIStatus, APIStatusBuilder> {
+  @override
+  String toString() {
+    return 'APIStatus[currentSeason=$currentSeason, maxSeason=$maxSeason, isDatafeedDown=$isDatafeedDown, downEvents=$downEvents, ios=$ios, android=$android, ]';
+  }
 
-    /* Year of the current FRC season. */
-        @nullable
-    @BuiltValueField(wireName: r'current_season')
-    int get currentSeason;
-    /* Maximum FRC season year for valid queries. */
-        @nullable
-    @BuiltValueField(wireName: r'max_season')
-    int get maxSeason;
-    /* True if the entire FMS API provided by FIRST is down. */
-        @nullable
-    @BuiltValueField(wireName: r'is_datafeed_down')
-    bool get isDatafeedDown;
-    /* An array of strings containing event keys of any active events that are no longer updating. */
-        @nullable
-    @BuiltValueField(wireName: r'down_events')
-    BuiltList<String> get downEvents;
-    
-        @nullable
-    @BuiltValueField(wireName: r'ios')
-    APIStatusAppVersion get ios;
-    
-        @nullable
-    @BuiltValueField(wireName: r'android')
-    APIStatusAppVersion get android;
+  APIStatus.fromJson(Map<String, dynamic> json) {
+    if (json == null) return;
+    currentSeason = json['current_season'];
+    maxSeason = json['max_season'];
+    isDatafeedDown = json['is_datafeed_down'];
+    downEvents = (json['down_events'] == null) ?
+      null :
+      (json['down_events'] as List).cast<String>();
+    ios = (json['ios'] == null) ?
+      null :
+      APIStatusAppVersion.fromJson(json['ios']);
+    android = (json['android'] == null) ?
+      null :
+      APIStatusAppVersion.fromJson(json['android']);
+  }
 
-    // Boilerplate code needed to wire-up generated code
-    APIStatus._();
+  Map<String, dynamic> toJson() {
+    Map <String, dynamic> json = {};
+    if (currentSeason != null)
+      json['current_season'] = currentSeason;
+    if (maxSeason != null)
+      json['max_season'] = maxSeason;
+    if (isDatafeedDown != null)
+      json['is_datafeed_down'] = isDatafeedDown;
+    if (downEvents != null)
+      json['down_events'] = downEvents;
+    if (ios != null)
+      json['ios'] = ios;
+    if (android != null)
+      json['android'] = android;
+    return json;
+  }
 
-    factory APIStatus([updates(APIStatusBuilder b)]) = _$APIStatus;
-    static Serializer<APIStatus> get serializer => _$aPIStatusSerializer;
+  static List<APIStatus> listFromJson(List<dynamic> json) {
+    return json == null ? List<APIStatus>() : json.map((value) => APIStatus.fromJson(value)).toList();
+  }
 
+  static Map<String, APIStatus> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, APIStatus>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) => map[key] = APIStatus.fromJson(value));
+    }
+    return map;
+  }
+
+  // maps a json object with a list of APIStatus-objects as value to a dart map
+  static Map<String, List<APIStatus>> mapListFromJson(Map<String, dynamic> json) {
+    var map = Map<String, List<APIStatus>>();
+     if (json != null && json.isNotEmpty) {
+       json.forEach((String key, dynamic value) {
+         map[key] = APIStatus.listFromJson(value);
+       });
+     }
+     return map;
+  }
 }
 

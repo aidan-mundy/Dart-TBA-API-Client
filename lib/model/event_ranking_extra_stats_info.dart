@@ -1,24 +1,53 @@
-        import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+part of tba_dart_api_client.api;
 
-part 'event_ranking_extra_stats_info.g.dart';
+class EventRankingExtraStatsInfo {
+  /* Integer expressing the number of digits of precision in the number provided in `sort_orders`. */
+  num precision = null;
+  /* Name of the field used in the `extra_stats` array. */
+  String name = null;
+  EventRankingExtraStatsInfo();
 
-abstract class EventRankingExtraStatsInfo implements Built<EventRankingExtraStatsInfo, EventRankingExtraStatsInfoBuilder> {
+  @override
+  String toString() {
+    return 'EventRankingExtraStatsInfo[precision=$precision, name=$name, ]';
+  }
 
-    /* Integer expressing the number of digits of precision in the number provided in `sort_orders`. */
-        @nullable
-    @BuiltValueField(wireName: r'precision')
-    num get precision;
-    /* Name of the field used in the `extra_stats` array. */
-        @nullable
-    @BuiltValueField(wireName: r'name')
-    String get name;
+  EventRankingExtraStatsInfo.fromJson(Map<String, dynamic> json) {
+    if (json == null) return;
+    precision = json['precision'];
+    name = json['name'];
+  }
 
-    // Boilerplate code needed to wire-up generated code
-    EventRankingExtraStatsInfo._();
+  Map<String, dynamic> toJson() {
+    Map <String, dynamic> json = {};
+    if (precision != null)
+      json['precision'] = precision;
+    if (name != null)
+      json['name'] = name;
+    return json;
+  }
 
-    factory EventRankingExtraStatsInfo([updates(EventRankingExtraStatsInfoBuilder b)]) = _$EventRankingExtraStatsInfo;
-    static Serializer<EventRankingExtraStatsInfo> get serializer => _$eventRankingExtraStatsInfoSerializer;
+  static List<EventRankingExtraStatsInfo> listFromJson(List<dynamic> json) {
+    return json == null ? List<EventRankingExtraStatsInfo>() : json.map((value) => EventRankingExtraStatsInfo.fromJson(value)).toList();
+  }
 
+  static Map<String, EventRankingExtraStatsInfo> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, EventRankingExtraStatsInfo>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) => map[key] = EventRankingExtraStatsInfo.fromJson(value));
+    }
+    return map;
+  }
+
+  // maps a json object with a list of EventRankingExtraStatsInfo-objects as value to a dart map
+  static Map<String, List<EventRankingExtraStatsInfo>> mapListFromJson(Map<String, dynamic> json) {
+    var map = Map<String, List<EventRankingExtraStatsInfo>>();
+     if (json != null && json.isNotEmpty) {
+       json.forEach((String key, dynamic value) {
+         map[key] = EventRankingExtraStatsInfo.listFromJson(value);
+       });
+     }
+     return map;
+  }
 }
 

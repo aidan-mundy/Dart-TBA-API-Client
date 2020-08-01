@@ -1,24 +1,53 @@
-        import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+part of tba_dart_api_client.api;
 
-part 'team_event_status_alliance_backup.g.dart';
+class TeamEventStatusAllianceBackup {
+  /* TBA key for the team replaced by the backup. */
+  String out_ = null;
+  /* TBA key for the backup team called in. */
+  String in_ = null;
+  TeamEventStatusAllianceBackup();
 
-abstract class TeamEventStatusAllianceBackup implements Built<TeamEventStatusAllianceBackup, TeamEventStatusAllianceBackupBuilder> {
+  @override
+  String toString() {
+    return 'TeamEventStatusAllianceBackup[out_=$out_, in_=$in_, ]';
+  }
 
-    /* TBA key for the team replaced by the backup. */
-        @nullable
-    @BuiltValueField(wireName: r'out')
-    String get out_;
-    /* TBA key for the backup team called in. */
-        @nullable
-    @BuiltValueField(wireName: r'in')
-    String get in_;
+  TeamEventStatusAllianceBackup.fromJson(Map<String, dynamic> json) {
+    if (json == null) return;
+    out_ = json['out'];
+    in_ = json['in'];
+  }
 
-    // Boilerplate code needed to wire-up generated code
-    TeamEventStatusAllianceBackup._();
+  Map<String, dynamic> toJson() {
+    Map <String, dynamic> json = {};
+    if (out_ != null)
+      json['out'] = out_;
+    if (in_ != null)
+      json['in'] = in_;
+    return json;
+  }
 
-    factory TeamEventStatusAllianceBackup([updates(TeamEventStatusAllianceBackupBuilder b)]) = _$TeamEventStatusAllianceBackup;
-    static Serializer<TeamEventStatusAllianceBackup> get serializer => _$teamEventStatusAllianceBackupSerializer;
+  static List<TeamEventStatusAllianceBackup> listFromJson(List<dynamic> json) {
+    return json == null ? List<TeamEventStatusAllianceBackup>() : json.map((value) => TeamEventStatusAllianceBackup.fromJson(value)).toList();
+  }
 
+  static Map<String, TeamEventStatusAllianceBackup> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, TeamEventStatusAllianceBackup>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) => map[key] = TeamEventStatusAllianceBackup.fromJson(value));
+    }
+    return map;
+  }
+
+  // maps a json object with a list of TeamEventStatusAllianceBackup-objects as value to a dart map
+  static Map<String, List<TeamEventStatusAllianceBackup>> mapListFromJson(Map<String, dynamic> json) {
+    var map = Map<String, List<TeamEventStatusAllianceBackup>>();
+     if (json != null && json.isNotEmpty) {
+       json.forEach((String key, dynamic value) {
+         map[key] = TeamEventStatusAllianceBackup.listFromJson(value);
+       });
+     }
+     return map;
+  }
 }
 

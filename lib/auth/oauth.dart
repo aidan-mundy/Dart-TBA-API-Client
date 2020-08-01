@@ -1,20 +1,16 @@
-import 'dart:async';
-import 'package:tba_dart_api_client/auth/auth.dart';
-import 'package:dio/dio.dart';
+part of tba_dart_api_client.api;
 
-class OAuthInterceptor extends AuthInterceptor {
-    Map<String, String> tokens = {};
+class OAuth implements Authentication {
+  String _accessToken;
 
-    @override
-    Future onRequest(RequestOptions options) {
-        final authInfo = getAuthInfo(options, "oauth");
-        for (var info in authInfo) {
-            final token = tokens[info["name"]];
-            if(token != null) {
-                options.headers["Authorization"] = "Bearer ${token}";
-                break;
-            }
-        }
-        return super.onRequest(options);
+  OAuth({String accessToken}) : _accessToken = accessToken;
+
+  @override
+  void applyToParams(List<QueryParam> queryParams, Map<String, String> headerParams) {
+    if (_accessToken != null) {
+      headerParams["Authorization"] = "Bearer $_accessToken";
     }
+  }
+
+  set accessToken(String accessToken) => _accessToken = accessToken;
 }

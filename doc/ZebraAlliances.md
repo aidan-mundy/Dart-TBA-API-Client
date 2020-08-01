@@ -8,8 +8,8 @@ import 'package:tba_dart_api_client/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**red** | [**BuiltList&lt;ZebraTeam&gt;**](ZebraTeam.md) | Zebra MotionWorks data for teams on the red alliance | [optional] [default to const []]
-**blue** | [**BuiltList&lt;ZebraTeam&gt;**](ZebraTeam.md) | Zebra data for teams on the blue alliance | [optional] [default to const []]
+**red** | [**List&lt;ZebraTeam&gt;**](ZebraTeam.md) | Zebra MotionWorks data for teams on the red alliance | [optional] [default to []]
+**blue** | [**List&lt;ZebraTeam&gt;**](ZebraTeam.md) | Zebra data for teams on the blue alliance | [optional] [default to []]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

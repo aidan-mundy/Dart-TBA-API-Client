@@ -9,7 +9,7 @@ All URIs are relative to *https://www.thebluealliance.com/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getStatus**](TBAApi.md#getStatus) | **get** /status | 
+[**getStatus**](TBAApi.md#getStatus) | **GET** /status | 
 
 
 # **getStatus**
@@ -27,7 +27,7 @@ import 'package:tba_dart_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = new TBAApi();
+var api_instance = TBAApi();
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
 try { 

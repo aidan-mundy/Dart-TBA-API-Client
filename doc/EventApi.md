@@ -9,41 +9,41 @@ All URIs are relative to *https://www.thebluealliance.com/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getDistrictEvents**](EventApi.md#getDistrictEvents) | **get** /district/{district_key}/events | 
-[**getDistrictEventsKeys**](EventApi.md#getDistrictEventsKeys) | **get** /district/{district_key}/events/keys | 
-[**getDistrictEventsSimple**](EventApi.md#getDistrictEventsSimple) | **get** /district/{district_key}/events/simple | 
-[**getEvent**](EventApi.md#getEvent) | **get** /event/{event_key} | 
-[**getEventAlliances**](EventApi.md#getEventAlliances) | **get** /event/{event_key}/alliances | 
-[**getEventAwards**](EventApi.md#getEventAwards) | **get** /event/{event_key}/awards | 
-[**getEventDistrictPoints**](EventApi.md#getEventDistrictPoints) | **get** /event/{event_key}/district_points | 
-[**getEventInsights**](EventApi.md#getEventInsights) | **get** /event/{event_key}/insights | 
-[**getEventMatchTimeseries**](EventApi.md#getEventMatchTimeseries) | **get** /event/{event_key}/matches/timeseries | 
-[**getEventMatches**](EventApi.md#getEventMatches) | **get** /event/{event_key}/matches | 
-[**getEventMatchesKeys**](EventApi.md#getEventMatchesKeys) | **get** /event/{event_key}/matches/keys | 
-[**getEventMatchesSimple**](EventApi.md#getEventMatchesSimple) | **get** /event/{event_key}/matches/simple | 
-[**getEventOPRs**](EventApi.md#getEventOPRs) | **get** /event/{event_key}/oprs | 
-[**getEventPredictions**](EventApi.md#getEventPredictions) | **get** /event/{event_key}/predictions | 
-[**getEventRankings**](EventApi.md#getEventRankings) | **get** /event/{event_key}/rankings | 
-[**getEventSimple**](EventApi.md#getEventSimple) | **get** /event/{event_key}/simple | 
-[**getEventTeams**](EventApi.md#getEventTeams) | **get** /event/{event_key}/teams | 
-[**getEventTeamsKeys**](EventApi.md#getEventTeamsKeys) | **get** /event/{event_key}/teams/keys | 
-[**getEventTeamsSimple**](EventApi.md#getEventTeamsSimple) | **get** /event/{event_key}/teams/simple | 
-[**getEventTeamsStatuses**](EventApi.md#getEventTeamsStatuses) | **get** /event/{event_key}/teams/statuses | 
-[**getEventsByYear**](EventApi.md#getEventsByYear) | **get** /events/{year} | 
-[**getEventsByYearKeys**](EventApi.md#getEventsByYearKeys) | **get** /events/{year}/keys | 
-[**getEventsByYearSimple**](EventApi.md#getEventsByYearSimple) | **get** /events/{year}/simple | 
-[**getTeamEventAwards**](EventApi.md#getTeamEventAwards) | **get** /team/{team_key}/event/{event_key}/awards | 
-[**getTeamEventMatches**](EventApi.md#getTeamEventMatches) | **get** /team/{team_key}/event/{event_key}/matches | 
-[**getTeamEventMatchesKeys**](EventApi.md#getTeamEventMatchesKeys) | **get** /team/{team_key}/event/{event_key}/matches/keys | 
-[**getTeamEventMatchesSimple**](EventApi.md#getTeamEventMatchesSimple) | **get** /team/{team_key}/event/{event_key}/matches/simple | 
-[**getTeamEventStatus**](EventApi.md#getTeamEventStatus) | **get** /team/{team_key}/event/{event_key}/status | 
-[**getTeamEvents**](EventApi.md#getTeamEvents) | **get** /team/{team_key}/events | 
-[**getTeamEventsByYear**](EventApi.md#getTeamEventsByYear) | **get** /team/{team_key}/events/{year} | 
-[**getTeamEventsByYearKeys**](EventApi.md#getTeamEventsByYearKeys) | **get** /team/{team_key}/events/{year}/keys | 
-[**getTeamEventsByYearSimple**](EventApi.md#getTeamEventsByYearSimple) | **get** /team/{team_key}/events/{year}/simple | 
-[**getTeamEventsKeys**](EventApi.md#getTeamEventsKeys) | **get** /team/{team_key}/events/keys | 
-[**getTeamEventsSimple**](EventApi.md#getTeamEventsSimple) | **get** /team/{team_key}/events/simple | 
-[**getTeamEventsStatusesByYear**](EventApi.md#getTeamEventsStatusesByYear) | **get** /team/{team_key}/events/{year}/statuses | 
+[**getDistrictEvents**](EventApi.md#getDistrictEvents) | **GET** /district/{district_key}/events | 
+[**getDistrictEventsKeys**](EventApi.md#getDistrictEventsKeys) | **GET** /district/{district_key}/events/keys | 
+[**getDistrictEventsSimple**](EventApi.md#getDistrictEventsSimple) | **GET** /district/{district_key}/events/simple | 
+[**getEvent**](EventApi.md#getEvent) | **GET** /event/{event_key} | 
+[**getEventAlliances**](EventApi.md#getEventAlliances) | **GET** /event/{event_key}/alliances | 
+[**getEventAwards**](EventApi.md#getEventAwards) | **GET** /event/{event_key}/awards | 
+[**getEventDistrictPoints**](EventApi.md#getEventDistrictPoints) | **GET** /event/{event_key}/district_points | 
+[**getEventInsights**](EventApi.md#getEventInsights) | **GET** /event/{event_key}/insights | 
+[**getEventMatchTimeseries**](EventApi.md#getEventMatchTimeseries) | **GET** /event/{event_key}/matches/timeseries | 
+[**getEventMatches**](EventApi.md#getEventMatches) | **GET** /event/{event_key}/matches | 
+[**getEventMatchesKeys**](EventApi.md#getEventMatchesKeys) | **GET** /event/{event_key}/matches/keys | 
+[**getEventMatchesSimple**](EventApi.md#getEventMatchesSimple) | **GET** /event/{event_key}/matches/simple | 
+[**getEventOPRs**](EventApi.md#getEventOPRs) | **GET** /event/{event_key}/oprs | 
+[**getEventPredictions**](EventApi.md#getEventPredictions) | **GET** /event/{event_key}/predictions | 
+[**getEventRankings**](EventApi.md#getEventRankings) | **GET** /event/{event_key}/rankings | 
+[**getEventSimple**](EventApi.md#getEventSimple) | **GET** /event/{event_key}/simple | 
+[**getEventTeams**](EventApi.md#getEventTeams) | **GET** /event/{event_key}/teams | 
+[**getEventTeamsKeys**](EventApi.md#getEventTeamsKeys) | **GET** /event/{event_key}/teams/keys | 
+[**getEventTeamsSimple**](EventApi.md#getEventTeamsSimple) | **GET** /event/{event_key}/teams/simple | 
+[**getEventTeamsStatuses**](EventApi.md#getEventTeamsStatuses) | **GET** /event/{event_key}/teams/statuses | 
+[**getEventsByYear**](EventApi.md#getEventsByYear) | **GET** /events/{year} | 
+[**getEventsByYearKeys**](EventApi.md#getEventsByYearKeys) | **GET** /events/{year}/keys | 
+[**getEventsByYearSimple**](EventApi.md#getEventsByYearSimple) | **GET** /events/{year}/simple | 
+[**getTeamEventAwards**](EventApi.md#getTeamEventAwards) | **GET** /team/{team_key}/event/{event_key}/awards | 
+[**getTeamEventMatches**](EventApi.md#getTeamEventMatches) | **GET** /team/{team_key}/event/{event_key}/matches | 
+[**getTeamEventMatchesKeys**](EventApi.md#getTeamEventMatchesKeys) | **GET** /team/{team_key}/event/{event_key}/matches/keys | 
+[**getTeamEventMatchesSimple**](EventApi.md#getTeamEventMatchesSimple) | **GET** /team/{team_key}/event/{event_key}/matches/simple | 
+[**getTeamEventStatus**](EventApi.md#getTeamEventStatus) | **GET** /team/{team_key}/event/{event_key}/status | 
+[**getTeamEvents**](EventApi.md#getTeamEvents) | **GET** /team/{team_key}/events | 
+[**getTeamEventsByYear**](EventApi.md#getTeamEventsByYear) | **GET** /team/{team_key}/events/{year} | 
+[**getTeamEventsByYearKeys**](EventApi.md#getTeamEventsByYearKeys) | **GET** /team/{team_key}/events/{year}/keys | 
+[**getTeamEventsByYearSimple**](EventApi.md#getTeamEventsByYearSimple) | **GET** /team/{team_key}/events/{year}/simple | 
+[**getTeamEventsKeys**](EventApi.md#getTeamEventsKeys) | **GET** /team/{team_key}/events/keys | 
+[**getTeamEventsSimple**](EventApi.md#getTeamEventsSimple) | **GET** /team/{team_key}/events/simple | 
+[**getTeamEventsStatusesByYear**](EventApi.md#getTeamEventsStatusesByYear) | **GET** /team/{team_key}/events/{year}/statuses | 
 
 
 # **getDistrictEvents**
@@ -61,7 +61,7 @@ import 'package:tba_dart_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = new EventApi();
+var api_instance = EventApi();
 var districtKey = districtKey_example; // String | TBA District Key, eg `2016fim`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
@@ -110,7 +110,7 @@ import 'package:tba_dart_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = new EventApi();
+var api_instance = EventApi();
 var districtKey = districtKey_example; // String | TBA District Key, eg `2016fim`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
@@ -159,7 +159,7 @@ import 'package:tba_dart_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = new EventApi();
+var api_instance = EventApi();
 var districtKey = districtKey_example; // String | TBA District Key, eg `2016fim`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
@@ -208,7 +208,7 @@ import 'package:tba_dart_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = new EventApi();
+var api_instance = EventApi();
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
@@ -257,7 +257,7 @@ import 'package:tba_dart_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = new EventApi();
+var api_instance = EventApi();
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
@@ -306,7 +306,7 @@ import 'package:tba_dart_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = new EventApi();
+var api_instance = EventApi();
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
@@ -355,7 +355,7 @@ import 'package:tba_dart_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = new EventApi();
+var api_instance = EventApi();
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
@@ -404,7 +404,7 @@ import 'package:tba_dart_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = new EventApi();
+var api_instance = EventApi();
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
@@ -453,7 +453,7 @@ import 'package:tba_dart_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = new EventApi();
+var api_instance = EventApi();
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
@@ -502,7 +502,7 @@ import 'package:tba_dart_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = new EventApi();
+var api_instance = EventApi();
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
@@ -551,7 +551,7 @@ import 'package:tba_dart_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = new EventApi();
+var api_instance = EventApi();
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
@@ -600,7 +600,7 @@ import 'package:tba_dart_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = new EventApi();
+var api_instance = EventApi();
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
@@ -649,7 +649,7 @@ import 'package:tba_dart_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = new EventApi();
+var api_instance = EventApi();
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
@@ -698,7 +698,7 @@ import 'package:tba_dart_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = new EventApi();
+var api_instance = EventApi();
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
@@ -747,7 +747,7 @@ import 'package:tba_dart_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = new EventApi();
+var api_instance = EventApi();
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
@@ -796,7 +796,7 @@ import 'package:tba_dart_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = new EventApi();
+var api_instance = EventApi();
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
@@ -845,7 +845,7 @@ import 'package:tba_dart_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = new EventApi();
+var api_instance = EventApi();
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
@@ -894,7 +894,7 @@ import 'package:tba_dart_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = new EventApi();
+var api_instance = EventApi();
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
@@ -943,7 +943,7 @@ import 'package:tba_dart_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = new EventApi();
+var api_instance = EventApi();
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
@@ -992,7 +992,7 @@ import 'package:tba_dart_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = new EventApi();
+var api_instance = EventApi();
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
@@ -1041,7 +1041,7 @@ import 'package:tba_dart_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = new EventApi();
+var api_instance = EventApi();
 var year = 56; // int | Competition Year (or Season). Must be 4 digits.
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
@@ -1090,7 +1090,7 @@ import 'package:tba_dart_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = new EventApi();
+var api_instance = EventApi();
 var year = 56; // int | Competition Year (or Season). Must be 4 digits.
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
@@ -1139,7 +1139,7 @@ import 'package:tba_dart_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = new EventApi();
+var api_instance = EventApi();
 var year = 56; // int | Competition Year (or Season). Must be 4 digits.
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
@@ -1188,7 +1188,7 @@ import 'package:tba_dart_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = new EventApi();
+var api_instance = EventApi();
 var teamKey = teamKey_example; // String | TBA Team Key, eg `frc254`
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -1239,7 +1239,7 @@ import 'package:tba_dart_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = new EventApi();
+var api_instance = EventApi();
 var teamKey = teamKey_example; // String | TBA Team Key, eg `frc254`
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -1290,7 +1290,7 @@ import 'package:tba_dart_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = new EventApi();
+var api_instance = EventApi();
 var teamKey = teamKey_example; // String | TBA Team Key, eg `frc254`
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -1341,7 +1341,7 @@ import 'package:tba_dart_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = new EventApi();
+var api_instance = EventApi();
 var teamKey = teamKey_example; // String | TBA Team Key, eg `frc254`
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -1392,7 +1392,7 @@ import 'package:tba_dart_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = new EventApi();
+var api_instance = EventApi();
 var teamKey = teamKey_example; // String | TBA Team Key, eg `frc254`
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -1443,7 +1443,7 @@ import 'package:tba_dart_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = new EventApi();
+var api_instance = EventApi();
 var teamKey = teamKey_example; // String | TBA Team Key, eg `frc254`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
@@ -1492,7 +1492,7 @@ import 'package:tba_dart_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = new EventApi();
+var api_instance = EventApi();
 var teamKey = teamKey_example; // String | TBA Team Key, eg `frc254`
 var year = 56; // int | Competition Year (or Season). Must be 4 digits.
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -1543,7 +1543,7 @@ import 'package:tba_dart_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = new EventApi();
+var api_instance = EventApi();
 var teamKey = teamKey_example; // String | TBA Team Key, eg `frc254`
 var year = 56; // int | Competition Year (or Season). Must be 4 digits.
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -1594,7 +1594,7 @@ import 'package:tba_dart_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = new EventApi();
+var api_instance = EventApi();
 var teamKey = teamKey_example; // String | TBA Team Key, eg `frc254`
 var year = 56; // int | Competition Year (or Season). Must be 4 digits.
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
@@ -1645,7 +1645,7 @@ import 'package:tba_dart_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = new EventApi();
+var api_instance = EventApi();
 var teamKey = teamKey_example; // String | TBA Team Key, eg `frc254`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
@@ -1694,7 +1694,7 @@ import 'package:tba_dart_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = new EventApi();
+var api_instance = EventApi();
 var teamKey = teamKey_example; // String | TBA Team Key, eg `frc254`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
@@ -1743,7 +1743,7 @@ import 'package:tba_dart_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = new EventApi();
+var api_instance = EventApi();
 var teamKey = teamKey_example; // String | TBA Team Key, eg `frc254`
 var year = 56; // int | Competition Year (or Season). Must be 4 digits.
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.

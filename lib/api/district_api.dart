@@ -1,511 +1,600 @@
-import 'dart:async';
-import 'dart:io';
-import 'dart:convert';
-import 'package:dio/dio.dart';
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/serializer.dart';
+part of tba_dart_api_client.api;
 
-import 'package:tba_dart_api_client/model/event_district_points.dart';
-import 'package:tba_dart_api_client/model/district_list.dart';
-import 'package:tba_dart_api_client/model/team_simple.dart';
-import 'package:tba_dart_api_client/model/event_simple.dart';
-import 'package:tba_dart_api_client/model/team.dart';
-import 'package:tba_dart_api_client/model/event.dart';
-import 'package:tba_dart_api_client/model/district_ranking.dart';
+
 
 class DistrictApi {
-    final Dio _dio;
-    Serializers _serializers;
-
-    DistrictApi(this._dio, this._serializers);
-
-        /// 
-        ///
-        /// Gets a list of events in the given district.
-        Future<Response<List<Event>>>getDistrictEvents(String districtKey,{ String ifModifiedSince,CancelToken cancelToken, Map<String, String> headers,}) async {
-
-        String _path = "/district/{district_key}/events".replaceAll("{" r'district_key' "}", districtKey.toString());
-
-        Map<String, dynamic> queryParams = {};
-        Map<String, String> headerParams = Map.from(headers ?? {});
-        dynamic bodyData;
-
-                headerParams[r'If-Modified-Since'] = ifModifiedSince;
-        queryParams.removeWhere((key, value) => value == null);
-        headerParams.removeWhere((key, value) => value == null);
-
-        List<String> contentTypes = [];
-
-
-
-            return _dio.request(
-            _path,
-            queryParameters: queryParams,
-            data: bodyData,
-            options: Options(
-            method: 'get'.toUpperCase(),
-            headers: headerParams,
-            extra: {
-                'secure': [ {"type": "apiKey", "name": "apiKey", "keyName": "X-TBA-Auth-Key", "where": "header" }],
-            },
-            contentType: contentTypes.isNotEmpty ? contentTypes[0] : "application/json",
-            ),
-            cancelToken: cancelToken,
-            ).then((response) {
-
-                final FullType type = const FullType(BuiltList, const [const FullType(Event)]);
-                BuiltList<Event> dataList = _serializers.deserialize(response.data is String ? jsonDecode(response.data) : response.data, specifiedType: type);
-                var data = dataList.toList();
-
-            return Response<List<Event>>(
-                data: data,
-                headers: response.headers,
-                request: response.request,
-                redirects: response.redirects,
-                statusCode: response.statusCode,
-                statusMessage: response.statusMessage,
-                extra: response.extra,
-            );
-            });
-            }
-        /// 
-        ///
-        /// Gets a list of event keys for events in the given district.
-        Future<Response<List<String>>>getDistrictEventsKeys(String districtKey,{ String ifModifiedSince,CancelToken cancelToken, Map<String, String> headers,}) async {
-
-        String _path = "/district/{district_key}/events/keys".replaceAll("{" r'district_key' "}", districtKey.toString());
-
-        Map<String, dynamic> queryParams = {};
-        Map<String, String> headerParams = Map.from(headers ?? {});
-        dynamic bodyData;
-
-                headerParams[r'If-Modified-Since'] = ifModifiedSince;
-        queryParams.removeWhere((key, value) => value == null);
-        headerParams.removeWhere((key, value) => value == null);
-
-        List<String> contentTypes = [];
-
-
-
-            return _dio.request(
-            _path,
-            queryParameters: queryParams,
-            data: bodyData,
-            options: Options(
-            method: 'get'.toUpperCase(),
-            headers: headerParams,
-            extra: {
-                'secure': [ {"type": "apiKey", "name": "apiKey", "keyName": "X-TBA-Auth-Key", "where": "header" }],
-            },
-            contentType: contentTypes.isNotEmpty ? contentTypes[0] : "application/json",
-            ),
-            cancelToken: cancelToken,
-            ).then((response) {
-
-                final FullType type = const FullType(BuiltList, const [const FullType(String)]);
-                BuiltList<String> dataList = _serializers.deserialize(response.data is String ? jsonDecode(response.data) : response.data, specifiedType: type);
-                var data = dataList.toList();
-
-            return Response<List<String>>(
-                data: data,
-                headers: response.headers,
-                request: response.request,
-                redirects: response.redirects,
-                statusCode: response.statusCode,
-                statusMessage: response.statusMessage,
-                extra: response.extra,
-            );
-            });
-            }
-        /// 
-        ///
-        /// Gets a short-form list of events in the given district.
-        Future<Response<List<EventSimple>>>getDistrictEventsSimple(String districtKey,{ String ifModifiedSince,CancelToken cancelToken, Map<String, String> headers,}) async {
-
-        String _path = "/district/{district_key}/events/simple".replaceAll("{" r'district_key' "}", districtKey.toString());
-
-        Map<String, dynamic> queryParams = {};
-        Map<String, String> headerParams = Map.from(headers ?? {});
-        dynamic bodyData;
-
-                headerParams[r'If-Modified-Since'] = ifModifiedSince;
-        queryParams.removeWhere((key, value) => value == null);
-        headerParams.removeWhere((key, value) => value == null);
-
-        List<String> contentTypes = [];
-
-
-
-            return _dio.request(
-            _path,
-            queryParameters: queryParams,
-            data: bodyData,
-            options: Options(
-            method: 'get'.toUpperCase(),
-            headers: headerParams,
-            extra: {
-                'secure': [ {"type": "apiKey", "name": "apiKey", "keyName": "X-TBA-Auth-Key", "where": "header" }],
-            },
-            contentType: contentTypes.isNotEmpty ? contentTypes[0] : "application/json",
-            ),
-            cancelToken: cancelToken,
-            ).then((response) {
-
-                final FullType type = const FullType(BuiltList, const [const FullType(EventSimple)]);
-                BuiltList<EventSimple> dataList = _serializers.deserialize(response.data is String ? jsonDecode(response.data) : response.data, specifiedType: type);
-                var data = dataList.toList();
-
-            return Response<List<EventSimple>>(
-                data: data,
-                headers: response.headers,
-                request: response.request,
-                redirects: response.redirects,
-                statusCode: response.statusCode,
-                statusMessage: response.statusMessage,
-                extra: response.extra,
-            );
-            });
-            }
-        /// 
-        ///
-        /// Gets a list of team district rankings for the given district.
-        Future<Response<List<DistrictRanking>>>getDistrictRankings(String districtKey,{ String ifModifiedSince,CancelToken cancelToken, Map<String, String> headers,}) async {
-
-        String _path = "/district/{district_key}/rankings".replaceAll("{" r'district_key' "}", districtKey.toString());
-
-        Map<String, dynamic> queryParams = {};
-        Map<String, String> headerParams = Map.from(headers ?? {});
-        dynamic bodyData;
-
-                headerParams[r'If-Modified-Since'] = ifModifiedSince;
-        queryParams.removeWhere((key, value) => value == null);
-        headerParams.removeWhere((key, value) => value == null);
-
-        List<String> contentTypes = [];
-
-
-
-            return _dio.request(
-            _path,
-            queryParameters: queryParams,
-            data: bodyData,
-            options: Options(
-            method: 'get'.toUpperCase(),
-            headers: headerParams,
-            extra: {
-                'secure': [ {"type": "apiKey", "name": "apiKey", "keyName": "X-TBA-Auth-Key", "where": "header" }],
-            },
-            contentType: contentTypes.isNotEmpty ? contentTypes[0] : "application/json",
-            ),
-            cancelToken: cancelToken,
-            ).then((response) {
-
-                final FullType type = const FullType(BuiltList, const [const FullType(DistrictRanking)]);
-                BuiltList<DistrictRanking> dataList = _serializers.deserialize(response.data is String ? jsonDecode(response.data) : response.data, specifiedType: type);
-                var data = dataList.toList();
-
-            return Response<List<DistrictRanking>>(
-                data: data,
-                headers: response.headers,
-                request: response.request,
-                redirects: response.redirects,
-                statusCode: response.statusCode,
-                statusMessage: response.statusMessage,
-                extra: response.extra,
-            );
-            });
-            }
-        /// 
-        ///
-        /// Gets a list of &#x60;Team&#x60; objects that competed in events in the given district.
-        Future<Response<List<Team>>>getDistrictTeams(String districtKey,{ String ifModifiedSince,CancelToken cancelToken, Map<String, String> headers,}) async {
-
-        String _path = "/district/{district_key}/teams".replaceAll("{" r'district_key' "}", districtKey.toString());
-
-        Map<String, dynamic> queryParams = {};
-        Map<String, String> headerParams = Map.from(headers ?? {});
-        dynamic bodyData;
-
-                headerParams[r'If-Modified-Since'] = ifModifiedSince;
-        queryParams.removeWhere((key, value) => value == null);
-        headerParams.removeWhere((key, value) => value == null);
-
-        List<String> contentTypes = [];
-
-
-
-            return _dio.request(
-            _path,
-            queryParameters: queryParams,
-            data: bodyData,
-            options: Options(
-            method: 'get'.toUpperCase(),
-            headers: headerParams,
-            extra: {
-                'secure': [ {"type": "apiKey", "name": "apiKey", "keyName": "X-TBA-Auth-Key", "where": "header" }],
-            },
-            contentType: contentTypes.isNotEmpty ? contentTypes[0] : "application/json",
-            ),
-            cancelToken: cancelToken,
-            ).then((response) {
-
-                final FullType type = const FullType(BuiltList, const [const FullType(Team)]);
-                BuiltList<Team> dataList = _serializers.deserialize(response.data is String ? jsonDecode(response.data) : response.data, specifiedType: type);
-                var data = dataList.toList();
-
-            return Response<List<Team>>(
-                data: data,
-                headers: response.headers,
-                request: response.request,
-                redirects: response.redirects,
-                statusCode: response.statusCode,
-                statusMessage: response.statusMessage,
-                extra: response.extra,
-            );
-            });
-            }
-        /// 
-        ///
-        /// Gets a list of &#x60;Team&#x60; objects that competed in events in the given district.
-        Future<Response<List<String>>>getDistrictTeamsKeys(String districtKey,{ String ifModifiedSince,CancelToken cancelToken, Map<String, String> headers,}) async {
-
-        String _path = "/district/{district_key}/teams/keys".replaceAll("{" r'district_key' "}", districtKey.toString());
-
-        Map<String, dynamic> queryParams = {};
-        Map<String, String> headerParams = Map.from(headers ?? {});
-        dynamic bodyData;
-
-                headerParams[r'If-Modified-Since'] = ifModifiedSince;
-        queryParams.removeWhere((key, value) => value == null);
-        headerParams.removeWhere((key, value) => value == null);
-
-        List<String> contentTypes = [];
-
-
-
-            return _dio.request(
-            _path,
-            queryParameters: queryParams,
-            data: bodyData,
-            options: Options(
-            method: 'get'.toUpperCase(),
-            headers: headerParams,
-            extra: {
-                'secure': [ {"type": "apiKey", "name": "apiKey", "keyName": "X-TBA-Auth-Key", "where": "header" }],
-            },
-            contentType: contentTypes.isNotEmpty ? contentTypes[0] : "application/json",
-            ),
-            cancelToken: cancelToken,
-            ).then((response) {
-
-                final FullType type = const FullType(BuiltList, const [const FullType(String)]);
-                BuiltList<String> dataList = _serializers.deserialize(response.data is String ? jsonDecode(response.data) : response.data, specifiedType: type);
-                var data = dataList.toList();
-
-            return Response<List<String>>(
-                data: data,
-                headers: response.headers,
-                request: response.request,
-                redirects: response.redirects,
-                statusCode: response.statusCode,
-                statusMessage: response.statusMessage,
-                extra: response.extra,
-            );
-            });
-            }
-        /// 
-        ///
-        /// Gets a short-form list of &#x60;Team&#x60; objects that competed in events in the given district.
-        Future<Response<List<TeamSimple>>>getDistrictTeamsSimple(String districtKey,{ String ifModifiedSince,CancelToken cancelToken, Map<String, String> headers,}) async {
-
-        String _path = "/district/{district_key}/teams/simple".replaceAll("{" r'district_key' "}", districtKey.toString());
-
-        Map<String, dynamic> queryParams = {};
-        Map<String, String> headerParams = Map.from(headers ?? {});
-        dynamic bodyData;
-
-                headerParams[r'If-Modified-Since'] = ifModifiedSince;
-        queryParams.removeWhere((key, value) => value == null);
-        headerParams.removeWhere((key, value) => value == null);
-
-        List<String> contentTypes = [];
-
-
-
-            return _dio.request(
-            _path,
-            queryParameters: queryParams,
-            data: bodyData,
-            options: Options(
-            method: 'get'.toUpperCase(),
-            headers: headerParams,
-            extra: {
-                'secure': [ {"type": "apiKey", "name": "apiKey", "keyName": "X-TBA-Auth-Key", "where": "header" }],
-            },
-            contentType: contentTypes.isNotEmpty ? contentTypes[0] : "application/json",
-            ),
-            cancelToken: cancelToken,
-            ).then((response) {
-
-                final FullType type = const FullType(BuiltList, const [const FullType(TeamSimple)]);
-                BuiltList<TeamSimple> dataList = _serializers.deserialize(response.data is String ? jsonDecode(response.data) : response.data, specifiedType: type);
-                var data = dataList.toList();
-
-            return Response<List<TeamSimple>>(
-                data: data,
-                headers: response.headers,
-                request: response.request,
-                redirects: response.redirects,
-                statusCode: response.statusCode,
-                statusMessage: response.statusMessage,
-                extra: response.extra,
-            );
-            });
-            }
-        /// 
-        ///
-        /// Gets a list of districts and their corresponding district key, for the given year.
-        Future<Response<List<DistrictList>>>getDistrictsByYear(int year,{ String ifModifiedSince,CancelToken cancelToken, Map<String, String> headers,}) async {
-
-        String _path = "/districts/{year}".replaceAll("{" r'year' "}", year.toString());
-
-        Map<String, dynamic> queryParams = {};
-        Map<String, String> headerParams = Map.from(headers ?? {});
-        dynamic bodyData;
-
-                headerParams[r'If-Modified-Since'] = ifModifiedSince;
-        queryParams.removeWhere((key, value) => value == null);
-        headerParams.removeWhere((key, value) => value == null);
-
-        List<String> contentTypes = [];
-
-
-
-            return _dio.request(
-            _path,
-            queryParameters: queryParams,
-            data: bodyData,
-            options: Options(
-            method: 'get'.toUpperCase(),
-            headers: headerParams,
-            extra: {
-                'secure': [ {"type": "apiKey", "name": "apiKey", "keyName": "X-TBA-Auth-Key", "where": "header" }],
-            },
-            contentType: contentTypes.isNotEmpty ? contentTypes[0] : "application/json",
-            ),
-            cancelToken: cancelToken,
-            ).then((response) {
-
-                final FullType type = const FullType(BuiltList, const [const FullType(DistrictList)]);
-                BuiltList<DistrictList> dataList = _serializers.deserialize(response.data is String ? jsonDecode(response.data) : response.data, specifiedType: type);
-                var data = dataList.toList();
-
-            return Response<List<DistrictList>>(
-                data: data,
-                headers: response.headers,
-                request: response.request,
-                redirects: response.redirects,
-                statusCode: response.statusCode,
-                statusMessage: response.statusMessage,
-                extra: response.extra,
-            );
-            });
-            }
-        /// 
-        ///
-        /// Gets a list of team rankings for the Event.
-        Future<Response<EventDistrictPoints>>getEventDistrictPoints(String eventKey,{ String ifModifiedSince,CancelToken cancelToken, Map<String, String> headers,}) async {
-
-        String _path = "/event/{event_key}/district_points".replaceAll("{" r'event_key' "}", eventKey.toString());
-
-        Map<String, dynamic> queryParams = {};
-        Map<String, String> headerParams = Map.from(headers ?? {});
-        dynamic bodyData;
-
-                headerParams[r'If-Modified-Since'] = ifModifiedSince;
-        queryParams.removeWhere((key, value) => value == null);
-        headerParams.removeWhere((key, value) => value == null);
-
-        List<String> contentTypes = [];
-
-
-
-            return _dio.request(
-            _path,
-            queryParameters: queryParams,
-            data: bodyData,
-            options: Options(
-            method: 'get'.toUpperCase(),
-            headers: headerParams,
-            extra: {
-                'secure': [ {"type": "apiKey", "name": "apiKey", "keyName": "X-TBA-Auth-Key", "where": "header" }],
-            },
-            contentType: contentTypes.isNotEmpty ? contentTypes[0] : "application/json",
-            ),
-            cancelToken: cancelToken,
-            ).then((response) {
-
-        var serializer = _serializers.serializerForType(EventDistrictPoints);
-        var data = _serializers.deserializeWith<EventDistrictPoints>(serializer, response.data is String ? jsonDecode(response.data) : response.data);
-
-            return Response<EventDistrictPoints>(
-                data: data,
-                headers: response.headers,
-                request: response.request,
-                redirects: response.redirects,
-                statusCode: response.statusCode,
-                statusMessage: response.statusMessage,
-                extra: response.extra,
-            );
-            });
-            }
-        /// 
-        ///
-        /// Gets an array of districts representing each year the team was in a district. Will return an empty array if the team was never in a district.
-        Future<Response<List<DistrictList>>>getTeamDistricts(String teamKey,{ String ifModifiedSince,CancelToken cancelToken, Map<String, String> headers,}) async {
-
-        String _path = "/team/{team_key}/districts".replaceAll("{" r'team_key' "}", teamKey.toString());
-
-        Map<String, dynamic> queryParams = {};
-        Map<String, String> headerParams = Map.from(headers ?? {});
-        dynamic bodyData;
-
-                headerParams[r'If-Modified-Since'] = ifModifiedSince;
-        queryParams.removeWhere((key, value) => value == null);
-        headerParams.removeWhere((key, value) => value == null);
-
-        List<String> contentTypes = [];
-
-
-
-            return _dio.request(
-            _path,
-            queryParameters: queryParams,
-            data: bodyData,
-            options: Options(
-            method: 'get'.toUpperCase(),
-            headers: headerParams,
-            extra: {
-                'secure': [ {"type": "apiKey", "name": "apiKey", "keyName": "X-TBA-Auth-Key", "where": "header" }],
-            },
-            contentType: contentTypes.isNotEmpty ? contentTypes[0] : "application/json",
-            ),
-            cancelToken: cancelToken,
-            ).then((response) {
-
-                final FullType type = const FullType(BuiltList, const [const FullType(DistrictList)]);
-                BuiltList<DistrictList> dataList = _serializers.deserialize(response.data is String ? jsonDecode(response.data) : response.data, specifiedType: type);
-                var data = dataList.toList();
-
-            return Response<List<DistrictList>>(
-                data: data,
-                headers: response.headers,
-                request: response.request,
-                redirects: response.redirects,
-                statusCode: response.statusCode,
-                statusMessage: response.statusMessage,
-                extra: response.extra,
-            );
-            });
-            }
-        }
+  final ApiClient apiClient;
+
+  DistrictApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+
+  ///  with HTTP info returned
+  ///
+  /// Gets a list of events in the given district.
+  Future<Response> getDistrictEventsWithHttpInfo(String districtKey, { String ifModifiedSince }) async {
+    Object postBody;
+
+    // verify required params are set
+    if(districtKey == null) {
+     throw ApiException(400, "Missing required param: districtKey");
+    }
+
+    // create path and map variables
+    String path = "/district/{district_key}/events".replaceAll("{format}","json").replaceAll("{" + "district_key" + "}", districtKey.toString());
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+    headerParams["If-Modified-Since"] = ifModifiedSince;
+
+    List<String> contentTypes = [];
+
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
+    List<String> authNames = ["apiKey"];
+
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = MultipartRequest(null, null);
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+    }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'GET',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             nullableContentType,
+                                             authNames);
+    return response;
+  }
+
+  /// 
+  ///
+  /// Gets a list of events in the given district.
+  Future<List<Event>> getDistrictEvents(String districtKey, { String ifModifiedSince }) async {
+    Response response = await getDistrictEventsWithHttpInfo(districtKey,  ifModifiedSince: ifModifiedSince );
+    if(response.statusCode >= 400) {
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+    } else if(response.body != null) {
+      return (apiClient.deserialize(_decodeBodyBytes(response), 'List<Event>') as List).map((item) => item as Event).toList();
+    } else {
+      return null;
+    }
+  }
+
+  ///  with HTTP info returned
+  ///
+  /// Gets a list of event keys for events in the given district.
+  Future<Response> getDistrictEventsKeysWithHttpInfo(String districtKey, { String ifModifiedSince }) async {
+    Object postBody;
+
+    // verify required params are set
+    if(districtKey == null) {
+     throw ApiException(400, "Missing required param: districtKey");
+    }
+
+    // create path and map variables
+    String path = "/district/{district_key}/events/keys".replaceAll("{format}","json").replaceAll("{" + "district_key" + "}", districtKey.toString());
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+    headerParams["If-Modified-Since"] = ifModifiedSince;
+
+    List<String> contentTypes = [];
+
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
+    List<String> authNames = ["apiKey"];
+
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = MultipartRequest(null, null);
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+    }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'GET',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             nullableContentType,
+                                             authNames);
+    return response;
+  }
+
+  /// 
+  ///
+  /// Gets a list of event keys for events in the given district.
+  Future<List<String>> getDistrictEventsKeys(String districtKey, { String ifModifiedSince }) async {
+    Response response = await getDistrictEventsKeysWithHttpInfo(districtKey,  ifModifiedSince: ifModifiedSince );
+    if(response.statusCode >= 400) {
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+    } else if(response.body != null) {
+      return (apiClient.deserialize(_decodeBodyBytes(response), 'List<String>') as List).map((item) => item as String).toList();
+    } else {
+      return null;
+    }
+  }
+
+  ///  with HTTP info returned
+  ///
+  /// Gets a short-form list of events in the given district.
+  Future<Response> getDistrictEventsSimpleWithHttpInfo(String districtKey, { String ifModifiedSince }) async {
+    Object postBody;
+
+    // verify required params are set
+    if(districtKey == null) {
+     throw ApiException(400, "Missing required param: districtKey");
+    }
+
+    // create path and map variables
+    String path = "/district/{district_key}/events/simple".replaceAll("{format}","json").replaceAll("{" + "district_key" + "}", districtKey.toString());
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+    headerParams["If-Modified-Since"] = ifModifiedSince;
+
+    List<String> contentTypes = [];
+
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
+    List<String> authNames = ["apiKey"];
+
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = MultipartRequest(null, null);
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+    }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'GET',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             nullableContentType,
+                                             authNames);
+    return response;
+  }
+
+  /// 
+  ///
+  /// Gets a short-form list of events in the given district.
+  Future<List<EventSimple>> getDistrictEventsSimple(String districtKey, { String ifModifiedSince }) async {
+    Response response = await getDistrictEventsSimpleWithHttpInfo(districtKey,  ifModifiedSince: ifModifiedSince );
+    if(response.statusCode >= 400) {
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+    } else if(response.body != null) {
+      return (apiClient.deserialize(_decodeBodyBytes(response), 'List<EventSimple>') as List).map((item) => item as EventSimple).toList();
+    } else {
+      return null;
+    }
+  }
+
+  ///  with HTTP info returned
+  ///
+  /// Gets a list of team district rankings for the given district.
+  Future<Response> getDistrictRankingsWithHttpInfo(String districtKey, { String ifModifiedSince }) async {
+    Object postBody;
+
+    // verify required params are set
+    if(districtKey == null) {
+     throw ApiException(400, "Missing required param: districtKey");
+    }
+
+    // create path and map variables
+    String path = "/district/{district_key}/rankings".replaceAll("{format}","json").replaceAll("{" + "district_key" + "}", districtKey.toString());
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+    headerParams["If-Modified-Since"] = ifModifiedSince;
+
+    List<String> contentTypes = [];
+
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
+    List<String> authNames = ["apiKey"];
+
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = MultipartRequest(null, null);
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+    }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'GET',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             nullableContentType,
+                                             authNames);
+    return response;
+  }
+
+  /// 
+  ///
+  /// Gets a list of team district rankings for the given district.
+  Future<List<DistrictRanking>> getDistrictRankings(String districtKey, { String ifModifiedSince }) async {
+    Response response = await getDistrictRankingsWithHttpInfo(districtKey,  ifModifiedSince: ifModifiedSince );
+    if(response.statusCode >= 400) {
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+    } else if(response.body != null) {
+      return (apiClient.deserialize(_decodeBodyBytes(response), 'List<DistrictRanking>') as List).map((item) => item as DistrictRanking).toList();
+    } else {
+      return null;
+    }
+  }
+
+  ///  with HTTP info returned
+  ///
+  /// Gets a list of &#x60;Team&#x60; objects that competed in events in the given district.
+  Future<Response> getDistrictTeamsWithHttpInfo(String districtKey, { String ifModifiedSince }) async {
+    Object postBody;
+
+    // verify required params are set
+    if(districtKey == null) {
+     throw ApiException(400, "Missing required param: districtKey");
+    }
+
+    // create path and map variables
+    String path = "/district/{district_key}/teams".replaceAll("{format}","json").replaceAll("{" + "district_key" + "}", districtKey.toString());
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+    headerParams["If-Modified-Since"] = ifModifiedSince;
+
+    List<String> contentTypes = [];
+
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
+    List<String> authNames = ["apiKey"];
+
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = MultipartRequest(null, null);
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+    }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'GET',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             nullableContentType,
+                                             authNames);
+    return response;
+  }
+
+  /// 
+  ///
+  /// Gets a list of &#x60;Team&#x60; objects that competed in events in the given district.
+  Future<List<Team>> getDistrictTeams(String districtKey, { String ifModifiedSince }) async {
+    Response response = await getDistrictTeamsWithHttpInfo(districtKey,  ifModifiedSince: ifModifiedSince );
+    if(response.statusCode >= 400) {
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+    } else if(response.body != null) {
+      return (apiClient.deserialize(_decodeBodyBytes(response), 'List<Team>') as List).map((item) => item as Team).toList();
+    } else {
+      return null;
+    }
+  }
+
+  ///  with HTTP info returned
+  ///
+  /// Gets a list of &#x60;Team&#x60; objects that competed in events in the given district.
+  Future<Response> getDistrictTeamsKeysWithHttpInfo(String districtKey, { String ifModifiedSince }) async {
+    Object postBody;
+
+    // verify required params are set
+    if(districtKey == null) {
+     throw ApiException(400, "Missing required param: districtKey");
+    }
+
+    // create path and map variables
+    String path = "/district/{district_key}/teams/keys".replaceAll("{format}","json").replaceAll("{" + "district_key" + "}", districtKey.toString());
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+    headerParams["If-Modified-Since"] = ifModifiedSince;
+
+    List<String> contentTypes = [];
+
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
+    List<String> authNames = ["apiKey"];
+
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = MultipartRequest(null, null);
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+    }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'GET',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             nullableContentType,
+                                             authNames);
+    return response;
+  }
+
+  /// 
+  ///
+  /// Gets a list of &#x60;Team&#x60; objects that competed in events in the given district.
+  Future<List<String>> getDistrictTeamsKeys(String districtKey, { String ifModifiedSince }) async {
+    Response response = await getDistrictTeamsKeysWithHttpInfo(districtKey,  ifModifiedSince: ifModifiedSince );
+    if(response.statusCode >= 400) {
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+    } else if(response.body != null) {
+      return (apiClient.deserialize(_decodeBodyBytes(response), 'List<String>') as List).map((item) => item as String).toList();
+    } else {
+      return null;
+    }
+  }
+
+  ///  with HTTP info returned
+  ///
+  /// Gets a short-form list of &#x60;Team&#x60; objects that competed in events in the given district.
+  Future<Response> getDistrictTeamsSimpleWithHttpInfo(String districtKey, { String ifModifiedSince }) async {
+    Object postBody;
+
+    // verify required params are set
+    if(districtKey == null) {
+     throw ApiException(400, "Missing required param: districtKey");
+    }
+
+    // create path and map variables
+    String path = "/district/{district_key}/teams/simple".replaceAll("{format}","json").replaceAll("{" + "district_key" + "}", districtKey.toString());
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+    headerParams["If-Modified-Since"] = ifModifiedSince;
+
+    List<String> contentTypes = [];
+
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
+    List<String> authNames = ["apiKey"];
+
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = MultipartRequest(null, null);
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+    }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'GET',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             nullableContentType,
+                                             authNames);
+    return response;
+  }
+
+  /// 
+  ///
+  /// Gets a short-form list of &#x60;Team&#x60; objects that competed in events in the given district.
+  Future<List<TeamSimple>> getDistrictTeamsSimple(String districtKey, { String ifModifiedSince }) async {
+    Response response = await getDistrictTeamsSimpleWithHttpInfo(districtKey,  ifModifiedSince: ifModifiedSince );
+    if(response.statusCode >= 400) {
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+    } else if(response.body != null) {
+      return (apiClient.deserialize(_decodeBodyBytes(response), 'List<TeamSimple>') as List).map((item) => item as TeamSimple).toList();
+    } else {
+      return null;
+    }
+  }
+
+  ///  with HTTP info returned
+  ///
+  /// Gets a list of districts and their corresponding district key, for the given year.
+  Future<Response> getDistrictsByYearWithHttpInfo(int year, { String ifModifiedSince }) async {
+    Object postBody;
+
+    // verify required params are set
+    if(year == null) {
+     throw ApiException(400, "Missing required param: year");
+    }
+
+    // create path and map variables
+    String path = "/districts/{year}".replaceAll("{format}","json").replaceAll("{" + "year" + "}", year.toString());
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+    headerParams["If-Modified-Since"] = ifModifiedSince;
+
+    List<String> contentTypes = [];
+
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
+    List<String> authNames = ["apiKey"];
+
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = MultipartRequest(null, null);
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+    }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'GET',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             nullableContentType,
+                                             authNames);
+    return response;
+  }
+
+  /// 
+  ///
+  /// Gets a list of districts and their corresponding district key, for the given year.
+  Future<List<DistrictList>> getDistrictsByYear(int year, { String ifModifiedSince }) async {
+    Response response = await getDistrictsByYearWithHttpInfo(year,  ifModifiedSince: ifModifiedSince );
+    if(response.statusCode >= 400) {
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+    } else if(response.body != null) {
+      return (apiClient.deserialize(_decodeBodyBytes(response), 'List<DistrictList>') as List).map((item) => item as DistrictList).toList();
+    } else {
+      return null;
+    }
+  }
+
+  ///  with HTTP info returned
+  ///
+  /// Gets a list of team rankings for the Event.
+  Future<Response> getEventDistrictPointsWithHttpInfo(String eventKey, { String ifModifiedSince }) async {
+    Object postBody;
+
+    // verify required params are set
+    if(eventKey == null) {
+     throw ApiException(400, "Missing required param: eventKey");
+    }
+
+    // create path and map variables
+    String path = "/event/{event_key}/district_points".replaceAll("{format}","json").replaceAll("{" + "event_key" + "}", eventKey.toString());
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+    headerParams["If-Modified-Since"] = ifModifiedSince;
+
+    List<String> contentTypes = [];
+
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
+    List<String> authNames = ["apiKey"];
+
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = MultipartRequest(null, null);
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+    }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'GET',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             nullableContentType,
+                                             authNames);
+    return response;
+  }
+
+  /// 
+  ///
+  /// Gets a list of team rankings for the Event.
+  Future<EventDistrictPoints> getEventDistrictPoints(String eventKey, { String ifModifiedSince }) async {
+    Response response = await getEventDistrictPointsWithHttpInfo(eventKey,  ifModifiedSince: ifModifiedSince );
+    if(response.statusCode >= 400) {
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+    } else if(response.body != null) {
+      return apiClient.deserialize(_decodeBodyBytes(response), 'EventDistrictPoints') as EventDistrictPoints;
+    } else {
+      return null;
+    }
+  }
+
+  ///  with HTTP info returned
+  ///
+  /// Gets an array of districts representing each year the team was in a district. Will return an empty array if the team was never in a district.
+  Future<Response> getTeamDistrictsWithHttpInfo(String teamKey, { String ifModifiedSince }) async {
+    Object postBody;
+
+    // verify required params are set
+    if(teamKey == null) {
+     throw ApiException(400, "Missing required param: teamKey");
+    }
+
+    // create path and map variables
+    String path = "/team/{team_key}/districts".replaceAll("{format}","json").replaceAll("{" + "team_key" + "}", teamKey.toString());
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+    headerParams["If-Modified-Since"] = ifModifiedSince;
+
+    List<String> contentTypes = [];
+
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
+    List<String> authNames = ["apiKey"];
+
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = MultipartRequest(null, null);
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+    }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'GET',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             nullableContentType,
+                                             authNames);
+    return response;
+  }
+
+  /// 
+  ///
+  /// Gets an array of districts representing each year the team was in a district. Will return an empty array if the team was never in a district.
+  Future<List<DistrictList>> getTeamDistricts(String teamKey, { String ifModifiedSince }) async {
+    Response response = await getTeamDistrictsWithHttpInfo(teamKey,  ifModifiedSince: ifModifiedSince );
+    if(response.statusCode >= 400) {
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+    } else if(response.body != null) {
+      return (apiClient.deserialize(_decodeBodyBytes(response), 'List<DistrictList>') as List).map((item) => item as DistrictList).toList();
+    } else {
+      return null;
+    }
+  }
+
+}

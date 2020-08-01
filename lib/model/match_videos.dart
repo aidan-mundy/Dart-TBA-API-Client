@@ -1,24 +1,53 @@
-        import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+part of tba_dart_api_client.api;
 
-part 'match_videos.g.dart';
+class MatchVideos {
+  /* Can be one of 'youtube' or 'tba' */
+  String type = null;
+  /* Unique key representing this video */
+  String key = null;
+  MatchVideos();
 
-abstract class MatchVideos implements Built<MatchVideos, MatchVideosBuilder> {
+  @override
+  String toString() {
+    return 'MatchVideos[type=$type, key=$key, ]';
+  }
 
-    /* Can be one of 'youtube' or 'tba' */
-        @nullable
-    @BuiltValueField(wireName: r'type')
-    String get type;
-    /* Unique key representing this video */
-        @nullable
-    @BuiltValueField(wireName: r'key')
-    String get key;
+  MatchVideos.fromJson(Map<String, dynamic> json) {
+    if (json == null) return;
+    type = json['type'];
+    key = json['key'];
+  }
 
-    // Boilerplate code needed to wire-up generated code
-    MatchVideos._();
+  Map<String, dynamic> toJson() {
+    Map <String, dynamic> json = {};
+    if (type != null)
+      json['type'] = type;
+    if (key != null)
+      json['key'] = key;
+    return json;
+  }
 
-    factory MatchVideos([updates(MatchVideosBuilder b)]) = _$MatchVideos;
-    static Serializer<MatchVideos> get serializer => _$matchVideosSerializer;
+  static List<MatchVideos> listFromJson(List<dynamic> json) {
+    return json == null ? List<MatchVideos>() : json.map((value) => MatchVideos.fromJson(value)).toList();
+  }
 
+  static Map<String, MatchVideos> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, MatchVideos>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) => map[key] = MatchVideos.fromJson(value));
+    }
+    return map;
+  }
+
+  // maps a json object with a list of MatchVideos-objects as value to a dart map
+  static Map<String, List<MatchVideos>> mapListFromJson(Map<String, dynamic> json) {
+    var map = Map<String, List<MatchVideos>>();
+     if (json != null && json.isNotEmpty) {
+       json.forEach((String key, dynamic value) {
+         map[key] = MatchVideos.listFromJson(value);
+       });
+     }
+     return map;
+  }
 }
 
