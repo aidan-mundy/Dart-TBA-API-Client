@@ -1,9 +1,9 @@
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 import 'package:test/test.dart';
 
 // tests for MatchScoreBreakdown2015
 void main() {
-    var instance = new MatchScoreBreakdown2015();
+  var instance = new MatchScoreBreakdown2015();
 
   group('test MatchScoreBreakdown2015', () {
     // MatchScoreBreakdown2015Alliance blue (default value: null)
@@ -25,8 +25,5 @@ void main() {
     test('to test the property `coopertitionPoints`', () async {
       // TODO
     });
-
-
   });
-
 }

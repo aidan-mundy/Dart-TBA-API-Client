@@ -1,9 +1,9 @@
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 import 'package:test/test.dart';
 
 // tests for TeamRobot
 void main() {
-    var instance = new TeamRobot();
+  var instance = new TeamRobot();
 
   group('test TeamRobot', () {
     // Year this robot competed in.
@@ -29,8 +29,5 @@ void main() {
     test('to test the property `teamKey`', () async {
       // TODO
     });
-
-
   });
-
 }

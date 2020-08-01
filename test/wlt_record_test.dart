@@ -1,9 +1,9 @@
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 import 'package:test/test.dart';
 
 // tests for WLTRecord
 void main() {
-    var instance = new WLTRecord();
+  var instance = new WLTRecord();
 
   group('test WLTRecord', () {
     // Number of losses.
@@ -23,8 +23,5 @@ void main() {
     test('to test the property `ties`', () async {
       // TODO
     });
-
-
   });
-
 }

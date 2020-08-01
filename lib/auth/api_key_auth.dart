@@ -1,18 +1,18 @@
-part of tba_dart_api_client.api;
+part of tba_api_client.api;
 
 class ApiKeyAuth implements Authentication {
-
   final String location;
   final String paramName;
-  String _apiKey;
+  static String _apiKey;
   String apiKeyPrefix;
 
-  set apiKey(String key) => _apiKey = key;
+  static set apiKey(String key) => _apiKey = key;
 
   ApiKeyAuth(this.location, this.paramName);
 
   @override
-  void applyToParams(List<QueryParam> queryParams, Map<String, String> headerParams) {
+  void applyToParams(
+      List<QueryParam> queryParams, Map<String, String> headerParams) {
     String value;
     if (apiKeyPrefix != null) {
       value = '$apiKeyPrefix $_apiKey';

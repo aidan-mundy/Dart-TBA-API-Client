@@ -1,9 +1,9 @@
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 import 'package:test/test.dart';
 
 // tests for EventDistrictPoints
 void main() {
-    var instance = new EventDistrictPoints();
+  var instance = new EventDistrictPoints();
 
   group('test EventDistrictPoints', () {
     // Points gained for each team at the event. Stored as a key-value pair with the team key as the key, and an object describing the points as its value.
@@ -17,8 +17,5 @@ void main() {
     test('to test the property `tiebreakers`', () async {
       // TODO
     });
-
-
   });
-
 }

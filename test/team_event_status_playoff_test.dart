@@ -1,9 +1,9 @@
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 import 'package:test/test.dart';
 
 // tests for TeamEventStatusPlayoff
 void main() {
-    var instance = new TeamEventStatusPlayoff();
+  var instance = new TeamEventStatusPlayoff();
 
   group('test TeamEventStatusPlayoff', () {
     // The highest playoff level the team reached.
@@ -33,8 +33,5 @@ void main() {
     test('to test the property `playoffAverage`', () async {
       // TODO
     });
-
-
   });
-
 }

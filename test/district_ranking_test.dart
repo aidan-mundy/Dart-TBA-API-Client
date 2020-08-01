@@ -1,9 +1,9 @@
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 import 'package:test/test.dart';
 
 // tests for DistrictRanking
 void main() {
-    var instance = new DistrictRanking();
+  var instance = new DistrictRanking();
 
   group('test DistrictRanking', () {
     // TBA team key for the team.
@@ -35,8 +35,5 @@ void main() {
     test('to test the property `eventPoints`', () async {
       // TODO
     });
-
-
   });
-
 }

@@ -1,9 +1,9 @@
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 import 'package:test/test.dart';
 
 // tests for MatchScoreBreakdown2020Alliance
 void main() {
-    var instance = new MatchScoreBreakdown2020Alliance();
+  var instance = new MatchScoreBreakdown2020Alliance();
 
   group('test MatchScoreBreakdown2020Alliance', () {
     // String initLineRobot1 (default value: null)
@@ -138,7 +138,8 @@ void main() {
 
     // Unofficial TBA-computed value that indicates whether the shieldEnergizedRankingPoint was earned normally or awarded due to a foul.
     // bool tbaShieldEnergizedRankingPointFromFoul (default value: null)
-    test('to test the property `tbaShieldEnergizedRankingPointFromFoul`', () async {
+    test('to test the property `tbaShieldEnergizedRankingPointFromFoul`',
+        () async {
       // TODO
     });
 
@@ -177,8 +178,5 @@ void main() {
     test('to test the property `totalPoints`', () async {
       // TODO
     });
-
-
   });
-
 }

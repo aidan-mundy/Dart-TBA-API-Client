@@ -1,9 +1,9 @@
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 import 'package:test/test.dart';
 
 // tests for EliminationAlliance
 void main() {
-    var instance = new EliminationAlliance();
+  var instance = new EliminationAlliance();
 
   group('test EliminationAlliance', () {
     // Alliance name, may be null.
@@ -33,8 +33,5 @@ void main() {
     test('to test the property `status`', () async {
       // TODO
     });
-
-
   });
-
 }

@@ -1,27 +1,27 @@
-# tba_dart_api_client.api.TBAApi
+# tba_api_client.api.TBAApi
 
 ## Load the API package
+
 ```dart
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 ```
 
-All URIs are relative to *https://www.thebluealliance.com/api/v3*
+All URIs are relative to _https://www.thebluealliance.com/api/v3_
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getStatus**](TBAApi.md#getStatus) | **GET** /status | 
-
+| Method                               | HTTP request    | Description |
+| ------------------------------------ | --------------- | ----------- |
+| [**getStatus**](TBAApi.md#getStatus) | **GET** /status |
 
 # **getStatus**
+
 > APIStatus getStatus(ifModifiedSince)
-
-
 
 Returns API status, and TBA status information.
 
-### Example 
+### Example
+
 ```dart
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 // TODO Configure API key authorization: apiKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -30,7 +30,7 @@ import 'package:tba_dart_api_client/api.dart';
 var api_instance = TBAApi();
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
-try { 
+try {
     var result = api_instance.getStatus(ifModifiedSince);
     print(result);
 } catch (e) {
@@ -40,9 +40,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ifModifiedSince** | **String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional] [default to null]
+| Name                | Type       | Description                                                                                       | Notes                       |
+| ------------------- | ---------- | ------------------------------------------------------------------------------------------------- | --------------------------- |
+| **ifModifiedSince** | **String** | Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional][default to null] |
 
 ### Return type
 
@@ -54,8 +54,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

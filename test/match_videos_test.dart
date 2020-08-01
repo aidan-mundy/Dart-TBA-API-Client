@@ -1,9 +1,9 @@
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 import 'package:test/test.dart';
 
 // tests for MatchVideos
 void main() {
-    var instance = new MatchVideos();
+  var instance = new MatchVideos();
 
   group('test MatchVideos', () {
     // Can be one of 'youtube' or 'tba'
@@ -17,8 +17,5 @@ void main() {
     test('to test the property `key`', () async {
       // TODO
     });
-
-
   });
-
 }

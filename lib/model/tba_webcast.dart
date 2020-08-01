@@ -1,6 +1,6 @@
-part of tba_dart_api_client.api;
+part of tba_api_client.api;
 
-class Webcast {
+class TBAWebcast {
   /* Type of webcast, typically descriptive of the streaming provider. */
   String type = null;
   //enum typeEnum {  youtube,  twitch,  ustream,  iframe,  html5,  rtmp,  livestream,  direct_link,  mms,  justin,  stemtv,  dacast,  };{
@@ -10,14 +10,14 @@ class Webcast {
   String date = null;
   /* File identification as may be required for some types. May be null. */
   String file = null;
-  Webcast();
+  TBAWebcast();
 
   @override
   String toString() {
     return 'Webcast[type=$type, channel=$channel, date=$date, file=$file, ]';
   }
 
-  Webcast.fromJson(Map<String, dynamic> json) {
+  TBAWebcast.fromJson(Map<String, dynamic> json) {
     if (json == null) return;
     type = json['type'];
     channel = json['channel'];
@@ -26,39 +26,38 @@ class Webcast {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
-    if (type != null)
-      json['type'] = type;
-    if (channel != null)
-      json['channel'] = channel;
-    if (date != null)
-      json['date'] = date;
-    if (file != null)
-      json['file'] = file;
+    Map<String, dynamic> json = {};
+    if (type != null) json['type'] = type;
+    if (channel != null) json['channel'] = channel;
+    if (date != null) json['date'] = date;
+    if (file != null) json['file'] = file;
     return json;
   }
 
-  static List<Webcast> listFromJson(List<dynamic> json) {
-    return json == null ? List<Webcast>() : json.map((value) => Webcast.fromJson(value)).toList();
+  static List<TBAWebcast> listFromJson(List<dynamic> json) {
+    return json == null
+        ? List<TBAWebcast>()
+        : json.map((value) => TBAWebcast.fromJson(value)).toList();
   }
 
-  static Map<String, Webcast> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Webcast>();
+  static Map<String, TBAWebcast> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, TBAWebcast>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = Webcast.fromJson(value));
+      json.forEach(
+          (String key, dynamic value) => map[key] = TBAWebcast.fromJson(value));
     }
     return map;
   }
 
   // maps a json object with a list of Webcast-objects as value to a dart map
-  static Map<String, List<Webcast>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<Webcast>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = Webcast.listFromJson(value);
-       });
-     }
-     return map;
+  static Map<String, List<TBAWebcast>> mapListFromJson(
+      Map<String, dynamic> json) {
+    var map = Map<String, List<TBAWebcast>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = TBAWebcast.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
-

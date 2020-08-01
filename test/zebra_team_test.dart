@@ -1,9 +1,9 @@
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 import 'package:test/test.dart';
 
 // tests for ZebraTeam
 void main() {
-    var instance = new ZebraTeam();
+  var instance = new ZebraTeam();
 
   group('test ZebraTeam', () {
     // The TBA team key for the Zebra MotionWorks data.
@@ -23,8 +23,5 @@ void main() {
     test('to test the property `ys`', () async {
       // TODO
     });
-
-
   });
-
 }

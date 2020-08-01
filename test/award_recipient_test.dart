@@ -1,9 +1,9 @@
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 import 'package:test/test.dart';
 
 // tests for AwardRecipient
 void main() {
-    var instance = new AwardRecipient();
+  var instance = new AwardRecipient();
 
   group('test AwardRecipient', () {
     // The TBA team key for the team that was given the award. May be null.
@@ -17,8 +17,5 @@ void main() {
     test('to test the property `awardee`', () async {
       // TODO
     });
-
-
   });
-
 }

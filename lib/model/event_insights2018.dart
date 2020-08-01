@@ -1,4 +1,4 @@
-part of tba_dart_api_client.api;
+part of tba_api_client.api;
 
 class EventInsights2018 {
   /* An array with three values, number of times auto quest was completed, number of opportunities to complete the auto quest, and percentage. */
@@ -84,9 +84,9 @@ class EventInsights2018 {
 
   EventInsights2018.fromJson(Map<String, dynamic> json) {
     if (json == null) return;
-    autoQuestAchieved = (json['auto_quest_achieved'] == null) ?
-      null :
-      (json['auto_quest_achieved'] as List).cast<double>();
+    autoQuestAchieved = (json['auto_quest_achieved'] == null)
+        ? null
+        : (json['auto_quest_achieved'] as List).cast<double>();
     averageBoostPlayed = json['average_boost_played'];
     averageEndgamePoints = json['average_endgame_points'];
     averageForcePlayed = json['average_force_played'];
@@ -95,56 +95,67 @@ class EventInsights2018 {
     averagePointsTeleop = json['average_points_teleop'];
     averageRunPointsAuto = json['average_run_points_auto'];
     averageScaleOwnershipPoints = json['average_scale_ownership_points'];
-    averageScaleOwnershipPointsAuto = json['average_scale_ownership_points_auto'];
-    averageScaleOwnershipPointsTeleop = json['average_scale_ownership_points_teleop'];
+    averageScaleOwnershipPointsAuto =
+        json['average_scale_ownership_points_auto'];
+    averageScaleOwnershipPointsTeleop =
+        json['average_scale_ownership_points_teleop'];
     averageScore = json['average_score'];
     averageSwitchOwnershipPoints = json['average_switch_ownership_points'];
-    averageSwitchOwnershipPointsAuto = json['average_switch_ownership_points_auto'];
-    averageSwitchOwnershipPointsTeleop = json['average_switch_ownership_points_teleop'];
+    averageSwitchOwnershipPointsAuto =
+        json['average_switch_ownership_points_auto'];
+    averageSwitchOwnershipPointsTeleop =
+        json['average_switch_ownership_points_teleop'];
     averageVaultPoints = json['average_vault_points'];
     averageWinMargin = json['average_win_margin'];
     averageWinScore = json['average_win_score'];
-    boostPlayedCounts = (json['boost_played_counts'] == null) ?
-      null :
-      (json['boost_played_counts'] as List).cast<double>();
-    climbCounts = (json['climb_counts'] == null) ?
-      null :
-      (json['climb_counts'] as List).cast<double>();
-    faceTheBossAchieved = (json['face_the_boss_achieved'] == null) ?
-      null :
-      (json['face_the_boss_achieved'] as List).cast<double>();
-    forcePlayedCounts = (json['force_played_counts'] == null) ?
-      null :
-      (json['force_played_counts'] as List).cast<double>();
-    highScore = (json['high_score'] == null) ?
-      null :
-      (json['high_score'] as List).cast<String>();
-    levitatePlayedCounts = (json['levitate_played_counts'] == null) ?
-      null :
-      (json['levitate_played_counts'] as List).cast<double>();
-    runCountsAuto = (json['run_counts_auto'] == null) ?
-      null :
-      (json['run_counts_auto'] as List).cast<double>();
+    boostPlayedCounts = (json['boost_played_counts'] == null)
+        ? null
+        : (json['boost_played_counts'] as List).cast<double>();
+    climbCounts = (json['climb_counts'] == null)
+        ? null
+        : (json['climb_counts'] as List).cast<double>();
+    faceTheBossAchieved = (json['face_the_boss_achieved'] == null)
+        ? null
+        : (json['face_the_boss_achieved'] as List).cast<double>();
+    forcePlayedCounts = (json['force_played_counts'] == null)
+        ? null
+        : (json['force_played_counts'] as List).cast<double>();
+    highScore = (json['high_score'] == null)
+        ? null
+        : (json['high_score'] as List).cast<String>();
+    levitatePlayedCounts = (json['levitate_played_counts'] == null)
+        ? null
+        : (json['levitate_played_counts'] as List).cast<double>();
+    runCountsAuto = (json['run_counts_auto'] == null)
+        ? null
+        : (json['run_counts_auto'] as List).cast<double>();
     scaleNeutralPercentage = json['scale_neutral_percentage'];
     scaleNeutralPercentageAuto = json['scale_neutral_percentage_auto'];
     scaleNeutralPercentageTeleop = json['scale_neutral_percentage_teleop'];
-    switchOwnedCountsAuto = (json['switch_owned_counts_auto'] == null) ?
-      null :
-      (json['switch_owned_counts_auto'] as List).cast<double>();
-    unicornMatches = (json['unicorn_matches'] == null) ?
-      null :
-      (json['unicorn_matches'] as List).cast<double>();
-    winningOppSwitchDenialPercentageTeleop = json['winning_opp_switch_denial_percentage_teleop'];
-    winningOwnSwitchOwnershipPercentage = json['winning_own_switch_ownership_percentage'];
-    winningOwnSwitchOwnershipPercentageAuto = json['winning_own_switch_ownership_percentage_auto'];
-    winningOwnSwitchOwnershipPercentageTeleop = json['winning_own_switch_ownership_percentage_teleop'];
-    winningScaleOwnershipPercentage = json['winning_scale_ownership_percentage'];
-    winningScaleOwnershipPercentageAuto = json['winning_scale_ownership_percentage_auto'];
-    winningScaleOwnershipPercentageTeleop = json['winning_scale_ownership_percentage_teleop'];
+    switchOwnedCountsAuto = (json['switch_owned_counts_auto'] == null)
+        ? null
+        : (json['switch_owned_counts_auto'] as List).cast<double>();
+    unicornMatches = (json['unicorn_matches'] == null)
+        ? null
+        : (json['unicorn_matches'] as List).cast<double>();
+    winningOppSwitchDenialPercentageTeleop =
+        json['winning_opp_switch_denial_percentage_teleop'];
+    winningOwnSwitchOwnershipPercentage =
+        json['winning_own_switch_ownership_percentage'];
+    winningOwnSwitchOwnershipPercentageAuto =
+        json['winning_own_switch_ownership_percentage_auto'];
+    winningOwnSwitchOwnershipPercentageTeleop =
+        json['winning_own_switch_ownership_percentage_teleop'];
+    winningScaleOwnershipPercentage =
+        json['winning_scale_ownership_percentage'];
+    winningScaleOwnershipPercentageAuto =
+        json['winning_scale_ownership_percentage_auto'];
+    winningScaleOwnershipPercentageTeleop =
+        json['winning_scale_ownership_percentage_teleop'];
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (autoQuestAchieved != null)
       json['auto_quest_achieved'] = autoQuestAchieved;
     if (averageBoostPlayed != null)
@@ -153,8 +164,7 @@ class EventInsights2018 {
       json['average_endgame_points'] = averageEndgamePoints;
     if (averageForcePlayed != null)
       json['average_force_played'] = averageForcePlayed;
-    if (averageFoulScore != null)
-      json['average_foul_score'] = averageFoulScore;
+    if (averageFoulScore != null) json['average_foul_score'] = averageFoulScore;
     if (averagePointsAuto != null)
       json['average_points_auto'] = averagePointsAuto;
     if (averagePointsTeleop != null)
@@ -164,37 +174,35 @@ class EventInsights2018 {
     if (averageScaleOwnershipPoints != null)
       json['average_scale_ownership_points'] = averageScaleOwnershipPoints;
     if (averageScaleOwnershipPointsAuto != null)
-      json['average_scale_ownership_points_auto'] = averageScaleOwnershipPointsAuto;
+      json['average_scale_ownership_points_auto'] =
+          averageScaleOwnershipPointsAuto;
     if (averageScaleOwnershipPointsTeleop != null)
-      json['average_scale_ownership_points_teleop'] = averageScaleOwnershipPointsTeleop;
-    if (averageScore != null)
-      json['average_score'] = averageScore;
+      json['average_scale_ownership_points_teleop'] =
+          averageScaleOwnershipPointsTeleop;
+    if (averageScore != null) json['average_score'] = averageScore;
     if (averageSwitchOwnershipPoints != null)
       json['average_switch_ownership_points'] = averageSwitchOwnershipPoints;
     if (averageSwitchOwnershipPointsAuto != null)
-      json['average_switch_ownership_points_auto'] = averageSwitchOwnershipPointsAuto;
+      json['average_switch_ownership_points_auto'] =
+          averageSwitchOwnershipPointsAuto;
     if (averageSwitchOwnershipPointsTeleop != null)
-      json['average_switch_ownership_points_teleop'] = averageSwitchOwnershipPointsTeleop;
+      json['average_switch_ownership_points_teleop'] =
+          averageSwitchOwnershipPointsTeleop;
     if (averageVaultPoints != null)
       json['average_vault_points'] = averageVaultPoints;
-    if (averageWinMargin != null)
-      json['average_win_margin'] = averageWinMargin;
-    if (averageWinScore != null)
-      json['average_win_score'] = averageWinScore;
+    if (averageWinMargin != null) json['average_win_margin'] = averageWinMargin;
+    if (averageWinScore != null) json['average_win_score'] = averageWinScore;
     if (boostPlayedCounts != null)
       json['boost_played_counts'] = boostPlayedCounts;
-    if (climbCounts != null)
-      json['climb_counts'] = climbCounts;
+    if (climbCounts != null) json['climb_counts'] = climbCounts;
     if (faceTheBossAchieved != null)
       json['face_the_boss_achieved'] = faceTheBossAchieved;
     if (forcePlayedCounts != null)
       json['force_played_counts'] = forcePlayedCounts;
-    if (highScore != null)
-      json['high_score'] = highScore;
+    if (highScore != null) json['high_score'] = highScore;
     if (levitatePlayedCounts != null)
       json['levitate_played_counts'] = levitatePlayedCounts;
-    if (runCountsAuto != null)
-      json['run_counts_auto'] = runCountsAuto;
+    if (runCountsAuto != null) json['run_counts_auto'] = runCountsAuto;
     if (scaleNeutralPercentage != null)
       json['scale_neutral_percentage'] = scaleNeutralPercentage;
     if (scaleNeutralPercentageAuto != null)
@@ -203,46 +211,55 @@ class EventInsights2018 {
       json['scale_neutral_percentage_teleop'] = scaleNeutralPercentageTeleop;
     if (switchOwnedCountsAuto != null)
       json['switch_owned_counts_auto'] = switchOwnedCountsAuto;
-    if (unicornMatches != null)
-      json['unicorn_matches'] = unicornMatches;
+    if (unicornMatches != null) json['unicorn_matches'] = unicornMatches;
     if (winningOppSwitchDenialPercentageTeleop != null)
-      json['winning_opp_switch_denial_percentage_teleop'] = winningOppSwitchDenialPercentageTeleop;
+      json['winning_opp_switch_denial_percentage_teleop'] =
+          winningOppSwitchDenialPercentageTeleop;
     if (winningOwnSwitchOwnershipPercentage != null)
-      json['winning_own_switch_ownership_percentage'] = winningOwnSwitchOwnershipPercentage;
+      json['winning_own_switch_ownership_percentage'] =
+          winningOwnSwitchOwnershipPercentage;
     if (winningOwnSwitchOwnershipPercentageAuto != null)
-      json['winning_own_switch_ownership_percentage_auto'] = winningOwnSwitchOwnershipPercentageAuto;
+      json['winning_own_switch_ownership_percentage_auto'] =
+          winningOwnSwitchOwnershipPercentageAuto;
     if (winningOwnSwitchOwnershipPercentageTeleop != null)
-      json['winning_own_switch_ownership_percentage_teleop'] = winningOwnSwitchOwnershipPercentageTeleop;
+      json['winning_own_switch_ownership_percentage_teleop'] =
+          winningOwnSwitchOwnershipPercentageTeleop;
     if (winningScaleOwnershipPercentage != null)
-      json['winning_scale_ownership_percentage'] = winningScaleOwnershipPercentage;
+      json['winning_scale_ownership_percentage'] =
+          winningScaleOwnershipPercentage;
     if (winningScaleOwnershipPercentageAuto != null)
-      json['winning_scale_ownership_percentage_auto'] = winningScaleOwnershipPercentageAuto;
+      json['winning_scale_ownership_percentage_auto'] =
+          winningScaleOwnershipPercentageAuto;
     if (winningScaleOwnershipPercentageTeleop != null)
-      json['winning_scale_ownership_percentage_teleop'] = winningScaleOwnershipPercentageTeleop;
+      json['winning_scale_ownership_percentage_teleop'] =
+          winningScaleOwnershipPercentageTeleop;
     return json;
   }
 
   static List<EventInsights2018> listFromJson(List<dynamic> json) {
-    return json == null ? List<EventInsights2018>() : json.map((value) => EventInsights2018.fromJson(value)).toList();
+    return json == null
+        ? List<EventInsights2018>()
+        : json.map((value) => EventInsights2018.fromJson(value)).toList();
   }
 
   static Map<String, EventInsights2018> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, EventInsights2018>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = EventInsights2018.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = EventInsights2018.fromJson(value));
     }
     return map;
   }
 
   // maps a json object with a list of EventInsights2018-objects as value to a dart map
-  static Map<String, List<EventInsights2018>> mapListFromJson(Map<String, dynamic> json) {
+  static Map<String, List<EventInsights2018>> mapListFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, List<EventInsights2018>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = EventInsights2018.listFromJson(value);
-       });
-     }
-     return map;
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = EventInsights2018.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
-

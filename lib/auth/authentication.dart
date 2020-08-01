@@ -1,7 +1,7 @@
-part of tba_dart_api_client.api;
+part of tba_api_client.api;
 
 abstract class Authentication {
-
-	/// Apply authentication settings to header and query params.
-	void applyToParams(List<QueryParam> queryParams, Map<String, String> headerParams);
+  /// Apply authentication settings to header and query params.
+  void applyToParams(
+      List<QueryParam> queryParams, Map<String, String> headerParams);
 }

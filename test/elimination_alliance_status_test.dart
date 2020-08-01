@@ -1,9 +1,9 @@
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 import 'package:test/test.dart';
 
 // tests for EliminationAllianceStatus
 void main() {
-    var instance = new EliminationAllianceStatus();
+  var instance = new EliminationAllianceStatus();
 
   group('test EliminationAllianceStatus', () {
     // double playoffAverage (default value: null)
@@ -30,8 +30,5 @@ void main() {
     test('to test the property `status`', () async {
       // TODO
     });
-
-
   });
-
 }

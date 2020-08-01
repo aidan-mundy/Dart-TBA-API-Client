@@ -1,9 +1,9 @@
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 import 'package:test/test.dart';
 
 // tests for MatchScoreBreakdown2017Alliance
 void main() {
-    var instance = new MatchScoreBreakdown2017Alliance();
+  var instance = new MatchScoreBreakdown2017Alliance();
 
   group('test MatchScoreBreakdown2017Alliance', () {
     // int autoPoints (default value: null)
@@ -170,8 +170,5 @@ void main() {
     test('to test the property `touchpadFar`', () async {
       // TODO
     });
-
-
   });
-
 }

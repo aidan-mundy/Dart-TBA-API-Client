@@ -1,9 +1,9 @@
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 import 'package:test/test.dart';
 
 // tests for MatchScoreBreakdown2019Alliance
 void main() {
-    var instance = new MatchScoreBreakdown2019Alliance();
+  var instance = new MatchScoreBreakdown2019Alliance();
 
   group('test MatchScoreBreakdown2019Alliance', () {
     // int adjustPoints (default value: null)
@@ -260,8 +260,5 @@ void main() {
     test('to test the property `totalPoints`', () async {
       // TODO
     });
-
-
   });
-
 }

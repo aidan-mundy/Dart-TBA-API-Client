@@ -1,4 +1,4 @@
-part of tba_dart_api_client.api;
+part of tba_api_client.api;
 
 class EventRankingExtraStatsInfo {
   /* Integer expressing the number of digits of precision in the number provided in `sort_orders`. */
@@ -19,35 +19,39 @@ class EventRankingExtraStatsInfo {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
-    if (precision != null)
-      json['precision'] = precision;
-    if (name != null)
-      json['name'] = name;
+    Map<String, dynamic> json = {};
+    if (precision != null) json['precision'] = precision;
+    if (name != null) json['name'] = name;
     return json;
   }
 
   static List<EventRankingExtraStatsInfo> listFromJson(List<dynamic> json) {
-    return json == null ? List<EventRankingExtraStatsInfo>() : json.map((value) => EventRankingExtraStatsInfo.fromJson(value)).toList();
+    return json == null
+        ? List<EventRankingExtraStatsInfo>()
+        : json
+            .map((value) => EventRankingExtraStatsInfo.fromJson(value))
+            .toList();
   }
 
-  static Map<String, EventRankingExtraStatsInfo> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, EventRankingExtraStatsInfo> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, EventRankingExtraStatsInfo>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = EventRankingExtraStatsInfo.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = EventRankingExtraStatsInfo.fromJson(value));
     }
     return map;
   }
 
   // maps a json object with a list of EventRankingExtraStatsInfo-objects as value to a dart map
-  static Map<String, List<EventRankingExtraStatsInfo>> mapListFromJson(Map<String, dynamic> json) {
+  static Map<String, List<EventRankingExtraStatsInfo>> mapListFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, List<EventRankingExtraStatsInfo>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = EventRankingExtraStatsInfo.listFromJson(value);
-       });
-     }
-     return map;
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = EventRankingExtraStatsInfo.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
-

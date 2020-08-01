@@ -1,9 +1,9 @@
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 import 'package:test/test.dart';
 
 // tests for MatchScoreBreakdown2016Alliance
 void main() {
-    var instance = new MatchScoreBreakdown2016Alliance();
+  var instance = new MatchScoreBreakdown2016Alliance();
 
   group('test MatchScoreBreakdown2016Alliance', () {
     // int autoPoints (default value: null)
@@ -195,8 +195,5 @@ void main() {
     test('to test the property `position5crossings`', () async {
       // TODO
     });
-
-
   });
-
 }

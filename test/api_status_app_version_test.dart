@@ -1,9 +1,9 @@
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 import 'package:test/test.dart';
 
 // tests for APIStatusAppVersion
 void main() {
-    var instance = new APIStatusAppVersion();
+  var instance = new APIStatusAppVersion();
 
   group('test APIStatusAppVersion', () {
     // Internal use - Minimum application version required to correctly connect and process data.
@@ -17,8 +17,5 @@ void main() {
     test('to test the property `latestAppVersion`', () async {
       // TODO
     });
-
-
   });
-
 }

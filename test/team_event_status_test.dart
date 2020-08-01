@@ -1,9 +1,9 @@
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 import 'package:test/test.dart';
 
 // tests for TeamEventStatus
 void main() {
-    var instance = new TeamEventStatus();
+  var instance = new TeamEventStatus();
 
   group('test TeamEventStatus', () {
     // TeamEventStatusRank qual (default value: null)
@@ -50,8 +50,5 @@ void main() {
     test('to test the property `lastMatchKey`', () async {
       // TODO
     });
-
-
   });
-
 }

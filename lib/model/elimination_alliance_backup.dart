@@ -1,4 +1,4 @@
-part of tba_dart_api_client.api;
+part of tba_api_client.api;
 
 class EliminationAllianceBackup {
   /* Team key that was called in as the backup. */
@@ -19,35 +19,39 @@ class EliminationAllianceBackup {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
-    if (in_ != null)
-      json['in'] = in_;
-    if (out_ != null)
-      json['out'] = out_;
+    Map<String, dynamic> json = {};
+    if (in_ != null) json['in'] = in_;
+    if (out_ != null) json['out'] = out_;
     return json;
   }
 
   static List<EliminationAllianceBackup> listFromJson(List<dynamic> json) {
-    return json == null ? List<EliminationAllianceBackup>() : json.map((value) => EliminationAllianceBackup.fromJson(value)).toList();
+    return json == null
+        ? List<EliminationAllianceBackup>()
+        : json
+            .map((value) => EliminationAllianceBackup.fromJson(value))
+            .toList();
   }
 
-  static Map<String, EliminationAllianceBackup> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, EliminationAllianceBackup> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, EliminationAllianceBackup>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = EliminationAllianceBackup.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = EliminationAllianceBackup.fromJson(value));
     }
     return map;
   }
 
   // maps a json object with a list of EliminationAllianceBackup-objects as value to a dart map
-  static Map<String, List<EliminationAllianceBackup>> mapListFromJson(Map<String, dynamic> json) {
+  static Map<String, List<EliminationAllianceBackup>> mapListFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, List<EliminationAllianceBackup>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = EliminationAllianceBackup.listFromJson(value);
-       });
-     }
-     return map;
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = EliminationAllianceBackup.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
-

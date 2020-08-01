@@ -1,53 +1,52 @@
-part of tba_dart_api_client.api;
+part of tba_api_client.api;
 
 class MatchScoreBreakdown2015Alliance {
-  
   int autoPoints = null;
-  
+
   int teleopPoints = null;
-  
+
   int containerPoints = null;
-  
+
   int totePoints = null;
-  
+
   int litterPoints = null;
-  
+
   int foulPoints = null;
-  
+
   int adjustPoints = null;
-  
+
   int totalPoints = null;
-  
+
   int foulCount = null;
-  
+
   int toteCountFar = null;
-  
+
   int toteCountNear = null;
-  
+
   bool toteSet = null;
-  
+
   bool toteStack = null;
-  
+
   int containerCountLevel1 = null;
-  
+
   int containerCountLevel2 = null;
-  
+
   int containerCountLevel3 = null;
-  
+
   int containerCountLevel4 = null;
-  
+
   int containerCountLevel5 = null;
-  
+
   int containerCountLevel6 = null;
-  
+
   bool containerSet = null;
-  
+
   int litterCountContainer = null;
-  
+
   int litterCountLandfill = null;
-  
+
   int litterCountUnprocessed = null;
-  
+
   bool robotSet = null;
   MatchScoreBreakdown2015Alliance();
 
@@ -85,33 +84,20 @@ class MatchScoreBreakdown2015Alliance {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
-    if (autoPoints != null)
-      json['auto_points'] = autoPoints;
-    if (teleopPoints != null)
-      json['teleop_points'] = teleopPoints;
-    if (containerPoints != null)
-      json['container_points'] = containerPoints;
-    if (totePoints != null)
-      json['tote_points'] = totePoints;
-    if (litterPoints != null)
-      json['litter_points'] = litterPoints;
-    if (foulPoints != null)
-      json['foul_points'] = foulPoints;
-    if (adjustPoints != null)
-      json['adjust_points'] = adjustPoints;
-    if (totalPoints != null)
-      json['total_points'] = totalPoints;
-    if (foulCount != null)
-      json['foul_count'] = foulCount;
-    if (toteCountFar != null)
-      json['tote_count_far'] = toteCountFar;
-    if (toteCountNear != null)
-      json['tote_count_near'] = toteCountNear;
-    if (toteSet != null)
-      json['tote_set'] = toteSet;
-    if (toteStack != null)
-      json['tote_stack'] = toteStack;
+    Map<String, dynamic> json = {};
+    if (autoPoints != null) json['auto_points'] = autoPoints;
+    if (teleopPoints != null) json['teleop_points'] = teleopPoints;
+    if (containerPoints != null) json['container_points'] = containerPoints;
+    if (totePoints != null) json['tote_points'] = totePoints;
+    if (litterPoints != null) json['litter_points'] = litterPoints;
+    if (foulPoints != null) json['foul_points'] = foulPoints;
+    if (adjustPoints != null) json['adjust_points'] = adjustPoints;
+    if (totalPoints != null) json['total_points'] = totalPoints;
+    if (foulCount != null) json['foul_count'] = foulCount;
+    if (toteCountFar != null) json['tote_count_far'] = toteCountFar;
+    if (toteCountNear != null) json['tote_count_near'] = toteCountNear;
+    if (toteSet != null) json['tote_set'] = toteSet;
+    if (toteStack != null) json['tote_stack'] = toteStack;
     if (containerCountLevel1 != null)
       json['container_count_level1'] = containerCountLevel1;
     if (containerCountLevel2 != null)
@@ -124,40 +110,45 @@ class MatchScoreBreakdown2015Alliance {
       json['container_count_level5'] = containerCountLevel5;
     if (containerCountLevel6 != null)
       json['container_count_level6'] = containerCountLevel6;
-    if (containerSet != null)
-      json['container_set'] = containerSet;
+    if (containerSet != null) json['container_set'] = containerSet;
     if (litterCountContainer != null)
       json['litter_count_container'] = litterCountContainer;
     if (litterCountLandfill != null)
       json['litter_count_landfill'] = litterCountLandfill;
     if (litterCountUnprocessed != null)
       json['litter_count_unprocessed'] = litterCountUnprocessed;
-    if (robotSet != null)
-      json['robot_set'] = robotSet;
+    if (robotSet != null) json['robot_set'] = robotSet;
     return json;
   }
 
-  static List<MatchScoreBreakdown2015Alliance> listFromJson(List<dynamic> json) {
-    return json == null ? List<MatchScoreBreakdown2015Alliance>() : json.map((value) => MatchScoreBreakdown2015Alliance.fromJson(value)).toList();
+  static List<MatchScoreBreakdown2015Alliance> listFromJson(
+      List<dynamic> json) {
+    return json == null
+        ? List<MatchScoreBreakdown2015Alliance>()
+        : json
+            .map((value) => MatchScoreBreakdown2015Alliance.fromJson(value))
+            .toList();
   }
 
-  static Map<String, MatchScoreBreakdown2015Alliance> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, MatchScoreBreakdown2015Alliance> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, MatchScoreBreakdown2015Alliance>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = MatchScoreBreakdown2015Alliance.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = MatchScoreBreakdown2015Alliance.fromJson(value));
     }
     return map;
   }
 
   // maps a json object with a list of MatchScoreBreakdown2015Alliance-objects as value to a dart map
-  static Map<String, List<MatchScoreBreakdown2015Alliance>> mapListFromJson(Map<String, dynamic> json) {
+  static Map<String, List<MatchScoreBreakdown2015Alliance>> mapListFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, List<MatchScoreBreakdown2015Alliance>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = MatchScoreBreakdown2015Alliance.listFromJson(value);
-       });
-     }
-     return map;
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = MatchScoreBreakdown2015Alliance.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
-

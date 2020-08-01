@@ -1,9 +1,9 @@
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 import 'package:test/test.dart';
 
 // tests for EventDistrictPointsPoints
 void main() {
-    var instance = new EventDistrictPointsPoints();
+  var instance = new EventDistrictPointsPoints();
 
   group('test EventDistrictPointsPoints', () {
     // Total points awarded at this event.
@@ -35,8 +35,5 @@ void main() {
     test('to test the property `qualPoints`', () async {
       // TODO
     });
-
-
   });
-
 }

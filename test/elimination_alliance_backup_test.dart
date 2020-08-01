@@ -1,9 +1,9 @@
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 import 'package:test/test.dart';
 
 // tests for EliminationAllianceBackup
 void main() {
-    var instance = new EliminationAllianceBackup();
+  var instance = new EliminationAllianceBackup();
 
   group('test EliminationAllianceBackup', () {
     // Team key that was called in as the backup.
@@ -17,8 +17,5 @@ void main() {
     test('to test the property `out_`', () async {
       // TODO
     });
-
-
   });
-
 }

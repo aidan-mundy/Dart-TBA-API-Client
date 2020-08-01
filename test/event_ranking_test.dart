@@ -1,9 +1,9 @@
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 import 'package:test/test.dart';
 
 // tests for EventRanking
 void main() {
-    var instance = new EventRanking();
+  var instance = new EventRanking();
 
   group('test EventRanking', () {
     // List of rankings at the event.
@@ -23,8 +23,5 @@ void main() {
     test('to test the property `sortOrderInfo`', () async {
       // TODO
     });
-
-
   });
-
 }

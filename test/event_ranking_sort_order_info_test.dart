@@ -1,9 +1,9 @@
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 import 'package:test/test.dart';
 
 // tests for EventRankingSortOrderInfo
 void main() {
-    var instance = new EventRankingSortOrderInfo();
+  var instance = new EventRankingSortOrderInfo();
 
   group('test EventRankingSortOrderInfo', () {
     // Integer expressing the number of digits of precision in the number provided in `sort_orders`.
@@ -17,8 +17,5 @@ void main() {
     test('to test the property `name`', () async {
       // TODO
     });
-
-
   });
-
 }

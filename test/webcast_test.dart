@@ -1,9 +1,9 @@
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 import 'package:test/test.dart';
 
 // tests for Webcast
 void main() {
-    var instance = new Webcast();
+  var instance = new TBAWebcast();
 
   group('test Webcast', () {
     // Type of webcast, typically descriptive of the streaming provider.
@@ -29,8 +29,5 @@ void main() {
     test('to test the property `file`', () async {
       // TODO
     });
-
-
   });
-
 }

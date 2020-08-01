@@ -1,4 +1,4 @@
-part of tba_dart_api_client.api;
+part of tba_api_client.api;
 
 class MatchTimeseries2018 {
   /* TBA event key with the format yyyy[EVENT_CODE], where yyyy is the year, and EVENT_CODE is the event code of the event. */
@@ -7,7 +7,7 @@ class MatchTimeseries2018 {
   String matchId = null;
   /* Current mode of play, can be `pre_match`, `auto`, `telop`, or `post_match`. */
   String mode = null;
-  
+
   int play = null;
   /* Amount of time remaining in the match, only valid during `auto` and `teleop` modes. */
   int timeRemaining = null;
@@ -106,93 +106,73 @@ class MatchTimeseries2018 {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
-    if (eventKey != null)
-      json['event_key'] = eventKey;
-    if (matchId != null)
-      json['match_id'] = matchId;
-    if (mode != null)
-      json['mode'] = mode;
-    if (play != null)
-      json['play'] = play;
-    if (timeRemaining != null)
-      json['time_remaining'] = timeRemaining;
-    if (blueAutoQuest != null)
-      json['blue_auto_quest'] = blueAutoQuest;
-    if (blueBoostCount != null)
-      json['blue_boost_count'] = blueBoostCount;
-    if (blueBoostPlayed != null)
-      json['blue_boost_played'] = blueBoostPlayed;
+    Map<String, dynamic> json = {};
+    if (eventKey != null) json['event_key'] = eventKey;
+    if (matchId != null) json['match_id'] = matchId;
+    if (mode != null) json['mode'] = mode;
+    if (play != null) json['play'] = play;
+    if (timeRemaining != null) json['time_remaining'] = timeRemaining;
+    if (blueAutoQuest != null) json['blue_auto_quest'] = blueAutoQuest;
+    if (blueBoostCount != null) json['blue_boost_count'] = blueBoostCount;
+    if (blueBoostPlayed != null) json['blue_boost_played'] = blueBoostPlayed;
     if (blueCurrentPowerup != null)
       json['blue_current_powerup'] = blueCurrentPowerup;
-    if (blueFaceTheBoss != null)
-      json['blue_face_the_boss'] = blueFaceTheBoss;
-    if (blueForceCount != null)
-      json['blue_force_count'] = blueForceCount;
-    if (blueForcePlayed != null)
-      json['blue_force_played'] = blueForcePlayed;
+    if (blueFaceTheBoss != null) json['blue_face_the_boss'] = blueFaceTheBoss;
+    if (blueForceCount != null) json['blue_force_count'] = blueForceCount;
+    if (blueForcePlayed != null) json['blue_force_played'] = blueForcePlayed;
     if (blueLevitateCount != null)
       json['blue_levitate_count'] = blueLevitateCount;
     if (blueLevitatePlayed != null)
       json['blue_levitate_played'] = blueLevitatePlayed;
     if (bluePowerupTimeRemaining != null)
       json['blue_powerup_time_remaining'] = bluePowerupTimeRemaining;
-    if (blueScaleOwned != null)
-      json['blue_scale_owned'] = blueScaleOwned;
-    if (blueScore != null)
-      json['blue_score'] = blueScore;
-    if (blueSwitchOwned != null)
-      json['blue_switch_owned'] = blueSwitchOwned;
-    if (redAutoQuest != null)
-      json['red_auto_quest'] = redAutoQuest;
-    if (redBoostCount != null)
-      json['red_boost_count'] = redBoostCount;
-    if (redBoostPlayed != null)
-      json['red_boost_played'] = redBoostPlayed;
+    if (blueScaleOwned != null) json['blue_scale_owned'] = blueScaleOwned;
+    if (blueScore != null) json['blue_score'] = blueScore;
+    if (blueSwitchOwned != null) json['blue_switch_owned'] = blueSwitchOwned;
+    if (redAutoQuest != null) json['red_auto_quest'] = redAutoQuest;
+    if (redBoostCount != null) json['red_boost_count'] = redBoostCount;
+    if (redBoostPlayed != null) json['red_boost_played'] = redBoostPlayed;
     if (redCurrentPowerup != null)
       json['red_current_powerup'] = redCurrentPowerup;
-    if (redFaceTheBoss != null)
-      json['red_face_the_boss'] = redFaceTheBoss;
-    if (redForceCount != null)
-      json['red_force_count'] = redForceCount;
-    if (redForcePlayed != null)
-      json['red_force_played'] = redForcePlayed;
-    if (redLevitateCount != null)
-      json['red_levitate_count'] = redLevitateCount;
+    if (redFaceTheBoss != null) json['red_face_the_boss'] = redFaceTheBoss;
+    if (redForceCount != null) json['red_force_count'] = redForceCount;
+    if (redForcePlayed != null) json['red_force_played'] = redForcePlayed;
+    if (redLevitateCount != null) json['red_levitate_count'] = redLevitateCount;
     if (redLevitatePlayed != null)
       json['red_levitate_played'] = redLevitatePlayed;
     if (redPowerupTimeRemaining != null)
       json['red_powerup_time_remaining'] = redPowerupTimeRemaining;
-    if (redScaleOwned != null)
-      json['red_scale_owned'] = redScaleOwned;
-    if (redScore != null)
-      json['red_score'] = redScore;
-    if (redSwitchOwned != null)
-      json['red_switch_owned'] = redSwitchOwned;
+    if (redScaleOwned != null) json['red_scale_owned'] = redScaleOwned;
+    if (redScore != null) json['red_score'] = redScore;
+    if (redSwitchOwned != null) json['red_switch_owned'] = redSwitchOwned;
     return json;
   }
 
   static List<MatchTimeseries2018> listFromJson(List<dynamic> json) {
-    return json == null ? List<MatchTimeseries2018>() : json.map((value) => MatchTimeseries2018.fromJson(value)).toList();
+    return json == null
+        ? List<MatchTimeseries2018>()
+        : json.map((value) => MatchTimeseries2018.fromJson(value)).toList();
   }
 
-  static Map<String, MatchTimeseries2018> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, MatchTimeseries2018> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, MatchTimeseries2018>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = MatchTimeseries2018.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = MatchTimeseries2018.fromJson(value));
     }
     return map;
   }
 
   // maps a json object with a list of MatchTimeseries2018-objects as value to a dart map
-  static Map<String, List<MatchTimeseries2018>> mapListFromJson(Map<String, dynamic> json) {
+  static Map<String, List<MatchTimeseries2018>> mapListFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, List<MatchTimeseries2018>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = MatchTimeseries2018.listFromJson(value);
-       });
-     }
-     return map;
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = MatchTimeseries2018.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
-

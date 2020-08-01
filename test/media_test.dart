@@ -1,9 +1,9 @@
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 import 'package:test/test.dart';
 
 // tests for Media
 void main() {
-    var instance = new Media();
+  var instance = new TBAMedia();
 
   group('test Media', () {
     // String type of the media element.
@@ -41,8 +41,5 @@ void main() {
     test('to test the property `viewUrl`', () async {
       // TODO
     });
-
-
   });
-
 }

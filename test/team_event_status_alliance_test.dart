@@ -1,9 +1,9 @@
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 import 'package:test/test.dart';
 
 // tests for TeamEventStatusAlliance
 void main() {
-    var instance = new TeamEventStatusAlliance();
+  var instance = new TeamEventStatusAlliance();
 
   group('test TeamEventStatusAlliance', () {
     // Alliance name, may be null.
@@ -28,8 +28,5 @@ void main() {
     test('to test the property `pick`', () async {
       // TODO
     });
-
-
   });
-
 }

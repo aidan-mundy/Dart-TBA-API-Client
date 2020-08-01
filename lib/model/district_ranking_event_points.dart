@@ -1,4 +1,4 @@
-part of tba_dart_api_client.api;
+part of tba_api_client.api;
 
 class DistrictRankingEventPoints {
   /* `true` if this event is a District Championship event. */
@@ -34,45 +34,44 @@ class DistrictRankingEventPoints {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
-    if (districtCmp != null)
-      json['district_cmp'] = districtCmp;
-    if (total != null)
-      json['total'] = total;
-    if (alliancePoints != null)
-      json['alliance_points'] = alliancePoints;
-    if (elimPoints != null)
-      json['elim_points'] = elimPoints;
-    if (awardPoints != null)
-      json['award_points'] = awardPoints;
-    if (eventKey != null)
-      json['event_key'] = eventKey;
-    if (qualPoints != null)
-      json['qual_points'] = qualPoints;
+    Map<String, dynamic> json = {};
+    if (districtCmp != null) json['district_cmp'] = districtCmp;
+    if (total != null) json['total'] = total;
+    if (alliancePoints != null) json['alliance_points'] = alliancePoints;
+    if (elimPoints != null) json['elim_points'] = elimPoints;
+    if (awardPoints != null) json['award_points'] = awardPoints;
+    if (eventKey != null) json['event_key'] = eventKey;
+    if (qualPoints != null) json['qual_points'] = qualPoints;
     return json;
   }
 
   static List<DistrictRankingEventPoints> listFromJson(List<dynamic> json) {
-    return json == null ? List<DistrictRankingEventPoints>() : json.map((value) => DistrictRankingEventPoints.fromJson(value)).toList();
+    return json == null
+        ? List<DistrictRankingEventPoints>()
+        : json
+            .map((value) => DistrictRankingEventPoints.fromJson(value))
+            .toList();
   }
 
-  static Map<String, DistrictRankingEventPoints> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, DistrictRankingEventPoints> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, DistrictRankingEventPoints>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = DistrictRankingEventPoints.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = DistrictRankingEventPoints.fromJson(value));
     }
     return map;
   }
 
   // maps a json object with a list of DistrictRankingEventPoints-objects as value to a dart map
-  static Map<String, List<DistrictRankingEventPoints>> mapListFromJson(Map<String, dynamic> json) {
+  static Map<String, List<DistrictRankingEventPoints>> mapListFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, List<DistrictRankingEventPoints>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = DistrictRankingEventPoints.listFromJson(value);
-       });
-     }
-     return map;
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = DistrictRankingEventPoints.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
-

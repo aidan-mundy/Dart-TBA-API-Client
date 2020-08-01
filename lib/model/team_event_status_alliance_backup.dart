@@ -1,4 +1,4 @@
-part of tba_dart_api_client.api;
+part of tba_api_client.api;
 
 class TeamEventStatusAllianceBackup {
   /* TBA key for the team replaced by the backup. */
@@ -19,35 +19,39 @@ class TeamEventStatusAllianceBackup {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
-    if (out_ != null)
-      json['out'] = out_;
-    if (in_ != null)
-      json['in'] = in_;
+    Map<String, dynamic> json = {};
+    if (out_ != null) json['out'] = out_;
+    if (in_ != null) json['in'] = in_;
     return json;
   }
 
   static List<TeamEventStatusAllianceBackup> listFromJson(List<dynamic> json) {
-    return json == null ? List<TeamEventStatusAllianceBackup>() : json.map((value) => TeamEventStatusAllianceBackup.fromJson(value)).toList();
+    return json == null
+        ? List<TeamEventStatusAllianceBackup>()
+        : json
+            .map((value) => TeamEventStatusAllianceBackup.fromJson(value))
+            .toList();
   }
 
-  static Map<String, TeamEventStatusAllianceBackup> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, TeamEventStatusAllianceBackup> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, TeamEventStatusAllianceBackup>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = TeamEventStatusAllianceBackup.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = TeamEventStatusAllianceBackup.fromJson(value));
     }
     return map;
   }
 
   // maps a json object with a list of TeamEventStatusAllianceBackup-objects as value to a dart map
-  static Map<String, List<TeamEventStatusAllianceBackup>> mapListFromJson(Map<String, dynamic> json) {
+  static Map<String, List<TeamEventStatusAllianceBackup>> mapListFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, List<TeamEventStatusAllianceBackup>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = TeamEventStatusAllianceBackup.listFromJson(value);
-       });
-     }
-     return map;
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = TeamEventStatusAllianceBackup.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
-

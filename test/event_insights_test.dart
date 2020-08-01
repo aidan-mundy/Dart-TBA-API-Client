@@ -1,9 +1,9 @@
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 import 'package:test/test.dart';
 
 // tests for EventInsights
 void main() {
-    var instance = new EventInsights();
+  var instance = new EventInsights();
 
   group('test EventInsights', () {
     // Inights for the qualification round of an event
@@ -17,8 +17,5 @@ void main() {
     test('to test the property `playoff`', () async {
       // TODO
     });
-
-
   });
-
 }

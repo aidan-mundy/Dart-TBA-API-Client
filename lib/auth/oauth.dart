@@ -1,4 +1,4 @@
-part of tba_dart_api_client.api;
+part of tba_api_client.api;
 
 class OAuth implements Authentication {
   String _accessToken;
@@ -6,7 +6,8 @@ class OAuth implements Authentication {
   OAuth({String accessToken}) : _accessToken = accessToken;
 
   @override
-  void applyToParams(List<QueryParam> queryParams, Map<String, String> headerParams) {
+  void applyToParams(
+      List<QueryParam> queryParams, Map<String, String> headerParams) {
     if (_accessToken != null) {
       headerParams["Authorization"] = "Bearer $_accessToken";
     }

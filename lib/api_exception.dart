@@ -1,4 +1,4 @@
-part of tba_dart_api_client.api;
+part of tba_api_client.api;
 
 class ApiException implements Exception {
   int code = 0;
@@ -8,7 +8,8 @@ class ApiException implements Exception {
 
   ApiException(this.code, this.message);
 
-  ApiException.withInner(this.code, this.message, this.innerException, this.stackTrace);
+  ApiException.withInner(
+      this.code, this.message, this.innerException, this.stackTrace);
 
   String toString() {
     if (message == null) return "ApiException";

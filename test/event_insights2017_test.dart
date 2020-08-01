@@ -1,9 +1,9 @@
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 import 'package:test/test.dart';
 
 // tests for EventInsights2017
 void main() {
-    var instance = new EventInsights2017();
+  var instance = new EventInsights2017();
 
   group('test EventInsights2017', () {
     // Average foul score.
@@ -197,8 +197,5 @@ void main() {
     test('to test the property `unicornMatches`', () async {
       // TODO
     });
-
-
   });
-
 }

@@ -1,9 +1,9 @@
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 import 'package:test/test.dart';
 
 // tests for MatchTimeseries2018
 void main() {
-    var instance = new MatchTimeseries2018();
+  var instance = new MatchTimeseries2018();
 
   group('test MatchTimeseries2018', () {
     // TBA event key with the format yyyy[EVENT_CODE], where yyyy is the year, and EVENT_CODE is the event code of the event.
@@ -190,8 +190,5 @@ void main() {
     test('to test the property `redSwitchOwned`', () async {
       // TODO
     });
-
-
   });
-
 }

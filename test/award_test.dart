@@ -1,9 +1,9 @@
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 import 'package:test/test.dart';
 
 // tests for Award
 void main() {
-    var instance = new Award();
+  var instance = new TBAAward();
 
   group('test Award', () {
     // The name of the award as provided by FIRST. May vary for the same award type.
@@ -35,8 +35,5 @@ void main() {
     test('to test the property `year`', () async {
       // TODO
     });
-
-
   });
-
 }

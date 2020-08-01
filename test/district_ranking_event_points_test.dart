@@ -1,9 +1,9 @@
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 import 'package:test/test.dart';
 
 // tests for DistrictRankingEventPoints
 void main() {
-    var instance = new DistrictRankingEventPoints();
+  var instance = new DistrictRankingEventPoints();
 
   group('test DistrictRankingEventPoints', () {
     // `true` if this event is a District Championship event.
@@ -47,8 +47,5 @@ void main() {
     test('to test the property `qualPoints`', () async {
       // TODO
     });
-
-
   });
-
 }

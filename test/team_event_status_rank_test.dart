@@ -1,9 +1,9 @@
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 import 'package:test/test.dart';
 
 // tests for TeamEventStatusRank
 void main() {
-    var instance = new TeamEventStatusRank();
+  var instance = new TeamEventStatusRank();
 
   group('test TeamEventStatusRank', () {
     // Number of teams ranked.
@@ -27,8 +27,5 @@ void main() {
     test('to test the property `status`', () async {
       // TODO
     });
-
-
   });
-
 }

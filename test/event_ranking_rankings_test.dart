@@ -1,9 +1,9 @@
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 import 'package:test/test.dart';
 
 // tests for EventRankingRankings
 void main() {
-    var instance = new EventRankingRankings();
+  var instance = new EventRankingRankings();
 
   group('test EventRankingRankings', () {
     // Number of matches played by this team.
@@ -52,8 +52,5 @@ void main() {
     test('to test the property `teamKey`', () async {
       // TODO
     });
-
-
   });
-
 }

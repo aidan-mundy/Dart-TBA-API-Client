@@ -1,9 +1,9 @@
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 import 'package:test/test.dart';
 
 // tests for DistrictList
 void main() {
-    var instance = new DistrictList();
+  var instance = new DistrictList();
 
   group('test DistrictList', () {
     // The short identifier for the district.
@@ -29,8 +29,5 @@ void main() {
     test('to test the property `year`', () async {
       // TODO
     });
-
-
   });
-
 }

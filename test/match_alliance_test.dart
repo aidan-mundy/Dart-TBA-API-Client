@@ -1,9 +1,9 @@
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 import 'package:test/test.dart';
 
 // tests for MatchAlliance
 void main() {
-    var instance = new MatchAlliance();
+  var instance = new MatchAlliance();
 
   group('test MatchAlliance', () {
     // Score for this alliance. Will be null or -1 for an unplayed match.
@@ -28,8 +28,5 @@ void main() {
     test('to test the property `dqTeamKeys`', () async {
       // TODO
     });
-
-
   });
-
 }

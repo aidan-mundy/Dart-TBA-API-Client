@@ -1,9 +1,9 @@
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 import 'package:test/test.dart';
 
 // tests for APIStatus
 void main() {
-    var instance = new APIStatus();
+  var instance = new APIStatus();
 
   group('test APIStatus', () {
     // Year of the current FRC season.
@@ -39,8 +39,5 @@ void main() {
     test('to test the property `android`', () async {
       // TODO
     });
-
-
   });
-
 }

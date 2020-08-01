@@ -1,9 +1,9 @@
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 import 'package:test/test.dart';
 
 // tests for MatchSimple
 void main() {
-    var instance = new MatchSimple();
+  var instance = new MatchSimple();
 
   group('test MatchSimple', () {
     // TBA match key with the format `yyyy[EVENT_CODE]_[COMP_LEVEL]m[MATCH_NUMBER]`, where `yyyy` is the year, and `EVENT_CODE` is the event code of the event, `COMP_LEVEL` is (qm, ef, qf, sf, f), and `MATCH_NUMBER` is the match number in the competition level. A set number may append the competition level if more than one match in required per set.
@@ -64,8 +64,5 @@ void main() {
     test('to test the property `actualTime`', () async {
       // TODO
     });
-
-
   });
-
 }

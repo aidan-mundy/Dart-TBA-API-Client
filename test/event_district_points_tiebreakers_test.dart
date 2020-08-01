@@ -1,9 +1,9 @@
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 import 'package:test/test.dart';
 
 // tests for EventDistrictPointsTiebreakers
 void main() {
-    var instance = new EventDistrictPointsTiebreakers();
+  var instance = new EventDistrictPointsTiebreakers();
 
   group('test EventDistrictPointsTiebreakers', () {
     // List<int> highestQualScores (default value: [])
@@ -15,8 +15,5 @@ void main() {
     test('to test the property `qualWins`', () async {
       // TODO
     });
-
-
   });
-
 }

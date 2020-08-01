@@ -1,9 +1,9 @@
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 import 'package:test/test.dart';
 
 // tests for TeamEventStatusAllianceBackup
 void main() {
-    var instance = new TeamEventStatusAllianceBackup();
+  var instance = new TeamEventStatusAllianceBackup();
 
   group('test TeamEventStatusAllianceBackup', () {
     // TBA key for the team replaced by the backup.
@@ -17,8 +17,5 @@ void main() {
     test('to test the property `in_`', () async {
       // TODO
     });
-
-
   });
-
 }

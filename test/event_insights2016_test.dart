@@ -1,9 +1,9 @@
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 import 'package:test/test.dart';
 
 // tests for EventInsights2016
 void main() {
-    var instance = new EventInsights2016();
+  var instance = new EventInsights2016();
 
   group('test EventInsights2016', () {
     // For the Low Bar - An array with three values, number of times damaged, number of opportunities to damage, and percentage.
@@ -149,8 +149,5 @@ void main() {
     test('to test the property `highScore`', () async {
       // TODO
     });
-
-
   });
-
 }

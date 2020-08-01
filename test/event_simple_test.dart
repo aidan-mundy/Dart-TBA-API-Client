@@ -1,9 +1,9 @@
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 import 'package:test/test.dart';
 
 // tests for EventSimple
 void main() {
-    var instance = new EventSimple();
+  var instance = new EventSimple();
 
   group('test EventSimple', () {
     // TBA event key with the format yyyy[EVENT_CODE], where yyyy is the year, and EVENT_CODE is the event code of the event.
@@ -70,8 +70,5 @@ void main() {
     test('to test the property `year`', () async {
       // TODO
     });
-
-
   });
-
 }

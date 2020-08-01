@@ -1,9 +1,9 @@
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 import 'package:test/test.dart';
 
 // tests for TeamSimple
 void main() {
-    var instance = new TeamSimple();
+  var instance = new TeamSimple();
 
   group('test TeamSimple', () {
     // TBA team key with the format `frcXXXX` with `XXXX` representing the team number.
@@ -47,8 +47,5 @@ void main() {
     test('to test the property `country`', () async {
       // TODO
     });
-
-
   });
-
 }

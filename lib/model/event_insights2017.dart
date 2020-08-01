@@ -1,4 +1,4 @@
-part of tba_dart_api_client.api;
+part of tba_api_client.api;
 
 class EventInsights2017 {
   /* Average foul score. */
@@ -94,62 +94,59 @@ class EventInsights2017 {
     averageTakeoffPointsTeleop = json['average_takeoff_points_teleop'];
     averageWinMargin = json['average_win_margin'];
     averageWinScore = json['average_win_score'];
-    highKpa = (json['high_kpa'] == null) ?
-      null :
-      (json['high_kpa'] as List).cast<String>();
-    highScore = (json['high_score'] == null) ?
-      null :
-      (json['high_score'] as List).cast<String>();
-    kpaAchieved = (json['kpa_achieved'] == null) ?
-      null :
-      (json['kpa_achieved'] as List).cast<double>();
-    mobilityCounts = (json['mobility_counts'] == null) ?
-      null :
-      (json['mobility_counts'] as List).cast<double>();
-    rotor1Engaged = (json['rotor_1_engaged'] == null) ?
-      null :
-      (json['rotor_1_engaged'] as List).cast<double>();
-    rotor1EngagedAuto = (json['rotor_1_engaged_auto'] == null) ?
-      null :
-      (json['rotor_1_engaged_auto'] as List).cast<double>();
-    rotor2Engaged = (json['rotor_2_engaged'] == null) ?
-      null :
-      (json['rotor_2_engaged'] as List).cast<double>();
-    rotor2EngagedAuto = (json['rotor_2_engaged_auto'] == null) ?
-      null :
-      (json['rotor_2_engaged_auto'] as List).cast<double>();
-    rotor3Engaged = (json['rotor_3_engaged'] == null) ?
-      null :
-      (json['rotor_3_engaged'] as List).cast<double>();
-    rotor4Engaged = (json['rotor_4_engaged'] == null) ?
-      null :
-      (json['rotor_4_engaged'] as List).cast<double>();
-    takeoffCounts = (json['takeoff_counts'] == null) ?
-      null :
-      (json['takeoff_counts'] as List).cast<double>();
-    unicornMatches = (json['unicorn_matches'] == null) ?
-      null :
-      (json['unicorn_matches'] as List).cast<double>();
+    highKpa = (json['high_kpa'] == null)
+        ? null
+        : (json['high_kpa'] as List).cast<String>();
+    highScore = (json['high_score'] == null)
+        ? null
+        : (json['high_score'] as List).cast<String>();
+    kpaAchieved = (json['kpa_achieved'] == null)
+        ? null
+        : (json['kpa_achieved'] as List).cast<double>();
+    mobilityCounts = (json['mobility_counts'] == null)
+        ? null
+        : (json['mobility_counts'] as List).cast<double>();
+    rotor1Engaged = (json['rotor_1_engaged'] == null)
+        ? null
+        : (json['rotor_1_engaged'] as List).cast<double>();
+    rotor1EngagedAuto = (json['rotor_1_engaged_auto'] == null)
+        ? null
+        : (json['rotor_1_engaged_auto'] as List).cast<double>();
+    rotor2Engaged = (json['rotor_2_engaged'] == null)
+        ? null
+        : (json['rotor_2_engaged'] as List).cast<double>();
+    rotor2EngagedAuto = (json['rotor_2_engaged_auto'] == null)
+        ? null
+        : (json['rotor_2_engaged_auto'] as List).cast<double>();
+    rotor3Engaged = (json['rotor_3_engaged'] == null)
+        ? null
+        : (json['rotor_3_engaged'] as List).cast<double>();
+    rotor4Engaged = (json['rotor_4_engaged'] == null)
+        ? null
+        : (json['rotor_4_engaged'] as List).cast<double>();
+    takeoffCounts = (json['takeoff_counts'] == null)
+        ? null
+        : (json['takeoff_counts'] as List).cast<double>();
+    unicornMatches = (json['unicorn_matches'] == null)
+        ? null
+        : (json['unicorn_matches'] as List).cast<double>();
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
-    if (averageFoulScore != null)
-      json['average_foul_score'] = averageFoulScore;
+    Map<String, dynamic> json = {};
+    if (averageFoulScore != null) json['average_foul_score'] = averageFoulScore;
     if (averageFuelPoints != null)
       json['average_fuel_points'] = averageFuelPoints;
     if (averageFuelPointsAuto != null)
       json['average_fuel_points_auto'] = averageFuelPointsAuto;
     if (averageFuelPointsTeleop != null)
       json['average_fuel_points_teleop'] = averageFuelPointsTeleop;
-    if (averageHighGoals != null)
-      json['average_high_goals'] = averageHighGoals;
+    if (averageHighGoals != null) json['average_high_goals'] = averageHighGoals;
     if (averageHighGoalsAuto != null)
       json['average_high_goals_auto'] = averageHighGoalsAuto;
     if (averageHighGoalsTeleop != null)
       json['average_high_goals_teleop'] = averageHighGoalsTeleop;
-    if (averageLowGoals != null)
-      json['average_low_goals'] = averageLowGoals;
+    if (averageLowGoals != null) json['average_low_goals'] = averageLowGoals;
     if (averageLowGoalsAuto != null)
       json['average_low_goals_auto'] = averageLowGoalsAuto;
     if (averageLowGoalsTeleop != null)
@@ -166,62 +163,52 @@ class EventInsights2017 {
       json['average_rotor_points_auto'] = averageRotorPointsAuto;
     if (averageRotorPointsTeleop != null)
       json['average_rotor_points_teleop'] = averageRotorPointsTeleop;
-    if (averageScore != null)
-      json['average_score'] = averageScore;
+    if (averageScore != null) json['average_score'] = averageScore;
     if (averageTakeoffPointsTeleop != null)
       json['average_takeoff_points_teleop'] = averageTakeoffPointsTeleop;
-    if (averageWinMargin != null)
-      json['average_win_margin'] = averageWinMargin;
-    if (averageWinScore != null)
-      json['average_win_score'] = averageWinScore;
-    if (highKpa != null)
-      json['high_kpa'] = highKpa;
-    if (highScore != null)
-      json['high_score'] = highScore;
-    if (kpaAchieved != null)
-      json['kpa_achieved'] = kpaAchieved;
-    if (mobilityCounts != null)
-      json['mobility_counts'] = mobilityCounts;
-    if (rotor1Engaged != null)
-      json['rotor_1_engaged'] = rotor1Engaged;
+    if (averageWinMargin != null) json['average_win_margin'] = averageWinMargin;
+    if (averageWinScore != null) json['average_win_score'] = averageWinScore;
+    if (highKpa != null) json['high_kpa'] = highKpa;
+    if (highScore != null) json['high_score'] = highScore;
+    if (kpaAchieved != null) json['kpa_achieved'] = kpaAchieved;
+    if (mobilityCounts != null) json['mobility_counts'] = mobilityCounts;
+    if (rotor1Engaged != null) json['rotor_1_engaged'] = rotor1Engaged;
     if (rotor1EngagedAuto != null)
       json['rotor_1_engaged_auto'] = rotor1EngagedAuto;
-    if (rotor2Engaged != null)
-      json['rotor_2_engaged'] = rotor2Engaged;
+    if (rotor2Engaged != null) json['rotor_2_engaged'] = rotor2Engaged;
     if (rotor2EngagedAuto != null)
       json['rotor_2_engaged_auto'] = rotor2EngagedAuto;
-    if (rotor3Engaged != null)
-      json['rotor_3_engaged'] = rotor3Engaged;
-    if (rotor4Engaged != null)
-      json['rotor_4_engaged'] = rotor4Engaged;
-    if (takeoffCounts != null)
-      json['takeoff_counts'] = takeoffCounts;
-    if (unicornMatches != null)
-      json['unicorn_matches'] = unicornMatches;
+    if (rotor3Engaged != null) json['rotor_3_engaged'] = rotor3Engaged;
+    if (rotor4Engaged != null) json['rotor_4_engaged'] = rotor4Engaged;
+    if (takeoffCounts != null) json['takeoff_counts'] = takeoffCounts;
+    if (unicornMatches != null) json['unicorn_matches'] = unicornMatches;
     return json;
   }
 
   static List<EventInsights2017> listFromJson(List<dynamic> json) {
-    return json == null ? List<EventInsights2017>() : json.map((value) => EventInsights2017.fromJson(value)).toList();
+    return json == null
+        ? List<EventInsights2017>()
+        : json.map((value) => EventInsights2017.fromJson(value)).toList();
   }
 
   static Map<String, EventInsights2017> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, EventInsights2017>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = EventInsights2017.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = EventInsights2017.fromJson(value));
     }
     return map;
   }
 
   // maps a json object with a list of EventInsights2017-objects as value to a dart map
-  static Map<String, List<EventInsights2017>> mapListFromJson(Map<String, dynamic> json) {
+  static Map<String, List<EventInsights2017>> mapListFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, List<EventInsights2017>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = EventInsights2017.listFromJson(value);
-       });
-     }
-     return map;
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = EventInsights2017.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
-

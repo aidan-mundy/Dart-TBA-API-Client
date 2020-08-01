@@ -1,61 +1,61 @@
-# tba_dart_api_client.api.EventApi
+# tba_api_client.api.EventApi
 
 ## Load the API package
+
 ```dart
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 ```
 
-All URIs are relative to *https://www.thebluealliance.com/api/v3*
+All URIs are relative to _https://www.thebluealliance.com/api/v3_
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getDistrictEvents**](EventApi.md#getDistrictEvents) | **GET** /district/{district_key}/events | 
-[**getDistrictEventsKeys**](EventApi.md#getDistrictEventsKeys) | **GET** /district/{district_key}/events/keys | 
-[**getDistrictEventsSimple**](EventApi.md#getDistrictEventsSimple) | **GET** /district/{district_key}/events/simple | 
-[**getEvent**](EventApi.md#getEvent) | **GET** /event/{event_key} | 
-[**getEventAlliances**](EventApi.md#getEventAlliances) | **GET** /event/{event_key}/alliances | 
-[**getEventAwards**](EventApi.md#getEventAwards) | **GET** /event/{event_key}/awards | 
-[**getEventDistrictPoints**](EventApi.md#getEventDistrictPoints) | **GET** /event/{event_key}/district_points | 
-[**getEventInsights**](EventApi.md#getEventInsights) | **GET** /event/{event_key}/insights | 
-[**getEventMatchTimeseries**](EventApi.md#getEventMatchTimeseries) | **GET** /event/{event_key}/matches/timeseries | 
-[**getEventMatches**](EventApi.md#getEventMatches) | **GET** /event/{event_key}/matches | 
-[**getEventMatchesKeys**](EventApi.md#getEventMatchesKeys) | **GET** /event/{event_key}/matches/keys | 
-[**getEventMatchesSimple**](EventApi.md#getEventMatchesSimple) | **GET** /event/{event_key}/matches/simple | 
-[**getEventOPRs**](EventApi.md#getEventOPRs) | **GET** /event/{event_key}/oprs | 
-[**getEventPredictions**](EventApi.md#getEventPredictions) | **GET** /event/{event_key}/predictions | 
-[**getEventRankings**](EventApi.md#getEventRankings) | **GET** /event/{event_key}/rankings | 
-[**getEventSimple**](EventApi.md#getEventSimple) | **GET** /event/{event_key}/simple | 
-[**getEventTeams**](EventApi.md#getEventTeams) | **GET** /event/{event_key}/teams | 
-[**getEventTeamsKeys**](EventApi.md#getEventTeamsKeys) | **GET** /event/{event_key}/teams/keys | 
-[**getEventTeamsSimple**](EventApi.md#getEventTeamsSimple) | **GET** /event/{event_key}/teams/simple | 
-[**getEventTeamsStatuses**](EventApi.md#getEventTeamsStatuses) | **GET** /event/{event_key}/teams/statuses | 
-[**getEventsByYear**](EventApi.md#getEventsByYear) | **GET** /events/{year} | 
-[**getEventsByYearKeys**](EventApi.md#getEventsByYearKeys) | **GET** /events/{year}/keys | 
-[**getEventsByYearSimple**](EventApi.md#getEventsByYearSimple) | **GET** /events/{year}/simple | 
-[**getTeamEventAwards**](EventApi.md#getTeamEventAwards) | **GET** /team/{team_key}/event/{event_key}/awards | 
-[**getTeamEventMatches**](EventApi.md#getTeamEventMatches) | **GET** /team/{team_key}/event/{event_key}/matches | 
-[**getTeamEventMatchesKeys**](EventApi.md#getTeamEventMatchesKeys) | **GET** /team/{team_key}/event/{event_key}/matches/keys | 
-[**getTeamEventMatchesSimple**](EventApi.md#getTeamEventMatchesSimple) | **GET** /team/{team_key}/event/{event_key}/matches/simple | 
-[**getTeamEventStatus**](EventApi.md#getTeamEventStatus) | **GET** /team/{team_key}/event/{event_key}/status | 
-[**getTeamEvents**](EventApi.md#getTeamEvents) | **GET** /team/{team_key}/events | 
-[**getTeamEventsByYear**](EventApi.md#getTeamEventsByYear) | **GET** /team/{team_key}/events/{year} | 
-[**getTeamEventsByYearKeys**](EventApi.md#getTeamEventsByYearKeys) | **GET** /team/{team_key}/events/{year}/keys | 
-[**getTeamEventsByYearSimple**](EventApi.md#getTeamEventsByYearSimple) | **GET** /team/{team_key}/events/{year}/simple | 
-[**getTeamEventsKeys**](EventApi.md#getTeamEventsKeys) | **GET** /team/{team_key}/events/keys | 
-[**getTeamEventsSimple**](EventApi.md#getTeamEventsSimple) | **GET** /team/{team_key}/events/simple | 
-[**getTeamEventsStatusesByYear**](EventApi.md#getTeamEventsStatusesByYear) | **GET** /team/{team_key}/events/{year}/statuses | 
-
+| Method                                                                     | HTTP request                                              | Description |
+| -------------------------------------------------------------------------- | --------------------------------------------------------- | ----------- |
+| [**getDistrictEvents**](EventApi.md#getDistrictEvents)                     | **GET** /district/{district_key}/events                   |
+| [**getDistrictEventsKeys**](EventApi.md#getDistrictEventsKeys)             | **GET** /district/{district_key}/events/keys              |
+| [**getDistrictEventsSimple**](EventApi.md#getDistrictEventsSimple)         | **GET** /district/{district_key}/events/simple            |
+| [**getEvent**](EventApi.md#getEvent)                                       | **GET** /event/{event_key}                                |
+| [**getEventAlliances**](EventApi.md#getEventAlliances)                     | **GET** /event/{event_key}/alliances                      |
+| [**getEventAwards**](EventApi.md#getEventAwards)                           | **GET** /event/{event_key}/awards                         |
+| [**getEventDistrictPoints**](EventApi.md#getEventDistrictPoints)           | **GET** /event/{event_key}/district_points                |
+| [**getEventInsights**](EventApi.md#getEventInsights)                       | **GET** /event/{event_key}/insights                       |
+| [**getEventMatchTimeseries**](EventApi.md#getEventMatchTimeseries)         | **GET** /event/{event_key}/matches/timeseries             |
+| [**getEventMatches**](EventApi.md#getEventMatches)                         | **GET** /event/{event_key}/matches                        |
+| [**getEventMatchesKeys**](EventApi.md#getEventMatchesKeys)                 | **GET** /event/{event_key}/matches/keys                   |
+| [**getEventMatchesSimple**](EventApi.md#getEventMatchesSimple)             | **GET** /event/{event_key}/matches/simple                 |
+| [**getEventOPRs**](EventApi.md#getEventOPRs)                               | **GET** /event/{event_key}/oprs                           |
+| [**getEventPredictions**](EventApi.md#getEventPredictions)                 | **GET** /event/{event_key}/predictions                    |
+| [**getEventRankings**](EventApi.md#getEventRankings)                       | **GET** /event/{event_key}/rankings                       |
+| [**getEventSimple**](EventApi.md#getEventSimple)                           | **GET** /event/{event_key}/simple                         |
+| [**getEventTeams**](EventApi.md#getEventTeams)                             | **GET** /event/{event_key}/teams                          |
+| [**getEventTeamsKeys**](EventApi.md#getEventTeamsKeys)                     | **GET** /event/{event_key}/teams/keys                     |
+| [**getEventTeamsSimple**](EventApi.md#getEventTeamsSimple)                 | **GET** /event/{event_key}/teams/simple                   |
+| [**getEventTeamsStatuses**](EventApi.md#getEventTeamsStatuses)             | **GET** /event/{event_key}/teams/statuses                 |
+| [**getEventsByYear**](EventApi.md#getEventsByYear)                         | **GET** /events/{year}                                    |
+| [**getEventsByYearKeys**](EventApi.md#getEventsByYearKeys)                 | **GET** /events/{year}/keys                               |
+| [**getEventsByYearSimple**](EventApi.md#getEventsByYearSimple)             | **GET** /events/{year}/simple                             |
+| [**getTeamEventAwards**](EventApi.md#getTeamEventAwards)                   | **GET** /team/{team_key}/event/{event_key}/awards         |
+| [**getTeamEventMatches**](EventApi.md#getTeamEventMatches)                 | **GET** /team/{team_key}/event/{event_key}/matches        |
+| [**getTeamEventMatchesKeys**](EventApi.md#getTeamEventMatchesKeys)         | **GET** /team/{team_key}/event/{event_key}/matches/keys   |
+| [**getTeamEventMatchesSimple**](EventApi.md#getTeamEventMatchesSimple)     | **GET** /team/{team_key}/event/{event_key}/matches/simple |
+| [**getTeamEventStatus**](EventApi.md#getTeamEventStatus)                   | **GET** /team/{team_key}/event/{event_key}/status         |
+| [**getTeamEvents**](EventApi.md#getTeamEvents)                             | **GET** /team/{team_key}/events                           |
+| [**getTeamEventsByYear**](EventApi.md#getTeamEventsByYear)                 | **GET** /team/{team_key}/events/{year}                    |
+| [**getTeamEventsByYearKeys**](EventApi.md#getTeamEventsByYearKeys)         | **GET** /team/{team_key}/events/{year}/keys               |
+| [**getTeamEventsByYearSimple**](EventApi.md#getTeamEventsByYearSimple)     | **GET** /team/{team_key}/events/{year}/simple             |
+| [**getTeamEventsKeys**](EventApi.md#getTeamEventsKeys)                     | **GET** /team/{team_key}/events/keys                      |
+| [**getTeamEventsSimple**](EventApi.md#getTeamEventsSimple)                 | **GET** /team/{team_key}/events/simple                    |
+| [**getTeamEventsStatusesByYear**](EventApi.md#getTeamEventsStatusesByYear) | **GET** /team/{team_key}/events/{year}/statuses           |
 
 # **getDistrictEvents**
+
 > List<Event> getDistrictEvents(districtKey, ifModifiedSince)
-
-
 
 Gets a list of events in the given district.
 
-### Example 
+### Example
+
 ```dart
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 // TODO Configure API key authorization: apiKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -65,7 +65,7 @@ var api_instance = EventApi();
 var districtKey = districtKey_example; // String | TBA District Key, eg `2016fim`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
-try { 
+try {
     var result = api_instance.getDistrictEvents(districtKey, ifModifiedSince);
     print(result);
 } catch (e) {
@@ -75,10 +75,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **districtKey** | **String**| TBA District Key, eg &#x60;2016fim&#x60; | [default to null]
- **ifModifiedSince** | **String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional] [default to null]
+| Name                | Type       | Description                                                                                       | Notes                       |
+| ------------------- | ---------- | ------------------------------------------------------------------------------------------------- | --------------------------- |
+| **districtKey**     | **String** | TBA District Key, eg &#x60;2016fim&#x60;                                                          | [default to null]           |
+| **ifModifiedSince** | **String** | Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional][default to null] |
 
 ### Return type
 
@@ -90,21 +90,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getDistrictEventsKeys**
+
 > List<String> getDistrictEventsKeys(districtKey, ifModifiedSince)
-
-
 
 Gets a list of event keys for events in the given district.
 
-### Example 
+### Example
+
 ```dart
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 // TODO Configure API key authorization: apiKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -114,7 +114,7 @@ var api_instance = EventApi();
 var districtKey = districtKey_example; // String | TBA District Key, eg `2016fim`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
-try { 
+try {
     var result = api_instance.getDistrictEventsKeys(districtKey, ifModifiedSince);
     print(result);
 } catch (e) {
@@ -124,10 +124,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **districtKey** | **String**| TBA District Key, eg &#x60;2016fim&#x60; | [default to null]
- **ifModifiedSince** | **String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional] [default to null]
+| Name                | Type       | Description                                                                                       | Notes                       |
+| ------------------- | ---------- | ------------------------------------------------------------------------------------------------- | --------------------------- |
+| **districtKey**     | **String** | TBA District Key, eg &#x60;2016fim&#x60;                                                          | [default to null]           |
+| **ifModifiedSince** | **String** | Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional][default to null] |
 
 ### Return type
 
@@ -139,21 +139,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getDistrictEventsSimple**
+
 > List<EventSimple> getDistrictEventsSimple(districtKey, ifModifiedSince)
-
-
 
 Gets a short-form list of events in the given district.
 
-### Example 
+### Example
+
 ```dart
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 // TODO Configure API key authorization: apiKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -163,7 +163,7 @@ var api_instance = EventApi();
 var districtKey = districtKey_example; // String | TBA District Key, eg `2016fim`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
-try { 
+try {
     var result = api_instance.getDistrictEventsSimple(districtKey, ifModifiedSince);
     print(result);
 } catch (e) {
@@ -173,10 +173,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **districtKey** | **String**| TBA District Key, eg &#x60;2016fim&#x60; | [default to null]
- **ifModifiedSince** | **String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional] [default to null]
+| Name                | Type       | Description                                                                                       | Notes                       |
+| ------------------- | ---------- | ------------------------------------------------------------------------------------------------- | --------------------------- |
+| **districtKey**     | **String** | TBA District Key, eg &#x60;2016fim&#x60;                                                          | [default to null]           |
+| **ifModifiedSince** | **String** | Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional][default to null] |
 
 ### Return type
 
@@ -188,21 +188,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getEvent**
+
 > Event getEvent(eventKey, ifModifiedSince)
-
-
 
 Gets an Event.
 
-### Example 
+### Example
+
 ```dart
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 // TODO Configure API key authorization: apiKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -212,7 +212,7 @@ var api_instance = EventApi();
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
-try { 
+try {
     var result = api_instance.getEvent(eventKey, ifModifiedSince);
     print(result);
 } catch (e) {
@@ -222,10 +222,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **eventKey** | **String**| TBA Event Key, eg &#x60;2016nytr&#x60; | [default to null]
- **ifModifiedSince** | **String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional] [default to null]
+| Name                | Type       | Description                                                                                       | Notes                       |
+| ------------------- | ---------- | ------------------------------------------------------------------------------------------------- | --------------------------- |
+| **eventKey**        | **String** | TBA Event Key, eg &#x60;2016nytr&#x60;                                                            | [default to null]           |
+| **ifModifiedSince** | **String** | Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional][default to null] |
 
 ### Return type
 
@@ -237,21 +237,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getEventAlliances**
+
 > List<EliminationAlliance> getEventAlliances(eventKey, ifModifiedSince)
-
-
 
 Gets a list of Elimination Alliances for the given Event.
 
-### Example 
+### Example
+
 ```dart
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 // TODO Configure API key authorization: apiKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -261,7 +261,7 @@ var api_instance = EventApi();
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
-try { 
+try {
     var result = api_instance.getEventAlliances(eventKey, ifModifiedSince);
     print(result);
 } catch (e) {
@@ -271,10 +271,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **eventKey** | **String**| TBA Event Key, eg &#x60;2016nytr&#x60; | [default to null]
- **ifModifiedSince** | **String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional] [default to null]
+| Name                | Type       | Description                                                                                       | Notes                       |
+| ------------------- | ---------- | ------------------------------------------------------------------------------------------------- | --------------------------- |
+| **eventKey**        | **String** | TBA Event Key, eg &#x60;2016nytr&#x60;                                                            | [default to null]           |
+| **ifModifiedSince** | **String** | Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional][default to null] |
 
 ### Return type
 
@@ -286,21 +286,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getEventAwards**
+
 > List<Award> getEventAwards(eventKey, ifModifiedSince)
-
-
 
 Gets a list of awards from the given event.
 
-### Example 
+### Example
+
 ```dart
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 // TODO Configure API key authorization: apiKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -310,7 +310,7 @@ var api_instance = EventApi();
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
-try { 
+try {
     var result = api_instance.getEventAwards(eventKey, ifModifiedSince);
     print(result);
 } catch (e) {
@@ -320,10 +320,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **eventKey** | **String**| TBA Event Key, eg &#x60;2016nytr&#x60; | [default to null]
- **ifModifiedSince** | **String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional] [default to null]
+| Name                | Type       | Description                                                                                       | Notes                       |
+| ------------------- | ---------- | ------------------------------------------------------------------------------------------------- | --------------------------- |
+| **eventKey**        | **String** | TBA Event Key, eg &#x60;2016nytr&#x60;                                                            | [default to null]           |
+| **ifModifiedSince** | **String** | Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional][default to null] |
 
 ### Return type
 
@@ -335,21 +335,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getEventDistrictPoints**
+
 > EventDistrictPoints getEventDistrictPoints(eventKey, ifModifiedSince)
-
-
 
 Gets a list of team rankings for the Event.
 
-### Example 
+### Example
+
 ```dart
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 // TODO Configure API key authorization: apiKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -359,7 +359,7 @@ var api_instance = EventApi();
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
-try { 
+try {
     var result = api_instance.getEventDistrictPoints(eventKey, ifModifiedSince);
     print(result);
 } catch (e) {
@@ -369,10 +369,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **eventKey** | **String**| TBA Event Key, eg &#x60;2016nytr&#x60; | [default to null]
- **ifModifiedSince** | **String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional] [default to null]
+| Name                | Type       | Description                                                                                       | Notes                       |
+| ------------------- | ---------- | ------------------------------------------------------------------------------------------------- | --------------------------- |
+| **eventKey**        | **String** | TBA Event Key, eg &#x60;2016nytr&#x60;                                                            | [default to null]           |
+| **ifModifiedSince** | **String** | Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional][default to null] |
 
 ### Return type
 
@@ -384,21 +384,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getEventInsights**
+
 > EventInsights getEventInsights(eventKey, ifModifiedSince)
-
-
 
 Gets a set of Event-specific insights for the given Event.
 
-### Example 
+### Example
+
 ```dart
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 // TODO Configure API key authorization: apiKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -408,7 +408,7 @@ var api_instance = EventApi();
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
-try { 
+try {
     var result = api_instance.getEventInsights(eventKey, ifModifiedSince);
     print(result);
 } catch (e) {
@@ -418,10 +418,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **eventKey** | **String**| TBA Event Key, eg &#x60;2016nytr&#x60; | [default to null]
- **ifModifiedSince** | **String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional] [default to null]
+| Name                | Type       | Description                                                                                       | Notes                       |
+| ------------------- | ---------- | ------------------------------------------------------------------------------------------------- | --------------------------- |
+| **eventKey**        | **String** | TBA Event Key, eg &#x60;2016nytr&#x60;                                                            | [default to null]           |
+| **ifModifiedSince** | **String** | Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional][default to null] |
 
 ### Return type
 
@@ -433,21 +433,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getEventMatchTimeseries**
+
 > List<String> getEventMatchTimeseries(eventKey, ifModifiedSince)
 
+Gets an array of Match Keys for the given event key that have timeseries data. Returns an empty array if no matches have timeseries data. _WARNING:_ This is _not_ official data, and is subject to a significant possibility of error, or missing data. Do not rely on this data for any purpose. In fact, pretend we made it up. _WARNING:_ This endpoint and corresponding data models are under _active development_ and may change at any time, including in breaking ways.
 
+### Example
 
-Gets an array of Match Keys for the given event key that have timeseries data. Returns an empty array if no matches have timeseries data. *WARNING:* This is *not* official data, and is subject to a significant possibility of error, or missing data. Do not rely on this data for any purpose. In fact, pretend we made it up. *WARNING:* This endpoint and corresponding data models are under *active development* and may change at any time, including in breaking ways.
-
-### Example 
 ```dart
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 // TODO Configure API key authorization: apiKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -457,7 +457,7 @@ var api_instance = EventApi();
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
-try { 
+try {
     var result = api_instance.getEventMatchTimeseries(eventKey, ifModifiedSince);
     print(result);
 } catch (e) {
@@ -467,10 +467,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **eventKey** | **String**| TBA Event Key, eg &#x60;2016nytr&#x60; | [default to null]
- **ifModifiedSince** | **String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional] [default to null]
+| Name                | Type       | Description                                                                                       | Notes                       |
+| ------------------- | ---------- | ------------------------------------------------------------------------------------------------- | --------------------------- |
+| **eventKey**        | **String** | TBA Event Key, eg &#x60;2016nytr&#x60;                                                            | [default to null]           |
+| **ifModifiedSince** | **String** | Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional][default to null] |
 
 ### Return type
 
@@ -482,21 +482,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getEventMatches**
+
 > List<Match> getEventMatches(eventKey, ifModifiedSince)
-
-
 
 Gets a list of matches for the given event.
 
-### Example 
+### Example
+
 ```dart
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 // TODO Configure API key authorization: apiKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -506,7 +506,7 @@ var api_instance = EventApi();
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
-try { 
+try {
     var result = api_instance.getEventMatches(eventKey, ifModifiedSince);
     print(result);
 } catch (e) {
@@ -516,10 +516,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **eventKey** | **String**| TBA Event Key, eg &#x60;2016nytr&#x60; | [default to null]
- **ifModifiedSince** | **String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional] [default to null]
+| Name                | Type       | Description                                                                                       | Notes                       |
+| ------------------- | ---------- | ------------------------------------------------------------------------------------------------- | --------------------------- |
+| **eventKey**        | **String** | TBA Event Key, eg &#x60;2016nytr&#x60;                                                            | [default to null]           |
+| **ifModifiedSince** | **String** | Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional][default to null] |
 
 ### Return type
 
@@ -531,21 +531,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getEventMatchesKeys**
+
 > List<String> getEventMatchesKeys(eventKey, ifModifiedSince)
-
-
 
 Gets a list of match keys for the given event.
 
-### Example 
+### Example
+
 ```dart
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 // TODO Configure API key authorization: apiKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -555,7 +555,7 @@ var api_instance = EventApi();
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
-try { 
+try {
     var result = api_instance.getEventMatchesKeys(eventKey, ifModifiedSince);
     print(result);
 } catch (e) {
@@ -565,10 +565,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **eventKey** | **String**| TBA Event Key, eg &#x60;2016nytr&#x60; | [default to null]
- **ifModifiedSince** | **String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional] [default to null]
+| Name                | Type       | Description                                                                                       | Notes                       |
+| ------------------- | ---------- | ------------------------------------------------------------------------------------------------- | --------------------------- |
+| **eventKey**        | **String** | TBA Event Key, eg &#x60;2016nytr&#x60;                                                            | [default to null]           |
+| **ifModifiedSince** | **String** | Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional][default to null] |
 
 ### Return type
 
@@ -580,21 +580,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getEventMatchesSimple**
+
 > List<MatchSimple> getEventMatchesSimple(eventKey, ifModifiedSince)
-
-
 
 Gets a short-form list of matches for the given event.
 
-### Example 
+### Example
+
 ```dart
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 // TODO Configure API key authorization: apiKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -604,7 +604,7 @@ var api_instance = EventApi();
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
-try { 
+try {
     var result = api_instance.getEventMatchesSimple(eventKey, ifModifiedSince);
     print(result);
 } catch (e) {
@@ -614,10 +614,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **eventKey** | **String**| TBA Event Key, eg &#x60;2016nytr&#x60; | [default to null]
- **ifModifiedSince** | **String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional] [default to null]
+| Name                | Type       | Description                                                                                       | Notes                       |
+| ------------------- | ---------- | ------------------------------------------------------------------------------------------------- | --------------------------- |
+| **eventKey**        | **String** | TBA Event Key, eg &#x60;2016nytr&#x60;                                                            | [default to null]           |
+| **ifModifiedSince** | **String** | Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional][default to null] |
 
 ### Return type
 
@@ -629,21 +629,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getEventOPRs**
+
 > EventOPRs getEventOPRs(eventKey, ifModifiedSince)
-
-
 
 Gets a set of Event OPRs (including OPR, DPR, and CCWM) for the given Event.
 
-### Example 
+### Example
+
 ```dart
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 // TODO Configure API key authorization: apiKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -653,7 +653,7 @@ var api_instance = EventApi();
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
-try { 
+try {
     var result = api_instance.getEventOPRs(eventKey, ifModifiedSince);
     print(result);
 } catch (e) {
@@ -663,10 +663,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **eventKey** | **String**| TBA Event Key, eg &#x60;2016nytr&#x60; | [default to null]
- **ifModifiedSince** | **String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional] [default to null]
+| Name                | Type       | Description                                                                                       | Notes                       |
+| ------------------- | ---------- | ------------------------------------------------------------------------------------------------- | --------------------------- |
+| **eventKey**        | **String** | TBA Event Key, eg &#x60;2016nytr&#x60;                                                            | [default to null]           |
+| **ifModifiedSince** | **String** | Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional][default to null] |
 
 ### Return type
 
@@ -678,21 +678,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getEventPredictions**
+
 > Object getEventPredictions(eventKey, ifModifiedSince)
 
+Gets information on TBA-generated predictions for the given Event. Contains year-specific information. _WARNING_ This endpoint is currently under development and may change at any time.
 
+### Example
 
-Gets information on TBA-generated predictions for the given Event. Contains year-specific information. *WARNING* This endpoint is currently under development and may change at any time.
-
-### Example 
 ```dart
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 // TODO Configure API key authorization: apiKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -702,7 +702,7 @@ var api_instance = EventApi();
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
-try { 
+try {
     var result = api_instance.getEventPredictions(eventKey, ifModifiedSince);
     print(result);
 } catch (e) {
@@ -712,10 +712,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **eventKey** | **String**| TBA Event Key, eg &#x60;2016nytr&#x60; | [default to null]
- **ifModifiedSince** | **String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional] [default to null]
+| Name                | Type       | Description                                                                                       | Notes                       |
+| ------------------- | ---------- | ------------------------------------------------------------------------------------------------- | --------------------------- |
+| **eventKey**        | **String** | TBA Event Key, eg &#x60;2016nytr&#x60;                                                            | [default to null]           |
+| **ifModifiedSince** | **String** | Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional][default to null] |
 
 ### Return type
 
@@ -727,21 +727,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getEventRankings**
+
 > EventRanking getEventRankings(eventKey, ifModifiedSince)
-
-
 
 Gets a list of team rankings for the Event.
 
-### Example 
+### Example
+
 ```dart
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 // TODO Configure API key authorization: apiKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -751,7 +751,7 @@ var api_instance = EventApi();
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
-try { 
+try {
     var result = api_instance.getEventRankings(eventKey, ifModifiedSince);
     print(result);
 } catch (e) {
@@ -761,10 +761,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **eventKey** | **String**| TBA Event Key, eg &#x60;2016nytr&#x60; | [default to null]
- **ifModifiedSince** | **String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional] [default to null]
+| Name                | Type       | Description                                                                                       | Notes                       |
+| ------------------- | ---------- | ------------------------------------------------------------------------------------------------- | --------------------------- |
+| **eventKey**        | **String** | TBA Event Key, eg &#x60;2016nytr&#x60;                                                            | [default to null]           |
+| **ifModifiedSince** | **String** | Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional][default to null] |
 
 ### Return type
 
@@ -776,21 +776,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getEventSimple**
+
 > EventSimple getEventSimple(eventKey, ifModifiedSince)
-
-
 
 Gets a short-form Event.
 
-### Example 
+### Example
+
 ```dart
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 // TODO Configure API key authorization: apiKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -800,7 +800,7 @@ var api_instance = EventApi();
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
-try { 
+try {
     var result = api_instance.getEventSimple(eventKey, ifModifiedSince);
     print(result);
 } catch (e) {
@@ -810,10 +810,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **eventKey** | **String**| TBA Event Key, eg &#x60;2016nytr&#x60; | [default to null]
- **ifModifiedSince** | **String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional] [default to null]
+| Name                | Type       | Description                                                                                       | Notes                       |
+| ------------------- | ---------- | ------------------------------------------------------------------------------------------------- | --------------------------- |
+| **eventKey**        | **String** | TBA Event Key, eg &#x60;2016nytr&#x60;                                                            | [default to null]           |
+| **ifModifiedSince** | **String** | Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional][default to null] |
 
 ### Return type
 
@@ -825,21 +825,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getEventTeams**
+
 > List<Team> getEventTeams(eventKey, ifModifiedSince)
-
-
 
 Gets a list of `Team` objects that competed in the given event.
 
-### Example 
+### Example
+
 ```dart
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 // TODO Configure API key authorization: apiKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -849,7 +849,7 @@ var api_instance = EventApi();
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
-try { 
+try {
     var result = api_instance.getEventTeams(eventKey, ifModifiedSince);
     print(result);
 } catch (e) {
@@ -859,10 +859,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **eventKey** | **String**| TBA Event Key, eg &#x60;2016nytr&#x60; | [default to null]
- **ifModifiedSince** | **String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional] [default to null]
+| Name                | Type       | Description                                                                                       | Notes                       |
+| ------------------- | ---------- | ------------------------------------------------------------------------------------------------- | --------------------------- |
+| **eventKey**        | **String** | TBA Event Key, eg &#x60;2016nytr&#x60;                                                            | [default to null]           |
+| **ifModifiedSince** | **String** | Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional][default to null] |
 
 ### Return type
 
@@ -874,21 +874,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getEventTeamsKeys**
+
 > List<String> getEventTeamsKeys(eventKey, ifModifiedSince)
-
-
 
 Gets a list of `Team` keys that competed in the given event.
 
-### Example 
+### Example
+
 ```dart
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 // TODO Configure API key authorization: apiKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -898,7 +898,7 @@ var api_instance = EventApi();
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
-try { 
+try {
     var result = api_instance.getEventTeamsKeys(eventKey, ifModifiedSince);
     print(result);
 } catch (e) {
@@ -908,10 +908,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **eventKey** | **String**| TBA Event Key, eg &#x60;2016nytr&#x60; | [default to null]
- **ifModifiedSince** | **String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional] [default to null]
+| Name                | Type       | Description                                                                                       | Notes                       |
+| ------------------- | ---------- | ------------------------------------------------------------------------------------------------- | --------------------------- |
+| **eventKey**        | **String** | TBA Event Key, eg &#x60;2016nytr&#x60;                                                            | [default to null]           |
+| **ifModifiedSince** | **String** | Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional][default to null] |
 
 ### Return type
 
@@ -923,21 +923,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getEventTeamsSimple**
+
 > List<TeamSimple> getEventTeamsSimple(eventKey, ifModifiedSince)
-
-
 
 Gets a short-form list of `Team` objects that competed in the given event.
 
-### Example 
+### Example
+
 ```dart
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 // TODO Configure API key authorization: apiKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -947,7 +947,7 @@ var api_instance = EventApi();
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
-try { 
+try {
     var result = api_instance.getEventTeamsSimple(eventKey, ifModifiedSince);
     print(result);
 } catch (e) {
@@ -957,10 +957,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **eventKey** | **String**| TBA Event Key, eg &#x60;2016nytr&#x60; | [default to null]
- **ifModifiedSince** | **String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional] [default to null]
+| Name                | Type       | Description                                                                                       | Notes                       |
+| ------------------- | ---------- | ------------------------------------------------------------------------------------------------- | --------------------------- |
+| **eventKey**        | **String** | TBA Event Key, eg &#x60;2016nytr&#x60;                                                            | [default to null]           |
+| **ifModifiedSince** | **String** | Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional][default to null] |
 
 ### Return type
 
@@ -972,21 +972,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getEventTeamsStatuses**
+
 > Map<String, TeamEventStatus> getEventTeamsStatuses(eventKey, ifModifiedSince)
-
-
 
 Gets a key-value list of the event statuses for teams competing at the given event.
 
-### Example 
+### Example
+
 ```dart
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 // TODO Configure API key authorization: apiKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -996,7 +996,7 @@ var api_instance = EventApi();
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
-try { 
+try {
     var result = api_instance.getEventTeamsStatuses(eventKey, ifModifiedSince);
     print(result);
 } catch (e) {
@@ -1006,10 +1006,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **eventKey** | **String**| TBA Event Key, eg &#x60;2016nytr&#x60; | [default to null]
- **ifModifiedSince** | **String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional] [default to null]
+| Name                | Type       | Description                                                                                       | Notes                       |
+| ------------------- | ---------- | ------------------------------------------------------------------------------------------------- | --------------------------- |
+| **eventKey**        | **String** | TBA Event Key, eg &#x60;2016nytr&#x60;                                                            | [default to null]           |
+| **ifModifiedSince** | **String** | Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional][default to null] |
 
 ### Return type
 
@@ -1021,21 +1021,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getEventsByYear**
+
 > List<Event> getEventsByYear(year, ifModifiedSince)
-
-
 
 Gets a list of events in the given year.
 
-### Example 
+### Example
+
 ```dart
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 // TODO Configure API key authorization: apiKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1045,7 +1045,7 @@ var api_instance = EventApi();
 var year = 56; // int | Competition Year (or Season). Must be 4 digits.
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
-try { 
+try {
     var result = api_instance.getEventsByYear(year, ifModifiedSince);
     print(result);
 } catch (e) {
@@ -1055,10 +1055,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **year** | **int**| Competition Year (or Season). Must be 4 digits. | [default to null]
- **ifModifiedSince** | **String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional] [default to null]
+| Name                | Type       | Description                                                                                       | Notes                       |
+| ------------------- | ---------- | ------------------------------------------------------------------------------------------------- | --------------------------- |
+| **year**            | **int**    | Competition Year (or Season). Must be 4 digits.                                                   | [default to null]           |
+| **ifModifiedSince** | **String** | Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional][default to null] |
 
 ### Return type
 
@@ -1070,21 +1070,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getEventsByYearKeys**
+
 > List<String> getEventsByYearKeys(year, ifModifiedSince)
-
-
 
 Gets a list of event keys in the given year.
 
-### Example 
+### Example
+
 ```dart
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 // TODO Configure API key authorization: apiKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1094,7 +1094,7 @@ var api_instance = EventApi();
 var year = 56; // int | Competition Year (or Season). Must be 4 digits.
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
-try { 
+try {
     var result = api_instance.getEventsByYearKeys(year, ifModifiedSince);
     print(result);
 } catch (e) {
@@ -1104,10 +1104,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **year** | **int**| Competition Year (or Season). Must be 4 digits. | [default to null]
- **ifModifiedSince** | **String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional] [default to null]
+| Name                | Type       | Description                                                                                       | Notes                       |
+| ------------------- | ---------- | ------------------------------------------------------------------------------------------------- | --------------------------- |
+| **year**            | **int**    | Competition Year (or Season). Must be 4 digits.                                                   | [default to null]           |
+| **ifModifiedSince** | **String** | Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional][default to null] |
 
 ### Return type
 
@@ -1119,21 +1119,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getEventsByYearSimple**
+
 > List<EventSimple> getEventsByYearSimple(year, ifModifiedSince)
-
-
 
 Gets a short-form list of events in the given year.
 
-### Example 
+### Example
+
 ```dart
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 // TODO Configure API key authorization: apiKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1143,7 +1143,7 @@ var api_instance = EventApi();
 var year = 56; // int | Competition Year (or Season). Must be 4 digits.
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
-try { 
+try {
     var result = api_instance.getEventsByYearSimple(year, ifModifiedSince);
     print(result);
 } catch (e) {
@@ -1153,10 +1153,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **year** | **int**| Competition Year (or Season). Must be 4 digits. | [default to null]
- **ifModifiedSince** | **String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional] [default to null]
+| Name                | Type       | Description                                                                                       | Notes                       |
+| ------------------- | ---------- | ------------------------------------------------------------------------------------------------- | --------------------------- |
+| **year**            | **int**    | Competition Year (or Season). Must be 4 digits.                                                   | [default to null]           |
+| **ifModifiedSince** | **String** | Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional][default to null] |
 
 ### Return type
 
@@ -1168,21 +1168,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTeamEventAwards**
+
 > List<Award> getTeamEventAwards(teamKey, eventKey, ifModifiedSince)
-
-
 
 Gets a list of awards the given team won at the given event.
 
-### Example 
+### Example
+
 ```dart
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 // TODO Configure API key authorization: apiKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1193,7 +1193,7 @@ var teamKey = teamKey_example; // String | TBA Team Key, eg `frc254`
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
-try { 
+try {
     var result = api_instance.getTeamEventAwards(teamKey, eventKey, ifModifiedSince);
     print(result);
 } catch (e) {
@@ -1203,11 +1203,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **teamKey** | **String**| TBA Team Key, eg &#x60;frc254&#x60; | [default to null]
- **eventKey** | **String**| TBA Event Key, eg &#x60;2016nytr&#x60; | [default to null]
- **ifModifiedSince** | **String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional] [default to null]
+| Name                | Type       | Description                                                                                       | Notes                       |
+| ------------------- | ---------- | ------------------------------------------------------------------------------------------------- | --------------------------- |
+| **teamKey**         | **String** | TBA Team Key, eg &#x60;frc254&#x60;                                                               | [default to null]           |
+| **eventKey**        | **String** | TBA Event Key, eg &#x60;2016nytr&#x60;                                                            | [default to null]           |
+| **ifModifiedSince** | **String** | Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional][default to null] |
 
 ### Return type
 
@@ -1219,21 +1219,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTeamEventMatches**
+
 > List<Match> getTeamEventMatches(teamKey, eventKey, ifModifiedSince)
-
-
 
 Gets a list of matches for the given team and event.
 
-### Example 
+### Example
+
 ```dart
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 // TODO Configure API key authorization: apiKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1244,7 +1244,7 @@ var teamKey = teamKey_example; // String | TBA Team Key, eg `frc254`
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
-try { 
+try {
     var result = api_instance.getTeamEventMatches(teamKey, eventKey, ifModifiedSince);
     print(result);
 } catch (e) {
@@ -1254,11 +1254,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **teamKey** | **String**| TBA Team Key, eg &#x60;frc254&#x60; | [default to null]
- **eventKey** | **String**| TBA Event Key, eg &#x60;2016nytr&#x60; | [default to null]
- **ifModifiedSince** | **String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional] [default to null]
+| Name                | Type       | Description                                                                                       | Notes                       |
+| ------------------- | ---------- | ------------------------------------------------------------------------------------------------- | --------------------------- |
+| **teamKey**         | **String** | TBA Team Key, eg &#x60;frc254&#x60;                                                               | [default to null]           |
+| **eventKey**        | **String** | TBA Event Key, eg &#x60;2016nytr&#x60;                                                            | [default to null]           |
+| **ifModifiedSince** | **String** | Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional][default to null] |
 
 ### Return type
 
@@ -1270,21 +1270,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTeamEventMatchesKeys**
+
 > List<String> getTeamEventMatchesKeys(teamKey, eventKey, ifModifiedSince)
-
-
 
 Gets a list of match keys for matches for the given team and event.
 
-### Example 
+### Example
+
 ```dart
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 // TODO Configure API key authorization: apiKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1295,7 +1295,7 @@ var teamKey = teamKey_example; // String | TBA Team Key, eg `frc254`
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
-try { 
+try {
     var result = api_instance.getTeamEventMatchesKeys(teamKey, eventKey, ifModifiedSince);
     print(result);
 } catch (e) {
@@ -1305,11 +1305,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **teamKey** | **String**| TBA Team Key, eg &#x60;frc254&#x60; | [default to null]
- **eventKey** | **String**| TBA Event Key, eg &#x60;2016nytr&#x60; | [default to null]
- **ifModifiedSince** | **String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional] [default to null]
+| Name                | Type       | Description                                                                                       | Notes                       |
+| ------------------- | ---------- | ------------------------------------------------------------------------------------------------- | --------------------------- |
+| **teamKey**         | **String** | TBA Team Key, eg &#x60;frc254&#x60;                                                               | [default to null]           |
+| **eventKey**        | **String** | TBA Event Key, eg &#x60;2016nytr&#x60;                                                            | [default to null]           |
+| **ifModifiedSince** | **String** | Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional][default to null] |
 
 ### Return type
 
@@ -1321,21 +1321,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTeamEventMatchesSimple**
+
 > List<Match> getTeamEventMatchesSimple(teamKey, eventKey, ifModifiedSince)
-
-
 
 Gets a short-form list of matches for the given team and event.
 
-### Example 
+### Example
+
 ```dart
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 // TODO Configure API key authorization: apiKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1346,7 +1346,7 @@ var teamKey = teamKey_example; // String | TBA Team Key, eg `frc254`
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
-try { 
+try {
     var result = api_instance.getTeamEventMatchesSimple(teamKey, eventKey, ifModifiedSince);
     print(result);
 } catch (e) {
@@ -1356,11 +1356,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **teamKey** | **String**| TBA Team Key, eg &#x60;frc254&#x60; | [default to null]
- **eventKey** | **String**| TBA Event Key, eg &#x60;2016nytr&#x60; | [default to null]
- **ifModifiedSince** | **String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional] [default to null]
+| Name                | Type       | Description                                                                                       | Notes                       |
+| ------------------- | ---------- | ------------------------------------------------------------------------------------------------- | --------------------------- |
+| **teamKey**         | **String** | TBA Team Key, eg &#x60;frc254&#x60;                                                               | [default to null]           |
+| **eventKey**        | **String** | TBA Event Key, eg &#x60;2016nytr&#x60;                                                            | [default to null]           |
+| **ifModifiedSince** | **String** | Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional][default to null] |
 
 ### Return type
 
@@ -1372,21 +1372,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTeamEventStatus**
+
 > TeamEventStatus getTeamEventStatus(teamKey, eventKey, ifModifiedSince)
-
-
 
 Gets the competition rank and status of the team at the given event.
 
-### Example 
+### Example
+
 ```dart
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 // TODO Configure API key authorization: apiKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1397,7 +1397,7 @@ var teamKey = teamKey_example; // String | TBA Team Key, eg `frc254`
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
-try { 
+try {
     var result = api_instance.getTeamEventStatus(teamKey, eventKey, ifModifiedSince);
     print(result);
 } catch (e) {
@@ -1407,11 +1407,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **teamKey** | **String**| TBA Team Key, eg &#x60;frc254&#x60; | [default to null]
- **eventKey** | **String**| TBA Event Key, eg &#x60;2016nytr&#x60; | [default to null]
- **ifModifiedSince** | **String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional] [default to null]
+| Name                | Type       | Description                                                                                       | Notes                       |
+| ------------------- | ---------- | ------------------------------------------------------------------------------------------------- | --------------------------- |
+| **teamKey**         | **String** | TBA Team Key, eg &#x60;frc254&#x60;                                                               | [default to null]           |
+| **eventKey**        | **String** | TBA Event Key, eg &#x60;2016nytr&#x60;                                                            | [default to null]           |
+| **ifModifiedSince** | **String** | Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional][default to null] |
 
 ### Return type
 
@@ -1423,21 +1423,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTeamEvents**
+
 > List<Event> getTeamEvents(teamKey, ifModifiedSince)
-
-
 
 Gets a list of all events this team has competed at.
 
-### Example 
+### Example
+
 ```dart
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 // TODO Configure API key authorization: apiKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1447,7 +1447,7 @@ var api_instance = EventApi();
 var teamKey = teamKey_example; // String | TBA Team Key, eg `frc254`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
-try { 
+try {
     var result = api_instance.getTeamEvents(teamKey, ifModifiedSince);
     print(result);
 } catch (e) {
@@ -1457,10 +1457,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **teamKey** | **String**| TBA Team Key, eg &#x60;frc254&#x60; | [default to null]
- **ifModifiedSince** | **String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional] [default to null]
+| Name                | Type       | Description                                                                                       | Notes                       |
+| ------------------- | ---------- | ------------------------------------------------------------------------------------------------- | --------------------------- |
+| **teamKey**         | **String** | TBA Team Key, eg &#x60;frc254&#x60;                                                               | [default to null]           |
+| **ifModifiedSince** | **String** | Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional][default to null] |
 
 ### Return type
 
@@ -1472,21 +1472,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTeamEventsByYear**
+
 > List<Event> getTeamEventsByYear(teamKey, year, ifModifiedSince)
-
-
 
 Gets a list of events this team has competed at in the given year.
 
-### Example 
+### Example
+
 ```dart
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 // TODO Configure API key authorization: apiKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1497,7 +1497,7 @@ var teamKey = teamKey_example; // String | TBA Team Key, eg `frc254`
 var year = 56; // int | Competition Year (or Season). Must be 4 digits.
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
-try { 
+try {
     var result = api_instance.getTeamEventsByYear(teamKey, year, ifModifiedSince);
     print(result);
 } catch (e) {
@@ -1507,11 +1507,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **teamKey** | **String**| TBA Team Key, eg &#x60;frc254&#x60; | [default to null]
- **year** | **int**| Competition Year (or Season). Must be 4 digits. | [default to null]
- **ifModifiedSince** | **String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional] [default to null]
+| Name                | Type       | Description                                                                                       | Notes                       |
+| ------------------- | ---------- | ------------------------------------------------------------------------------------------------- | --------------------------- |
+| **teamKey**         | **String** | TBA Team Key, eg &#x60;frc254&#x60;                                                               | [default to null]           |
+| **year**            | **int**    | Competition Year (or Season). Must be 4 digits.                                                   | [default to null]           |
+| **ifModifiedSince** | **String** | Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional][default to null] |
 
 ### Return type
 
@@ -1523,21 +1523,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTeamEventsByYearKeys**
+
 > List<String> getTeamEventsByYearKeys(teamKey, year, ifModifiedSince)
-
-
 
 Gets a list of the event keys for events this team has competed at in the given year.
 
-### Example 
+### Example
+
 ```dart
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 // TODO Configure API key authorization: apiKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1548,7 +1548,7 @@ var teamKey = teamKey_example; // String | TBA Team Key, eg `frc254`
 var year = 56; // int | Competition Year (or Season). Must be 4 digits.
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
-try { 
+try {
     var result = api_instance.getTeamEventsByYearKeys(teamKey, year, ifModifiedSince);
     print(result);
 } catch (e) {
@@ -1558,11 +1558,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **teamKey** | **String**| TBA Team Key, eg &#x60;frc254&#x60; | [default to null]
- **year** | **int**| Competition Year (or Season). Must be 4 digits. | [default to null]
- **ifModifiedSince** | **String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional] [default to null]
+| Name                | Type       | Description                                                                                       | Notes                       |
+| ------------------- | ---------- | ------------------------------------------------------------------------------------------------- | --------------------------- |
+| **teamKey**         | **String** | TBA Team Key, eg &#x60;frc254&#x60;                                                               | [default to null]           |
+| **year**            | **int**    | Competition Year (or Season). Must be 4 digits.                                                   | [default to null]           |
+| **ifModifiedSince** | **String** | Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional][default to null] |
 
 ### Return type
 
@@ -1574,21 +1574,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTeamEventsByYearSimple**
+
 > List<EventSimple> getTeamEventsByYearSimple(teamKey, year, ifModifiedSince)
-
-
 
 Gets a short-form list of events this team has competed at in the given year.
 
-### Example 
+### Example
+
 ```dart
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 // TODO Configure API key authorization: apiKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1599,7 +1599,7 @@ var teamKey = teamKey_example; // String | TBA Team Key, eg `frc254`
 var year = 56; // int | Competition Year (or Season). Must be 4 digits.
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
-try { 
+try {
     var result = api_instance.getTeamEventsByYearSimple(teamKey, year, ifModifiedSince);
     print(result);
 } catch (e) {
@@ -1609,11 +1609,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **teamKey** | **String**| TBA Team Key, eg &#x60;frc254&#x60; | [default to null]
- **year** | **int**| Competition Year (or Season). Must be 4 digits. | [default to null]
- **ifModifiedSince** | **String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional] [default to null]
+| Name                | Type       | Description                                                                                       | Notes                       |
+| ------------------- | ---------- | ------------------------------------------------------------------------------------------------- | --------------------------- |
+| **teamKey**         | **String** | TBA Team Key, eg &#x60;frc254&#x60;                                                               | [default to null]           |
+| **year**            | **int**    | Competition Year (or Season). Must be 4 digits.                                                   | [default to null]           |
+| **ifModifiedSince** | **String** | Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional][default to null] |
 
 ### Return type
 
@@ -1625,21 +1625,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTeamEventsKeys**
+
 > List<String> getTeamEventsKeys(teamKey, ifModifiedSince)
-
-
 
 Gets a list of the event keys for all events this team has competed at.
 
-### Example 
+### Example
+
 ```dart
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 // TODO Configure API key authorization: apiKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1649,7 +1649,7 @@ var api_instance = EventApi();
 var teamKey = teamKey_example; // String | TBA Team Key, eg `frc254`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
-try { 
+try {
     var result = api_instance.getTeamEventsKeys(teamKey, ifModifiedSince);
     print(result);
 } catch (e) {
@@ -1659,10 +1659,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **teamKey** | **String**| TBA Team Key, eg &#x60;frc254&#x60; | [default to null]
- **ifModifiedSince** | **String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional] [default to null]
+| Name                | Type       | Description                                                                                       | Notes                       |
+| ------------------- | ---------- | ------------------------------------------------------------------------------------------------- | --------------------------- |
+| **teamKey**         | **String** | TBA Team Key, eg &#x60;frc254&#x60;                                                               | [default to null]           |
+| **ifModifiedSince** | **String** | Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional][default to null] |
 
 ### Return type
 
@@ -1674,21 +1674,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTeamEventsSimple**
+
 > List<EventSimple> getTeamEventsSimple(teamKey, ifModifiedSince)
-
-
 
 Gets a short-form list of all events this team has competed at.
 
-### Example 
+### Example
+
 ```dart
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 // TODO Configure API key authorization: apiKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1698,7 +1698,7 @@ var api_instance = EventApi();
 var teamKey = teamKey_example; // String | TBA Team Key, eg `frc254`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
-try { 
+try {
     var result = api_instance.getTeamEventsSimple(teamKey, ifModifiedSince);
     print(result);
 } catch (e) {
@@ -1708,10 +1708,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **teamKey** | **String**| TBA Team Key, eg &#x60;frc254&#x60; | [default to null]
- **ifModifiedSince** | **String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional] [default to null]
+| Name                | Type       | Description                                                                                       | Notes                       |
+| ------------------- | ---------- | ------------------------------------------------------------------------------------------------- | --------------------------- |
+| **teamKey**         | **String** | TBA Team Key, eg &#x60;frc254&#x60;                                                               | [default to null]           |
+| **ifModifiedSince** | **String** | Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional][default to null] |
 
 ### Return type
 
@@ -1723,21 +1723,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTeamEventsStatusesByYear**
+
 > Map<String, TeamEventStatus> getTeamEventsStatusesByYear(teamKey, year, ifModifiedSince)
-
-
 
 Gets a key-value list of the event statuses for events this team has competed at in the given year.
 
-### Example 
+### Example
+
 ```dart
-import 'package:tba_dart_api_client/api.dart';
+import 'package:tba_api_client/api.dart';
 // TODO Configure API key authorization: apiKey
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1748,7 +1748,7 @@ var teamKey = teamKey_example; // String | TBA Team Key, eg `frc254`
 var year = 56; // int | Competition Year (or Season). Must be 4 digits.
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
-try { 
+try {
     var result = api_instance.getTeamEventsStatusesByYear(teamKey, year, ifModifiedSince);
     print(result);
 } catch (e) {
@@ -1758,11 +1758,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **teamKey** | **String**| TBA Team Key, eg &#x60;frc254&#x60; | [default to null]
- **year** | **int**| Competition Year (or Season). Must be 4 digits. | [default to null]
- **ifModifiedSince** | **String**| Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional] [default to null]
+| Name                | Type       | Description                                                                                       | Notes                       |
+| ------------------- | ---------- | ------------------------------------------------------------------------------------------------- | --------------------------- |
+| **teamKey**         | **String** | TBA Team Key, eg &#x60;frc254&#x60;                                                               | [default to null]           |
+| **year**            | **int**    | Competition Year (or Season). Must be 4 digits.                                                   | [default to null]           |
+| **ifModifiedSince** | **String** | Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. | [optional][default to null] |
 
 ### Return type
 
@@ -1774,8 +1774,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
