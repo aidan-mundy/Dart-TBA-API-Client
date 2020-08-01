@@ -26,7 +26,9 @@ class ListApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    headerParams["If-Modified-Since"] = ifModifiedSince;
+    if (ifModifiedSince != null) {
+      headerParams["If-Modified-Since"] = ifModifiedSince;
+    }
 
     List<String> contentTypes = [];
 
@@ -86,7 +88,9 @@ class ListApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    headerParams["If-Modified-Since"] = ifModifiedSince;
+    if (ifModifiedSince != null) {
+      headerParams["If-Modified-Since"] = ifModifiedSince;
+    }
 
     List<String> contentTypes = [];
 
@@ -146,7 +150,9 @@ class ListApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    headerParams["If-Modified-Since"] = ifModifiedSince;
+    if (ifModifiedSince != null) {
+      headerParams["If-Modified-Since"] = ifModifiedSince;
+    }
 
     List<String> contentTypes = [];
 
@@ -206,7 +212,9 @@ class ListApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    headerParams["If-Modified-Since"] = ifModifiedSince;
+    if (ifModifiedSince != null) {
+      headerParams["If-Modified-Since"] = ifModifiedSince;
+    }
 
     List<String> contentTypes = [];
 
@@ -266,7 +274,9 @@ class ListApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    headerParams["If-Modified-Since"] = ifModifiedSince;
+    if (ifModifiedSince != null) {
+      headerParams["If-Modified-Since"] = ifModifiedSince;
+    }
 
     List<String> contentTypes = [];
 
@@ -326,7 +336,9 @@ class ListApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    headerParams["If-Modified-Since"] = ifModifiedSince;
+    if (ifModifiedSince != null) {
+      headerParams["If-Modified-Since"] = ifModifiedSince;
+    }
 
     List<String> contentTypes = [];
 
@@ -386,7 +398,9 @@ class ListApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    headerParams["If-Modified-Since"] = ifModifiedSince;
+    if (ifModifiedSince != null) {
+      headerParams["If-Modified-Since"] = ifModifiedSince;
+    }
 
     List<String> contentTypes = [];
 
@@ -446,7 +460,9 @@ class ListApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    headerParams["If-Modified-Since"] = ifModifiedSince;
+    if (ifModifiedSince != null) {
+      headerParams["If-Modified-Since"] = ifModifiedSince;
+    }
 
     List<String> contentTypes = [];
 
@@ -506,7 +522,9 @@ class ListApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    headerParams["If-Modified-Since"] = ifModifiedSince;
+    if (ifModifiedSince != null) {
+      headerParams["If-Modified-Since"] = ifModifiedSince;
+    }
 
     List<String> contentTypes = [];
 
@@ -566,7 +584,9 @@ class ListApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    headerParams["If-Modified-Since"] = ifModifiedSince;
+    if (ifModifiedSince != null) {
+      headerParams["If-Modified-Since"] = ifModifiedSince;
+    }
 
     List<String> contentTypes = [];
 
@@ -626,7 +646,9 @@ class ListApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    headerParams["If-Modified-Since"] = ifModifiedSince;
+    if (ifModifiedSince != null) {
+      headerParams["If-Modified-Since"] = ifModifiedSince;
+    }
 
     List<String> contentTypes = [];
 
@@ -685,7 +707,9 @@ class ListApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    headerParams["If-Modified-Since"] = ifModifiedSince;
+    if (ifModifiedSince != null) {
+      headerParams["If-Modified-Since"] = ifModifiedSince;
+    }
 
     List<String> contentTypes = [];
 
@@ -745,7 +769,9 @@ class ListApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    headerParams["If-Modified-Since"] = ifModifiedSince;
+    if (ifModifiedSince != null) {
+      headerParams["If-Modified-Since"] = ifModifiedSince;
+    }
 
     List<String> contentTypes = [];
 
@@ -805,7 +831,9 @@ class ListApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    headerParams["If-Modified-Since"] = ifModifiedSince;
+    if (ifModifiedSince != null) {
+      headerParams["If-Modified-Since"] = ifModifiedSince;
+    }
 
     List<String> contentTypes = [];
 
@@ -870,7 +898,9 @@ class ListApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    headerParams["If-Modified-Since"] = ifModifiedSince;
+    if (ifModifiedSince != null) {
+      headerParams["If-Modified-Since"] = ifModifiedSince;
+    }
 
     List<String> contentTypes = [];
 
@@ -931,7 +961,9 @@ class ListApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    headerParams["If-Modified-Since"] = ifModifiedSince;
+    if (ifModifiedSince != null) {
+      headerParams["If-Modified-Since"] = ifModifiedSince;
+    }
 
     List<String> contentTypes = [];
 
@@ -994,7 +1026,9 @@ class ListApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    headerParams["If-Modified-Since"] = ifModifiedSince;
+    if (ifModifiedSince != null) {
+      headerParams["If-Modified-Since"] = ifModifiedSince;
+    }
 
     List<String> contentTypes = [];
 
@@ -1058,7 +1092,9 @@ class ListApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    headerParams["If-Modified-Since"] = ifModifiedSince;
+    if (ifModifiedSince != null) {
+      headerParams["If-Modified-Since"] = ifModifiedSince;
+    }
 
     List<String> contentTypes = [];
 
@@ -1122,7 +1158,9 @@ class ListApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    headerParams["If-Modified-Since"] = ifModifiedSince;
+    if (ifModifiedSince != null) {
+      headerParams["If-Modified-Since"] = ifModifiedSince;
+    }
 
     List<String> contentTypes = [];
 
@@ -1182,7 +1220,9 @@ class ListApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    headerParams["If-Modified-Since"] = ifModifiedSince;
+    if (ifModifiedSince != null) {
+      headerParams["If-Modified-Since"] = ifModifiedSince;
+    }
 
     List<String> contentTypes = [];
 
@@ -1242,7 +1282,9 @@ class ListApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    headerParams["If-Modified-Since"] = ifModifiedSince;
+    if (ifModifiedSince != null) {
+      headerParams["If-Modified-Since"] = ifModifiedSince;
+    }
 
     List<String> contentTypes = [];
 
