@@ -1,4 +1,4 @@
-# tba_api_client.model.DistrictRankingEventPoints
+# openapi.model.DistrictRankingEventPoints
 
 ## Load the model package
 

@@ -1,4 +1,4 @@
-# tba_api_client.model.EliminationAllianceBackup
+# openapi.model.EliminationAllianceBackup
 
 ## Load the model package
 

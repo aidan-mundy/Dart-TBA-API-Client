@@ -1,4 +1,4 @@
-# tba_api_client.model.AwardRecipient
+# openapi.model.AwardRecipient
 
 ## Load the model package
 

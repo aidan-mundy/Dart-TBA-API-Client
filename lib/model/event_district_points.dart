@@ -1,59 +1,27 @@
-part of tba_api_client.api;
+import 'package:tba_api_client/model/event_district_points_points.dart';
+import 'package:tba_api_client/model/event_district_points_tiebreakers.dart';
+import 'package:built_collection/built_collection.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
-class EventDistrictPoints {
+part 'event_district_points.g.dart';
+
+abstract class EventDistrictPoints
+    implements Built<EventDistrictPoints, EventDistrictPointsBuilder> {
   /* Points gained for each team at the event. Stored as a key-value pair with the team key as the key, and an object describing the points as its value. */
-  Map<String, EventDistrictPointsPoints> points = {};
+  @nullable
+  @BuiltValueField(wireName: r'points')
+  BuiltMap<String, EventDistrictPointsPoints> get points;
   /* Tiebreaker values for each team at the event. Stored as a key-value pair with the team key as the key, and an object describing the tiebreaker elements as its value. */
-  Map<String, EventDistrictPointsTiebreakers> tiebreakers = {};
-  EventDistrictPoints();
+  @nullable
+  @BuiltValueField(wireName: r'tiebreakers')
+  BuiltMap<String, EventDistrictPointsTiebreakers> get tiebreakers;
 
-  @override
-  String toString() {
-    return 'EventDistrictPoints[points=$points, tiebreakers=$tiebreakers, ]';
-  }
+  // Boilerplate code needed to wire-up generated code
+  EventDistrictPoints._();
 
-  EventDistrictPoints.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
-    points = (json['points'] == null)
-        ? null
-        : EventDistrictPointsPoints.mapFromJson(json['points']);
-    tiebreakers = (json['tiebreakers'] == null)
-        ? null
-        : EventDistrictPointsTiebreakers.mapFromJson(json['tiebreakers']);
-  }
-
-  Map<String, dynamic> toJson() {
-    Map<String, dynamic> json = {};
-    if (points != null) json['points'] = points;
-    if (tiebreakers != null) json['tiebreakers'] = tiebreakers;
-    return json;
-  }
-
-  static List<EventDistrictPoints> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<EventDistrictPoints>()
-        : json.map((value) => EventDistrictPoints.fromJson(value)).toList();
-  }
-
-  static Map<String, EventDistrictPoints> mapFromJson(
-      Map<String, dynamic> json) {
-    var map = Map<String, EventDistrictPoints>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = EventDistrictPoints.fromJson(value));
-    }
-    return map;
-  }
-
-  // maps a json object with a list of EventDistrictPoints-objects as value to a dart map
-  static Map<String, List<EventDistrictPoints>> mapListFromJson(
-      Map<String, dynamic> json) {
-    var map = Map<String, List<EventDistrictPoints>>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) {
-        map[key] = EventDistrictPoints.listFromJson(value);
-      });
-    }
-    return map;
-  }
+  factory EventDistrictPoints([updates(EventDistrictPointsBuilder b)]) =
+      _$EventDistrictPoints;
+  static Serializer<EventDistrictPoints> get serializer =>
+      _$eventDistrictPointsSerializer;
 }

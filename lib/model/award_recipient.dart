@@ -1,54 +1,23 @@
-part of tba_api_client.api;
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
-class AwardRecipient {
+part 'award_recipient.g.dart';
+
+abstract class AwardRecipient
+    implements Built<AwardRecipient, AwardRecipientBuilder> {
   /* The TBA team key for the team that was given the award. May be null. */
-  String teamKey = null;
+  @nullable
+  @BuiltValueField(wireName: r'team_key')
+  String get teamKey;
   /* The name of the individual given the award. May be null. */
-  String awardee = null;
-  AwardRecipient();
+  @nullable
+  @BuiltValueField(wireName: r'awardee')
+  String get awardee;
 
-  @override
-  String toString() {
-    return 'AwardRecipient[teamKey=$teamKey, awardee=$awardee, ]';
-  }
+  // Boilerplate code needed to wire-up generated code
+  AwardRecipient._();
 
-  AwardRecipient.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
-    teamKey = json['team_key'];
-    awardee = json['awardee'];
-  }
-
-  Map<String, dynamic> toJson() {
-    Map<String, dynamic> json = {};
-    if (teamKey != null) json['team_key'] = teamKey;
-    if (awardee != null) json['awardee'] = awardee;
-    return json;
-  }
-
-  static List<AwardRecipient> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<AwardRecipient>()
-        : json.map((value) => AwardRecipient.fromJson(value)).toList();
-  }
-
-  static Map<String, AwardRecipient> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, AwardRecipient>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = AwardRecipient.fromJson(value));
-    }
-    return map;
-  }
-
-  // maps a json object with a list of AwardRecipient-objects as value to a dart map
-  static Map<String, List<AwardRecipient>> mapListFromJson(
-      Map<String, dynamic> json) {
-    var map = Map<String, List<AwardRecipient>>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) {
-        map[key] = AwardRecipient.listFromJson(value);
-      });
-    }
-    return map;
-  }
+  factory AwardRecipient([updates(AwardRecipientBuilder b)]) = _$AwardRecipient;
+  static Serializer<AwardRecipient> get serializer =>
+      _$awardRecipientSerializer;
 }

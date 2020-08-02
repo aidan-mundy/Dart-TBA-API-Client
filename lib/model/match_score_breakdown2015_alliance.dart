@@ -1,154 +1,114 @@
-part of tba_api_client.api;
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
-class MatchScoreBreakdown2015Alliance {
-  int autoPoints = null;
+part 'match_score_breakdown2015_alliance.g.dart';
 
-  int teleopPoints = null;
+abstract class MatchScoreBreakdown2015Alliance
+    implements
+        Built<MatchScoreBreakdown2015Alliance,
+            MatchScoreBreakdown2015AllianceBuilder> {
+  @nullable
+  @BuiltValueField(wireName: r'auto_points')
+  int get autoPoints;
 
-  int containerPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'teleop_points')
+  int get teleopPoints;
 
-  int totePoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'container_points')
+  int get containerPoints;
 
-  int litterPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'tote_points')
+  int get totePoints;
 
-  int foulPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'litter_points')
+  int get litterPoints;
 
-  int adjustPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'foul_points')
+  int get foulPoints;
 
-  int totalPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'adjust_points')
+  int get adjustPoints;
 
-  int foulCount = null;
+  @nullable
+  @BuiltValueField(wireName: r'total_points')
+  int get totalPoints;
 
-  int toteCountFar = null;
+  @nullable
+  @BuiltValueField(wireName: r'foul_count')
+  int get foulCount;
 
-  int toteCountNear = null;
+  @nullable
+  @BuiltValueField(wireName: r'tote_count_far')
+  int get toteCountFar;
 
-  bool toteSet = null;
+  @nullable
+  @BuiltValueField(wireName: r'tote_count_near')
+  int get toteCountNear;
 
-  bool toteStack = null;
+  @nullable
+  @BuiltValueField(wireName: r'tote_set')
+  bool get toteSet;
 
-  int containerCountLevel1 = null;
+  @nullable
+  @BuiltValueField(wireName: r'tote_stack')
+  bool get toteStack;
 
-  int containerCountLevel2 = null;
+  @nullable
+  @BuiltValueField(wireName: r'container_count_level1')
+  int get containerCountLevel1;
 
-  int containerCountLevel3 = null;
+  @nullable
+  @BuiltValueField(wireName: r'container_count_level2')
+  int get containerCountLevel2;
 
-  int containerCountLevel4 = null;
+  @nullable
+  @BuiltValueField(wireName: r'container_count_level3')
+  int get containerCountLevel3;
 
-  int containerCountLevel5 = null;
+  @nullable
+  @BuiltValueField(wireName: r'container_count_level4')
+  int get containerCountLevel4;
 
-  int containerCountLevel6 = null;
+  @nullable
+  @BuiltValueField(wireName: r'container_count_level5')
+  int get containerCountLevel5;
 
-  bool containerSet = null;
+  @nullable
+  @BuiltValueField(wireName: r'container_count_level6')
+  int get containerCountLevel6;
 
-  int litterCountContainer = null;
+  @nullable
+  @BuiltValueField(wireName: r'container_set')
+  bool get containerSet;
 
-  int litterCountLandfill = null;
+  @nullable
+  @BuiltValueField(wireName: r'litter_count_container')
+  int get litterCountContainer;
 
-  int litterCountUnprocessed = null;
+  @nullable
+  @BuiltValueField(wireName: r'litter_count_landfill')
+  int get litterCountLandfill;
 
-  bool robotSet = null;
-  MatchScoreBreakdown2015Alliance();
+  @nullable
+  @BuiltValueField(wireName: r'litter_count_unprocessed')
+  int get litterCountUnprocessed;
 
-  @override
-  String toString() {
-    return 'MatchScoreBreakdown2015Alliance[autoPoints=$autoPoints, teleopPoints=$teleopPoints, containerPoints=$containerPoints, totePoints=$totePoints, litterPoints=$litterPoints, foulPoints=$foulPoints, adjustPoints=$adjustPoints, totalPoints=$totalPoints, foulCount=$foulCount, toteCountFar=$toteCountFar, toteCountNear=$toteCountNear, toteSet=$toteSet, toteStack=$toteStack, containerCountLevel1=$containerCountLevel1, containerCountLevel2=$containerCountLevel2, containerCountLevel3=$containerCountLevel3, containerCountLevel4=$containerCountLevel4, containerCountLevel5=$containerCountLevel5, containerCountLevel6=$containerCountLevel6, containerSet=$containerSet, litterCountContainer=$litterCountContainer, litterCountLandfill=$litterCountLandfill, litterCountUnprocessed=$litterCountUnprocessed, robotSet=$robotSet, ]';
-  }
+  @nullable
+  @BuiltValueField(wireName: r'robot_set')
+  bool get robotSet;
 
-  MatchScoreBreakdown2015Alliance.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
-    autoPoints = json['auto_points'];
-    teleopPoints = json['teleop_points'];
-    containerPoints = json['container_points'];
-    totePoints = json['tote_points'];
-    litterPoints = json['litter_points'];
-    foulPoints = json['foul_points'];
-    adjustPoints = json['adjust_points'];
-    totalPoints = json['total_points'];
-    foulCount = json['foul_count'];
-    toteCountFar = json['tote_count_far'];
-    toteCountNear = json['tote_count_near'];
-    toteSet = json['tote_set'];
-    toteStack = json['tote_stack'];
-    containerCountLevel1 = json['container_count_level1'];
-    containerCountLevel2 = json['container_count_level2'];
-    containerCountLevel3 = json['container_count_level3'];
-    containerCountLevel4 = json['container_count_level4'];
-    containerCountLevel5 = json['container_count_level5'];
-    containerCountLevel6 = json['container_count_level6'];
-    containerSet = json['container_set'];
-    litterCountContainer = json['litter_count_container'];
-    litterCountLandfill = json['litter_count_landfill'];
-    litterCountUnprocessed = json['litter_count_unprocessed'];
-    robotSet = json['robot_set'];
-  }
+  // Boilerplate code needed to wire-up generated code
+  MatchScoreBreakdown2015Alliance._();
 
-  Map<String, dynamic> toJson() {
-    Map<String, dynamic> json = {};
-    if (autoPoints != null) json['auto_points'] = autoPoints;
-    if (teleopPoints != null) json['teleop_points'] = teleopPoints;
-    if (containerPoints != null) json['container_points'] = containerPoints;
-    if (totePoints != null) json['tote_points'] = totePoints;
-    if (litterPoints != null) json['litter_points'] = litterPoints;
-    if (foulPoints != null) json['foul_points'] = foulPoints;
-    if (adjustPoints != null) json['adjust_points'] = adjustPoints;
-    if (totalPoints != null) json['total_points'] = totalPoints;
-    if (foulCount != null) json['foul_count'] = foulCount;
-    if (toteCountFar != null) json['tote_count_far'] = toteCountFar;
-    if (toteCountNear != null) json['tote_count_near'] = toteCountNear;
-    if (toteSet != null) json['tote_set'] = toteSet;
-    if (toteStack != null) json['tote_stack'] = toteStack;
-    if (containerCountLevel1 != null)
-      json['container_count_level1'] = containerCountLevel1;
-    if (containerCountLevel2 != null)
-      json['container_count_level2'] = containerCountLevel2;
-    if (containerCountLevel3 != null)
-      json['container_count_level3'] = containerCountLevel3;
-    if (containerCountLevel4 != null)
-      json['container_count_level4'] = containerCountLevel4;
-    if (containerCountLevel5 != null)
-      json['container_count_level5'] = containerCountLevel5;
-    if (containerCountLevel6 != null)
-      json['container_count_level6'] = containerCountLevel6;
-    if (containerSet != null) json['container_set'] = containerSet;
-    if (litterCountContainer != null)
-      json['litter_count_container'] = litterCountContainer;
-    if (litterCountLandfill != null)
-      json['litter_count_landfill'] = litterCountLandfill;
-    if (litterCountUnprocessed != null)
-      json['litter_count_unprocessed'] = litterCountUnprocessed;
-    if (robotSet != null) json['robot_set'] = robotSet;
-    return json;
-  }
-
-  static List<MatchScoreBreakdown2015Alliance> listFromJson(
-      List<dynamic> json) {
-    return json == null
-        ? List<MatchScoreBreakdown2015Alliance>()
-        : json
-            .map((value) => MatchScoreBreakdown2015Alliance.fromJson(value))
-            .toList();
-  }
-
-  static Map<String, MatchScoreBreakdown2015Alliance> mapFromJson(
-      Map<String, dynamic> json) {
-    var map = Map<String, MatchScoreBreakdown2015Alliance>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = MatchScoreBreakdown2015Alliance.fromJson(value));
-    }
-    return map;
-  }
-
-  // maps a json object with a list of MatchScoreBreakdown2015Alliance-objects as value to a dart map
-  static Map<String, List<MatchScoreBreakdown2015Alliance>> mapListFromJson(
-      Map<String, dynamic> json) {
-    var map = Map<String, List<MatchScoreBreakdown2015Alliance>>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) {
-        map[key] = MatchScoreBreakdown2015Alliance.listFromJson(value);
-      });
-    }
-    return map;
-  }
+  factory MatchScoreBreakdown2015Alliance(
+          [updates(MatchScoreBreakdown2015AllianceBuilder b)]) =
+      _$MatchScoreBreakdown2015Alliance;
+  static Serializer<MatchScoreBreakdown2015Alliance> get serializer =>
+      _$matchScoreBreakdown2015AllianceSerializer;
 }

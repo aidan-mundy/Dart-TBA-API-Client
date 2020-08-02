@@ -1,4 +1,4 @@
-# tba_api_client.model.TeamSimple
+# openapi.model.TeamSimple
 
 ## Load the model package
 

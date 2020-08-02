@@ -1,4 +1,4 @@
-# tba_api_client.model.TeamEventStatusAllianceBackup
+# openapi.model.TeamEventStatusAllianceBackup
 
 ## Load the model package
 

@@ -1,211 +1,166 @@
-part of tba_api_client.api;
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
-class MatchScoreBreakdown2018Alliance {
-  int adjustPoints = null;
+part 'match_score_breakdown2018_alliance.g.dart';
 
-  int autoOwnershipPoints = null;
+abstract class MatchScoreBreakdown2018Alliance
+    implements
+        Built<MatchScoreBreakdown2018Alliance,
+            MatchScoreBreakdown2018AllianceBuilder> {
+  @nullable
+  @BuiltValueField(wireName: r'adjustPoints')
+  int get adjustPoints;
 
-  int autoPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'autoOwnershipPoints')
+  int get autoOwnershipPoints;
 
-  bool autoQuestRankingPoint = null;
+  @nullable
+  @BuiltValueField(wireName: r'autoPoints')
+  int get autoPoints;
 
-  String autoRobot1 = null;
+  @nullable
+  @BuiltValueField(wireName: r'autoQuestRankingPoint')
+  bool get autoQuestRankingPoint;
 
-  String autoRobot2 = null;
+  @nullable
+  @BuiltValueField(wireName: r'autoRobot1')
+  String get autoRobot1;
 
-  String autoRobot3 = null;
+  @nullable
+  @BuiltValueField(wireName: r'autoRobot2')
+  String get autoRobot2;
 
-  int autoRunPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'autoRobot3')
+  String get autoRobot3;
 
-  int autoScaleOwnershipSec = null;
+  @nullable
+  @BuiltValueField(wireName: r'autoRunPoints')
+  int get autoRunPoints;
 
-  bool autoSwitchAtZero = null;
+  @nullable
+  @BuiltValueField(wireName: r'autoScaleOwnershipSec')
+  int get autoScaleOwnershipSec;
 
-  int autoSwitchOwnershipSec = null;
+  @nullable
+  @BuiltValueField(wireName: r'autoSwitchAtZero')
+  bool get autoSwitchAtZero;
 
-  int endgamePoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'autoSwitchOwnershipSec')
+  int get autoSwitchOwnershipSec;
 
-  String endgameRobot1 = null;
+  @nullable
+  @BuiltValueField(wireName: r'endgamePoints')
+  int get endgamePoints;
 
-  String endgameRobot2 = null;
+  @nullable
+  @BuiltValueField(wireName: r'endgameRobot1')
+  String get endgameRobot1;
 
-  String endgameRobot3 = null;
+  @nullable
+  @BuiltValueField(wireName: r'endgameRobot2')
+  String get endgameRobot2;
 
-  bool faceTheBossRankingPoint = null;
+  @nullable
+  @BuiltValueField(wireName: r'endgameRobot3')
+  String get endgameRobot3;
 
-  int foulCount = null;
+  @nullable
+  @BuiltValueField(wireName: r'faceTheBossRankingPoint')
+  bool get faceTheBossRankingPoint;
 
-  int foulPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'foulCount')
+  int get foulCount;
 
-  int rp = null;
+  @nullable
+  @BuiltValueField(wireName: r'foulPoints')
+  int get foulPoints;
 
-  int techFoulCount = null;
+  @nullable
+  @BuiltValueField(wireName: r'rp')
+  int get rp;
 
-  int teleopOwnershipPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'techFoulCount')
+  int get techFoulCount;
 
-  int teleopPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'teleopOwnershipPoints')
+  int get teleopOwnershipPoints;
 
-  int teleopScaleBoostSec = null;
+  @nullable
+  @BuiltValueField(wireName: r'teleopPoints')
+  int get teleopPoints;
 
-  int teleopScaleForceSec = null;
+  @nullable
+  @BuiltValueField(wireName: r'teleopScaleBoostSec')
+  int get teleopScaleBoostSec;
 
-  int teleopScaleOwnershipSec = null;
+  @nullable
+  @BuiltValueField(wireName: r'teleopScaleForceSec')
+  int get teleopScaleForceSec;
 
-  int teleopSwitchBoostSec = null;
+  @nullable
+  @BuiltValueField(wireName: r'teleopScaleOwnershipSec')
+  int get teleopScaleOwnershipSec;
 
-  int teleopSwitchForceSec = null;
+  @nullable
+  @BuiltValueField(wireName: r'teleopSwitchBoostSec')
+  int get teleopSwitchBoostSec;
 
-  int teleopSwitchOwnershipSec = null;
+  @nullable
+  @BuiltValueField(wireName: r'teleopSwitchForceSec')
+  int get teleopSwitchForceSec;
 
-  int totalPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'teleopSwitchOwnershipSec')
+  int get teleopSwitchOwnershipSec;
 
-  int vaultBoostPlayed = null;
+  @nullable
+  @BuiltValueField(wireName: r'totalPoints')
+  int get totalPoints;
 
-  int vaultBoostTotal = null;
+  @nullable
+  @BuiltValueField(wireName: r'vaultBoostPlayed')
+  int get vaultBoostPlayed;
 
-  int vaultForcePlayed = null;
+  @nullable
+  @BuiltValueField(wireName: r'vaultBoostTotal')
+  int get vaultBoostTotal;
 
-  int vaultForceTotal = null;
+  @nullable
+  @BuiltValueField(wireName: r'vaultForcePlayed')
+  int get vaultForcePlayed;
 
-  int vaultLevitatePlayed = null;
+  @nullable
+  @BuiltValueField(wireName: r'vaultForceTotal')
+  int get vaultForceTotal;
 
-  int vaultLevitateTotal = null;
+  @nullable
+  @BuiltValueField(wireName: r'vaultLevitatePlayed')
+  int get vaultLevitatePlayed;
 
-  int vaultPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'vaultLevitateTotal')
+  int get vaultLevitateTotal;
+
+  @nullable
+  @BuiltValueField(wireName: r'vaultPoints')
+  int get vaultPoints;
   /* Unofficial TBA-computed value of the FMS provided GameData given to the alliance teams at the start of the match. 3 Character String containing `L` and `R` only. The first character represents the near switch, the 2nd the scale, and the 3rd the far, opposing, switch from the alliance's perspective. An `L` in a position indicates the platform on the left will be lit for the alliance while an `R` will indicate the right platform will be lit for the alliance. See also [WPI Screen Steps](https://wpilib.screenstepslive.com/s/currentCS/m/getting_started/l/826278-2018-game-data-details). */
-  String tbaGameData = null;
-  MatchScoreBreakdown2018Alliance();
+  @nullable
+  @BuiltValueField(wireName: r'tba_gameData')
+  String get tbaGameData;
 
-  @override
-  String toString() {
-    return 'MatchScoreBreakdown2018Alliance[adjustPoints=$adjustPoints, autoOwnershipPoints=$autoOwnershipPoints, autoPoints=$autoPoints, autoQuestRankingPoint=$autoQuestRankingPoint, autoRobot1=$autoRobot1, autoRobot2=$autoRobot2, autoRobot3=$autoRobot3, autoRunPoints=$autoRunPoints, autoScaleOwnershipSec=$autoScaleOwnershipSec, autoSwitchAtZero=$autoSwitchAtZero, autoSwitchOwnershipSec=$autoSwitchOwnershipSec, endgamePoints=$endgamePoints, endgameRobot1=$endgameRobot1, endgameRobot2=$endgameRobot2, endgameRobot3=$endgameRobot3, faceTheBossRankingPoint=$faceTheBossRankingPoint, foulCount=$foulCount, foulPoints=$foulPoints, rp=$rp, techFoulCount=$techFoulCount, teleopOwnershipPoints=$teleopOwnershipPoints, teleopPoints=$teleopPoints, teleopScaleBoostSec=$teleopScaleBoostSec, teleopScaleForceSec=$teleopScaleForceSec, teleopScaleOwnershipSec=$teleopScaleOwnershipSec, teleopSwitchBoostSec=$teleopSwitchBoostSec, teleopSwitchForceSec=$teleopSwitchForceSec, teleopSwitchOwnershipSec=$teleopSwitchOwnershipSec, totalPoints=$totalPoints, vaultBoostPlayed=$vaultBoostPlayed, vaultBoostTotal=$vaultBoostTotal, vaultForcePlayed=$vaultForcePlayed, vaultForceTotal=$vaultForceTotal, vaultLevitatePlayed=$vaultLevitatePlayed, vaultLevitateTotal=$vaultLevitateTotal, vaultPoints=$vaultPoints, tbaGameData=$tbaGameData, ]';
-  }
+  // Boilerplate code needed to wire-up generated code
+  MatchScoreBreakdown2018Alliance._();
 
-  MatchScoreBreakdown2018Alliance.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
-    adjustPoints = json['adjustPoints'];
-    autoOwnershipPoints = json['autoOwnershipPoints'];
-    autoPoints = json['autoPoints'];
-    autoQuestRankingPoint = json['autoQuestRankingPoint'];
-    autoRobot1 = json['autoRobot1'];
-    autoRobot2 = json['autoRobot2'];
-    autoRobot3 = json['autoRobot3'];
-    autoRunPoints = json['autoRunPoints'];
-    autoScaleOwnershipSec = json['autoScaleOwnershipSec'];
-    autoSwitchAtZero = json['autoSwitchAtZero'];
-    autoSwitchOwnershipSec = json['autoSwitchOwnershipSec'];
-    endgamePoints = json['endgamePoints'];
-    endgameRobot1 = json['endgameRobot1'];
-    endgameRobot2 = json['endgameRobot2'];
-    endgameRobot3 = json['endgameRobot3'];
-    faceTheBossRankingPoint = json['faceTheBossRankingPoint'];
-    foulCount = json['foulCount'];
-    foulPoints = json['foulPoints'];
-    rp = json['rp'];
-    techFoulCount = json['techFoulCount'];
-    teleopOwnershipPoints = json['teleopOwnershipPoints'];
-    teleopPoints = json['teleopPoints'];
-    teleopScaleBoostSec = json['teleopScaleBoostSec'];
-    teleopScaleForceSec = json['teleopScaleForceSec'];
-    teleopScaleOwnershipSec = json['teleopScaleOwnershipSec'];
-    teleopSwitchBoostSec = json['teleopSwitchBoostSec'];
-    teleopSwitchForceSec = json['teleopSwitchForceSec'];
-    teleopSwitchOwnershipSec = json['teleopSwitchOwnershipSec'];
-    totalPoints = json['totalPoints'];
-    vaultBoostPlayed = json['vaultBoostPlayed'];
-    vaultBoostTotal = json['vaultBoostTotal'];
-    vaultForcePlayed = json['vaultForcePlayed'];
-    vaultForceTotal = json['vaultForceTotal'];
-    vaultLevitatePlayed = json['vaultLevitatePlayed'];
-    vaultLevitateTotal = json['vaultLevitateTotal'];
-    vaultPoints = json['vaultPoints'];
-    tbaGameData = json['tba_gameData'];
-  }
-
-  Map<String, dynamic> toJson() {
-    Map<String, dynamic> json = {};
-    if (adjustPoints != null) json['adjustPoints'] = adjustPoints;
-    if (autoOwnershipPoints != null)
-      json['autoOwnershipPoints'] = autoOwnershipPoints;
-    if (autoPoints != null) json['autoPoints'] = autoPoints;
-    if (autoQuestRankingPoint != null)
-      json['autoQuestRankingPoint'] = autoQuestRankingPoint;
-    if (autoRobot1 != null) json['autoRobot1'] = autoRobot1;
-    if (autoRobot2 != null) json['autoRobot2'] = autoRobot2;
-    if (autoRobot3 != null) json['autoRobot3'] = autoRobot3;
-    if (autoRunPoints != null) json['autoRunPoints'] = autoRunPoints;
-    if (autoScaleOwnershipSec != null)
-      json['autoScaleOwnershipSec'] = autoScaleOwnershipSec;
-    if (autoSwitchAtZero != null) json['autoSwitchAtZero'] = autoSwitchAtZero;
-    if (autoSwitchOwnershipSec != null)
-      json['autoSwitchOwnershipSec'] = autoSwitchOwnershipSec;
-    if (endgamePoints != null) json['endgamePoints'] = endgamePoints;
-    if (endgameRobot1 != null) json['endgameRobot1'] = endgameRobot1;
-    if (endgameRobot2 != null) json['endgameRobot2'] = endgameRobot2;
-    if (endgameRobot3 != null) json['endgameRobot3'] = endgameRobot3;
-    if (faceTheBossRankingPoint != null)
-      json['faceTheBossRankingPoint'] = faceTheBossRankingPoint;
-    if (foulCount != null) json['foulCount'] = foulCount;
-    if (foulPoints != null) json['foulPoints'] = foulPoints;
-    if (rp != null) json['rp'] = rp;
-    if (techFoulCount != null) json['techFoulCount'] = techFoulCount;
-    if (teleopOwnershipPoints != null)
-      json['teleopOwnershipPoints'] = teleopOwnershipPoints;
-    if (teleopPoints != null) json['teleopPoints'] = teleopPoints;
-    if (teleopScaleBoostSec != null)
-      json['teleopScaleBoostSec'] = teleopScaleBoostSec;
-    if (teleopScaleForceSec != null)
-      json['teleopScaleForceSec'] = teleopScaleForceSec;
-    if (teleopScaleOwnershipSec != null)
-      json['teleopScaleOwnershipSec'] = teleopScaleOwnershipSec;
-    if (teleopSwitchBoostSec != null)
-      json['teleopSwitchBoostSec'] = teleopSwitchBoostSec;
-    if (teleopSwitchForceSec != null)
-      json['teleopSwitchForceSec'] = teleopSwitchForceSec;
-    if (teleopSwitchOwnershipSec != null)
-      json['teleopSwitchOwnershipSec'] = teleopSwitchOwnershipSec;
-    if (totalPoints != null) json['totalPoints'] = totalPoints;
-    if (vaultBoostPlayed != null) json['vaultBoostPlayed'] = vaultBoostPlayed;
-    if (vaultBoostTotal != null) json['vaultBoostTotal'] = vaultBoostTotal;
-    if (vaultForcePlayed != null) json['vaultForcePlayed'] = vaultForcePlayed;
-    if (vaultForceTotal != null) json['vaultForceTotal'] = vaultForceTotal;
-    if (vaultLevitatePlayed != null)
-      json['vaultLevitatePlayed'] = vaultLevitatePlayed;
-    if (vaultLevitateTotal != null)
-      json['vaultLevitateTotal'] = vaultLevitateTotal;
-    if (vaultPoints != null) json['vaultPoints'] = vaultPoints;
-    if (tbaGameData != null) json['tba_gameData'] = tbaGameData;
-    return json;
-  }
-
-  static List<MatchScoreBreakdown2018Alliance> listFromJson(
-      List<dynamic> json) {
-    return json == null
-        ? List<MatchScoreBreakdown2018Alliance>()
-        : json
-            .map((value) => MatchScoreBreakdown2018Alliance.fromJson(value))
-            .toList();
-  }
-
-  static Map<String, MatchScoreBreakdown2018Alliance> mapFromJson(
-      Map<String, dynamic> json) {
-    var map = Map<String, MatchScoreBreakdown2018Alliance>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = MatchScoreBreakdown2018Alliance.fromJson(value));
-    }
-    return map;
-  }
-
-  // maps a json object with a list of MatchScoreBreakdown2018Alliance-objects as value to a dart map
-  static Map<String, List<MatchScoreBreakdown2018Alliance>> mapListFromJson(
-      Map<String, dynamic> json) {
-    var map = Map<String, List<MatchScoreBreakdown2018Alliance>>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) {
-        map[key] = MatchScoreBreakdown2018Alliance.listFromJson(value);
-      });
-    }
-    return map;
-  }
+  factory MatchScoreBreakdown2018Alliance(
+          [updates(MatchScoreBreakdown2018AllianceBuilder b)]) =
+      _$MatchScoreBreakdown2018Alliance;
+  static Serializer<MatchScoreBreakdown2018Alliance> get serializer =>
+      _$matchScoreBreakdown2018AllianceSerializer;
 }

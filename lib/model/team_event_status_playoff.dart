@@ -1,73 +1,96 @@
-part of tba_api_client.api;
+import 'package:built_collection/built_collection.dart';
+import 'package:tba_api_client/model/wlt_record.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
-class TeamEventStatusPlayoff {
+part 'team_event_status_playoff.g.dart';
+
+abstract class TeamEventStatusPlayoff
+    implements Built<TeamEventStatusPlayoff, TeamEventStatusPlayoffBuilder> {
   /* The highest playoff level the team reached. */
-  String level = null;
-  //enum levelEnum {  qm,  ef,  qf,  sf,  f,  };{
+  @nullable
+  @BuiltValueField(wireName: r'level')
+  TeamEventStatusPlayoffLevel get level;
+  //enum levelEnum {  qm,  ef,  qf,  sf,  f,  };
 
-  WLTRecord currentLevelRecord = null;
+  @nullable
+  @BuiltValueField(wireName: r'current_level_record')
+  WLTRecord get currentLevelRecord;
 
-  WLTRecord record = null;
+  @nullable
+  @BuiltValueField(wireName: r'record')
+  WLTRecord get record;
   /* Current competition status for the playoffs. */
-  String status = null;
-  //enum statusEnum {  won,  eliminated,  playing,  };{
+  @nullable
+  @BuiltValueField(wireName: r'status')
+  TeamEventStatusPlayoffStatus get status;
+  //enum statusEnum {  won,  eliminated,  playing,  };
   /* The average match score during playoffs. Year specific. May be null if not relevant for a given year. */
-  int playoffAverage = null;
-  TeamEventStatusPlayoff();
+  @nullable
+  @BuiltValueField(wireName: r'playoff_average')
+  int get playoffAverage;
 
-  @override
-  String toString() {
-    return 'TeamEventStatusPlayoff[level=$level, currentLevelRecord=$currentLevelRecord, record=$record, status=$status, playoffAverage=$playoffAverage, ]';
-  }
+  // Boilerplate code needed to wire-up generated code
+  TeamEventStatusPlayoff._();
 
-  TeamEventStatusPlayoff.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
-    level = json['level'];
-    currentLevelRecord = (json['current_level_record'] == null)
-        ? null
-        : WLTRecord.fromJson(json['current_level_record']);
-    record =
-        (json['record'] == null) ? null : WLTRecord.fromJson(json['record']);
-    status = json['status'];
-    playoffAverage = json['playoff_average'];
-  }
+  factory TeamEventStatusPlayoff([updates(TeamEventStatusPlayoffBuilder b)]) =
+      _$TeamEventStatusPlayoff;
+  static Serializer<TeamEventStatusPlayoff> get serializer =>
+      _$teamEventStatusPlayoffSerializer;
+}
 
-  Map<String, dynamic> toJson() {
-    Map<String, dynamic> json = {};
-    if (level != null) json['level'] = level;
-    if (currentLevelRecord != null)
-      json['current_level_record'] = currentLevelRecord;
-    if (record != null) json['record'] = record;
-    if (status != null) json['status'] = status;
-    if (playoffAverage != null) json['playoff_average'] = playoffAverage;
-    return json;
-  }
+class TeamEventStatusPlayoffLevel extends EnumClass {
+  /// The highest playoff level the team reached.
+  @BuiltValueEnumConst(wireName: "qm")
+  static const TeamEventStatusPlayoffLevel qm = _$qm;
 
-  static List<TeamEventStatusPlayoff> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<TeamEventStatusPlayoff>()
-        : json.map((value) => TeamEventStatusPlayoff.fromJson(value)).toList();
-  }
+  /// The highest playoff level the team reached.
+  @BuiltValueEnumConst(wireName: "ef")
+  static const TeamEventStatusPlayoffLevel ef = _$ef;
 
-  static Map<String, TeamEventStatusPlayoff> mapFromJson(
-      Map<String, dynamic> json) {
-    var map = Map<String, TeamEventStatusPlayoff>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = TeamEventStatusPlayoff.fromJson(value));
-    }
-    return map;
-  }
+  /// The highest playoff level the team reached.
+  @BuiltValueEnumConst(wireName: "qf")
+  static const TeamEventStatusPlayoffLevel qf = _$qf;
 
-  // maps a json object with a list of TeamEventStatusPlayoff-objects as value to a dart map
-  static Map<String, List<TeamEventStatusPlayoff>> mapListFromJson(
-      Map<String, dynamic> json) {
-    var map = Map<String, List<TeamEventStatusPlayoff>>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) {
-        map[key] = TeamEventStatusPlayoff.listFromJson(value);
-      });
-    }
-    return map;
-  }
+  /// The highest playoff level the team reached.
+  @BuiltValueEnumConst(wireName: "sf")
+  static const TeamEventStatusPlayoffLevel sf = _$sf;
+
+  /// The highest playoff level the team reached.
+  @BuiltValueEnumConst(wireName: "f")
+  static const TeamEventStatusPlayoffLevel f = _$f;
+
+  static Serializer<TeamEventStatusPlayoffLevel> get serializer =>
+      _$teamEventStatusPlayoffLevelSerializer;
+
+  const TeamEventStatusPlayoffLevel._(String name) : super(name);
+
+  static BuiltSet<TeamEventStatusPlayoffLevel> get values =>
+      _$teamEventStatusPlayoffLevelValues;
+  static TeamEventStatusPlayoffLevel valueOf(String name) =>
+      _$teamEventStatusPlayoffLevelValueOf(name);
+}
+
+class TeamEventStatusPlayoffStatus extends EnumClass {
+  /// Current competition status for the playoffs.
+  @BuiltValueEnumConst(wireName: "won")
+  static const TeamEventStatusPlayoffStatus won = _$won;
+
+  /// Current competition status for the playoffs.
+  @BuiltValueEnumConst(wireName: "eliminated")
+  static const TeamEventStatusPlayoffStatus eliminated = _$eliminated;
+
+  /// Current competition status for the playoffs.
+  @BuiltValueEnumConst(wireName: "playing")
+  static const TeamEventStatusPlayoffStatus playing = _$playing;
+
+  static Serializer<TeamEventStatusPlayoffStatus> get serializer =>
+      _$teamEventStatusPlayoffStatusSerializer;
+
+  const TeamEventStatusPlayoffStatus._(String name) : super(name);
+
+  static BuiltSet<TeamEventStatusPlayoffStatus> get values =>
+      _$teamEventStatusPlayoffStatusValues;
+  static TeamEventStatusPlayoffStatus valueOf(String name) =>
+      _$teamEventStatusPlayoffStatusValueOf(name);
 }

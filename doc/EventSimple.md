@@ -1,4 +1,4 @@
-# tba_api_client.model.EventSimple
+# openapi.model.EventSimple
 
 ## Load the model package
 

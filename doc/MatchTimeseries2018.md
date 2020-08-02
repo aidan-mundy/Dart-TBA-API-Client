@@ -1,4 +1,4 @@
-# tba_api_client.model.MatchTimeseries2018
+# openapi.model.MatchTimeseries2018
 
 ## Load the model package
 

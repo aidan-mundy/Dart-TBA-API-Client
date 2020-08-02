@@ -1,189 +1,211 @@
-part of tba_api_client.api;
+import 'package:built_collection/built_collection.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
-class MatchScoreBreakdown2017Alliance {
-  int autoPoints = null;
+part 'match_score_breakdown2017_alliance.g.dart';
 
-  int teleopPoints = null;
+abstract class MatchScoreBreakdown2017Alliance
+    implements
+        Built<MatchScoreBreakdown2017Alliance,
+            MatchScoreBreakdown2017AllianceBuilder> {
+  @nullable
+  @BuiltValueField(wireName: r'autoPoints')
+  int get autoPoints;
 
-  int foulPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'teleopPoints')
+  int get teleopPoints;
 
-  int adjustPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'foulPoints')
+  int get foulPoints;
 
-  int totalPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'adjustPoints')
+  int get adjustPoints;
 
-  String robot1Auto = null;
-  //enum robot1AutoEnum {  Unknown,  Mobility,  None,  };{
+  @nullable
+  @BuiltValueField(wireName: r'totalPoints')
+  int get totalPoints;
 
-  String robot2Auto = null;
-  //enum robot2AutoEnum {  Unknown,  Mobility,  None,  };{
+  @nullable
+  @BuiltValueField(wireName: r'robot1Auto')
+  MatchScoreBreakdown2017AllianceRobot1Auto get robot1Auto;
+  //enum robot1AutoEnum {  Unknown,  Mobility,  None,  };
 
-  String robot3Auto = null;
-  //enum robot3AutoEnum {  Unknown,  Mobility,  None,  };{
+  @nullable
+  @BuiltValueField(wireName: r'robot2Auto')
+  MatchScoreBreakdown2017AllianceRobot2Auto get robot2Auto;
+  //enum robot2AutoEnum {  Unknown,  Mobility,  None,  };
 
-  bool rotor1Auto = null;
+  @nullable
+  @BuiltValueField(wireName: r'robot3Auto')
+  MatchScoreBreakdown2017AllianceRobot3Auto get robot3Auto;
+  //enum robot3AutoEnum {  Unknown,  Mobility,  None,  };
 
-  bool rotor2Auto = null;
+  @nullable
+  @BuiltValueField(wireName: r'rotor1Auto')
+  bool get rotor1Auto;
 
-  int autoFuelLow = null;
+  @nullable
+  @BuiltValueField(wireName: r'rotor2Auto')
+  bool get rotor2Auto;
 
-  int autoFuelHigh = null;
+  @nullable
+  @BuiltValueField(wireName: r'autoFuelLow')
+  int get autoFuelLow;
 
-  int autoMobilityPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'autoFuelHigh')
+  int get autoFuelHigh;
 
-  int autoRotorPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'autoMobilityPoints')
+  int get autoMobilityPoints;
 
-  int autoFuelPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'autoRotorPoints')
+  int get autoRotorPoints;
 
-  int teleopFuelPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'autoFuelPoints')
+  int get autoFuelPoints;
 
-  int teleopFuelLow = null;
+  @nullable
+  @BuiltValueField(wireName: r'teleopFuelPoints')
+  int get teleopFuelPoints;
 
-  int teleopFuelHigh = null;
+  @nullable
+  @BuiltValueField(wireName: r'teleopFuelLow')
+  int get teleopFuelLow;
 
-  int teleopRotorPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'teleopFuelHigh')
+  int get teleopFuelHigh;
 
-  bool kPaRankingPointAchieved = null;
+  @nullable
+  @BuiltValueField(wireName: r'teleopRotorPoints')
+  int get teleopRotorPoints;
 
-  int teleopTakeoffPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'kPaRankingPointAchieved')
+  bool get kPaRankingPointAchieved;
 
-  int kPaBonusPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'teleopTakeoffPoints')
+  int get teleopTakeoffPoints;
 
-  int rotorBonusPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'kPaBonusPoints')
+  int get kPaBonusPoints;
 
-  bool rotor1Engaged = null;
+  @nullable
+  @BuiltValueField(wireName: r'rotorBonusPoints')
+  int get rotorBonusPoints;
 
-  bool rotor2Engaged = null;
+  @nullable
+  @BuiltValueField(wireName: r'rotor1Engaged')
+  bool get rotor1Engaged;
 
-  bool rotor3Engaged = null;
+  @nullable
+  @BuiltValueField(wireName: r'rotor2Engaged')
+  bool get rotor2Engaged;
 
-  bool rotor4Engaged = null;
+  @nullable
+  @BuiltValueField(wireName: r'rotor3Engaged')
+  bool get rotor3Engaged;
 
-  bool rotorRankingPointAchieved = null;
+  @nullable
+  @BuiltValueField(wireName: r'rotor4Engaged')
+  bool get rotor4Engaged;
 
-  int techFoulCount = null;
+  @nullable
+  @BuiltValueField(wireName: r'rotorRankingPointAchieved')
+  bool get rotorRankingPointAchieved;
 
-  int foulCount = null;
+  @nullable
+  @BuiltValueField(wireName: r'techFoulCount')
+  int get techFoulCount;
 
-  String touchpadNear = null;
+  @nullable
+  @BuiltValueField(wireName: r'foulCount')
+  int get foulCount;
 
-  String touchpadMiddle = null;
+  @nullable
+  @BuiltValueField(wireName: r'touchpadNear')
+  String get touchpadNear;
 
-  String touchpadFar = null;
-  MatchScoreBreakdown2017Alliance();
+  @nullable
+  @BuiltValueField(wireName: r'touchpadMiddle')
+  String get touchpadMiddle;
 
-  @override
-  String toString() {
-    return 'MatchScoreBreakdown2017Alliance[autoPoints=$autoPoints, teleopPoints=$teleopPoints, foulPoints=$foulPoints, adjustPoints=$adjustPoints, totalPoints=$totalPoints, robot1Auto=$robot1Auto, robot2Auto=$robot2Auto, robot3Auto=$robot3Auto, rotor1Auto=$rotor1Auto, rotor2Auto=$rotor2Auto, autoFuelLow=$autoFuelLow, autoFuelHigh=$autoFuelHigh, autoMobilityPoints=$autoMobilityPoints, autoRotorPoints=$autoRotorPoints, autoFuelPoints=$autoFuelPoints, teleopFuelPoints=$teleopFuelPoints, teleopFuelLow=$teleopFuelLow, teleopFuelHigh=$teleopFuelHigh, teleopRotorPoints=$teleopRotorPoints, kPaRankingPointAchieved=$kPaRankingPointAchieved, teleopTakeoffPoints=$teleopTakeoffPoints, kPaBonusPoints=$kPaBonusPoints, rotorBonusPoints=$rotorBonusPoints, rotor1Engaged=$rotor1Engaged, rotor2Engaged=$rotor2Engaged, rotor3Engaged=$rotor3Engaged, rotor4Engaged=$rotor4Engaged, rotorRankingPointAchieved=$rotorRankingPointAchieved, techFoulCount=$techFoulCount, foulCount=$foulCount, touchpadNear=$touchpadNear, touchpadMiddle=$touchpadMiddle, touchpadFar=$touchpadFar, ]';
-  }
+  @nullable
+  @BuiltValueField(wireName: r'touchpadFar')
+  String get touchpadFar;
 
-  MatchScoreBreakdown2017Alliance.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
-    autoPoints = json['autoPoints'];
-    teleopPoints = json['teleopPoints'];
-    foulPoints = json['foulPoints'];
-    adjustPoints = json['adjustPoints'];
-    totalPoints = json['totalPoints'];
-    robot1Auto = json['robot1Auto'];
-    robot2Auto = json['robot2Auto'];
-    robot3Auto = json['robot3Auto'];
-    rotor1Auto = json['rotor1Auto'];
-    rotor2Auto = json['rotor2Auto'];
-    autoFuelLow = json['autoFuelLow'];
-    autoFuelHigh = json['autoFuelHigh'];
-    autoMobilityPoints = json['autoMobilityPoints'];
-    autoRotorPoints = json['autoRotorPoints'];
-    autoFuelPoints = json['autoFuelPoints'];
-    teleopFuelPoints = json['teleopFuelPoints'];
-    teleopFuelLow = json['teleopFuelLow'];
-    teleopFuelHigh = json['teleopFuelHigh'];
-    teleopRotorPoints = json['teleopRotorPoints'];
-    kPaRankingPointAchieved = json['kPaRankingPointAchieved'];
-    teleopTakeoffPoints = json['teleopTakeoffPoints'];
-    kPaBonusPoints = json['kPaBonusPoints'];
-    rotorBonusPoints = json['rotorBonusPoints'];
-    rotor1Engaged = json['rotor1Engaged'];
-    rotor2Engaged = json['rotor2Engaged'];
-    rotor3Engaged = json['rotor3Engaged'];
-    rotor4Engaged = json['rotor4Engaged'];
-    rotorRankingPointAchieved = json['rotorRankingPointAchieved'];
-    techFoulCount = json['techFoulCount'];
-    foulCount = json['foulCount'];
-    touchpadNear = json['touchpadNear'];
-    touchpadMiddle = json['touchpadMiddle'];
-    touchpadFar = json['touchpadFar'];
-  }
+  // Boilerplate code needed to wire-up generated code
+  MatchScoreBreakdown2017Alliance._();
 
-  Map<String, dynamic> toJson() {
-    Map<String, dynamic> json = {};
-    if (autoPoints != null) json['autoPoints'] = autoPoints;
-    if (teleopPoints != null) json['teleopPoints'] = teleopPoints;
-    if (foulPoints != null) json['foulPoints'] = foulPoints;
-    if (adjustPoints != null) json['adjustPoints'] = adjustPoints;
-    if (totalPoints != null) json['totalPoints'] = totalPoints;
-    if (robot1Auto != null) json['robot1Auto'] = robot1Auto;
-    if (robot2Auto != null) json['robot2Auto'] = robot2Auto;
-    if (robot3Auto != null) json['robot3Auto'] = robot3Auto;
-    if (rotor1Auto != null) json['rotor1Auto'] = rotor1Auto;
-    if (rotor2Auto != null) json['rotor2Auto'] = rotor2Auto;
-    if (autoFuelLow != null) json['autoFuelLow'] = autoFuelLow;
-    if (autoFuelHigh != null) json['autoFuelHigh'] = autoFuelHigh;
-    if (autoMobilityPoints != null)
-      json['autoMobilityPoints'] = autoMobilityPoints;
-    if (autoRotorPoints != null) json['autoRotorPoints'] = autoRotorPoints;
-    if (autoFuelPoints != null) json['autoFuelPoints'] = autoFuelPoints;
-    if (teleopFuelPoints != null) json['teleopFuelPoints'] = teleopFuelPoints;
-    if (teleopFuelLow != null) json['teleopFuelLow'] = teleopFuelLow;
-    if (teleopFuelHigh != null) json['teleopFuelHigh'] = teleopFuelHigh;
-    if (teleopRotorPoints != null)
-      json['teleopRotorPoints'] = teleopRotorPoints;
-    if (kPaRankingPointAchieved != null)
-      json['kPaRankingPointAchieved'] = kPaRankingPointAchieved;
-    if (teleopTakeoffPoints != null)
-      json['teleopTakeoffPoints'] = teleopTakeoffPoints;
-    if (kPaBonusPoints != null) json['kPaBonusPoints'] = kPaBonusPoints;
-    if (rotorBonusPoints != null) json['rotorBonusPoints'] = rotorBonusPoints;
-    if (rotor1Engaged != null) json['rotor1Engaged'] = rotor1Engaged;
-    if (rotor2Engaged != null) json['rotor2Engaged'] = rotor2Engaged;
-    if (rotor3Engaged != null) json['rotor3Engaged'] = rotor3Engaged;
-    if (rotor4Engaged != null) json['rotor4Engaged'] = rotor4Engaged;
-    if (rotorRankingPointAchieved != null)
-      json['rotorRankingPointAchieved'] = rotorRankingPointAchieved;
-    if (techFoulCount != null) json['techFoulCount'] = techFoulCount;
-    if (foulCount != null) json['foulCount'] = foulCount;
-    if (touchpadNear != null) json['touchpadNear'] = touchpadNear;
-    if (touchpadMiddle != null) json['touchpadMiddle'] = touchpadMiddle;
-    if (touchpadFar != null) json['touchpadFar'] = touchpadFar;
-    return json;
-  }
+  factory MatchScoreBreakdown2017Alliance(
+          [updates(MatchScoreBreakdown2017AllianceBuilder b)]) =
+      _$MatchScoreBreakdown2017Alliance;
+  static Serializer<MatchScoreBreakdown2017Alliance> get serializer =>
+      _$matchScoreBreakdown2017AllianceSerializer;
+}
 
-  static List<MatchScoreBreakdown2017Alliance> listFromJson(
-      List<dynamic> json) {
-    return json == null
-        ? List<MatchScoreBreakdown2017Alliance>()
-        : json
-            .map((value) => MatchScoreBreakdown2017Alliance.fromJson(value))
-            .toList();
-  }
+class MatchScoreBreakdown2017AllianceRobot1Auto extends EnumClass {
+  @BuiltValueEnumConst(wireName: "Unknown")
+  static const MatchScoreBreakdown2017AllianceRobot1Auto unknown = _$1unknown;
+  @BuiltValueEnumConst(wireName: "Mobility")
+  static const MatchScoreBreakdown2017AllianceRobot1Auto mobility = _$1mobility;
+  @BuiltValueEnumConst(wireName: "None")
+  static const MatchScoreBreakdown2017AllianceRobot1Auto none = _$1none;
 
-  static Map<String, MatchScoreBreakdown2017Alliance> mapFromJson(
-      Map<String, dynamic> json) {
-    var map = Map<String, MatchScoreBreakdown2017Alliance>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = MatchScoreBreakdown2017Alliance.fromJson(value));
-    }
-    return map;
-  }
+  static Serializer<MatchScoreBreakdown2017AllianceRobot1Auto> get serializer =>
+      _$matchScoreBreakdown2017AllianceRobot1AutoSerializer;
 
-  // maps a json object with a list of MatchScoreBreakdown2017Alliance-objects as value to a dart map
-  static Map<String, List<MatchScoreBreakdown2017Alliance>> mapListFromJson(
-      Map<String, dynamic> json) {
-    var map = Map<String, List<MatchScoreBreakdown2017Alliance>>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) {
-        map[key] = MatchScoreBreakdown2017Alliance.listFromJson(value);
-      });
-    }
-    return map;
-  }
+  const MatchScoreBreakdown2017AllianceRobot1Auto._(String name) : super(name);
+
+  static BuiltSet<MatchScoreBreakdown2017AllianceRobot1Auto> get values =>
+      _$matchScoreBreakdown2017AllianceRobot1AutoValues;
+  static MatchScoreBreakdown2017AllianceRobot1Auto valueOf(String name) =>
+      _$matchScoreBreakdown2017AllianceRobot1AutoValueOf(name);
+}
+
+class MatchScoreBreakdown2017AllianceRobot2Auto extends EnumClass {
+  @BuiltValueEnumConst(wireName: "Unknown")
+  static const MatchScoreBreakdown2017AllianceRobot2Auto unknown = _$2unknown;
+  @BuiltValueEnumConst(wireName: "Mobility")
+  static const MatchScoreBreakdown2017AllianceRobot2Auto mobility = _$2mobility;
+  @BuiltValueEnumConst(wireName: "None")
+  static const MatchScoreBreakdown2017AllianceRobot2Auto none = _$2none;
+
+  static Serializer<MatchScoreBreakdown2017AllianceRobot2Auto> get serializer =>
+      _$matchScoreBreakdown2017AllianceRobot2AutoSerializer;
+
+  const MatchScoreBreakdown2017AllianceRobot2Auto._(String name) : super(name);
+
+  static BuiltSet<MatchScoreBreakdown2017AllianceRobot2Auto> get values =>
+      _$matchScoreBreakdown2017AllianceRobot2AutoValues;
+  static MatchScoreBreakdown2017AllianceRobot2Auto valueOf(String name) =>
+      _$matchScoreBreakdown2017AllianceRobot2AutoValueOf(name);
+}
+
+class MatchScoreBreakdown2017AllianceRobot3Auto extends EnumClass {
+  @BuiltValueEnumConst(wireName: "Unknown")
+  static const MatchScoreBreakdown2017AllianceRobot3Auto unknown = _$3unknown;
+  @BuiltValueEnumConst(wireName: "Mobility")
+  static const MatchScoreBreakdown2017AllianceRobot3Auto mobility = _$3mobility;
+  @BuiltValueEnumConst(wireName: "None")
+  static const MatchScoreBreakdown2017AllianceRobot3Auto none = _$3none;
+
+  static Serializer<MatchScoreBreakdown2017AllianceRobot3Auto> get serializer =>
+      _$matchScoreBreakdown2017AllianceRobot3AutoSerializer;
+
+  const MatchScoreBreakdown2017AllianceRobot3Auto._(String name) : super(name);
+
+  static BuiltSet<MatchScoreBreakdown2017AllianceRobot3Auto> get values =>
+      _$matchScoreBreakdown2017AllianceRobot3AutoValues;
+  static MatchScoreBreakdown2017AllianceRobot3Auto valueOf(String name) =>
+      _$matchScoreBreakdown2017AllianceRobot3AutoValueOf(name);
 }

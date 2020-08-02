@@ -1,4 +1,4 @@
-# tba_api_client.model.APIStatusAppVersion
+# openapi.model.APIStatusAppVersion
 
 ## Load the model package
 

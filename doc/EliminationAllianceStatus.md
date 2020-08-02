@@ -1,4 +1,4 @@
-# tba_api_client.model.EliminationAllianceStatus
+# openapi.model.EliminationAllianceStatus
 
 ## Load the model package
 

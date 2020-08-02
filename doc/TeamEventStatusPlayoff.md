@@ -1,4 +1,4 @@
-# tba_api_client.model.TeamEventStatusPlayoff
+# openapi.model.TeamEventStatusPlayoff
 
 ## Load the model package
 

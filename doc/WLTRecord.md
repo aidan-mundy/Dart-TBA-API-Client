@@ -1,4 +1,4 @@
-# tba_api_client.model.WLTRecord
+# openapi.model.WLTRecord
 
 ## Load the model package
 

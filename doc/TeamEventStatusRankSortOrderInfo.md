@@ -1,4 +1,4 @@
-# tba_api_client.model.TeamEventStatusRankSortOrderInfo
+# openapi.model.TeamEventStatusRankSortOrderInfo
 
 ## Load the model package
 

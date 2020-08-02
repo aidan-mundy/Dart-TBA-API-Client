@@ -1,74 +1,38 @@
-part of tba_api_client.api;
+import 'package:tba_api_client/model/wlt_record.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
-class EliminationAllianceStatus {
-  double playoffAverage = null;
+part 'elimination_alliance_status.g.dart';
 
-  String level = null;
+abstract class EliminationAllianceStatus
+    implements
+        Built<EliminationAllianceStatus, EliminationAllianceStatusBuilder> {
+  @nullable
+  @BuiltValueField(wireName: r'playoff_average')
+  double get playoffAverage;
 
-  WLTRecord record = null;
+  @nullable
+  @BuiltValueField(wireName: r'level')
+  String get level;
 
-  WLTRecord currentLevelRecord = null;
+  @nullable
+  @BuiltValueField(wireName: r'record')
+  WLTRecord get record;
 
-  String status = null;
-  EliminationAllianceStatus();
+  @nullable
+  @BuiltValueField(wireName: r'current_level_record')
+  WLTRecord get currentLevelRecord;
 
-  @override
-  String toString() {
-    return 'EliminationAllianceStatus[playoffAverage=$playoffAverage, level=$level, record=$record, currentLevelRecord=$currentLevelRecord, status=$status, ]';
-  }
+  @nullable
+  @BuiltValueField(wireName: r'status')
+  String get status;
 
-  EliminationAllianceStatus.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
-    playoffAverage = (json['playoff_average'] == null)
-        ? null
-        : json['playoff_average'].toDouble();
-    level = json['level'];
-    record =
-        (json['record'] == null) ? null : WLTRecord.fromJson(json['record']);
-    currentLevelRecord = (json['current_level_record'] == null)
-        ? null
-        : WLTRecord.fromJson(json['current_level_record']);
-    status = json['status'];
-  }
+  // Boilerplate code needed to wire-up generated code
+  EliminationAllianceStatus._();
 
-  Map<String, dynamic> toJson() {
-    Map<String, dynamic> json = {};
-    if (playoffAverage != null) json['playoff_average'] = playoffAverage;
-    if (level != null) json['level'] = level;
-    if (record != null) json['record'] = record;
-    if (currentLevelRecord != null)
-      json['current_level_record'] = currentLevelRecord;
-    if (status != null) json['status'] = status;
-    return json;
-  }
-
-  static List<EliminationAllianceStatus> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<EliminationAllianceStatus>()
-        : json
-            .map((value) => EliminationAllianceStatus.fromJson(value))
-            .toList();
-  }
-
-  static Map<String, EliminationAllianceStatus> mapFromJson(
-      Map<String, dynamic> json) {
-    var map = Map<String, EliminationAllianceStatus>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = EliminationAllianceStatus.fromJson(value));
-    }
-    return map;
-  }
-
-  // maps a json object with a list of EliminationAllianceStatus-objects as value to a dart map
-  static Map<String, List<EliminationAllianceStatus>> mapListFromJson(
-      Map<String, dynamic> json) {
-    var map = Map<String, List<EliminationAllianceStatus>>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) {
-        map[key] = EliminationAllianceStatus.listFromJson(value);
-      });
-    }
-    return map;
-  }
+  factory EliminationAllianceStatus(
+          [updates(EliminationAllianceStatusBuilder b)]) =
+      _$EliminationAllianceStatus;
+  static Serializer<EliminationAllianceStatus> get serializer =>
+      _$eliminationAllianceStatusSerializer;
 }

@@ -1,82 +1,115 @@
-library tba_api_client.api;
+import 'package:dio/dio.dart';
+import 'package:built_value/serializer.dart';
+import 'package:tba_api_client/serializers.dart';
+import 'package:tba_api_client/auth/api_key_auth.dart';
+import 'package:tba_api_client/auth/basic_auth.dart';
+import 'package:tba_api_client/auth/oauth.dart';
+import 'package:tba_api_client/api/district_api.dart';
+import 'package:tba_api_client/api/event_api.dart';
+import 'package:tba_api_client/api/list_api.dart';
+import 'package:tba_api_client/api/match_api.dart';
+import 'package:tba_api_client/api/tba_api.dart';
+import 'package:tba_api_client/api/team_api.dart';
 
-import 'dart:async';
-import 'dart:convert';
-import 'package:http/http.dart';
+final _defaultInterceptors = [
+  OAuthInterceptor(),
+  BasicAuthInterceptor(),
+  ApiKeyAuthInterceptor()
+];
 
-part 'api_client.dart';
-part 'api_helper.dart';
-part 'api_exception.dart';
-part 'auth/authentication.dart';
-part 'auth/api_key_auth.dart';
-part 'auth/oauth.dart';
-part 'auth/http_basic_auth.dart';
-part 'auth/http_bearer_auth.dart';
+class Openapi {
+  Dio dio;
+  Serializers serializers;
+  String basePath = "https://www.thebluealliance.com/api/v3";
 
-part 'api/district_api.dart';
-part 'api/event_api.dart';
-part 'api/list_api.dart';
-part 'api/match_api.dart';
-part 'api/tba_api.dart';
-part 'api/team_api.dart';
+  Openapi(
+      {this.dio,
+      Serializers serializers,
+      String basePathOverride,
+      List<Interceptor> interceptors}) {
+    if (dio == null) {
+      BaseOptions options = new BaseOptions(
+        baseUrl: basePathOverride ?? basePath,
+        connectTimeout: 5000,
+        receiveTimeout: 3000,
+      );
+      this.dio = new Dio(options);
+    }
 
-part 'model/api_status.dart';
-part 'model/api_status_app_version.dart';
-part 'model/tba_award.dart';
-part 'model/award_recipient.dart';
-part 'model/district_list.dart';
-part 'model/district_ranking.dart';
-part 'model/district_ranking_event_points.dart';
-part 'model/elimination_alliance.dart';
-part 'model/elimination_alliance_backup.dart';
-part 'model/elimination_alliance_status.dart';
-part 'model/tba_event.dart';
-part 'model/event_district_points.dart';
-part 'model/event_district_points_points.dart';
-part 'model/event_district_points_tiebreakers.dart';
-part 'model/event_insights.dart';
-part 'model/event_insights2016.dart';
-part 'model/event_insights2017.dart';
-part 'model/event_insights2018.dart';
-part 'model/event_op_rs.dart';
-part 'model/event_ranking.dart';
-part 'model/event_ranking_extra_stats_info.dart';
-part 'model/event_ranking_rankings.dart';
-part 'model/event_ranking_sort_order_info.dart';
-part 'model/event_simple.dart';
-part 'model/tba_match.dart';
-part 'model/match_alliance.dart';
-part 'model/match_score_breakdown2015.dart';
-part 'model/match_score_breakdown2015_alliance.dart';
-part 'model/match_score_breakdown2016.dart';
-part 'model/match_score_breakdown2016_alliance.dart';
-part 'model/match_score_breakdown2017.dart';
-part 'model/match_score_breakdown2017_alliance.dart';
-part 'model/match_score_breakdown2018.dart';
-part 'model/match_score_breakdown2018_alliance.dart';
-part 'model/match_score_breakdown2019.dart';
-part 'model/match_score_breakdown2019_alliance.dart';
-part 'model/match_score_breakdown2020.dart';
-part 'model/match_score_breakdown2020_alliance.dart';
-part 'model/match_simple.dart';
-part 'model/match_simple_alliances.dart';
-part 'model/match_timeseries2018.dart';
-part 'model/match_videos.dart';
-part 'model/tba_media.dart';
-part 'model/tba_team.dart';
-part 'model/team_event_status.dart';
-part 'model/team_event_status_alliance.dart';
-part 'model/team_event_status_alliance_backup.dart';
-part 'model/team_event_status_playoff.dart';
-part 'model/team_event_status_rank.dart';
-part 'model/team_event_status_rank_ranking.dart';
-part 'model/team_event_status_rank_sort_order_info.dart';
-part 'model/team_robot.dart';
-part 'model/team_simple.dart';
-part 'model/wlt_record.dart';
-part 'model/tba_webcast.dart';
-part 'model/zebra.dart';
-part 'model/zebra_alliances.dart';
-part 'model/zebra_team.dart';
+    if (interceptors == null) {
+      this.dio.interceptors.addAll(_defaultInterceptors);
+    } else {
+      this.dio.interceptors.addAll(interceptors);
+    }
 
-ApiClient defaultApiClient = ApiClient();
+    this.serializers = serializers ?? standardSerializers;
+  }
+
+  void setOAuthToken(String name, String token) {
+    (this.dio.interceptors.firstWhere((element) => element is OAuthInterceptor,
+            orElse: null) as OAuthInterceptor)
+        ?.tokens[name] = token;
+  }
+
+  void setBasicAuth(String name, String username, String password) {
+    (this.dio.interceptors.firstWhere(
+            (element) => element is BasicAuthInterceptor,
+            orElse: null) as BasicAuthInterceptor)
+        ?.authInfo[name] = BasicAuthInfo(username, password);
+  }
+
+  void setApiKey(String name, String apiKey) {
+    (this.dio.interceptors.firstWhere(
+            (element) => element is ApiKeyAuthInterceptor,
+            orElse: null) as ApiKeyAuthInterceptor)
+        ?.apiKeys[name] = apiKey;
+  }
+
+  /**
+    * Get DistrictApi instance, base route and serializer can be overridden by a given but be careful,
+    * by doing that all interceptors will not be executed
+    */
+  DistrictApi getDistrictApi() {
+    return DistrictApi(dio, serializers);
+  }
+
+  /**
+    * Get EventApi instance, base route and serializer can be overridden by a given but be careful,
+    * by doing that all interceptors will not be executed
+    */
+  EventApi getEventApi() {
+    return EventApi(dio, serializers);
+  }
+
+  /**
+    * Get ListApi instance, base route and serializer can be overridden by a given but be careful,
+    * by doing that all interceptors will not be executed
+    */
+  ListApi getListApi() {
+    return ListApi(dio, serializers);
+  }
+
+  /**
+    * Get MatchApi instance, base route and serializer can be overridden by a given but be careful,
+    * by doing that all interceptors will not be executed
+    */
+  MatchApi getMatchApi() {
+    return MatchApi(dio, serializers);
+  }
+
+  /**
+    * Get TBAApi instance, base route and serializer can be overridden by a given but be careful,
+    * by doing that all interceptors will not be executed
+    */
+  TBAApi getTBAApi() {
+    return TBAApi(dio, serializers);
+  }
+
+  /**
+    * Get TeamApi instance, base route and serializer can be overridden by a given but be careful,
+    * by doing that all interceptors will not be executed
+    */
+  TeamApi getTeamApi() {
+    return TeamApi(dio, serializers);
+  }
+}

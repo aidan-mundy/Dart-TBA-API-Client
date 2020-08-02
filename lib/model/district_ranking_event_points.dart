@@ -1,77 +1,46 @@
-part of tba_api_client.api;
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
-class DistrictRankingEventPoints {
+part 'district_ranking_event_points.g.dart';
+
+abstract class DistrictRankingEventPoints
+    implements
+        Built<DistrictRankingEventPoints, DistrictRankingEventPointsBuilder> {
   /* `true` if this event is a District Championship event. */
-  bool districtCmp = null;
+  @nullable
+  @BuiltValueField(wireName: r'district_cmp')
+  bool get districtCmp;
   /* Total points awarded at this event. */
-  int total = null;
+  @nullable
+  @BuiltValueField(wireName: r'total')
+  int get total;
   /* Points awarded for alliance selection. */
-  int alliancePoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'alliance_points')
+  int get alliancePoints;
   /* Points awarded for elimination match performance. */
-  int elimPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'elim_points')
+  int get elimPoints;
   /* Points awarded for event awards. */
-  int awardPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'award_points')
+  int get awardPoints;
   /* TBA Event key for this event. */
-  String eventKey = null;
+  @nullable
+  @BuiltValueField(wireName: r'event_key')
+  String get eventKey;
   /* Points awarded for qualification match performance. */
-  int qualPoints = null;
-  DistrictRankingEventPoints();
+  @nullable
+  @BuiltValueField(wireName: r'qual_points')
+  int get qualPoints;
 
-  @override
-  String toString() {
-    return 'DistrictRankingEventPoints[districtCmp=$districtCmp, total=$total, alliancePoints=$alliancePoints, elimPoints=$elimPoints, awardPoints=$awardPoints, eventKey=$eventKey, qualPoints=$qualPoints, ]';
-  }
+  // Boilerplate code needed to wire-up generated code
+  DistrictRankingEventPoints._();
 
-  DistrictRankingEventPoints.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
-    districtCmp = json['district_cmp'];
-    total = json['total'];
-    alliancePoints = json['alliance_points'];
-    elimPoints = json['elim_points'];
-    awardPoints = json['award_points'];
-    eventKey = json['event_key'];
-    qualPoints = json['qual_points'];
-  }
-
-  Map<String, dynamic> toJson() {
-    Map<String, dynamic> json = {};
-    if (districtCmp != null) json['district_cmp'] = districtCmp;
-    if (total != null) json['total'] = total;
-    if (alliancePoints != null) json['alliance_points'] = alliancePoints;
-    if (elimPoints != null) json['elim_points'] = elimPoints;
-    if (awardPoints != null) json['award_points'] = awardPoints;
-    if (eventKey != null) json['event_key'] = eventKey;
-    if (qualPoints != null) json['qual_points'] = qualPoints;
-    return json;
-  }
-
-  static List<DistrictRankingEventPoints> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<DistrictRankingEventPoints>()
-        : json
-            .map((value) => DistrictRankingEventPoints.fromJson(value))
-            .toList();
-  }
-
-  static Map<String, DistrictRankingEventPoints> mapFromJson(
-      Map<String, dynamic> json) {
-    var map = Map<String, DistrictRankingEventPoints>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = DistrictRankingEventPoints.fromJson(value));
-    }
-    return map;
-  }
-
-  // maps a json object with a list of DistrictRankingEventPoints-objects as value to a dart map
-  static Map<String, List<DistrictRankingEventPoints>> mapListFromJson(
-      Map<String, dynamic> json) {
-    var map = Map<String, List<DistrictRankingEventPoints>>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) {
-        map[key] = DistrictRankingEventPoints.listFromJson(value);
-      });
-    }
-    return map;
-  }
+  factory DistrictRankingEventPoints(
+          [updates(DistrictRankingEventPointsBuilder b)]) =
+      _$DistrictRankingEventPoints;
+  static Serializer<DistrictRankingEventPoints> get serializer =>
+      _$districtRankingEventPointsSerializer;
 }

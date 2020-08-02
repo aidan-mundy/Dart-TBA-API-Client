@@ -1,4 +1,4 @@
-# tba_api_client.model.EventRankingExtraStatsInfo
+# openapi.model.EventRankingExtraStatsInfo
 
 ## Load the model package
 

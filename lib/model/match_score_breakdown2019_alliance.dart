@@ -1,270 +1,222 @@
-part of tba_api_client.api;
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
-class MatchScoreBreakdown2019Alliance {
-  int adjustPoints = null;
+part 'match_score_breakdown2019_alliance.g.dart';
 
-  int autoPoints = null;
+abstract class MatchScoreBreakdown2019Alliance
+    implements
+        Built<MatchScoreBreakdown2019Alliance,
+            MatchScoreBreakdown2019AllianceBuilder> {
+  @nullable
+  @BuiltValueField(wireName: r'adjustPoints')
+  int get adjustPoints;
 
-  String bay1 = null;
+  @nullable
+  @BuiltValueField(wireName: r'autoPoints')
+  int get autoPoints;
 
-  String bay2 = null;
+  @nullable
+  @BuiltValueField(wireName: r'bay1')
+  String get bay1;
 
-  String bay3 = null;
+  @nullable
+  @BuiltValueField(wireName: r'bay2')
+  String get bay2;
 
-  String bay4 = null;
+  @nullable
+  @BuiltValueField(wireName: r'bay3')
+  String get bay3;
 
-  String bay5 = null;
+  @nullable
+  @BuiltValueField(wireName: r'bay4')
+  String get bay4;
 
-  String bay6 = null;
+  @nullable
+  @BuiltValueField(wireName: r'bay5')
+  String get bay5;
 
-  String bay7 = null;
+  @nullable
+  @BuiltValueField(wireName: r'bay6')
+  String get bay6;
 
-  String bay8 = null;
+  @nullable
+  @BuiltValueField(wireName: r'bay7')
+  String get bay7;
 
-  int cargoPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'bay8')
+  String get bay8;
 
-  bool completeRocketRankingPoint = null;
+  @nullable
+  @BuiltValueField(wireName: r'cargoPoints')
+  int get cargoPoints;
 
-  bool completedRocketFar = null;
+  @nullable
+  @BuiltValueField(wireName: r'completeRocketRankingPoint')
+  bool get completeRocketRankingPoint;
 
-  bool completedRocketNear = null;
+  @nullable
+  @BuiltValueField(wireName: r'completedRocketFar')
+  bool get completedRocketFar;
 
-  String endgameRobot1 = null;
+  @nullable
+  @BuiltValueField(wireName: r'completedRocketNear')
+  bool get completedRocketNear;
 
-  String endgameRobot2 = null;
+  @nullable
+  @BuiltValueField(wireName: r'endgameRobot1')
+  String get endgameRobot1;
 
-  String endgameRobot3 = null;
+  @nullable
+  @BuiltValueField(wireName: r'endgameRobot2')
+  String get endgameRobot2;
 
-  int foulCount = null;
+  @nullable
+  @BuiltValueField(wireName: r'endgameRobot3')
+  String get endgameRobot3;
 
-  int foulPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'foulCount')
+  int get foulCount;
 
-  int habClimbPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'foulPoints')
+  int get foulPoints;
 
-  bool habDockingRankingPoint = null;
+  @nullable
+  @BuiltValueField(wireName: r'habClimbPoints')
+  int get habClimbPoints;
 
-  String habLineRobot1 = null;
+  @nullable
+  @BuiltValueField(wireName: r'habDockingRankingPoint')
+  bool get habDockingRankingPoint;
 
-  String habLineRobot2 = null;
+  @nullable
+  @BuiltValueField(wireName: r'habLineRobot1')
+  String get habLineRobot1;
 
-  String habLineRobot3 = null;
+  @nullable
+  @BuiltValueField(wireName: r'habLineRobot2')
+  String get habLineRobot2;
 
-  int hatchPanelPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'habLineRobot3')
+  String get habLineRobot3;
 
-  String lowLeftRocketFar = null;
+  @nullable
+  @BuiltValueField(wireName: r'hatchPanelPoints')
+  int get hatchPanelPoints;
 
-  String lowLeftRocketNear = null;
+  @nullable
+  @BuiltValueField(wireName: r'lowLeftRocketFar')
+  String get lowLeftRocketFar;
 
-  String lowRightRocketFar = null;
+  @nullable
+  @BuiltValueField(wireName: r'lowLeftRocketNear')
+  String get lowLeftRocketNear;
 
-  String lowRightRocketNear = null;
+  @nullable
+  @BuiltValueField(wireName: r'lowRightRocketFar')
+  String get lowRightRocketFar;
 
-  String midLeftRocketFar = null;
+  @nullable
+  @BuiltValueField(wireName: r'lowRightRocketNear')
+  String get lowRightRocketNear;
 
-  String midLeftRocketNear = null;
+  @nullable
+  @BuiltValueField(wireName: r'midLeftRocketFar')
+  String get midLeftRocketFar;
 
-  String midRightRocketFar = null;
+  @nullable
+  @BuiltValueField(wireName: r'midLeftRocketNear')
+  String get midLeftRocketNear;
 
-  String midRightRocketNear = null;
+  @nullable
+  @BuiltValueField(wireName: r'midRightRocketFar')
+  String get midRightRocketFar;
 
-  String preMatchBay1 = null;
+  @nullable
+  @BuiltValueField(wireName: r'midRightRocketNear')
+  String get midRightRocketNear;
 
-  String preMatchBay2 = null;
+  @nullable
+  @BuiltValueField(wireName: r'preMatchBay1')
+  String get preMatchBay1;
 
-  String preMatchBay3 = null;
+  @nullable
+  @BuiltValueField(wireName: r'preMatchBay2')
+  String get preMatchBay2;
 
-  String preMatchBay6 = null;
+  @nullable
+  @BuiltValueField(wireName: r'preMatchBay3')
+  String get preMatchBay3;
 
-  String preMatchBay7 = null;
+  @nullable
+  @BuiltValueField(wireName: r'preMatchBay6')
+  String get preMatchBay6;
 
-  String preMatchBay8 = null;
+  @nullable
+  @BuiltValueField(wireName: r'preMatchBay7')
+  String get preMatchBay7;
 
-  String preMatchLevelRobot1 = null;
+  @nullable
+  @BuiltValueField(wireName: r'preMatchBay8')
+  String get preMatchBay8;
 
-  String preMatchLevelRobot2 = null;
+  @nullable
+  @BuiltValueField(wireName: r'preMatchLevelRobot1')
+  String get preMatchLevelRobot1;
 
-  String preMatchLevelRobot3 = null;
+  @nullable
+  @BuiltValueField(wireName: r'preMatchLevelRobot2')
+  String get preMatchLevelRobot2;
 
-  int rp = null;
+  @nullable
+  @BuiltValueField(wireName: r'preMatchLevelRobot3')
+  String get preMatchLevelRobot3;
 
-  int sandStormBonusPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'rp')
+  int get rp;
 
-  int techFoulCount = null;
+  @nullable
+  @BuiltValueField(wireName: r'sandStormBonusPoints')
+  int get sandStormBonusPoints;
 
-  int teleopPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'techFoulCount')
+  int get techFoulCount;
 
-  String topLeftRocketFar = null;
+  @nullable
+  @BuiltValueField(wireName: r'teleopPoints')
+  int get teleopPoints;
 
-  String topLeftRocketNear = null;
+  @nullable
+  @BuiltValueField(wireName: r'topLeftRocketFar')
+  String get topLeftRocketFar;
 
-  String topRightRocketFar = null;
+  @nullable
+  @BuiltValueField(wireName: r'topLeftRocketNear')
+  String get topLeftRocketNear;
 
-  String topRightRocketNear = null;
+  @nullable
+  @BuiltValueField(wireName: r'topRightRocketFar')
+  String get topRightRocketFar;
 
-  int totalPoints = null;
-  MatchScoreBreakdown2019Alliance();
+  @nullable
+  @BuiltValueField(wireName: r'topRightRocketNear')
+  String get topRightRocketNear;
 
-  @override
-  String toString() {
-    return 'MatchScoreBreakdown2019Alliance[adjustPoints=$adjustPoints, autoPoints=$autoPoints, bay1=$bay1, bay2=$bay2, bay3=$bay3, bay4=$bay4, bay5=$bay5, bay6=$bay6, bay7=$bay7, bay8=$bay8, cargoPoints=$cargoPoints, completeRocketRankingPoint=$completeRocketRankingPoint, completedRocketFar=$completedRocketFar, completedRocketNear=$completedRocketNear, endgameRobot1=$endgameRobot1, endgameRobot2=$endgameRobot2, endgameRobot3=$endgameRobot3, foulCount=$foulCount, foulPoints=$foulPoints, habClimbPoints=$habClimbPoints, habDockingRankingPoint=$habDockingRankingPoint, habLineRobot1=$habLineRobot1, habLineRobot2=$habLineRobot2, habLineRobot3=$habLineRobot3, hatchPanelPoints=$hatchPanelPoints, lowLeftRocketFar=$lowLeftRocketFar, lowLeftRocketNear=$lowLeftRocketNear, lowRightRocketFar=$lowRightRocketFar, lowRightRocketNear=$lowRightRocketNear, midLeftRocketFar=$midLeftRocketFar, midLeftRocketNear=$midLeftRocketNear, midRightRocketFar=$midRightRocketFar, midRightRocketNear=$midRightRocketNear, preMatchBay1=$preMatchBay1, preMatchBay2=$preMatchBay2, preMatchBay3=$preMatchBay3, preMatchBay6=$preMatchBay6, preMatchBay7=$preMatchBay7, preMatchBay8=$preMatchBay8, preMatchLevelRobot1=$preMatchLevelRobot1, preMatchLevelRobot2=$preMatchLevelRobot2, preMatchLevelRobot3=$preMatchLevelRobot3, rp=$rp, sandStormBonusPoints=$sandStormBonusPoints, techFoulCount=$techFoulCount, teleopPoints=$teleopPoints, topLeftRocketFar=$topLeftRocketFar, topLeftRocketNear=$topLeftRocketNear, topRightRocketFar=$topRightRocketFar, topRightRocketNear=$topRightRocketNear, totalPoints=$totalPoints, ]';
-  }
+  @nullable
+  @BuiltValueField(wireName: r'totalPoints')
+  int get totalPoints;
 
-  MatchScoreBreakdown2019Alliance.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
-    adjustPoints = json['adjustPoints'];
-    autoPoints = json['autoPoints'];
-    bay1 = json['bay1'];
-    bay2 = json['bay2'];
-    bay3 = json['bay3'];
-    bay4 = json['bay4'];
-    bay5 = json['bay5'];
-    bay6 = json['bay6'];
-    bay7 = json['bay7'];
-    bay8 = json['bay8'];
-    cargoPoints = json['cargoPoints'];
-    completeRocketRankingPoint = json['completeRocketRankingPoint'];
-    completedRocketFar = json['completedRocketFar'];
-    completedRocketNear = json['completedRocketNear'];
-    endgameRobot1 = json['endgameRobot1'];
-    endgameRobot2 = json['endgameRobot2'];
-    endgameRobot3 = json['endgameRobot3'];
-    foulCount = json['foulCount'];
-    foulPoints = json['foulPoints'];
-    habClimbPoints = json['habClimbPoints'];
-    habDockingRankingPoint = json['habDockingRankingPoint'];
-    habLineRobot1 = json['habLineRobot1'];
-    habLineRobot2 = json['habLineRobot2'];
-    habLineRobot3 = json['habLineRobot3'];
-    hatchPanelPoints = json['hatchPanelPoints'];
-    lowLeftRocketFar = json['lowLeftRocketFar'];
-    lowLeftRocketNear = json['lowLeftRocketNear'];
-    lowRightRocketFar = json['lowRightRocketFar'];
-    lowRightRocketNear = json['lowRightRocketNear'];
-    midLeftRocketFar = json['midLeftRocketFar'];
-    midLeftRocketNear = json['midLeftRocketNear'];
-    midRightRocketFar = json['midRightRocketFar'];
-    midRightRocketNear = json['midRightRocketNear'];
-    preMatchBay1 = json['preMatchBay1'];
-    preMatchBay2 = json['preMatchBay2'];
-    preMatchBay3 = json['preMatchBay3'];
-    preMatchBay6 = json['preMatchBay6'];
-    preMatchBay7 = json['preMatchBay7'];
-    preMatchBay8 = json['preMatchBay8'];
-    preMatchLevelRobot1 = json['preMatchLevelRobot1'];
-    preMatchLevelRobot2 = json['preMatchLevelRobot2'];
-    preMatchLevelRobot3 = json['preMatchLevelRobot3'];
-    rp = json['rp'];
-    sandStormBonusPoints = json['sandStormBonusPoints'];
-    techFoulCount = json['techFoulCount'];
-    teleopPoints = json['teleopPoints'];
-    topLeftRocketFar = json['topLeftRocketFar'];
-    topLeftRocketNear = json['topLeftRocketNear'];
-    topRightRocketFar = json['topRightRocketFar'];
-    topRightRocketNear = json['topRightRocketNear'];
-    totalPoints = json['totalPoints'];
-  }
+  // Boilerplate code needed to wire-up generated code
+  MatchScoreBreakdown2019Alliance._();
 
-  Map<String, dynamic> toJson() {
-    Map<String, dynamic> json = {};
-    if (adjustPoints != null) json['adjustPoints'] = adjustPoints;
-    if (autoPoints != null) json['autoPoints'] = autoPoints;
-    if (bay1 != null) json['bay1'] = bay1;
-    if (bay2 != null) json['bay2'] = bay2;
-    if (bay3 != null) json['bay3'] = bay3;
-    if (bay4 != null) json['bay4'] = bay4;
-    if (bay5 != null) json['bay5'] = bay5;
-    if (bay6 != null) json['bay6'] = bay6;
-    if (bay7 != null) json['bay7'] = bay7;
-    if (bay8 != null) json['bay8'] = bay8;
-    if (cargoPoints != null) json['cargoPoints'] = cargoPoints;
-    if (completeRocketRankingPoint != null)
-      json['completeRocketRankingPoint'] = completeRocketRankingPoint;
-    if (completedRocketFar != null)
-      json['completedRocketFar'] = completedRocketFar;
-    if (completedRocketNear != null)
-      json['completedRocketNear'] = completedRocketNear;
-    if (endgameRobot1 != null) json['endgameRobot1'] = endgameRobot1;
-    if (endgameRobot2 != null) json['endgameRobot2'] = endgameRobot2;
-    if (endgameRobot3 != null) json['endgameRobot3'] = endgameRobot3;
-    if (foulCount != null) json['foulCount'] = foulCount;
-    if (foulPoints != null) json['foulPoints'] = foulPoints;
-    if (habClimbPoints != null) json['habClimbPoints'] = habClimbPoints;
-    if (habDockingRankingPoint != null)
-      json['habDockingRankingPoint'] = habDockingRankingPoint;
-    if (habLineRobot1 != null) json['habLineRobot1'] = habLineRobot1;
-    if (habLineRobot2 != null) json['habLineRobot2'] = habLineRobot2;
-    if (habLineRobot3 != null) json['habLineRobot3'] = habLineRobot3;
-    if (hatchPanelPoints != null) json['hatchPanelPoints'] = hatchPanelPoints;
-    if (lowLeftRocketFar != null) json['lowLeftRocketFar'] = lowLeftRocketFar;
-    if (lowLeftRocketNear != null)
-      json['lowLeftRocketNear'] = lowLeftRocketNear;
-    if (lowRightRocketFar != null)
-      json['lowRightRocketFar'] = lowRightRocketFar;
-    if (lowRightRocketNear != null)
-      json['lowRightRocketNear'] = lowRightRocketNear;
-    if (midLeftRocketFar != null) json['midLeftRocketFar'] = midLeftRocketFar;
-    if (midLeftRocketNear != null)
-      json['midLeftRocketNear'] = midLeftRocketNear;
-    if (midRightRocketFar != null)
-      json['midRightRocketFar'] = midRightRocketFar;
-    if (midRightRocketNear != null)
-      json['midRightRocketNear'] = midRightRocketNear;
-    if (preMatchBay1 != null) json['preMatchBay1'] = preMatchBay1;
-    if (preMatchBay2 != null) json['preMatchBay2'] = preMatchBay2;
-    if (preMatchBay3 != null) json['preMatchBay3'] = preMatchBay3;
-    if (preMatchBay6 != null) json['preMatchBay6'] = preMatchBay6;
-    if (preMatchBay7 != null) json['preMatchBay7'] = preMatchBay7;
-    if (preMatchBay8 != null) json['preMatchBay8'] = preMatchBay8;
-    if (preMatchLevelRobot1 != null)
-      json['preMatchLevelRobot1'] = preMatchLevelRobot1;
-    if (preMatchLevelRobot2 != null)
-      json['preMatchLevelRobot2'] = preMatchLevelRobot2;
-    if (preMatchLevelRobot3 != null)
-      json['preMatchLevelRobot3'] = preMatchLevelRobot3;
-    if (rp != null) json['rp'] = rp;
-    if (sandStormBonusPoints != null)
-      json['sandStormBonusPoints'] = sandStormBonusPoints;
-    if (techFoulCount != null) json['techFoulCount'] = techFoulCount;
-    if (teleopPoints != null) json['teleopPoints'] = teleopPoints;
-    if (topLeftRocketFar != null) json['topLeftRocketFar'] = topLeftRocketFar;
-    if (topLeftRocketNear != null)
-      json['topLeftRocketNear'] = topLeftRocketNear;
-    if (topRightRocketFar != null)
-      json['topRightRocketFar'] = topRightRocketFar;
-    if (topRightRocketNear != null)
-      json['topRightRocketNear'] = topRightRocketNear;
-    if (totalPoints != null) json['totalPoints'] = totalPoints;
-    return json;
-  }
-
-  static List<MatchScoreBreakdown2019Alliance> listFromJson(
-      List<dynamic> json) {
-    return json == null
-        ? List<MatchScoreBreakdown2019Alliance>()
-        : json
-            .map((value) => MatchScoreBreakdown2019Alliance.fromJson(value))
-            .toList();
-  }
-
-  static Map<String, MatchScoreBreakdown2019Alliance> mapFromJson(
-      Map<String, dynamic> json) {
-    var map = Map<String, MatchScoreBreakdown2019Alliance>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = MatchScoreBreakdown2019Alliance.fromJson(value));
-    }
-    return map;
-  }
-
-  // maps a json object with a list of MatchScoreBreakdown2019Alliance-objects as value to a dart map
-  static Map<String, List<MatchScoreBreakdown2019Alliance>> mapListFromJson(
-      Map<String, dynamic> json) {
-    var map = Map<String, List<MatchScoreBreakdown2019Alliance>>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) {
-        map[key] = MatchScoreBreakdown2019Alliance.listFromJson(value);
-      });
-    }
-    return map;
-  }
+  factory MatchScoreBreakdown2019Alliance(
+          [updates(MatchScoreBreakdown2019AllianceBuilder b)]) =
+      _$MatchScoreBreakdown2019Alliance;
+  static Serializer<MatchScoreBreakdown2019Alliance> get serializer =>
+      _$matchScoreBreakdown2019AllianceSerializer;
 }

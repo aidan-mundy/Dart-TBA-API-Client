@@ -1,74 +1,41 @@
-part of tba_api_client.api;
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
-class TeamSimple {
+part 'team_simple.g.dart';
+
+abstract class TeamSimple implements Built<TeamSimple, TeamSimpleBuilder> {
   /* TBA team key with the format `frcXXXX` with `XXXX` representing the team number. */
-  String key = null;
+  @nullable
+  @BuiltValueField(wireName: r'key')
+  String get key;
   /* Official team number issued by FIRST. */
-  int teamNumber = null;
+  @nullable
+  @BuiltValueField(wireName: r'team_number')
+  int get teamNumber;
   /* Team nickname provided by FIRST. */
-  String nickname = null;
+  @nullable
+  @BuiltValueField(wireName: r'nickname')
+  String get nickname;
   /* Official long name registered with FIRST. */
-  String name = null;
+  @nullable
+  @BuiltValueField(wireName: r'name')
+  String get name;
   /* City of team derived from parsing the address registered with FIRST. */
-  String city = null;
+  @nullable
+  @BuiltValueField(wireName: r'city')
+  String get city;
   /* State of team derived from parsing the address registered with FIRST. */
-  String stateProv = null;
+  @nullable
+  @BuiltValueField(wireName: r'state_prov')
+  String get stateProv;
   /* Country of team derived from parsing the address registered with FIRST. */
-  String country = null;
-  TeamSimple();
+  @nullable
+  @BuiltValueField(wireName: r'country')
+  String get country;
 
-  @override
-  String toString() {
-    return 'TeamSimple[key=$key, teamNumber=$teamNumber, nickname=$nickname, name=$name, city=$city, stateProv=$stateProv, country=$country, ]';
-  }
+  // Boilerplate code needed to wire-up generated code
+  TeamSimple._();
 
-  TeamSimple.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
-    key = json['key'];
-    teamNumber = json['team_number'];
-    nickname = json['nickname'];
-    name = json['name'];
-    city = json['city'];
-    stateProv = json['state_prov'];
-    country = json['country'];
-  }
-
-  Map<String, dynamic> toJson() {
-    Map<String, dynamic> json = {};
-    if (key != null) json['key'] = key;
-    if (teamNumber != null) json['team_number'] = teamNumber;
-    if (nickname != null) json['nickname'] = nickname;
-    if (name != null) json['name'] = name;
-    if (city != null) json['city'] = city;
-    if (stateProv != null) json['state_prov'] = stateProv;
-    if (country != null) json['country'] = country;
-    return json;
-  }
-
-  static List<TeamSimple> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<TeamSimple>()
-        : json.map((value) => TeamSimple.fromJson(value)).toList();
-  }
-
-  static Map<String, TeamSimple> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, TeamSimple>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = TeamSimple.fromJson(value));
-    }
-    return map;
-  }
-
-  // maps a json object with a list of TeamSimple-objects as value to a dart map
-  static Map<String, List<TeamSimple>> mapListFromJson(
-      Map<String, dynamic> json) {
-    var map = Map<String, List<TeamSimple>>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) {
-        map[key] = TeamSimple.listFromJson(value);
-      });
-    }
-    return map;
-  }
+  factory TeamSimple([updates(TeamSimpleBuilder b)]) = _$TeamSimple;
+  static Serializer<TeamSimple> get serializer => _$teamSimpleSerializer;
 }

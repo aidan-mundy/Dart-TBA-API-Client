@@ -1,4 +1,4 @@
-# tba_api_client.model.DistrictList
+# openapi.model.DistrictList
 
 ## Load the model package
 

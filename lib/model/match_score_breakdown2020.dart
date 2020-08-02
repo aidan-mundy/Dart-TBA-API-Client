@@ -1,58 +1,24 @@
-part of tba_api_client.api;
+import 'package:tba_api_client/model/match_score_breakdown2020_alliance.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
-class MatchScoreBreakdown2020 {
-  MatchScoreBreakdown2020Alliance blue = null;
+part 'match_score_breakdown2020.g.dart';
 
-  MatchScoreBreakdown2020Alliance red = null;
-  MatchScoreBreakdown2020();
+abstract class MatchScoreBreakdown2020
+    implements Built<MatchScoreBreakdown2020, MatchScoreBreakdown2020Builder> {
+  @nullable
+  @BuiltValueField(wireName: r'blue')
+  MatchScoreBreakdown2020Alliance get blue;
 
-  @override
-  String toString() {
-    return 'MatchScoreBreakdown2020[blue=$blue, red=$red, ]';
-  }
+  @nullable
+  @BuiltValueField(wireName: r'red')
+  MatchScoreBreakdown2020Alliance get red;
 
-  MatchScoreBreakdown2020.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
-    blue = (json['blue'] == null)
-        ? null
-        : MatchScoreBreakdown2020Alliance.fromJson(json['blue']);
-    red = (json['red'] == null)
-        ? null
-        : MatchScoreBreakdown2020Alliance.fromJson(json['red']);
-  }
+  // Boilerplate code needed to wire-up generated code
+  MatchScoreBreakdown2020._();
 
-  Map<String, dynamic> toJson() {
-    Map<String, dynamic> json = {};
-    if (blue != null) json['blue'] = blue;
-    if (red != null) json['red'] = red;
-    return json;
-  }
-
-  static List<MatchScoreBreakdown2020> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<MatchScoreBreakdown2020>()
-        : json.map((value) => MatchScoreBreakdown2020.fromJson(value)).toList();
-  }
-
-  static Map<String, MatchScoreBreakdown2020> mapFromJson(
-      Map<String, dynamic> json) {
-    var map = Map<String, MatchScoreBreakdown2020>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = MatchScoreBreakdown2020.fromJson(value));
-    }
-    return map;
-  }
-
-  // maps a json object with a list of MatchScoreBreakdown2020-objects as value to a dart map
-  static Map<String, List<MatchScoreBreakdown2020>> mapListFromJson(
-      Map<String, dynamic> json) {
-    var map = Map<String, List<MatchScoreBreakdown2020>>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) {
-        map[key] = MatchScoreBreakdown2020.listFromJson(value);
-      });
-    }
-    return map;
-  }
+  factory MatchScoreBreakdown2020([updates(MatchScoreBreakdown2020Builder b)]) =
+      _$MatchScoreBreakdown2020;
+  static Serializer<MatchScoreBreakdown2020> get serializer =>
+      _$matchScoreBreakdown2020Serializer;
 }

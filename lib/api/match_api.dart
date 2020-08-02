@@ -1,901 +1,985 @@
-part of tba_api_client.api;
+import 'dart:async';
+import 'dart:convert';
+import 'package:dio/dio.dart';
+import 'package:built_collection/built_collection.dart';
+import 'package:built_value/serializer.dart';
+
+import 'package:tba_api_client/model/zebra.dart';
+import 'package:tba_api_client/model/match_simple.dart';
+import 'package:tba_api_client/model/match.dart';
 
 class MatchApi {
-  final ApiClient apiClient;
+  final Dio _dio;
+  Serializers _serializers;
 
-  MatchApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
-
-  ///  with HTTP info returned
-  ///
-  /// Gets an array of Match Keys for the given event key that have timeseries data. Returns an empty array if no matches have timeseries data. *WARNING:* This is *not* official data, and is subject to a significant possibility of error, or missing data. Do not rely on this data for any purpose. In fact, pretend we made it up. *WARNING:* This endpoint and corresponding data models are under *active development* and may change at any time, including in breaking ways.
-  Future<Response> getEventMatchTimeseriesWithHttpInfo(String eventKey,
-      {String ifModifiedSince}) async {
-    Object postBody;
-
-    // verify required params are set
-    if (eventKey == null) {
-      throw ApiException(400, "Missing required param: eventKey");
-    }
-
-    // create path and map variables
-    String path = "/event/{event_key}/matches/timeseries"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "event_key" + "}", eventKey.toString());
-
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-    if (ifModifiedSince != null) {
-      headerParams["If-Modified-Since"] = ifModifiedSince;
-    }
-
-    List<String> contentTypes = [];
-
-    String nullableContentType =
-        contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["apiKey"];
-
-    if (nullableContentType != null &&
-        nullableContentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if (hasFields) postBody = mp;
-    } else {}
-
-    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, nullableContentType, authNames);
-    return response;
-  }
+  MatchApi(this._dio, this._serializers);
 
   ///
   ///
   /// Gets an array of Match Keys for the given event key that have timeseries data. Returns an empty array if no matches have timeseries data. *WARNING:* This is *not* official data, and is subject to a significant possibility of error, or missing data. Do not rely on this data for any purpose. In fact, pretend we made it up. *WARNING:* This endpoint and corresponding data models are under *active development* and may change at any time, including in breaking ways.
-  Future<List<String>> getEventMatchTimeseries(String eventKey,
-      {String ifModifiedSince}) async {
-    Response response = await getEventMatchTimeseriesWithHttpInfo(eventKey,
-        ifModifiedSince: ifModifiedSince);
-    if (response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if (response.body != null) {
-      return (apiClient.deserialize(_decodeBodyBytes(response), 'List<String>')
-              as List)
-          .map((item) => item as String)
-          .toList();
-    } else {
-      return null;
-    }
-  }
+  Future<Response<List<String>>> getEventMatchTimeseries(
+    String eventKey, {
+    String ifModifiedSince,
+    CancelToken cancelToken,
+    Map<String, String> headers,
+    ProgressCallback onSendProgress,
+    ProgressCallback onReceiveProgress,
+  }) async {
+    String _path = "/event/{event_key}/matches/timeseries"
+        .replaceAll("{" r'event_key' "}", eventKey.toString());
 
-  ///  with HTTP info returned
-  ///
-  /// Gets a list of matches for the given event.
-  Future<Response> getEventMatchesWithHttpInfo(String eventKey,
-      {String ifModifiedSince}) async {
-    Object postBody;
+    Map<String, dynamic> queryParams = {};
+    Map<String, String> headerParams = Map.from(headers ?? {});
+    dynamic bodyData;
 
-    // verify required params are set
-    if (eventKey == null) {
-      throw ApiException(400, "Missing required param: eventKey");
-    }
-
-    // create path and map variables
-    String path = "/event/{event_key}/matches"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "event_key" + "}", eventKey.toString());
-
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-    if (ifModifiedSince != null) {
-      headerParams["If-Modified-Since"] = ifModifiedSince;
-    }
+    headerParams[r'If-Modified-Since'] = ifModifiedSince;
+    queryParams.removeWhere((key, value) => value == null);
+    headerParams.removeWhere((key, value) => value == null);
 
     List<String> contentTypes = [];
 
-    String nullableContentType =
-        contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["apiKey"];
+    return _dio
+        .request(
+      _path,
+      queryParameters: queryParams,
+      data: bodyData,
+      options: Options(
+        method: 'get'.toUpperCase(),
+        headers: headerParams,
+        extra: {
+          'secure': [
+            {
+              "type": "apiKey",
+              "name": "apiKey",
+              "keyName": "X-TBA-Auth-Key",
+              "where": "header"
+            }
+          ],
+        },
+        contentType:
+            contentTypes.isNotEmpty ? contentTypes[0] : "application/json",
+      ),
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    )
+        .then((response) {
+      final FullType type =
+          const FullType(BuiltList, const [const FullType(String)]);
+      BuiltList<String> dataList = _serializers.deserialize(
+          response.data is String ? jsonDecode(response.data) : response.data,
+          specifiedType: type);
+      var data = dataList.toList();
 
-    if (nullableContentType != null &&
-        nullableContentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if (hasFields) postBody = mp;
-    } else {}
-
-    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, nullableContentType, authNames);
-    return response;
+      return Response<List<String>>(
+        data: data,
+        headers: response.headers,
+        request: response.request,
+        redirects: response.redirects,
+        statusCode: response.statusCode,
+        statusMessage: response.statusMessage,
+        extra: response.extra,
+      );
+    });
   }
 
   ///
   ///
   /// Gets a list of matches for the given event.
-  Future<List<TBAMatch>> getEventMatches(String eventKey,
-      {String ifModifiedSince}) async {
-    Response response = await getEventMatchesWithHttpInfo(eventKey,
-        ifModifiedSince: ifModifiedSince);
-    if (response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if (response.body != null) {
-      return (apiClient.deserialize(_decodeBodyBytes(response), 'List<Match>')
-              as List)
-          .map((item) => item as TBAMatch)
-          .toList();
-    } else {
-      return null;
-    }
+  Future<Response<List<Match>>> getEventMatches(
+    String eventKey, {
+    String ifModifiedSince,
+    CancelToken cancelToken,
+    Map<String, String> headers,
+    ProgressCallback onSendProgress,
+    ProgressCallback onReceiveProgress,
+  }) async {
+    String _path = "/event/{event_key}/matches"
+        .replaceAll("{" r'event_key' "}", eventKey.toString());
+
+    Map<String, dynamic> queryParams = {};
+    Map<String, String> headerParams = Map.from(headers ?? {});
+    dynamic bodyData;
+
+    headerParams[r'If-Modified-Since'] = ifModifiedSince;
+    queryParams.removeWhere((key, value) => value == null);
+    headerParams.removeWhere((key, value) => value == null);
+
+    List<String> contentTypes = [];
+
+    return _dio
+        .request(
+      _path,
+      queryParameters: queryParams,
+      data: bodyData,
+      options: Options(
+        method: 'get'.toUpperCase(),
+        headers: headerParams,
+        extra: {
+          'secure': [
+            {
+              "type": "apiKey",
+              "name": "apiKey",
+              "keyName": "X-TBA-Auth-Key",
+              "where": "header"
+            }
+          ],
+        },
+        contentType:
+            contentTypes.isNotEmpty ? contentTypes[0] : "application/json",
+      ),
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    )
+        .then((response) {
+      final FullType type =
+          const FullType(BuiltList, const [const FullType(Match)]);
+      BuiltList<Match> dataList = _serializers.deserialize(
+          response.data is String ? jsonDecode(response.data) : response.data,
+          specifiedType: type);
+      var data = dataList.toList();
+
+      return Response<List<Match>>(
+        data: data,
+        headers: response.headers,
+        request: response.request,
+        redirects: response.redirects,
+        statusCode: response.statusCode,
+        statusMessage: response.statusMessage,
+        extra: response.extra,
+      );
+    });
   }
 
-  ///  with HTTP info returned
+  ///
   ///
   /// Gets a list of match keys for the given event.
-  Future<Response> getEventMatchesKeysWithHttpInfo(String eventKey,
-      {String ifModifiedSince}) async {
-    Object postBody;
+  Future<Response<List<String>>> getEventMatchesKeys(
+    String eventKey, {
+    String ifModifiedSince,
+    CancelToken cancelToken,
+    Map<String, String> headers,
+    ProgressCallback onSendProgress,
+    ProgressCallback onReceiveProgress,
+  }) async {
+    String _path = "/event/{event_key}/matches/keys"
+        .replaceAll("{" r'event_key' "}", eventKey.toString());
 
-    // verify required params are set
-    if (eventKey == null) {
-      throw ApiException(400, "Missing required param: eventKey");
-    }
+    Map<String, dynamic> queryParams = {};
+    Map<String, String> headerParams = Map.from(headers ?? {});
+    dynamic bodyData;
 
-    // create path and map variables
-    String path = "/event/{event_key}/matches/keys"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "event_key" + "}", eventKey.toString());
-
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-    if (ifModifiedSince != null) {
-      headerParams["If-Modified-Since"] = ifModifiedSince;
-    }
+    headerParams[r'If-Modified-Since'] = ifModifiedSince;
+    queryParams.removeWhere((key, value) => value == null);
+    headerParams.removeWhere((key, value) => value == null);
 
     List<String> contentTypes = [];
 
-    String nullableContentType =
-        contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["apiKey"];
+    return _dio
+        .request(
+      _path,
+      queryParameters: queryParams,
+      data: bodyData,
+      options: Options(
+        method: 'get'.toUpperCase(),
+        headers: headerParams,
+        extra: {
+          'secure': [
+            {
+              "type": "apiKey",
+              "name": "apiKey",
+              "keyName": "X-TBA-Auth-Key",
+              "where": "header"
+            }
+          ],
+        },
+        contentType:
+            contentTypes.isNotEmpty ? contentTypes[0] : "application/json",
+      ),
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    )
+        .then((response) {
+      final FullType type =
+          const FullType(BuiltList, const [const FullType(String)]);
+      BuiltList<String> dataList = _serializers.deserialize(
+          response.data is String ? jsonDecode(response.data) : response.data,
+          specifiedType: type);
+      var data = dataList.toList();
 
-    if (nullableContentType != null &&
-        nullableContentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if (hasFields) postBody = mp;
-    } else {}
-
-    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, nullableContentType, authNames);
-    return response;
-  }
-
-  ///
-  ///
-  /// Gets a list of match keys for the given event.
-  Future<List<String>> getEventMatchesKeys(String eventKey,
-      {String ifModifiedSince}) async {
-    Response response = await getEventMatchesKeysWithHttpInfo(eventKey,
-        ifModifiedSince: ifModifiedSince);
-    if (response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if (response.body != null) {
-      return (apiClient.deserialize(_decodeBodyBytes(response), 'List<String>')
-              as List)
-          .map((item) => item as String)
-          .toList();
-    } else {
-      return null;
-    }
-  }
-
-  ///  with HTTP info returned
-  ///
-  /// Gets a short-form list of matches for the given event.
-  Future<Response> getEventMatchesSimpleWithHttpInfo(String eventKey,
-      {String ifModifiedSince}) async {
-    Object postBody;
-
-    // verify required params are set
-    if (eventKey == null) {
-      throw ApiException(400, "Missing required param: eventKey");
-    }
-
-    // create path and map variables
-    String path = "/event/{event_key}/matches/simple"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "event_key" + "}", eventKey.toString());
-
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-    if (ifModifiedSince != null) {
-      headerParams["If-Modified-Since"] = ifModifiedSince;
-    }
-
-    List<String> contentTypes = [];
-
-    String nullableContentType =
-        contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["apiKey"];
-
-    if (nullableContentType != null &&
-        nullableContentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if (hasFields) postBody = mp;
-    } else {}
-
-    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, nullableContentType, authNames);
-    return response;
+      return Response<List<String>>(
+        data: data,
+        headers: response.headers,
+        request: response.request,
+        redirects: response.redirects,
+        statusCode: response.statusCode,
+        statusMessage: response.statusMessage,
+        extra: response.extra,
+      );
+    });
   }
 
   ///
   ///
   /// Gets a short-form list of matches for the given event.
-  Future<List<MatchSimple>> getEventMatchesSimple(String eventKey,
-      {String ifModifiedSince}) async {
-    Response response = await getEventMatchesSimpleWithHttpInfo(eventKey,
-        ifModifiedSince: ifModifiedSince);
-    if (response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if (response.body != null) {
-      return (apiClient.deserialize(
-              _decodeBodyBytes(response), 'List<MatchSimple>') as List)
-          .map((item) => item as MatchSimple)
-          .toList();
-    } else {
-      return null;
-    }
+  Future<Response<List<MatchSimple>>> getEventMatchesSimple(
+    String eventKey, {
+    String ifModifiedSince,
+    CancelToken cancelToken,
+    Map<String, String> headers,
+    ProgressCallback onSendProgress,
+    ProgressCallback onReceiveProgress,
+  }) async {
+    String _path = "/event/{event_key}/matches/simple"
+        .replaceAll("{" r'event_key' "}", eventKey.toString());
+
+    Map<String, dynamic> queryParams = {};
+    Map<String, String> headerParams = Map.from(headers ?? {});
+    dynamic bodyData;
+
+    headerParams[r'If-Modified-Since'] = ifModifiedSince;
+    queryParams.removeWhere((key, value) => value == null);
+    headerParams.removeWhere((key, value) => value == null);
+
+    List<String> contentTypes = [];
+
+    return _dio
+        .request(
+      _path,
+      queryParameters: queryParams,
+      data: bodyData,
+      options: Options(
+        method: 'get'.toUpperCase(),
+        headers: headerParams,
+        extra: {
+          'secure': [
+            {
+              "type": "apiKey",
+              "name": "apiKey",
+              "keyName": "X-TBA-Auth-Key",
+              "where": "header"
+            }
+          ],
+        },
+        contentType:
+            contentTypes.isNotEmpty ? contentTypes[0] : "application/json",
+      ),
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    )
+        .then((response) {
+      final FullType type =
+          const FullType(BuiltList, const [const FullType(MatchSimple)]);
+      BuiltList<MatchSimple> dataList = _serializers.deserialize(
+          response.data is String ? jsonDecode(response.data) : response.data,
+          specifiedType: type);
+      var data = dataList.toList();
+
+      return Response<List<MatchSimple>>(
+        data: data,
+        headers: response.headers,
+        request: response.request,
+        redirects: response.redirects,
+        statusCode: response.statusCode,
+        statusMessage: response.statusMessage,
+        extra: response.extra,
+      );
+    });
   }
 
-  ///  with HTTP info returned
+  ///
   ///
   /// Gets a &#x60;Match&#x60; object for the given match key.
-  Future<Response> getMatchWithHttpInfo(String matchKey,
-      {String ifModifiedSince}) async {
-    Object postBody;
+  Future<Response<Match>> getMatch(
+    String matchKey, {
+    String ifModifiedSince,
+    CancelToken cancelToken,
+    Map<String, String> headers,
+    ProgressCallback onSendProgress,
+    ProgressCallback onReceiveProgress,
+  }) async {
+    String _path = "/match/{match_key}"
+        .replaceAll("{" r'match_key' "}", matchKey.toString());
 
-    // verify required params are set
-    if (matchKey == null) {
-      throw ApiException(400, "Missing required param: matchKey");
-    }
+    Map<String, dynamic> queryParams = {};
+    Map<String, String> headerParams = Map.from(headers ?? {});
+    dynamic bodyData;
 
-    // create path and map variables
-    String path = "/match/{match_key}"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "match_key" + "}", matchKey.toString());
-
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-    if (ifModifiedSince != null) {
-      headerParams["If-Modified-Since"] = ifModifiedSince;
-    }
+    headerParams[r'If-Modified-Since'] = ifModifiedSince;
+    queryParams.removeWhere((key, value) => value == null);
+    headerParams.removeWhere((key, value) => value == null);
 
     List<String> contentTypes = [];
 
-    String nullableContentType =
-        contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["apiKey"];
+    return _dio
+        .request(
+      _path,
+      queryParameters: queryParams,
+      data: bodyData,
+      options: Options(
+        method: 'get'.toUpperCase(),
+        headers: headerParams,
+        extra: {
+          'secure': [
+            {
+              "type": "apiKey",
+              "name": "apiKey",
+              "keyName": "X-TBA-Auth-Key",
+              "where": "header"
+            }
+          ],
+        },
+        contentType:
+            contentTypes.isNotEmpty ? contentTypes[0] : "application/json",
+      ),
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    )
+        .then((response) {
+      var serializer = _serializers.serializerForType(Match);
+      var data = _serializers.deserializeWith<Match>(serializer,
+          response.data is String ? jsonDecode(response.data) : response.data);
 
-    if (nullableContentType != null &&
-        nullableContentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if (hasFields) postBody = mp;
-    } else {}
-
-    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, nullableContentType, authNames);
-    return response;
-  }
-
-  ///
-  ///
-  /// Gets a &#x60;Match&#x60; object for the given match key.
-  Future<TBAMatch> getMatch(String matchKey, {String ifModifiedSince}) async {
-    Response response =
-        await getMatchWithHttpInfo(matchKey, ifModifiedSince: ifModifiedSince);
-    if (response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if (response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'Match')
-          as TBAMatch;
-    } else {
-      return null;
-    }
-  }
-
-  ///  with HTTP info returned
-  ///
-  /// Gets a short-form &#x60;Match&#x60; object for the given match key.
-  Future<Response> getMatchSimpleWithHttpInfo(String matchKey,
-      {String ifModifiedSince}) async {
-    Object postBody;
-
-    // verify required params are set
-    if (matchKey == null) {
-      throw ApiException(400, "Missing required param: matchKey");
-    }
-
-    // create path and map variables
-    String path = "/match/{match_key}/simple"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "match_key" + "}", matchKey.toString());
-
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-    if (ifModifiedSince != null) {
-      headerParams["If-Modified-Since"] = ifModifiedSince;
-    }
-
-    List<String> contentTypes = [];
-
-    String nullableContentType =
-        contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["apiKey"];
-
-    if (nullableContentType != null &&
-        nullableContentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if (hasFields) postBody = mp;
-    } else {}
-
-    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, nullableContentType, authNames);
-    return response;
+      return Response<Match>(
+        data: data,
+        headers: response.headers,
+        request: response.request,
+        redirects: response.redirects,
+        statusCode: response.statusCode,
+        statusMessage: response.statusMessage,
+        extra: response.extra,
+      );
+    });
   }
 
   ///
   ///
   /// Gets a short-form &#x60;Match&#x60; object for the given match key.
-  Future<MatchSimple> getMatchSimple(String matchKey,
-      {String ifModifiedSince}) async {
-    Response response = await getMatchSimpleWithHttpInfo(matchKey,
-        ifModifiedSince: ifModifiedSince);
-    if (response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if (response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'MatchSimple')
-          as MatchSimple;
-    } else {
-      return null;
-    }
+  Future<Response<MatchSimple>> getMatchSimple(
+    String matchKey, {
+    String ifModifiedSince,
+    CancelToken cancelToken,
+    Map<String, String> headers,
+    ProgressCallback onSendProgress,
+    ProgressCallback onReceiveProgress,
+  }) async {
+    String _path = "/match/{match_key}/simple"
+        .replaceAll("{" r'match_key' "}", matchKey.toString());
+
+    Map<String, dynamic> queryParams = {};
+    Map<String, String> headerParams = Map.from(headers ?? {});
+    dynamic bodyData;
+
+    headerParams[r'If-Modified-Since'] = ifModifiedSince;
+    queryParams.removeWhere((key, value) => value == null);
+    headerParams.removeWhere((key, value) => value == null);
+
+    List<String> contentTypes = [];
+
+    return _dio
+        .request(
+      _path,
+      queryParameters: queryParams,
+      data: bodyData,
+      options: Options(
+        method: 'get'.toUpperCase(),
+        headers: headerParams,
+        extra: {
+          'secure': [
+            {
+              "type": "apiKey",
+              "name": "apiKey",
+              "keyName": "X-TBA-Auth-Key",
+              "where": "header"
+            }
+          ],
+        },
+        contentType:
+            contentTypes.isNotEmpty ? contentTypes[0] : "application/json",
+      ),
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    )
+        .then((response) {
+      var serializer = _serializers.serializerForType(MatchSimple);
+      var data = _serializers.deserializeWith<MatchSimple>(serializer,
+          response.data is String ? jsonDecode(response.data) : response.data);
+
+      return Response<MatchSimple>(
+        data: data,
+        headers: response.headers,
+        request: response.request,
+        redirects: response.redirects,
+        statusCode: response.statusCode,
+        statusMessage: response.statusMessage,
+        extra: response.extra,
+      );
+    });
   }
 
-  ///  with HTTP info returned
+  ///
   ///
   /// Gets an array of game-specific Match Timeseries objects for the given match key or an empty array if not available. *WARNING:* This is *not* official data, and is subject to a significant possibility of error, or missing data. Do not rely on this data for any purpose. In fact, pretend we made it up. *WARNING:* This endpoint and corresponding data models are under *active development* and may change at any time, including in breaking ways.
-  Future<Response> getMatchTimeseriesWithHttpInfo(String matchKey,
-      {String ifModifiedSince}) async {
-    Object postBody;
+  Future<Response<List<Object>>> getMatchTimeseries(
+    String matchKey, {
+    String ifModifiedSince,
+    CancelToken cancelToken,
+    Map<String, String> headers,
+    ProgressCallback onSendProgress,
+    ProgressCallback onReceiveProgress,
+  }) async {
+    String _path = "/match/{match_key}/timeseries"
+        .replaceAll("{" r'match_key' "}", matchKey.toString());
 
-    // verify required params are set
-    if (matchKey == null) {
-      throw ApiException(400, "Missing required param: matchKey");
-    }
+    Map<String, dynamic> queryParams = {};
+    Map<String, String> headerParams = Map.from(headers ?? {});
+    dynamic bodyData;
 
-    // create path and map variables
-    String path = "/match/{match_key}/timeseries"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "match_key" + "}", matchKey.toString());
-
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-    if (ifModifiedSince != null) {
-      headerParams["If-Modified-Since"] = ifModifiedSince;
-    }
+    headerParams[r'If-Modified-Since'] = ifModifiedSince;
+    queryParams.removeWhere((key, value) => value == null);
+    headerParams.removeWhere((key, value) => value == null);
 
     List<String> contentTypes = [];
 
-    String nullableContentType =
-        contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["apiKey"];
+    return _dio
+        .request(
+      _path,
+      queryParameters: queryParams,
+      data: bodyData,
+      options: Options(
+        method: 'get'.toUpperCase(),
+        headers: headerParams,
+        extra: {
+          'secure': [
+            {
+              "type": "apiKey",
+              "name": "apiKey",
+              "keyName": "X-TBA-Auth-Key",
+              "where": "header"
+            }
+          ],
+        },
+        contentType:
+            contentTypes.isNotEmpty ? contentTypes[0] : "application/json",
+      ),
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    )
+        .then((response) {
+      final FullType type =
+          const FullType(BuiltList, const [const FullType(Object)]);
+      BuiltList<Object> dataList = _serializers.deserialize(
+          response.data is String ? jsonDecode(response.data) : response.data,
+          specifiedType: type);
+      var data = dataList.toList();
 
-    if (nullableContentType != null &&
-        nullableContentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if (hasFields) postBody = mp;
-    } else {}
-
-    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, nullableContentType, authNames);
-    return response;
-  }
-
-  ///
-  ///
-  /// Gets an array of game-specific Match Timeseries objects for the given match key or an empty array if not available. *WARNING:* This is *not* official data, and is subject to a significant possibility of error, or missing data. Do not rely on this data for any purpose. In fact, pretend we made it up. *WARNING:* This endpoint and corresponding data models are under *active development* and may change at any time, including in breaking ways.
-  Future<List<Object>> getMatchTimeseries(String matchKey,
-      {String ifModifiedSince}) async {
-    Response response = await getMatchTimeseriesWithHttpInfo(matchKey,
-        ifModifiedSince: ifModifiedSince);
-    if (response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if (response.body != null) {
-      return (apiClient.deserialize(_decodeBodyBytes(response), 'List<Object>')
-              as List)
-          .map((item) => item as Object)
-          .toList();
-    } else {
-      return null;
-    }
-  }
-
-  ///  with HTTP info returned
-  ///
-  /// Gets Zebra MotionWorks data for a Match for the given match key.
-  Future<Response> getMatchZebraWithHttpInfo(String matchKey,
-      {String ifModifiedSince}) async {
-    Object postBody;
-
-    // verify required params are set
-    if (matchKey == null) {
-      throw ApiException(400, "Missing required param: matchKey");
-    }
-
-    // create path and map variables
-    String path = "/match/{match_key}/zebra_motionworks"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "match_key" + "}", matchKey.toString());
-
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-    if (ifModifiedSince != null) {
-      headerParams["If-Modified-Since"] = ifModifiedSince;
-    }
-
-    List<String> contentTypes = [];
-
-    String nullableContentType =
-        contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["apiKey"];
-
-    if (nullableContentType != null &&
-        nullableContentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if (hasFields) postBody = mp;
-    } else {}
-
-    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, nullableContentType, authNames);
-    return response;
+      return Response<List<Object>>(
+        data: data,
+        headers: response.headers,
+        request: response.request,
+        redirects: response.redirects,
+        statusCode: response.statusCode,
+        statusMessage: response.statusMessage,
+        extra: response.extra,
+      );
+    });
   }
 
   ///
   ///
   /// Gets Zebra MotionWorks data for a Match for the given match key.
-  Future<Zebra> getMatchZebra(String matchKey, {String ifModifiedSince}) async {
-    Response response = await getMatchZebraWithHttpInfo(matchKey,
-        ifModifiedSince: ifModifiedSince);
-    if (response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if (response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'Zebra')
-          as Zebra;
-    } else {
-      return null;
-    }
+  Future<Response<Zebra>> getMatchZebra(
+    String matchKey, {
+    String ifModifiedSince,
+    CancelToken cancelToken,
+    Map<String, String> headers,
+    ProgressCallback onSendProgress,
+    ProgressCallback onReceiveProgress,
+  }) async {
+    String _path = "/match/{match_key}/zebra_motionworks"
+        .replaceAll("{" r'match_key' "}", matchKey.toString());
+
+    Map<String, dynamic> queryParams = {};
+    Map<String, String> headerParams = Map.from(headers ?? {});
+    dynamic bodyData;
+
+    headerParams[r'If-Modified-Since'] = ifModifiedSince;
+    queryParams.removeWhere((key, value) => value == null);
+    headerParams.removeWhere((key, value) => value == null);
+
+    List<String> contentTypes = [];
+
+    return _dio
+        .request(
+      _path,
+      queryParameters: queryParams,
+      data: bodyData,
+      options: Options(
+        method: 'get'.toUpperCase(),
+        headers: headerParams,
+        extra: {
+          'secure': [
+            {
+              "type": "apiKey",
+              "name": "apiKey",
+              "keyName": "X-TBA-Auth-Key",
+              "where": "header"
+            }
+          ],
+        },
+        contentType:
+            contentTypes.isNotEmpty ? contentTypes[0] : "application/json",
+      ),
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    )
+        .then((response) {
+      var serializer = _serializers.serializerForType(Zebra);
+      var data = _serializers.deserializeWith<Zebra>(serializer,
+          response.data is String ? jsonDecode(response.data) : response.data);
+
+      return Response<Zebra>(
+        data: data,
+        headers: response.headers,
+        request: response.request,
+        redirects: response.redirects,
+        statusCode: response.statusCode,
+        statusMessage: response.statusMessage,
+        extra: response.extra,
+      );
+    });
   }
 
-  ///  with HTTP info returned
+  ///
   ///
   /// Gets a list of matches for the given team and event.
-  Future<Response> getTeamEventMatchesWithHttpInfo(
-      String teamKey, String eventKey,
-      {String ifModifiedSince}) async {
-    Object postBody;
+  Future<Response<List<Match>>> getTeamEventMatches(
+    String teamKey,
+    String eventKey, {
+    String ifModifiedSince,
+    CancelToken cancelToken,
+    Map<String, String> headers,
+    ProgressCallback onSendProgress,
+    ProgressCallback onReceiveProgress,
+  }) async {
+    String _path = "/team/{team_key}/event/{event_key}/matches"
+        .replaceAll("{" r'team_key' "}", teamKey.toString())
+        .replaceAll("{" r'event_key' "}", eventKey.toString());
 
-    // verify required params are set
-    if (teamKey == null) {
-      throw ApiException(400, "Missing required param: teamKey");
-    }
-    if (eventKey == null) {
-      throw ApiException(400, "Missing required param: eventKey");
-    }
+    Map<String, dynamic> queryParams = {};
+    Map<String, String> headerParams = Map.from(headers ?? {});
+    dynamic bodyData;
 
-    // create path and map variables
-    String path = "/team/{team_key}/event/{event_key}/matches"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "team_key" + "}", teamKey.toString())
-        .replaceAll("{" + "event_key" + "}", eventKey.toString());
-
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-    if (ifModifiedSince != null) {
-      headerParams["If-Modified-Since"] = ifModifiedSince;
-    }
+    headerParams[r'If-Modified-Since'] = ifModifiedSince;
+    queryParams.removeWhere((key, value) => value == null);
+    headerParams.removeWhere((key, value) => value == null);
 
     List<String> contentTypes = [];
 
-    String nullableContentType =
-        contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["apiKey"];
+    return _dio
+        .request(
+      _path,
+      queryParameters: queryParams,
+      data: bodyData,
+      options: Options(
+        method: 'get'.toUpperCase(),
+        headers: headerParams,
+        extra: {
+          'secure': [
+            {
+              "type": "apiKey",
+              "name": "apiKey",
+              "keyName": "X-TBA-Auth-Key",
+              "where": "header"
+            }
+          ],
+        },
+        contentType:
+            contentTypes.isNotEmpty ? contentTypes[0] : "application/json",
+      ),
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    )
+        .then((response) {
+      final FullType type =
+          const FullType(BuiltList, const [const FullType(Match)]);
+      BuiltList<Match> dataList = _serializers.deserialize(
+          response.data is String ? jsonDecode(response.data) : response.data,
+          specifiedType: type);
+      var data = dataList.toList();
 
-    if (nullableContentType != null &&
-        nullableContentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if (hasFields) postBody = mp;
-    } else {}
-
-    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, nullableContentType, authNames);
-    return response;
-  }
-
-  ///
-  ///
-  /// Gets a list of matches for the given team and event.
-  Future<List<TBAMatch>> getTeamEventMatches(String teamKey, String eventKey,
-      {String ifModifiedSince}) async {
-    Response response = await getTeamEventMatchesWithHttpInfo(teamKey, eventKey,
-        ifModifiedSince: ifModifiedSince);
-    if (response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if (response.body != null) {
-      return (apiClient.deserialize(_decodeBodyBytes(response), 'List<Match>')
-              as List)
-          .map((item) => item as TBAMatch)
-          .toList();
-    } else {
-      return null;
-    }
-  }
-
-  ///  with HTTP info returned
-  ///
-  /// Gets a list of match keys for matches for the given team and event.
-  Future<Response> getTeamEventMatchesKeysWithHttpInfo(
-      String teamKey, String eventKey,
-      {String ifModifiedSince}) async {
-    Object postBody;
-
-    // verify required params are set
-    if (teamKey == null) {
-      throw ApiException(400, "Missing required param: teamKey");
-    }
-    if (eventKey == null) {
-      throw ApiException(400, "Missing required param: eventKey");
-    }
-
-    // create path and map variables
-    String path = "/team/{team_key}/event/{event_key}/matches/keys"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "team_key" + "}", teamKey.toString())
-        .replaceAll("{" + "event_key" + "}", eventKey.toString());
-
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-    if (ifModifiedSince != null) {
-      headerParams["If-Modified-Since"] = ifModifiedSince;
-    }
-
-    List<String> contentTypes = [];
-
-    String nullableContentType =
-        contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["apiKey"];
-
-    if (nullableContentType != null &&
-        nullableContentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if (hasFields) postBody = mp;
-    } else {}
-
-    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, nullableContentType, authNames);
-    return response;
+      return Response<List<Match>>(
+        data: data,
+        headers: response.headers,
+        request: response.request,
+        redirects: response.redirects,
+        statusCode: response.statusCode,
+        statusMessage: response.statusMessage,
+        extra: response.extra,
+      );
+    });
   }
 
   ///
   ///
   /// Gets a list of match keys for matches for the given team and event.
-  Future<List<String>> getTeamEventMatchesKeys(String teamKey, String eventKey,
-      {String ifModifiedSince}) async {
-    Response response = await getTeamEventMatchesKeysWithHttpInfo(
-        teamKey, eventKey,
-        ifModifiedSince: ifModifiedSince);
-    if (response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if (response.body != null) {
-      return (apiClient.deserialize(_decodeBodyBytes(response), 'List<String>')
-              as List)
-          .map((item) => item as String)
-          .toList();
-    } else {
-      return null;
-    }
+  Future<Response<List<String>>> getTeamEventMatchesKeys(
+    String teamKey,
+    String eventKey, {
+    String ifModifiedSince,
+    CancelToken cancelToken,
+    Map<String, String> headers,
+    ProgressCallback onSendProgress,
+    ProgressCallback onReceiveProgress,
+  }) async {
+    String _path = "/team/{team_key}/event/{event_key}/matches/keys"
+        .replaceAll("{" r'team_key' "}", teamKey.toString())
+        .replaceAll("{" r'event_key' "}", eventKey.toString());
+
+    Map<String, dynamic> queryParams = {};
+    Map<String, String> headerParams = Map.from(headers ?? {});
+    dynamic bodyData;
+
+    headerParams[r'If-Modified-Since'] = ifModifiedSince;
+    queryParams.removeWhere((key, value) => value == null);
+    headerParams.removeWhere((key, value) => value == null);
+
+    List<String> contentTypes = [];
+
+    return _dio
+        .request(
+      _path,
+      queryParameters: queryParams,
+      data: bodyData,
+      options: Options(
+        method: 'get'.toUpperCase(),
+        headers: headerParams,
+        extra: {
+          'secure': [
+            {
+              "type": "apiKey",
+              "name": "apiKey",
+              "keyName": "X-TBA-Auth-Key",
+              "where": "header"
+            }
+          ],
+        },
+        contentType:
+            contentTypes.isNotEmpty ? contentTypes[0] : "application/json",
+      ),
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    )
+        .then((response) {
+      final FullType type =
+          const FullType(BuiltList, const [const FullType(String)]);
+      BuiltList<String> dataList = _serializers.deserialize(
+          response.data is String ? jsonDecode(response.data) : response.data,
+          specifiedType: type);
+      var data = dataList.toList();
+
+      return Response<List<String>>(
+        data: data,
+        headers: response.headers,
+        request: response.request,
+        redirects: response.redirects,
+        statusCode: response.statusCode,
+        statusMessage: response.statusMessage,
+        extra: response.extra,
+      );
+    });
   }
 
-  ///  with HTTP info returned
+  ///
   ///
   /// Gets a short-form list of matches for the given team and event.
-  Future<Response> getTeamEventMatchesSimpleWithHttpInfo(
-      String teamKey, String eventKey,
-      {String ifModifiedSince}) async {
-    Object postBody;
+  Future<Response<List<Match>>> getTeamEventMatchesSimple(
+    String teamKey,
+    String eventKey, {
+    String ifModifiedSince,
+    CancelToken cancelToken,
+    Map<String, String> headers,
+    ProgressCallback onSendProgress,
+    ProgressCallback onReceiveProgress,
+  }) async {
+    String _path = "/team/{team_key}/event/{event_key}/matches/simple"
+        .replaceAll("{" r'team_key' "}", teamKey.toString())
+        .replaceAll("{" r'event_key' "}", eventKey.toString());
 
-    // verify required params are set
-    if (teamKey == null) {
-      throw ApiException(400, "Missing required param: teamKey");
-    }
-    if (eventKey == null) {
-      throw ApiException(400, "Missing required param: eventKey");
-    }
+    Map<String, dynamic> queryParams = {};
+    Map<String, String> headerParams = Map.from(headers ?? {});
+    dynamic bodyData;
 
-    // create path and map variables
-    String path = "/team/{team_key}/event/{event_key}/matches/simple"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "team_key" + "}", teamKey.toString())
-        .replaceAll("{" + "event_key" + "}", eventKey.toString());
-
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-    if (ifModifiedSince != null) {
-      headerParams["If-Modified-Since"] = ifModifiedSince;
-    }
+    headerParams[r'If-Modified-Since'] = ifModifiedSince;
+    queryParams.removeWhere((key, value) => value == null);
+    headerParams.removeWhere((key, value) => value == null);
 
     List<String> contentTypes = [];
 
-    String nullableContentType =
-        contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["apiKey"];
+    return _dio
+        .request(
+      _path,
+      queryParameters: queryParams,
+      data: bodyData,
+      options: Options(
+        method: 'get'.toUpperCase(),
+        headers: headerParams,
+        extra: {
+          'secure': [
+            {
+              "type": "apiKey",
+              "name": "apiKey",
+              "keyName": "X-TBA-Auth-Key",
+              "where": "header"
+            }
+          ],
+        },
+        contentType:
+            contentTypes.isNotEmpty ? contentTypes[0] : "application/json",
+      ),
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    )
+        .then((response) {
+      final FullType type =
+          const FullType(BuiltList, const [const FullType(Match)]);
+      BuiltList<Match> dataList = _serializers.deserialize(
+          response.data is String ? jsonDecode(response.data) : response.data,
+          specifiedType: type);
+      var data = dataList.toList();
 
-    if (nullableContentType != null &&
-        nullableContentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if (hasFields) postBody = mp;
-    } else {}
-
-    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, nullableContentType, authNames);
-    return response;
-  }
-
-  ///
-  ///
-  /// Gets a short-form list of matches for the given team and event.
-  Future<List<TBAMatch>> getTeamEventMatchesSimple(
-      String teamKey, String eventKey,
-      {String ifModifiedSince}) async {
-    Response response = await getTeamEventMatchesSimpleWithHttpInfo(
-        teamKey, eventKey,
-        ifModifiedSince: ifModifiedSince);
-    if (response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if (response.body != null) {
-      return (apiClient.deserialize(_decodeBodyBytes(response), 'List<Match>')
-              as List)
-          .map((item) => item as TBAMatch)
-          .toList();
-    } else {
-      return null;
-    }
-  }
-
-  ///  with HTTP info returned
-  ///
-  /// Gets a list of matches for the given team and year.
-  Future<Response> getTeamMatchesByYearWithHttpInfo(String teamKey, int year,
-      {String ifModifiedSince}) async {
-    Object postBody;
-
-    // verify required params are set
-    if (teamKey == null) {
-      throw ApiException(400, "Missing required param: teamKey");
-    }
-    if (year == null) {
-      throw ApiException(400, "Missing required param: year");
-    }
-
-    // create path and map variables
-    String path = "/team/{team_key}/matches/{year}"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "team_key" + "}", teamKey.toString())
-        .replaceAll("{" + "year" + "}", year.toString());
-
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-    if (ifModifiedSince != null) {
-      headerParams["If-Modified-Since"] = ifModifiedSince;
-    }
-
-    List<String> contentTypes = [];
-
-    String nullableContentType =
-        contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["apiKey"];
-
-    if (nullableContentType != null &&
-        nullableContentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if (hasFields) postBody = mp;
-    } else {}
-
-    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, nullableContentType, authNames);
-    return response;
+      return Response<List<Match>>(
+        data: data,
+        headers: response.headers,
+        request: response.request,
+        redirects: response.redirects,
+        statusCode: response.statusCode,
+        statusMessage: response.statusMessage,
+        extra: response.extra,
+      );
+    });
   }
 
   ///
   ///
   /// Gets a list of matches for the given team and year.
-  Future<List<TBAMatch>> getTeamMatchesByYear(String teamKey, int year,
-      {String ifModifiedSince}) async {
-    Response response = await getTeamMatchesByYearWithHttpInfo(teamKey, year,
-        ifModifiedSince: ifModifiedSince);
-    if (response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if (response.body != null) {
-      return (apiClient.deserialize(_decodeBodyBytes(response), 'List<Match>')
-              as List)
-          .map((item) => item as TBAMatch)
-          .toList();
-    } else {
-      return null;
-    }
-  }
+  Future<Response<List<Match>>> getTeamMatchesByYear(
+    String teamKey,
+    int year, {
+    String ifModifiedSince,
+    CancelToken cancelToken,
+    Map<String, String> headers,
+    ProgressCallback onSendProgress,
+    ProgressCallback onReceiveProgress,
+  }) async {
+    String _path = "/team/{team_key}/matches/{year}"
+        .replaceAll("{" r'team_key' "}", teamKey.toString())
+        .replaceAll("{" r'year' "}", year.toString());
 
-  ///  with HTTP info returned
-  ///
-  /// Gets a list of match keys for matches for the given team and year.
-  Future<Response> getTeamMatchesByYearKeysWithHttpInfo(
-      String teamKey, int year,
-      {String ifModifiedSince}) async {
-    Object postBody;
+    Map<String, dynamic> queryParams = {};
+    Map<String, String> headerParams = Map.from(headers ?? {});
+    dynamic bodyData;
 
-    // verify required params are set
-    if (teamKey == null) {
-      throw ApiException(400, "Missing required param: teamKey");
-    }
-    if (year == null) {
-      throw ApiException(400, "Missing required param: year");
-    }
-
-    // create path and map variables
-    String path = "/team/{team_key}/matches/{year}/keys"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "team_key" + "}", teamKey.toString())
-        .replaceAll("{" + "year" + "}", year.toString());
-
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-    if (ifModifiedSince != null) {
-      headerParams["If-Modified-Since"] = ifModifiedSince;
-    }
+    headerParams[r'If-Modified-Since'] = ifModifiedSince;
+    queryParams.removeWhere((key, value) => value == null);
+    headerParams.removeWhere((key, value) => value == null);
 
     List<String> contentTypes = [];
 
-    String nullableContentType =
-        contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["apiKey"];
+    return _dio
+        .request(
+      _path,
+      queryParameters: queryParams,
+      data: bodyData,
+      options: Options(
+        method: 'get'.toUpperCase(),
+        headers: headerParams,
+        extra: {
+          'secure': [
+            {
+              "type": "apiKey",
+              "name": "apiKey",
+              "keyName": "X-TBA-Auth-Key",
+              "where": "header"
+            }
+          ],
+        },
+        contentType:
+            contentTypes.isNotEmpty ? contentTypes[0] : "application/json",
+      ),
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    )
+        .then((response) {
+      final FullType type =
+          const FullType(BuiltList, const [const FullType(Match)]);
+      BuiltList<Match> dataList = _serializers.deserialize(
+          response.data is String ? jsonDecode(response.data) : response.data,
+          specifiedType: type);
+      var data = dataList.toList();
 
-    if (nullableContentType != null &&
-        nullableContentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if (hasFields) postBody = mp;
-    } else {}
-
-    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, nullableContentType, authNames);
-    return response;
+      return Response<List<Match>>(
+        data: data,
+        headers: response.headers,
+        request: response.request,
+        redirects: response.redirects,
+        statusCode: response.statusCode,
+        statusMessage: response.statusMessage,
+        extra: response.extra,
+      );
+    });
   }
 
   ///
   ///
   /// Gets a list of match keys for matches for the given team and year.
-  Future<List<String>> getTeamMatchesByYearKeys(String teamKey, int year,
-      {String ifModifiedSince}) async {
-    Response response = await getTeamMatchesByYearKeysWithHttpInfo(
-        teamKey, year,
-        ifModifiedSince: ifModifiedSince);
-    if (response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if (response.body != null) {
-      return (apiClient.deserialize(_decodeBodyBytes(response), 'List<String>')
-              as List)
-          .map((item) => item as String)
-          .toList();
-    } else {
-      return null;
-    }
-  }
+  Future<Response<List<String>>> getTeamMatchesByYearKeys(
+    String teamKey,
+    int year, {
+    String ifModifiedSince,
+    CancelToken cancelToken,
+    Map<String, String> headers,
+    ProgressCallback onSendProgress,
+    ProgressCallback onReceiveProgress,
+  }) async {
+    String _path = "/team/{team_key}/matches/{year}/keys"
+        .replaceAll("{" r'team_key' "}", teamKey.toString())
+        .replaceAll("{" r'year' "}", year.toString());
 
-  ///  with HTTP info returned
-  ///
-  /// Gets a short-form list of matches for the given team and year.
-  Future<Response> getTeamMatchesByYearSimpleWithHttpInfo(
-      String teamKey, int year,
-      {String ifModifiedSince}) async {
-    Object postBody;
+    Map<String, dynamic> queryParams = {};
+    Map<String, String> headerParams = Map.from(headers ?? {});
+    dynamic bodyData;
 
-    // verify required params are set
-    if (teamKey == null) {
-      throw ApiException(400, "Missing required param: teamKey");
-    }
-    if (year == null) {
-      throw ApiException(400, "Missing required param: year");
-    }
-
-    // create path and map variables
-    String path = "/team/{team_key}/matches/{year}/simple"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "team_key" + "}", teamKey.toString())
-        .replaceAll("{" + "year" + "}", year.toString());
-
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-    if (ifModifiedSince != null) {
-      headerParams["If-Modified-Since"] = ifModifiedSince;
-    }
+    headerParams[r'If-Modified-Since'] = ifModifiedSince;
+    queryParams.removeWhere((key, value) => value == null);
+    headerParams.removeWhere((key, value) => value == null);
 
     List<String> contentTypes = [];
 
-    String nullableContentType =
-        contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["apiKey"];
+    return _dio
+        .request(
+      _path,
+      queryParameters: queryParams,
+      data: bodyData,
+      options: Options(
+        method: 'get'.toUpperCase(),
+        headers: headerParams,
+        extra: {
+          'secure': [
+            {
+              "type": "apiKey",
+              "name": "apiKey",
+              "keyName": "X-TBA-Auth-Key",
+              "where": "header"
+            }
+          ],
+        },
+        contentType:
+            contentTypes.isNotEmpty ? contentTypes[0] : "application/json",
+      ),
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    )
+        .then((response) {
+      final FullType type =
+          const FullType(BuiltList, const [const FullType(String)]);
+      BuiltList<String> dataList = _serializers.deserialize(
+          response.data is String ? jsonDecode(response.data) : response.data,
+          specifiedType: type);
+      var data = dataList.toList();
 
-    if (nullableContentType != null &&
-        nullableContentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if (hasFields) postBody = mp;
-    } else {}
-
-    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, nullableContentType, authNames);
-    return response;
+      return Response<List<String>>(
+        data: data,
+        headers: response.headers,
+        request: response.request,
+        redirects: response.redirects,
+        statusCode: response.statusCode,
+        statusMessage: response.statusMessage,
+        extra: response.extra,
+      );
+    });
   }
 
   ///
   ///
   /// Gets a short-form list of matches for the given team and year.
-  Future<List<MatchSimple>> getTeamMatchesByYearSimple(String teamKey, int year,
-      {String ifModifiedSince}) async {
-    Response response = await getTeamMatchesByYearSimpleWithHttpInfo(
-        teamKey, year,
-        ifModifiedSince: ifModifiedSince);
-    if (response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if (response.body != null) {
-      return (apiClient.deserialize(
-              _decodeBodyBytes(response), 'List<MatchSimple>') as List)
-          .map((item) => item as MatchSimple)
-          .toList();
-    } else {
-      return null;
-    }
+  Future<Response<List<MatchSimple>>> getTeamMatchesByYearSimple(
+    String teamKey,
+    int year, {
+    String ifModifiedSince,
+    CancelToken cancelToken,
+    Map<String, String> headers,
+    ProgressCallback onSendProgress,
+    ProgressCallback onReceiveProgress,
+  }) async {
+    String _path = "/team/{team_key}/matches/{year}/simple"
+        .replaceAll("{" r'team_key' "}", teamKey.toString())
+        .replaceAll("{" r'year' "}", year.toString());
+
+    Map<String, dynamic> queryParams = {};
+    Map<String, String> headerParams = Map.from(headers ?? {});
+    dynamic bodyData;
+
+    headerParams[r'If-Modified-Since'] = ifModifiedSince;
+    queryParams.removeWhere((key, value) => value == null);
+    headerParams.removeWhere((key, value) => value == null);
+
+    List<String> contentTypes = [];
+
+    return _dio
+        .request(
+      _path,
+      queryParameters: queryParams,
+      data: bodyData,
+      options: Options(
+        method: 'get'.toUpperCase(),
+        headers: headerParams,
+        extra: {
+          'secure': [
+            {
+              "type": "apiKey",
+              "name": "apiKey",
+              "keyName": "X-TBA-Auth-Key",
+              "where": "header"
+            }
+          ],
+        },
+        contentType:
+            contentTypes.isNotEmpty ? contentTypes[0] : "application/json",
+      ),
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    )
+        .then((response) {
+      final FullType type =
+          const FullType(BuiltList, const [const FullType(MatchSimple)]);
+      BuiltList<MatchSimple> dataList = _serializers.deserialize(
+          response.data is String ? jsonDecode(response.data) : response.data,
+          specifiedType: type);
+      var data = dataList.toList();
+
+      return Response<List<MatchSimple>>(
+        data: data,
+        headers: response.headers,
+        request: response.request,
+        redirects: response.redirects,
+        statusCode: response.statusCode,
+        statusMessage: response.statusMessage,
+        extra: response.extra,
+      );
+    });
   }
 }

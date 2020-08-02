@@ -1,4 +1,4 @@
-# tba_api_client.model.Webcast
+# openapi.model.Webcast
 
 ## Load the model package
 

@@ -1,55 +1,24 @@
-part of tba_api_client.api;
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
-class APIStatusAppVersion {
+part 'api_status_app_version.g.dart';
+
+abstract class APIStatusAppVersion
+    implements Built<APIStatusAppVersion, APIStatusAppVersionBuilder> {
   /* Internal use - Minimum application version required to correctly connect and process data. */
-  int minAppVersion = null;
+  @nullable
+  @BuiltValueField(wireName: r'min_app_version')
+  int get minAppVersion;
   /* Internal use - Latest application version available. */
-  int latestAppVersion = null;
-  APIStatusAppVersion();
+  @nullable
+  @BuiltValueField(wireName: r'latest_app_version')
+  int get latestAppVersion;
 
-  @override
-  String toString() {
-    return 'APIStatusAppVersion[minAppVersion=$minAppVersion, latestAppVersion=$latestAppVersion, ]';
-  }
+  // Boilerplate code needed to wire-up generated code
+  APIStatusAppVersion._();
 
-  APIStatusAppVersion.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
-    minAppVersion = json['min_app_version'];
-    latestAppVersion = json['latest_app_version'];
-  }
-
-  Map<String, dynamic> toJson() {
-    Map<String, dynamic> json = {};
-    if (minAppVersion != null) json['min_app_version'] = minAppVersion;
-    if (latestAppVersion != null) json['latest_app_version'] = latestAppVersion;
-    return json;
-  }
-
-  static List<APIStatusAppVersion> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<APIStatusAppVersion>()
-        : json.map((value) => APIStatusAppVersion.fromJson(value)).toList();
-  }
-
-  static Map<String, APIStatusAppVersion> mapFromJson(
-      Map<String, dynamic> json) {
-    var map = Map<String, APIStatusAppVersion>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = APIStatusAppVersion.fromJson(value));
-    }
-    return map;
-  }
-
-  // maps a json object with a list of APIStatusAppVersion-objects as value to a dart map
-  static Map<String, List<APIStatusAppVersion>> mapListFromJson(
-      Map<String, dynamic> json) {
-    var map = Map<String, List<APIStatusAppVersion>>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) {
-        map[key] = APIStatusAppVersion.listFromJson(value);
-      });
-    }
-    return map;
-  }
+  factory APIStatusAppVersion([updates(APIStatusAppVersionBuilder b)]) =
+      _$APIStatusAppVersion;
+  static Serializer<APIStatusAppVersion> get serializer =>
+      _$aPIStatusAppVersionSerializer;
 }

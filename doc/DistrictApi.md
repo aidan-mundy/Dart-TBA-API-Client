@@ -1,4 +1,4 @@
-# tba_api_client.api.DistrictApi
+# openapi.api.DistrictApi
 
 ## Load the API package
 
@@ -10,16 +10,16 @@ All URIs are relative to _https://www.thebluealliance.com/api/v3_
 
 | Method                                                                | HTTP request                                   | Description |
 | --------------------------------------------------------------------- | ---------------------------------------------- | ----------- |
-| [**getDistrictEvents**](DistrictApi.md#getDistrictEvents)             | **GET** /district/{district_key}/events        |
-| [**getDistrictEventsKeys**](DistrictApi.md#getDistrictEventsKeys)     | **GET** /district/{district_key}/events/keys   |
-| [**getDistrictEventsSimple**](DistrictApi.md#getDistrictEventsSimple) | **GET** /district/{district_key}/events/simple |
-| [**getDistrictRankings**](DistrictApi.md#getDistrictRankings)         | **GET** /district/{district_key}/rankings      |
-| [**getDistrictTeams**](DistrictApi.md#getDistrictTeams)               | **GET** /district/{district_key}/teams         |
-| [**getDistrictTeamsKeys**](DistrictApi.md#getDistrictTeamsKeys)       | **GET** /district/{district_key}/teams/keys    |
-| [**getDistrictTeamsSimple**](DistrictApi.md#getDistrictTeamsSimple)   | **GET** /district/{district_key}/teams/simple  |
-| [**getDistrictsByYear**](DistrictApi.md#getDistrictsByYear)           | **GET** /districts/{year}                      |
-| [**getEventDistrictPoints**](DistrictApi.md#getEventDistrictPoints)   | **GET** /event/{event_key}/district_points     |
-| [**getTeamDistricts**](DistrictApi.md#getTeamDistricts)               | **GET** /team/{team_key}/districts             |
+| [**getDistrictEvents**](DistrictApi.md#getDistrictEvents)             | **get** /district/{district_key}/events        |
+| [**getDistrictEventsKeys**](DistrictApi.md#getDistrictEventsKeys)     | **get** /district/{district_key}/events/keys   |
+| [**getDistrictEventsSimple**](DistrictApi.md#getDistrictEventsSimple) | **get** /district/{district_key}/events/simple |
+| [**getDistrictRankings**](DistrictApi.md#getDistrictRankings)         | **get** /district/{district_key}/rankings      |
+| [**getDistrictTeams**](DistrictApi.md#getDistrictTeams)               | **get** /district/{district_key}/teams         |
+| [**getDistrictTeamsKeys**](DistrictApi.md#getDistrictTeamsKeys)       | **get** /district/{district_key}/teams/keys    |
+| [**getDistrictTeamsSimple**](DistrictApi.md#getDistrictTeamsSimple)   | **get** /district/{district_key}/teams/simple  |
+| [**getDistrictsByYear**](DistrictApi.md#getDistrictsByYear)           | **get** /districts/{year}                      |
+| [**getEventDistrictPoints**](DistrictApi.md#getEventDistrictPoints)   | **get** /event/{event_key}/district_points     |
+| [**getTeamDistricts**](DistrictApi.md#getTeamDistricts)               | **get** /team/{team_key}/districts             |
 
 # **getDistrictEvents**
 
@@ -36,7 +36,7 @@ import 'package:tba_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = DistrictApi();
+var api_instance = new DistrictApi();
 var districtKey = districtKey_example; // String | TBA District Key, eg `2016fim`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
@@ -85,7 +85,7 @@ import 'package:tba_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = DistrictApi();
+var api_instance = new DistrictApi();
 var districtKey = districtKey_example; // String | TBA District Key, eg `2016fim`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
@@ -134,7 +134,7 @@ import 'package:tba_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = DistrictApi();
+var api_instance = new DistrictApi();
 var districtKey = districtKey_example; // String | TBA District Key, eg `2016fim`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
@@ -183,7 +183,7 @@ import 'package:tba_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = DistrictApi();
+var api_instance = new DistrictApi();
 var districtKey = districtKey_example; // String | TBA District Key, eg `2016fim`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
@@ -232,7 +232,7 @@ import 'package:tba_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = DistrictApi();
+var api_instance = new DistrictApi();
 var districtKey = districtKey_example; // String | TBA District Key, eg `2016fim`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
@@ -281,7 +281,7 @@ import 'package:tba_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = DistrictApi();
+var api_instance = new DistrictApi();
 var districtKey = districtKey_example; // String | TBA District Key, eg `2016fim`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
@@ -330,7 +330,7 @@ import 'package:tba_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = DistrictApi();
+var api_instance = new DistrictApi();
 var districtKey = districtKey_example; // String | TBA District Key, eg `2016fim`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
@@ -379,7 +379,7 @@ import 'package:tba_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = DistrictApi();
+var api_instance = new DistrictApi();
 var year = 56; // int | Competition Year (or Season). Must be 4 digits.
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
@@ -428,7 +428,7 @@ import 'package:tba_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = DistrictApi();
+var api_instance = new DistrictApi();
 var eventKey = eventKey_example; // String | TBA Event Key, eg `2016nytr`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 
@@ -477,7 +477,7 @@ import 'package:tba_api_client/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
 
-var api_instance = DistrictApi();
+var api_instance = new DistrictApi();
 var teamKey = teamKey_example; // String | TBA Team Key, eg `frc254`
 var ifModifiedSince = ifModifiedSince_example; // String | Value of the `Last-Modified` header in the most recently cached response by the client.
 

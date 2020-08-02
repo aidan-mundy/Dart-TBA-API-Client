@@ -1,4 +1,4 @@
-# tba_api_client.model.MatchScoreBreakdown2018Alliance
+# openapi.model.MatchScoreBreakdown2018Alliance
 
 ## Load the model package
 

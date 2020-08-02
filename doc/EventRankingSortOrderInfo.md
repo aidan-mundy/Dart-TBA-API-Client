@@ -1,4 +1,4 @@
-# tba_api_client.model.EventRankingSortOrderInfo
+# openapi.model.EventRankingSortOrderInfo
 
 ## Load the model package
 

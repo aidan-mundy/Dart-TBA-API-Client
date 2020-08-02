@@ -1,4 +1,4 @@
-# tba_api_client.model.MatchSimpleAlliances
+# openapi.model.MatchSimpleAlliances
 
 ## Load the model package
 

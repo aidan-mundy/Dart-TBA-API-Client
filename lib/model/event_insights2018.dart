@@ -1,265 +1,165 @@
-part of tba_api_client.api;
+import 'package:built_collection/built_collection.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
-class EventInsights2018 {
+part 'event_insights2018.g.dart';
+
+abstract class EventInsights2018
+    implements Built<EventInsights2018, EventInsights2018Builder> {
   /* An array with three values, number of times auto quest was completed, number of opportunities to complete the auto quest, and percentage. */
-  List<double> autoQuestAchieved = [];
+  @nullable
+  @BuiltValueField(wireName: r'auto_quest_achieved')
+  BuiltList<double> get autoQuestAchieved;
   /* Average number of boost power up scored (out of 3). */
-  double averageBoostPlayed = null;
+  @nullable
+  @BuiltValueField(wireName: r'average_boost_played')
+  double get averageBoostPlayed;
   /* Average endgame points. */
-  double averageEndgamePoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'average_endgame_points')
+  double get averageEndgamePoints;
   /* Average number of force power up scored (out of 3). */
-  double averageForcePlayed = null;
+  @nullable
+  @BuiltValueField(wireName: r'average_force_played')
+  double get averageForcePlayed;
   /* Average foul score. */
-  double averageFoulScore = null;
+  @nullable
+  @BuiltValueField(wireName: r'average_foul_score')
+  double get averageFoulScore;
   /* Average points scored during auto. */
-  double averagePointsAuto = null;
+  @nullable
+  @BuiltValueField(wireName: r'average_points_auto')
+  double get averagePointsAuto;
   /* Average points scored during teleop. */
-  double averagePointsTeleop = null;
+  @nullable
+  @BuiltValueField(wireName: r'average_points_teleop')
+  double get averagePointsTeleop;
   /* Average mobility points scored during auto. */
-  double averageRunPointsAuto = null;
+  @nullable
+  @BuiltValueField(wireName: r'average_run_points_auto')
+  double get averageRunPointsAuto;
   /* Average scale ownership points scored. */
-  double averageScaleOwnershipPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'average_scale_ownership_points')
+  double get averageScaleOwnershipPoints;
   /* Average scale ownership points scored during auto. */
-  double averageScaleOwnershipPointsAuto = null;
+  @nullable
+  @BuiltValueField(wireName: r'average_scale_ownership_points_auto')
+  double get averageScaleOwnershipPointsAuto;
   /* Average scale ownership points scored during teleop. */
-  double averageScaleOwnershipPointsTeleop = null;
+  @nullable
+  @BuiltValueField(wireName: r'average_scale_ownership_points_teleop')
+  double get averageScaleOwnershipPointsTeleop;
   /* Average score. */
-  double averageScore = null;
+  @nullable
+  @BuiltValueField(wireName: r'average_score')
+  double get averageScore;
   /* Average switch ownership points scored. */
-  double averageSwitchOwnershipPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'average_switch_ownership_points')
+  double get averageSwitchOwnershipPoints;
   /* Average switch ownership points scored during auto. */
-  double averageSwitchOwnershipPointsAuto = null;
+  @nullable
+  @BuiltValueField(wireName: r'average_switch_ownership_points_auto')
+  double get averageSwitchOwnershipPointsAuto;
   /* Average switch ownership points scored during teleop. */
-  double averageSwitchOwnershipPointsTeleop = null;
+  @nullable
+  @BuiltValueField(wireName: r'average_switch_ownership_points_teleop')
+  double get averageSwitchOwnershipPointsTeleop;
   /* Average value points scored. */
-  double averageVaultPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'average_vault_points')
+  double get averageVaultPoints;
   /* Average margin of victory. */
-  double averageWinMargin = null;
+  @nullable
+  @BuiltValueField(wireName: r'average_win_margin')
+  double get averageWinMargin;
   /* Average winning score. */
-  double averageWinScore = null;
+  @nullable
+  @BuiltValueField(wireName: r'average_win_score')
+  double get averageWinScore;
   /* An array with three values, number of times a boost power up was played, number of opportunities to play a boost power up, and percentage. */
-  List<double> boostPlayedCounts = [];
+  @nullable
+  @BuiltValueField(wireName: r'boost_played_counts')
+  BuiltList<double> get boostPlayedCounts;
   /* An array with three values, number of times a climb occurred, number of opportunities to climb, and percentage. */
-  List<double> climbCounts = [];
+  @nullable
+  @BuiltValueField(wireName: r'climb_counts')
+  BuiltList<double> get climbCounts;
   /* An array with three values, number of times an alliance faced the boss, number of opportunities to face the boss, and percentage. */
-  List<double> faceTheBossAchieved = [];
+  @nullable
+  @BuiltValueField(wireName: r'face_the_boss_achieved')
+  BuiltList<double> get faceTheBossAchieved;
   /* An array with three values, number of times a force power up was played, number of opportunities to play a force power up, and percentage. */
-  List<double> forcePlayedCounts = [];
+  @nullable
+  @BuiltValueField(wireName: r'force_played_counts')
+  BuiltList<double> get forcePlayedCounts;
   /* An array with three values, high score, match key from the match with the high score, and the name of the match */
-  List<String> highScore = [];
+  @nullable
+  @BuiltValueField(wireName: r'high_score')
+  BuiltList<String> get highScore;
   /* An array with three values, number of times a levitate power up was played, number of opportunities to play a levitate power up, and percentage. */
-  List<double> levitatePlayedCounts = [];
+  @nullable
+  @BuiltValueField(wireName: r'levitate_played_counts')
+  BuiltList<double> get levitatePlayedCounts;
   /* An array with three values, number of times a team scored mobility points in auto, number of opportunities to score mobility points in auto, and percentage. */
-  List<double> runCountsAuto = [];
+  @nullable
+  @BuiltValueField(wireName: r'run_counts_auto')
+  BuiltList<double> get runCountsAuto;
   /* Average scale neutral percentage. */
-  double scaleNeutralPercentage = null;
+  @nullable
+  @BuiltValueField(wireName: r'scale_neutral_percentage')
+  double get scaleNeutralPercentage;
   /* Average scale neutral percentage during auto. */
-  double scaleNeutralPercentageAuto = null;
+  @nullable
+  @BuiltValueField(wireName: r'scale_neutral_percentage_auto')
+  double get scaleNeutralPercentageAuto;
   /* Average scale neutral percentage during teleop. */
-  double scaleNeutralPercentageTeleop = null;
+  @nullable
+  @BuiltValueField(wireName: r'scale_neutral_percentage_teleop')
+  double get scaleNeutralPercentageTeleop;
   /* An array with three values, number of times a switch was owned during auto, number of opportunities to own a switch during auto, and percentage. */
-  List<double> switchOwnedCountsAuto = [];
+  @nullable
+  @BuiltValueField(wireName: r'switch_owned_counts_auto')
+  BuiltList<double> get switchOwnedCountsAuto;
   /* An array with three values, number of times a unicorn match (Win + Auto Quest + Face the Boss) occurred, number of opportunities to have a unicorn match, and percentage. */
-  List<double> unicornMatches = [];
+  @nullable
+  @BuiltValueField(wireName: r'unicorn_matches')
+  BuiltList<double> get unicornMatches;
   /* Average opposing switch denail percentage for the winning alliance during teleop. */
-  double winningOppSwitchDenialPercentageTeleop = null;
+  @nullable
+  @BuiltValueField(wireName: r'winning_opp_switch_denial_percentage_teleop')
+  double get winningOppSwitchDenialPercentageTeleop;
   /* Average own switch ownership percentage for the winning alliance. */
-  double winningOwnSwitchOwnershipPercentage = null;
+  @nullable
+  @BuiltValueField(wireName: r'winning_own_switch_ownership_percentage')
+  double get winningOwnSwitchOwnershipPercentage;
   /* Average own switch ownership percentage for the winning alliance during auto. */
-  double winningOwnSwitchOwnershipPercentageAuto = null;
+  @nullable
+  @BuiltValueField(wireName: r'winning_own_switch_ownership_percentage_auto')
+  double get winningOwnSwitchOwnershipPercentageAuto;
   /* Average own switch ownership percentage for the winning alliance during teleop. */
-  double winningOwnSwitchOwnershipPercentageTeleop = null;
+  @nullable
+  @BuiltValueField(wireName: r'winning_own_switch_ownership_percentage_teleop')
+  double get winningOwnSwitchOwnershipPercentageTeleop;
   /* Average scale ownership percentage for the winning alliance. */
-  double winningScaleOwnershipPercentage = null;
+  @nullable
+  @BuiltValueField(wireName: r'winning_scale_ownership_percentage')
+  double get winningScaleOwnershipPercentage;
   /* Average scale ownership percentage for the winning alliance during auto. */
-  double winningScaleOwnershipPercentageAuto = null;
+  @nullable
+  @BuiltValueField(wireName: r'winning_scale_ownership_percentage_auto')
+  double get winningScaleOwnershipPercentageAuto;
   /* Average scale ownership percentage for the winning alliance during teleop. */
-  double winningScaleOwnershipPercentageTeleop = null;
-  EventInsights2018();
+  @nullable
+  @BuiltValueField(wireName: r'winning_scale_ownership_percentage_teleop')
+  double get winningScaleOwnershipPercentageTeleop;
 
-  @override
-  String toString() {
-    return 'EventInsights2018[autoQuestAchieved=$autoQuestAchieved, averageBoostPlayed=$averageBoostPlayed, averageEndgamePoints=$averageEndgamePoints, averageForcePlayed=$averageForcePlayed, averageFoulScore=$averageFoulScore, averagePointsAuto=$averagePointsAuto, averagePointsTeleop=$averagePointsTeleop, averageRunPointsAuto=$averageRunPointsAuto, averageScaleOwnershipPoints=$averageScaleOwnershipPoints, averageScaleOwnershipPointsAuto=$averageScaleOwnershipPointsAuto, averageScaleOwnershipPointsTeleop=$averageScaleOwnershipPointsTeleop, averageScore=$averageScore, averageSwitchOwnershipPoints=$averageSwitchOwnershipPoints, averageSwitchOwnershipPointsAuto=$averageSwitchOwnershipPointsAuto, averageSwitchOwnershipPointsTeleop=$averageSwitchOwnershipPointsTeleop, averageVaultPoints=$averageVaultPoints, averageWinMargin=$averageWinMargin, averageWinScore=$averageWinScore, boostPlayedCounts=$boostPlayedCounts, climbCounts=$climbCounts, faceTheBossAchieved=$faceTheBossAchieved, forcePlayedCounts=$forcePlayedCounts, highScore=$highScore, levitatePlayedCounts=$levitatePlayedCounts, runCountsAuto=$runCountsAuto, scaleNeutralPercentage=$scaleNeutralPercentage, scaleNeutralPercentageAuto=$scaleNeutralPercentageAuto, scaleNeutralPercentageTeleop=$scaleNeutralPercentageTeleop, switchOwnedCountsAuto=$switchOwnedCountsAuto, unicornMatches=$unicornMatches, winningOppSwitchDenialPercentageTeleop=$winningOppSwitchDenialPercentageTeleop, winningOwnSwitchOwnershipPercentage=$winningOwnSwitchOwnershipPercentage, winningOwnSwitchOwnershipPercentageAuto=$winningOwnSwitchOwnershipPercentageAuto, winningOwnSwitchOwnershipPercentageTeleop=$winningOwnSwitchOwnershipPercentageTeleop, winningScaleOwnershipPercentage=$winningScaleOwnershipPercentage, winningScaleOwnershipPercentageAuto=$winningScaleOwnershipPercentageAuto, winningScaleOwnershipPercentageTeleop=$winningScaleOwnershipPercentageTeleop, ]';
-  }
+  // Boilerplate code needed to wire-up generated code
+  EventInsights2018._();
 
-  EventInsights2018.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
-    autoQuestAchieved = (json['auto_quest_achieved'] == null)
-        ? null
-        : (json['auto_quest_achieved'] as List).cast<double>();
-    averageBoostPlayed = json['average_boost_played'];
-    averageEndgamePoints = json['average_endgame_points'];
-    averageForcePlayed = json['average_force_played'];
-    averageFoulScore = json['average_foul_score'];
-    averagePointsAuto = json['average_points_auto'];
-    averagePointsTeleop = json['average_points_teleop'];
-    averageRunPointsAuto = json['average_run_points_auto'];
-    averageScaleOwnershipPoints = json['average_scale_ownership_points'];
-    averageScaleOwnershipPointsAuto =
-        json['average_scale_ownership_points_auto'];
-    averageScaleOwnershipPointsTeleop =
-        json['average_scale_ownership_points_teleop'];
-    averageScore = json['average_score'];
-    averageSwitchOwnershipPoints = json['average_switch_ownership_points'];
-    averageSwitchOwnershipPointsAuto =
-        json['average_switch_ownership_points_auto'];
-    averageSwitchOwnershipPointsTeleop =
-        json['average_switch_ownership_points_teleop'];
-    averageVaultPoints = json['average_vault_points'];
-    averageWinMargin = json['average_win_margin'];
-    averageWinScore = json['average_win_score'];
-    boostPlayedCounts = (json['boost_played_counts'] == null)
-        ? null
-        : (json['boost_played_counts'] as List).cast<double>();
-    climbCounts = (json['climb_counts'] == null)
-        ? null
-        : (json['climb_counts'] as List).cast<double>();
-    faceTheBossAchieved = (json['face_the_boss_achieved'] == null)
-        ? null
-        : (json['face_the_boss_achieved'] as List).cast<double>();
-    forcePlayedCounts = (json['force_played_counts'] == null)
-        ? null
-        : (json['force_played_counts'] as List).cast<double>();
-    highScore = (json['high_score'] == null)
-        ? null
-        : (json['high_score'] as List).cast<String>();
-    levitatePlayedCounts = (json['levitate_played_counts'] == null)
-        ? null
-        : (json['levitate_played_counts'] as List).cast<double>();
-    runCountsAuto = (json['run_counts_auto'] == null)
-        ? null
-        : (json['run_counts_auto'] as List).cast<double>();
-    scaleNeutralPercentage = json['scale_neutral_percentage'];
-    scaleNeutralPercentageAuto = json['scale_neutral_percentage_auto'];
-    scaleNeutralPercentageTeleop = json['scale_neutral_percentage_teleop'];
-    switchOwnedCountsAuto = (json['switch_owned_counts_auto'] == null)
-        ? null
-        : (json['switch_owned_counts_auto'] as List).cast<double>();
-    unicornMatches = (json['unicorn_matches'] == null)
-        ? null
-        : (json['unicorn_matches'] as List).cast<double>();
-    winningOppSwitchDenialPercentageTeleop =
-        json['winning_opp_switch_denial_percentage_teleop'];
-    winningOwnSwitchOwnershipPercentage =
-        json['winning_own_switch_ownership_percentage'];
-    winningOwnSwitchOwnershipPercentageAuto =
-        json['winning_own_switch_ownership_percentage_auto'];
-    winningOwnSwitchOwnershipPercentageTeleop =
-        json['winning_own_switch_ownership_percentage_teleop'];
-    winningScaleOwnershipPercentage =
-        json['winning_scale_ownership_percentage'];
-    winningScaleOwnershipPercentageAuto =
-        json['winning_scale_ownership_percentage_auto'];
-    winningScaleOwnershipPercentageTeleop =
-        json['winning_scale_ownership_percentage_teleop'];
-  }
-
-  Map<String, dynamic> toJson() {
-    Map<String, dynamic> json = {};
-    if (autoQuestAchieved != null)
-      json['auto_quest_achieved'] = autoQuestAchieved;
-    if (averageBoostPlayed != null)
-      json['average_boost_played'] = averageBoostPlayed;
-    if (averageEndgamePoints != null)
-      json['average_endgame_points'] = averageEndgamePoints;
-    if (averageForcePlayed != null)
-      json['average_force_played'] = averageForcePlayed;
-    if (averageFoulScore != null) json['average_foul_score'] = averageFoulScore;
-    if (averagePointsAuto != null)
-      json['average_points_auto'] = averagePointsAuto;
-    if (averagePointsTeleop != null)
-      json['average_points_teleop'] = averagePointsTeleop;
-    if (averageRunPointsAuto != null)
-      json['average_run_points_auto'] = averageRunPointsAuto;
-    if (averageScaleOwnershipPoints != null)
-      json['average_scale_ownership_points'] = averageScaleOwnershipPoints;
-    if (averageScaleOwnershipPointsAuto != null)
-      json['average_scale_ownership_points_auto'] =
-          averageScaleOwnershipPointsAuto;
-    if (averageScaleOwnershipPointsTeleop != null)
-      json['average_scale_ownership_points_teleop'] =
-          averageScaleOwnershipPointsTeleop;
-    if (averageScore != null) json['average_score'] = averageScore;
-    if (averageSwitchOwnershipPoints != null)
-      json['average_switch_ownership_points'] = averageSwitchOwnershipPoints;
-    if (averageSwitchOwnershipPointsAuto != null)
-      json['average_switch_ownership_points_auto'] =
-          averageSwitchOwnershipPointsAuto;
-    if (averageSwitchOwnershipPointsTeleop != null)
-      json['average_switch_ownership_points_teleop'] =
-          averageSwitchOwnershipPointsTeleop;
-    if (averageVaultPoints != null)
-      json['average_vault_points'] = averageVaultPoints;
-    if (averageWinMargin != null) json['average_win_margin'] = averageWinMargin;
-    if (averageWinScore != null) json['average_win_score'] = averageWinScore;
-    if (boostPlayedCounts != null)
-      json['boost_played_counts'] = boostPlayedCounts;
-    if (climbCounts != null) json['climb_counts'] = climbCounts;
-    if (faceTheBossAchieved != null)
-      json['face_the_boss_achieved'] = faceTheBossAchieved;
-    if (forcePlayedCounts != null)
-      json['force_played_counts'] = forcePlayedCounts;
-    if (highScore != null) json['high_score'] = highScore;
-    if (levitatePlayedCounts != null)
-      json['levitate_played_counts'] = levitatePlayedCounts;
-    if (runCountsAuto != null) json['run_counts_auto'] = runCountsAuto;
-    if (scaleNeutralPercentage != null)
-      json['scale_neutral_percentage'] = scaleNeutralPercentage;
-    if (scaleNeutralPercentageAuto != null)
-      json['scale_neutral_percentage_auto'] = scaleNeutralPercentageAuto;
-    if (scaleNeutralPercentageTeleop != null)
-      json['scale_neutral_percentage_teleop'] = scaleNeutralPercentageTeleop;
-    if (switchOwnedCountsAuto != null)
-      json['switch_owned_counts_auto'] = switchOwnedCountsAuto;
-    if (unicornMatches != null) json['unicorn_matches'] = unicornMatches;
-    if (winningOppSwitchDenialPercentageTeleop != null)
-      json['winning_opp_switch_denial_percentage_teleop'] =
-          winningOppSwitchDenialPercentageTeleop;
-    if (winningOwnSwitchOwnershipPercentage != null)
-      json['winning_own_switch_ownership_percentage'] =
-          winningOwnSwitchOwnershipPercentage;
-    if (winningOwnSwitchOwnershipPercentageAuto != null)
-      json['winning_own_switch_ownership_percentage_auto'] =
-          winningOwnSwitchOwnershipPercentageAuto;
-    if (winningOwnSwitchOwnershipPercentageTeleop != null)
-      json['winning_own_switch_ownership_percentage_teleop'] =
-          winningOwnSwitchOwnershipPercentageTeleop;
-    if (winningScaleOwnershipPercentage != null)
-      json['winning_scale_ownership_percentage'] =
-          winningScaleOwnershipPercentage;
-    if (winningScaleOwnershipPercentageAuto != null)
-      json['winning_scale_ownership_percentage_auto'] =
-          winningScaleOwnershipPercentageAuto;
-    if (winningScaleOwnershipPercentageTeleop != null)
-      json['winning_scale_ownership_percentage_teleop'] =
-          winningScaleOwnershipPercentageTeleop;
-    return json;
-  }
-
-  static List<EventInsights2018> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<EventInsights2018>()
-        : json.map((value) => EventInsights2018.fromJson(value)).toList();
-  }
-
-  static Map<String, EventInsights2018> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, EventInsights2018>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = EventInsights2018.fromJson(value));
-    }
-    return map;
-  }
-
-  // maps a json object with a list of EventInsights2018-objects as value to a dart map
-  static Map<String, List<EventInsights2018>> mapListFromJson(
-      Map<String, dynamic> json) {
-    var map = Map<String, List<EventInsights2018>>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) {
-        map[key] = EventInsights2018.listFromJson(value);
-      });
-    }
-    return map;
-  }
+  factory EventInsights2018([updates(EventInsights2018Builder b)]) =
+      _$EventInsights2018;
+  static Serializer<EventInsights2018> get serializer =>
+      _$eventInsights2018Serializer;
 }

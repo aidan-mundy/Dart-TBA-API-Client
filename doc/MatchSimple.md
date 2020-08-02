@@ -1,4 +1,4 @@
-# tba_api_client.model.MatchSimple
+# openapi.model.MatchSimple
 
 ## Load the model package
 

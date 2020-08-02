@@ -1,84 +1,50 @@
-part of tba_api_client.api;
+import 'package:built_collection/built_collection.dart';
+import 'package:tba_api_client/model/wlt_record.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
-class EventRankingRankings {
+part 'event_ranking_rankings.g.dart';
+
+abstract class EventRankingRankings
+    implements Built<EventRankingRankings, EventRankingRankingsBuilder> {
   /* Number of matches played by this team. */
-  int matchesPlayed = null;
+  @nullable
+  @BuiltValueField(wireName: r'matches_played')
+  int get matchesPlayed;
   /* The average match score during qualifications. Year specific. May be null if not relevant for a given year. */
-  int qualAverage = null;
+  @nullable
+  @BuiltValueField(wireName: r'qual_average')
+  int get qualAverage;
   /* Additional special data on the team's performance calculated by TBA. */
-  List<num> extraStats = [];
+  @nullable
+  @BuiltValueField(wireName: r'extra_stats')
+  BuiltList<num> get extraStats;
   /* Additional year-specific information, may be null. See parent `sort_order_info` for details. */
-  List<num> sortOrders = [];
+  @nullable
+  @BuiltValueField(wireName: r'sort_orders')
+  BuiltList<num> get sortOrders;
 
-  WLTRecord record = null;
+  @nullable
+  @BuiltValueField(wireName: r'record')
+  WLTRecord get record;
   /* The team's rank at the event as provided by FIRST. */
-  int rank = null;
+  @nullable
+  @BuiltValueField(wireName: r'rank')
+  int get rank;
   /* Number of times disqualified. */
-  int dq = null;
+  @nullable
+  @BuiltValueField(wireName: r'dq')
+  int get dq;
   /* The team with this rank. */
-  String teamKey = null;
-  EventRankingRankings();
+  @nullable
+  @BuiltValueField(wireName: r'team_key')
+  String get teamKey;
 
-  @override
-  String toString() {
-    return 'EventRankingRankings[matchesPlayed=$matchesPlayed, qualAverage=$qualAverage, extraStats=$extraStats, sortOrders=$sortOrders, record=$record, rank=$rank, dq=$dq, teamKey=$teamKey, ]';
-  }
+  // Boilerplate code needed to wire-up generated code
+  EventRankingRankings._();
 
-  EventRankingRankings.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
-    matchesPlayed = json['matches_played'];
-    qualAverage = json['qual_average'];
-    extraStats = (json['extra_stats'] == null)
-        ? null
-        : (json['extra_stats'] as List).cast<num>();
-    sortOrders = (json['sort_orders'] == null)
-        ? null
-        : (json['sort_orders'] as List).cast<num>();
-    record =
-        (json['record'] == null) ? null : WLTRecord.fromJson(json['record']);
-    rank = json['rank'];
-    dq = json['dq'];
-    teamKey = json['team_key'];
-  }
-
-  Map<String, dynamic> toJson() {
-    Map<String, dynamic> json = {};
-    if (matchesPlayed != null) json['matches_played'] = matchesPlayed;
-    if (qualAverage != null) json['qual_average'] = qualAverage;
-    if (extraStats != null) json['extra_stats'] = extraStats;
-    if (sortOrders != null) json['sort_orders'] = sortOrders;
-    if (record != null) json['record'] = record;
-    if (rank != null) json['rank'] = rank;
-    if (dq != null) json['dq'] = dq;
-    if (teamKey != null) json['team_key'] = teamKey;
-    return json;
-  }
-
-  static List<EventRankingRankings> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<EventRankingRankings>()
-        : json.map((value) => EventRankingRankings.fromJson(value)).toList();
-  }
-
-  static Map<String, EventRankingRankings> mapFromJson(
-      Map<String, dynamic> json) {
-    var map = Map<String, EventRankingRankings>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = EventRankingRankings.fromJson(value));
-    }
-    return map;
-  }
-
-  // maps a json object with a list of EventRankingRankings-objects as value to a dart map
-  static Map<String, List<EventRankingRankings>> mapListFromJson(
-      Map<String, dynamic> json) {
-    var map = Map<String, List<EventRankingRankings>>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) {
-        map[key] = EventRankingRankings.listFromJson(value);
-      });
-    }
-    return map;
-  }
+  factory EventRankingRankings([updates(EventRankingRankingsBuilder b)]) =
+      _$EventRankingRankings;
+  static Serializer<EventRankingRankings> get serializer =>
+      _$eventRankingRankingsSerializer;
 }

@@ -1,196 +1,154 @@
-part of tba_api_client.api;
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
-class MatchScoreBreakdown2020Alliance {
-  String initLineRobot1 = null;
+part 'match_score_breakdown2020_alliance.g.dart';
 
-  String endgameRobot1 = null;
+abstract class MatchScoreBreakdown2020Alliance
+    implements
+        Built<MatchScoreBreakdown2020Alliance,
+            MatchScoreBreakdown2020AllianceBuilder> {
+  @nullable
+  @BuiltValueField(wireName: r'initLineRobot1')
+  String get initLineRobot1;
 
-  String initLineRobot2 = null;
+  @nullable
+  @BuiltValueField(wireName: r'endgameRobot1')
+  String get endgameRobot1;
 
-  String endgameRobot2 = null;
+  @nullable
+  @BuiltValueField(wireName: r'initLineRobot2')
+  String get initLineRobot2;
 
-  String initLineRobot3 = null;
+  @nullable
+  @BuiltValueField(wireName: r'endgameRobot2')
+  String get endgameRobot2;
 
-  String endgameRobot3 = null;
+  @nullable
+  @BuiltValueField(wireName: r'initLineRobot3')
+  String get initLineRobot3;
 
-  int autoCellsBottom = null;
+  @nullable
+  @BuiltValueField(wireName: r'endgameRobot3')
+  String get endgameRobot3;
 
-  int autoCellsOuter = null;
+  @nullable
+  @BuiltValueField(wireName: r'autoCellsBottom')
+  int get autoCellsBottom;
 
-  int autoCellsInner = null;
+  @nullable
+  @BuiltValueField(wireName: r'autoCellsOuter')
+  int get autoCellsOuter;
 
-  int teleopCellsBottom = null;
+  @nullable
+  @BuiltValueField(wireName: r'autoCellsInner')
+  int get autoCellsInner;
 
-  int teleopCellsOuter = null;
+  @nullable
+  @BuiltValueField(wireName: r'teleopCellsBottom')
+  int get teleopCellsBottom;
 
-  int teleopCellsInner = null;
+  @nullable
+  @BuiltValueField(wireName: r'teleopCellsOuter')
+  int get teleopCellsOuter;
 
-  bool stage1Activated = null;
+  @nullable
+  @BuiltValueField(wireName: r'teleopCellsInner')
+  int get teleopCellsInner;
 
-  bool stage2Activated = null;
+  @nullable
+  @BuiltValueField(wireName: r'stage1Activated')
+  bool get stage1Activated;
 
-  bool stage3Activated = null;
+  @nullable
+  @BuiltValueField(wireName: r'stage2Activated')
+  bool get stage2Activated;
 
-  String stage3TargetColor = null;
+  @nullable
+  @BuiltValueField(wireName: r'stage3Activated')
+  bool get stage3Activated;
 
-  String endgameRungIsLevel = null;
+  @nullable
+  @BuiltValueField(wireName: r'stage3TargetColor')
+  String get stage3TargetColor;
 
-  int autoInitLinePoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'endgameRungIsLevel')
+  String get endgameRungIsLevel;
 
-  int autoCellPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'autoInitLinePoints')
+  int get autoInitLinePoints;
 
-  int autoPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'autoCellPoints')
+  int get autoCellPoints;
 
-  int teleopCellPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'autoPoints')
+  int get autoPoints;
 
-  int controlPanelPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'teleopCellPoints')
+  int get teleopCellPoints;
 
-  int endgamePoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'controlPanelPoints')
+  int get controlPanelPoints;
 
-  int teleopPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'endgamePoints')
+  int get endgamePoints;
 
-  bool shieldOperationalRankingPoint = null;
+  @nullable
+  @BuiltValueField(wireName: r'teleopPoints')
+  int get teleopPoints;
 
-  bool shieldEnergizedRankingPoint = null;
+  @nullable
+  @BuiltValueField(wireName: r'shieldOperationalRankingPoint')
+  bool get shieldOperationalRankingPoint;
+
+  @nullable
+  @BuiltValueField(wireName: r'shieldEnergizedRankingPoint')
+  bool get shieldEnergizedRankingPoint;
   /* Unofficial TBA-computed value that indicates whether the shieldEnergizedRankingPoint was earned normally or awarded due to a foul. */
-  bool tbaShieldEnergizedRankingPointFromFoul = null;
+  @nullable
+  @BuiltValueField(wireName: r'tba_shieldEnergizedRankingPointFromFoul')
+  bool get tbaShieldEnergizedRankingPointFromFoul;
   /* Unofficial TBA-computed value that counts the number of robots who were hanging at the end of the match. */
-  int tbaNumRobotsHanging = null;
+  @nullable
+  @BuiltValueField(wireName: r'tba_numRobotsHanging')
+  int get tbaNumRobotsHanging;
 
-  int foulCount = null;
+  @nullable
+  @BuiltValueField(wireName: r'foulCount')
+  int get foulCount;
 
-  int techFoulCount = null;
+  @nullable
+  @BuiltValueField(wireName: r'techFoulCount')
+  int get techFoulCount;
 
-  int adjustPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'adjustPoints')
+  int get adjustPoints;
 
-  int foulPoints = null;
+  @nullable
+  @BuiltValueField(wireName: r'foulPoints')
+  int get foulPoints;
 
-  int rp = null;
+  @nullable
+  @BuiltValueField(wireName: r'rp')
+  int get rp;
 
-  int totalPoints = null;
-  MatchScoreBreakdown2020Alliance();
+  @nullable
+  @BuiltValueField(wireName: r'totalPoints')
+  int get totalPoints;
 
-  @override
-  String toString() {
-    return 'MatchScoreBreakdown2020Alliance[initLineRobot1=$initLineRobot1, endgameRobot1=$endgameRobot1, initLineRobot2=$initLineRobot2, endgameRobot2=$endgameRobot2, initLineRobot3=$initLineRobot3, endgameRobot3=$endgameRobot3, autoCellsBottom=$autoCellsBottom, autoCellsOuter=$autoCellsOuter, autoCellsInner=$autoCellsInner, teleopCellsBottom=$teleopCellsBottom, teleopCellsOuter=$teleopCellsOuter, teleopCellsInner=$teleopCellsInner, stage1Activated=$stage1Activated, stage2Activated=$stage2Activated, stage3Activated=$stage3Activated, stage3TargetColor=$stage3TargetColor, endgameRungIsLevel=$endgameRungIsLevel, autoInitLinePoints=$autoInitLinePoints, autoCellPoints=$autoCellPoints, autoPoints=$autoPoints, teleopCellPoints=$teleopCellPoints, controlPanelPoints=$controlPanelPoints, endgamePoints=$endgamePoints, teleopPoints=$teleopPoints, shieldOperationalRankingPoint=$shieldOperationalRankingPoint, shieldEnergizedRankingPoint=$shieldEnergizedRankingPoint, tbaShieldEnergizedRankingPointFromFoul=$tbaShieldEnergizedRankingPointFromFoul, tbaNumRobotsHanging=$tbaNumRobotsHanging, foulCount=$foulCount, techFoulCount=$techFoulCount, adjustPoints=$adjustPoints, foulPoints=$foulPoints, rp=$rp, totalPoints=$totalPoints, ]';
-  }
+  // Boilerplate code needed to wire-up generated code
+  MatchScoreBreakdown2020Alliance._();
 
-  MatchScoreBreakdown2020Alliance.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
-    initLineRobot1 = json['initLineRobot1'];
-    endgameRobot1 = json['endgameRobot1'];
-    initLineRobot2 = json['initLineRobot2'];
-    endgameRobot2 = json['endgameRobot2'];
-    initLineRobot3 = json['initLineRobot3'];
-    endgameRobot3 = json['endgameRobot3'];
-    autoCellsBottom = json['autoCellsBottom'];
-    autoCellsOuter = json['autoCellsOuter'];
-    autoCellsInner = json['autoCellsInner'];
-    teleopCellsBottom = json['teleopCellsBottom'];
-    teleopCellsOuter = json['teleopCellsOuter'];
-    teleopCellsInner = json['teleopCellsInner'];
-    stage1Activated = json['stage1Activated'];
-    stage2Activated = json['stage2Activated'];
-    stage3Activated = json['stage3Activated'];
-    stage3TargetColor = json['stage3TargetColor'];
-    endgameRungIsLevel = json['endgameRungIsLevel'];
-    autoInitLinePoints = json['autoInitLinePoints'];
-    autoCellPoints = json['autoCellPoints'];
-    autoPoints = json['autoPoints'];
-    teleopCellPoints = json['teleopCellPoints'];
-    controlPanelPoints = json['controlPanelPoints'];
-    endgamePoints = json['endgamePoints'];
-    teleopPoints = json['teleopPoints'];
-    shieldOperationalRankingPoint = json['shieldOperationalRankingPoint'];
-    shieldEnergizedRankingPoint = json['shieldEnergizedRankingPoint'];
-    tbaShieldEnergizedRankingPointFromFoul =
-        json['tba_shieldEnergizedRankingPointFromFoul'];
-    tbaNumRobotsHanging = json['tba_numRobotsHanging'];
-    foulCount = json['foulCount'];
-    techFoulCount = json['techFoulCount'];
-    adjustPoints = json['adjustPoints'];
-    foulPoints = json['foulPoints'];
-    rp = json['rp'];
-    totalPoints = json['totalPoints'];
-  }
-
-  Map<String, dynamic> toJson() {
-    Map<String, dynamic> json = {};
-    if (initLineRobot1 != null) json['initLineRobot1'] = initLineRobot1;
-    if (endgameRobot1 != null) json['endgameRobot1'] = endgameRobot1;
-    if (initLineRobot2 != null) json['initLineRobot2'] = initLineRobot2;
-    if (endgameRobot2 != null) json['endgameRobot2'] = endgameRobot2;
-    if (initLineRobot3 != null) json['initLineRobot3'] = initLineRobot3;
-    if (endgameRobot3 != null) json['endgameRobot3'] = endgameRobot3;
-    if (autoCellsBottom != null) json['autoCellsBottom'] = autoCellsBottom;
-    if (autoCellsOuter != null) json['autoCellsOuter'] = autoCellsOuter;
-    if (autoCellsInner != null) json['autoCellsInner'] = autoCellsInner;
-    if (teleopCellsBottom != null)
-      json['teleopCellsBottom'] = teleopCellsBottom;
-    if (teleopCellsOuter != null) json['teleopCellsOuter'] = teleopCellsOuter;
-    if (teleopCellsInner != null) json['teleopCellsInner'] = teleopCellsInner;
-    if (stage1Activated != null) json['stage1Activated'] = stage1Activated;
-    if (stage2Activated != null) json['stage2Activated'] = stage2Activated;
-    if (stage3Activated != null) json['stage3Activated'] = stage3Activated;
-    if (stage3TargetColor != null)
-      json['stage3TargetColor'] = stage3TargetColor;
-    if (endgameRungIsLevel != null)
-      json['endgameRungIsLevel'] = endgameRungIsLevel;
-    if (autoInitLinePoints != null)
-      json['autoInitLinePoints'] = autoInitLinePoints;
-    if (autoCellPoints != null) json['autoCellPoints'] = autoCellPoints;
-    if (autoPoints != null) json['autoPoints'] = autoPoints;
-    if (teleopCellPoints != null) json['teleopCellPoints'] = teleopCellPoints;
-    if (controlPanelPoints != null)
-      json['controlPanelPoints'] = controlPanelPoints;
-    if (endgamePoints != null) json['endgamePoints'] = endgamePoints;
-    if (teleopPoints != null) json['teleopPoints'] = teleopPoints;
-    if (shieldOperationalRankingPoint != null)
-      json['shieldOperationalRankingPoint'] = shieldOperationalRankingPoint;
-    if (shieldEnergizedRankingPoint != null)
-      json['shieldEnergizedRankingPoint'] = shieldEnergizedRankingPoint;
-    if (tbaShieldEnergizedRankingPointFromFoul != null)
-      json['tba_shieldEnergizedRankingPointFromFoul'] =
-          tbaShieldEnergizedRankingPointFromFoul;
-    if (tbaNumRobotsHanging != null)
-      json['tba_numRobotsHanging'] = tbaNumRobotsHanging;
-    if (foulCount != null) json['foulCount'] = foulCount;
-    if (techFoulCount != null) json['techFoulCount'] = techFoulCount;
-    if (adjustPoints != null) json['adjustPoints'] = adjustPoints;
-    if (foulPoints != null) json['foulPoints'] = foulPoints;
-    if (rp != null) json['rp'] = rp;
-    if (totalPoints != null) json['totalPoints'] = totalPoints;
-    return json;
-  }
-
-  static List<MatchScoreBreakdown2020Alliance> listFromJson(
-      List<dynamic> json) {
-    return json == null
-        ? List<MatchScoreBreakdown2020Alliance>()
-        : json
-            .map((value) => MatchScoreBreakdown2020Alliance.fromJson(value))
-            .toList();
-  }
-
-  static Map<String, MatchScoreBreakdown2020Alliance> mapFromJson(
-      Map<String, dynamic> json) {
-    var map = Map<String, MatchScoreBreakdown2020Alliance>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = MatchScoreBreakdown2020Alliance.fromJson(value));
-    }
-    return map;
-  }
-
-  // maps a json object with a list of MatchScoreBreakdown2020Alliance-objects as value to a dart map
-  static Map<String, List<MatchScoreBreakdown2020Alliance>> mapListFromJson(
-      Map<String, dynamic> json) {
-    var map = Map<String, List<MatchScoreBreakdown2020Alliance>>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) {
-        map[key] = MatchScoreBreakdown2020Alliance.listFromJson(value);
-      });
-    }
-    return map;
-  }
+  factory MatchScoreBreakdown2020Alliance(
+          [updates(MatchScoreBreakdown2020AllianceBuilder b)]) =
+      _$MatchScoreBreakdown2020Alliance;
+  static Serializer<MatchScoreBreakdown2020Alliance> get serializer =>
+      _$matchScoreBreakdown2020AllianceSerializer;
 }

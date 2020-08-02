@@ -1,69 +1,31 @@
-part of tba_api_client.api;
+import 'package:built_collection/built_collection.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
-class MatchAlliance {
+part 'match_alliance.g.dart';
+
+abstract class MatchAlliance
+    implements Built<MatchAlliance, MatchAllianceBuilder> {
   /* Score for this alliance. Will be null or -1 for an unplayed match. */
-  int score = null;
+  @nullable
+  @BuiltValueField(wireName: r'score')
+  int get score;
 
-  List<String> teamKeys = [];
+  @nullable
+  @BuiltValueField(wireName: r'team_keys')
+  BuiltList<String> get teamKeys;
   /* TBA team keys (eg `frc254`) of any teams playing as a surrogate. */
-  List<String> surrogateTeamKeys = [];
+  @nullable
+  @BuiltValueField(wireName: r'surrogate_team_keys')
+  BuiltList<String> get surrogateTeamKeys;
   /* TBA team keys (eg `frc254`) of any disqualified teams. */
-  List<String> dqTeamKeys = [];
-  MatchAlliance();
+  @nullable
+  @BuiltValueField(wireName: r'dq_team_keys')
+  BuiltList<String> get dqTeamKeys;
 
-  @override
-  String toString() {
-    return 'MatchAlliance[score=$score, teamKeys=$teamKeys, surrogateTeamKeys=$surrogateTeamKeys, dqTeamKeys=$dqTeamKeys, ]';
-  }
+  // Boilerplate code needed to wire-up generated code
+  MatchAlliance._();
 
-  MatchAlliance.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
-    score = json['score'];
-    teamKeys = (json['team_keys'] == null)
-        ? null
-        : (json['team_keys'] as List).cast<String>();
-    surrogateTeamKeys = (json['surrogate_team_keys'] == null)
-        ? null
-        : (json['surrogate_team_keys'] as List).cast<String>();
-    dqTeamKeys = (json['dq_team_keys'] == null)
-        ? null
-        : (json['dq_team_keys'] as List).cast<String>();
-  }
-
-  Map<String, dynamic> toJson() {
-    Map<String, dynamic> json = {};
-    if (score != null) json['score'] = score;
-    if (teamKeys != null) json['team_keys'] = teamKeys;
-    if (surrogateTeamKeys != null)
-      json['surrogate_team_keys'] = surrogateTeamKeys;
-    if (dqTeamKeys != null) json['dq_team_keys'] = dqTeamKeys;
-    return json;
-  }
-
-  static List<MatchAlliance> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<MatchAlliance>()
-        : json.map((value) => MatchAlliance.fromJson(value)).toList();
-  }
-
-  static Map<String, MatchAlliance> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, MatchAlliance>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = MatchAlliance.fromJson(value));
-    }
-    return map;
-  }
-
-  // maps a json object with a list of MatchAlliance-objects as value to a dart map
-  static Map<String, List<MatchAlliance>> mapListFromJson(
-      Map<String, dynamic> json) {
-    var map = Map<String, List<MatchAlliance>>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) {
-        map[key] = MatchAlliance.listFromJson(value);
-      });
-    }
-    return map;
-  }
+  factory MatchAlliance([updates(MatchAllianceBuilder b)]) = _$MatchAlliance;
+  static Serializer<MatchAlliance> get serializer => _$matchAllianceSerializer;
 }

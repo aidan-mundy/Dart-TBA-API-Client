@@ -1,90 +1,113 @@
-part of tba_api_client.api;
+import 'package:built_collection/built_collection.dart';
+import 'package:tba_api_client/model/match_simple_alliances.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
-class MatchSimple {
+part 'match_simple.g.dart';
+
+abstract class MatchSimple implements Built<MatchSimple, MatchSimpleBuilder> {
   /* TBA match key with the format `yyyy[EVENT_CODE]_[COMP_LEVEL]m[MATCH_NUMBER]`, where `yyyy` is the year, and `EVENT_CODE` is the event code of the event, `COMP_LEVEL` is (qm, ef, qf, sf, f), and `MATCH_NUMBER` is the match number in the competition level. A set number may append the competition level if more than one match in required per set. */
-  String key = null;
+  @nullable
+  @BuiltValueField(wireName: r'key')
+  String get key;
   /* The competition level the match was played at. */
-  String compLevel = null;
-  //enum compLevelEnum {  qm,  ef,  qf,  sf,  f,  };{
+  @nullable
+  @BuiltValueField(wireName: r'comp_level')
+  MatchSimpleCompLevel get compLevel;
+  //enum compLevelEnum {  qm,  ef,  qf,  sf,  f,  };
   /* The set number in a series of matches where more than one match is required in the match series. */
-  int setNumber = null;
+  @nullable
+  @BuiltValueField(wireName: r'set_number')
+  int get setNumber;
   /* The match number of the match in the competition level. */
-  int matchNumber = null;
+  @nullable
+  @BuiltValueField(wireName: r'match_number')
+  int get matchNumber;
 
-  MatchSimpleAlliances alliances = null;
+  @nullable
+  @BuiltValueField(wireName: r'alliances')
+  MatchSimpleAlliances get alliances;
   /* The color (red/blue) of the winning alliance. Will contain an empty string in the event of no winner, or a tie. */
-  String winningAlliance = null;
-  //enum winningAllianceEnum {  red,  blue,  ,  };{
+  @nullable
+  @BuiltValueField(wireName: r'winning_alliance')
+  MatchSimpleWinningAlliance get winningAlliance;
+  //enum winningAllianceEnum {  red,  blue,  ,  };
   /* Event key of the event the match was played at. */
-  String eventKey = null;
+  @nullable
+  @BuiltValueField(wireName: r'event_key')
+  String get eventKey;
   /* UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of the scheduled match time, as taken from the published schedule. */
-  int time = null;
+  @nullable
+  @BuiltValueField(wireName: r'time')
+  int get time;
   /* UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of the TBA predicted match start time. */
-  int predictedTime = null;
+  @nullable
+  @BuiltValueField(wireName: r'predicted_time')
+  int get predictedTime;
   /* UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of actual match start time. */
-  int actualTime = null;
-  MatchSimple();
+  @nullable
+  @BuiltValueField(wireName: r'actual_time')
+  int get actualTime;
 
-  @override
-  String toString() {
-    return 'MatchSimple[key=$key, compLevel=$compLevel, setNumber=$setNumber, matchNumber=$matchNumber, alliances=$alliances, winningAlliance=$winningAlliance, eventKey=$eventKey, time=$time, predictedTime=$predictedTime, actualTime=$actualTime, ]';
-  }
+  // Boilerplate code needed to wire-up generated code
+  MatchSimple._();
 
-  MatchSimple.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
-    key = json['key'];
-    compLevel = json['comp_level'];
-    setNumber = json['set_number'];
-    matchNumber = json['match_number'];
-    alliances = (json['alliances'] == null)
-        ? null
-        : MatchSimpleAlliances.fromJson(json['alliances']);
-    winningAlliance = json['winning_alliance'];
-    eventKey = json['event_key'];
-    time = json['time'];
-    predictedTime = json['predicted_time'];
-    actualTime = json['actual_time'];
-  }
+  factory MatchSimple([updates(MatchSimpleBuilder b)]) = _$MatchSimple;
+  static Serializer<MatchSimple> get serializer => _$matchSimpleSerializer;
+}
 
-  Map<String, dynamic> toJson() {
-    Map<String, dynamic> json = {};
-    if (key != null) json['key'] = key;
-    if (compLevel != null) json['comp_level'] = compLevel;
-    if (setNumber != null) json['set_number'] = setNumber;
-    if (matchNumber != null) json['match_number'] = matchNumber;
-    if (alliances != null) json['alliances'] = alliances;
-    if (winningAlliance != null) json['winning_alliance'] = winningAlliance;
-    if (eventKey != null) json['event_key'] = eventKey;
-    if (time != null) json['time'] = time;
-    if (predictedTime != null) json['predicted_time'] = predictedTime;
-    if (actualTime != null) json['actual_time'] = actualTime;
-    return json;
-  }
+class MatchSimpleCompLevel extends EnumClass {
+  /// The competition level the match was played at.
+  @BuiltValueEnumConst(wireName: "qm")
+  static const MatchSimpleCompLevel qm = _$qm;
 
-  static List<MatchSimple> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<MatchSimple>()
-        : json.map((value) => MatchSimple.fromJson(value)).toList();
-  }
+  /// The competition level the match was played at.
+  @BuiltValueEnumConst(wireName: "ef")
+  static const MatchSimpleCompLevel ef = _$ef;
 
-  static Map<String, MatchSimple> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, MatchSimple>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = MatchSimple.fromJson(value));
-    }
-    return map;
-  }
+  /// The competition level the match was played at.
+  @BuiltValueEnumConst(wireName: "qf")
+  static const MatchSimpleCompLevel qf = _$qf;
 
-  // maps a json object with a list of MatchSimple-objects as value to a dart map
-  static Map<String, List<MatchSimple>> mapListFromJson(
-      Map<String, dynamic> json) {
-    var map = Map<String, List<MatchSimple>>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) {
-        map[key] = MatchSimple.listFromJson(value);
-      });
-    }
-    return map;
-  }
+  /// The competition level the match was played at.
+  @BuiltValueEnumConst(wireName: "sf")
+  static const MatchSimpleCompLevel sf = _$sf;
+
+  /// The competition level the match was played at.
+  @BuiltValueEnumConst(wireName: "f")
+  static const MatchSimpleCompLevel f = _$f;
+
+  static Serializer<MatchSimpleCompLevel> get serializer =>
+      _$matchSimpleCompLevelSerializer;
+
+  const MatchSimpleCompLevel._(String name) : super(name);
+
+  static BuiltSet<MatchSimpleCompLevel> get values =>
+      _$matchSimpleCompLevelValues;
+  static MatchSimpleCompLevel valueOf(String name) =>
+      _$matchSimpleCompLevelValueOf(name);
+}
+
+class MatchSimpleWinningAlliance extends EnumClass {
+  /// The color (red/blue) of the winning alliance. Will contain an empty string in the event of no winner, or a tie.
+  @BuiltValueEnumConst(wireName: "red")
+  static const MatchSimpleWinningAlliance red = _$red;
+
+  /// The color (red/blue) of the winning alliance. Will contain an empty string in the event of no winner, or a tie.
+  @BuiltValueEnumConst(wireName: "blue")
+  static const MatchSimpleWinningAlliance blue = _$blue;
+
+  /// The color (red/blue) of the winning alliance. Will contain an empty string in the event of no winner, or a tie.
+  @BuiltValueEnumConst(wireName: "")
+  static const MatchSimpleWinningAlliance empty = _$empty;
+
+  static Serializer<MatchSimpleWinningAlliance> get serializer =>
+      _$matchSimpleWinningAllianceSerializer;
+
+  const MatchSimpleWinningAlliance._(String name) : super(name);
+
+  static BuiltSet<MatchSimpleWinningAlliance> get values =>
+      _$matchSimpleWinningAllianceValues;
+  static MatchSimpleWinningAlliance valueOf(String name) =>
+      _$matchSimpleWinningAllianceValueOf(name);
 }

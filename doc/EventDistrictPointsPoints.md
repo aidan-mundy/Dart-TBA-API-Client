@@ -1,4 +1,4 @@
-# tba_api_client.model.EventDistrictPointsPoints
+# openapi.model.EventDistrictPointsPoints
 
 ## Load the model package
 

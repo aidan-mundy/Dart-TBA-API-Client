@@ -1,4 +1,4 @@
-# tba_api_client.model.MatchVideos
+# openapi.model.MatchVideos
 
 ## Load the model package
 

@@ -1,54 +1,25 @@
-part of tba_api_client.api;
+import 'package:built_collection/built_collection.dart';
+import 'package:tba_api_client/model/zebra_team.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
-class ZebraAlliances {
+part 'zebra_alliances.g.dart';
+
+abstract class ZebraAlliances
+    implements Built<ZebraAlliances, ZebraAlliancesBuilder> {
   /* Zebra MotionWorks data for teams on the red alliance */
-  List<ZebraTeam> red = [];
+  @nullable
+  @BuiltValueField(wireName: r'red')
+  BuiltList<ZebraTeam> get red;
   /* Zebra data for teams on the blue alliance */
-  List<ZebraTeam> blue = [];
-  ZebraAlliances();
+  @nullable
+  @BuiltValueField(wireName: r'blue')
+  BuiltList<ZebraTeam> get blue;
 
-  @override
-  String toString() {
-    return 'ZebraAlliances[red=$red, blue=$blue, ]';
-  }
+  // Boilerplate code needed to wire-up generated code
+  ZebraAlliances._();
 
-  ZebraAlliances.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
-    red = (json['red'] == null) ? null : ZebraTeam.listFromJson(json['red']);
-    blue = (json['blue'] == null) ? null : ZebraTeam.listFromJson(json['blue']);
-  }
-
-  Map<String, dynamic> toJson() {
-    Map<String, dynamic> json = {};
-    if (red != null) json['red'] = red;
-    if (blue != null) json['blue'] = blue;
-    return json;
-  }
-
-  static List<ZebraAlliances> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<ZebraAlliances>()
-        : json.map((value) => ZebraAlliances.fromJson(value)).toList();
-  }
-
-  static Map<String, ZebraAlliances> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, ZebraAlliances>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ZebraAlliances.fromJson(value));
-    }
-    return map;
-  }
-
-  // maps a json object with a list of ZebraAlliances-objects as value to a dart map
-  static Map<String, List<ZebraAlliances>> mapListFromJson(
-      Map<String, dynamic> json) {
-    var map = Map<String, List<ZebraAlliances>>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) {
-        map[key] = ZebraAlliances.listFromJson(value);
-      });
-    }
-    return map;
-  }
+  factory ZebraAlliances([updates(ZebraAlliancesBuilder b)]) = _$ZebraAlliances;
+  static Serializer<ZebraAlliances> get serializer =>
+      _$zebraAlliancesSerializer;
 }
