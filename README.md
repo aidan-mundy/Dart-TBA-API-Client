@@ -37,7 +37,7 @@ dependencies:
 
 ### Authenticating with the API
 
-All endpoints require an API Key to be passed in the header `X-TBA-Auth-Key`. If you do not have an API key yet, you can obtain one from your [Account Page](/account).
+All endpoints require an API Key to be passed in the header `X-TBA-Auth-Key`. If you do not have an API key yet, you can obtain one from your [Account Page](https://www.thebluealliance.com/account).
 
 Please follow the [installation procedure](#installation--usage) before continuing
 
