@@ -50,7 +50,7 @@ Then create a file named `apiKeystore.dart` in the `lib` folder of your project 
 ```dart
 String key = "YOUR_TBA_API_KEY_GOES_HERE";
 ```
-Add `lib/apiKeystore.dart` to your `.gitignore` file to ensure that your API key is not publicly accessible. All contributors to your project will also need to create an `apiKeystore.dart` in the `lib` folder as well, but they will not need to follow the `.gitignore` step as long as they have pulled the updated `.gitignore` before making their API Keystore. 
+Add `lib/apiKeystore.dart` to your `.gitignore` file to ensure that your API key is not publicly accessible. All contributors to your project will also need to create an `apiKeystore.dart` in their `lib` folder as well (with their own, unique API key), but they will not need to follow the `.gitignore` step as long as they have pulled the updated `.gitignore` before making their API Keystore. 
 
 Now add the following code to your `main.dart` file to automatically apply your API Key to your requests:
 ```dart
