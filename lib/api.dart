@@ -17,10 +17,17 @@ final _defaultInterceptors = [
   ApiKeyAuthInterceptor()
 ];
 
+final String defaultBasePath = "https://www.thebluealliance.com/api/v3";
+
+final BaseOptions defaultOptions = new BaseOptions(
+  baseUrl: defaultBasePath,
+  connectTimeout: 5000,
+  receiveTimeout: 3000,
+);
+
 class Openapi {
   Dio dio;
   Serializers serializers;
-  String basePath = "https://www.thebluealliance.com/api/v3";
 
   Openapi(
       {this.dio,
@@ -29,7 +36,7 @@ class Openapi {
       List<Interceptor> interceptors}) {
     if (dio == null) {
       BaseOptions options = new BaseOptions(
-        baseUrl: basePathOverride ?? basePath,
+        baseUrl: basePathOverride ?? defaultBasePath,
         connectTimeout: 5000,
         receiveTimeout: 3000,
       );
