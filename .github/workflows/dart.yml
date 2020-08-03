@@ -20,5 +20,3 @@ jobs:
       run: pub get
     - name: Run Dartanalyzer
       run: dartanalyzer lib
-    - name: Run tests
-      run: pub run test
