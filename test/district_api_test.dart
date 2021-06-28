@@ -1,7 +1,6 @@
 import 'package:test/test.dart';
 import 'package:tba_api_client/tba_api_client.dart';
 
-
 /// tests for DistrictApi
 void main() {
   final instance = TbaApiClient().getDistrictApi();
@@ -76,6 +75,5 @@ void main() {
     test('test getTeamDistricts', () async {
       // TODO
     });
-
   });
 }

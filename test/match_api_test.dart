@@ -1,7 +1,6 @@
 import 'package:test/test.dart';
 import 'package:tba_api_client/tba_api_client.dart';
 
-
 /// tests for MatchApi
 void main() {
   final instance = TbaApiClient().getMatchApi();
@@ -104,6 +103,5 @@ void main() {
     test('test getTeamMatchesByYearSimple', () async {
       // TODO
     });
-
   });
 }

@@ -1,7 +1,6 @@
 import 'package:test/test.dart';
 import 'package:tba_api_client/tba_api_client.dart';
 
-
 /// tests for EventApi
 void main() {
   final instance = TbaApiClient().getEventApi();
@@ -251,6 +250,5 @@ void main() {
     test('test getTeamEventsStatusesByYear', () async {
       // TODO
     });
-
   });
 }

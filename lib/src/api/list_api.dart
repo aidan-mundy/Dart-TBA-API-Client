@@ -16,17 +16,16 @@ import 'package:tba_api_client/src/model/team_event_status.dart';
 import 'package:tba_api_client/src/model/team_simple.dart';
 
 class ListApi {
-
   final Dio _dio;
 
   final Serializers _serializers;
 
   const ListApi(this._dio, this._serializers);
 
-  /// 
+  ///
   ///
   /// Gets a list of events in the given district.
-  Future<Response<BuiltList<Event>>> getDistrictEvents({ 
+  Future<Response<BuiltList<Event>>> getDistrictEvents({
     required String districtKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -60,8 +59,7 @@ class ListApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -80,7 +78,6 @@ class ListApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<Event>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -102,10 +99,10 @@ class ListApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a list of event keys for events in the given district.
-  Future<Response<BuiltList<String>>> getDistrictEventsKeys({ 
+  Future<Response<BuiltList<String>>> getDistrictEventsKeys({
     required String districtKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -139,8 +136,7 @@ class ListApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -159,7 +155,6 @@ class ListApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<String>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -181,10 +176,10 @@ class ListApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a short-form list of events in the given district.
-  Future<Response<BuiltList<EventSimple>>> getDistrictEventsSimple({ 
+  Future<Response<BuiltList<EventSimple>>> getDistrictEventsSimple({
     required String districtKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -218,8 +213,7 @@ class ListApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -238,7 +232,6 @@ class ListApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<EventSimple>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -260,10 +253,10 @@ class ListApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a list of team district rankings for the given district.
-  Future<Response<BuiltList<DistrictRanking>>> getDistrictRankings({ 
+  Future<Response<BuiltList<DistrictRanking>>> getDistrictRankings({
     required String districtKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -297,8 +290,7 @@ class ListApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -317,7 +309,6 @@ class ListApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<DistrictRanking>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -339,10 +330,10 @@ class ListApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a list of `Team` objects that competed in events in the given district.
-  Future<Response<BuiltList<Team>>> getDistrictTeams({ 
+  Future<Response<BuiltList<Team>>> getDistrictTeams({
     required String districtKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -376,8 +367,7 @@ class ListApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -396,7 +386,6 @@ class ListApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<Team>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -418,10 +407,10 @@ class ListApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a list of `Team` objects that competed in events in the given district.
-  Future<Response<BuiltList<String>>> getDistrictTeamsKeys({ 
+  Future<Response<BuiltList<String>>> getDistrictTeamsKeys({
     required String districtKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -455,8 +444,7 @@ class ListApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -475,7 +463,6 @@ class ListApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<String>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -497,10 +484,10 @@ class ListApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a short-form list of `Team` objects that competed in events in the given district.
-  Future<Response<BuiltList<TeamSimple>>> getDistrictTeamsSimple({ 
+  Future<Response<BuiltList<TeamSimple>>> getDistrictTeamsSimple({
     required String districtKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -534,8 +521,7 @@ class ListApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -554,7 +540,6 @@ class ListApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<TeamSimple>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -576,10 +561,10 @@ class ListApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a list of `Team` objects that competed in the given event.
-  Future<Response<BuiltList<Team>>> getEventTeams({ 
+  Future<Response<BuiltList<Team>>> getEventTeams({
     required String eventKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -613,8 +598,7 @@ class ListApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -633,7 +617,6 @@ class ListApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<Team>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -655,10 +638,10 @@ class ListApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a list of `Team` keys that competed in the given event.
-  Future<Response<BuiltList<String>>> getEventTeamsKeys({ 
+  Future<Response<BuiltList<String>>> getEventTeamsKeys({
     required String eventKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -692,8 +675,7 @@ class ListApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -712,7 +694,6 @@ class ListApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<String>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -734,10 +715,10 @@ class ListApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a short-form list of `Team` objects that competed in the given event.
-  Future<Response<BuiltList<TeamSimple>>> getEventTeamsSimple({ 
+  Future<Response<BuiltList<TeamSimple>>> getEventTeamsSimple({
     required String eventKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -771,8 +752,7 @@ class ListApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -791,7 +771,6 @@ class ListApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<TeamSimple>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -813,10 +792,10 @@ class ListApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a key-value list of the event statuses for teams competing at the given event.
-  Future<Response<BuiltMap<String, TeamEventStatus>>> getEventTeamsStatuses({ 
+  Future<Response<BuiltMap<String, TeamEventStatus>>> getEventTeamsStatuses({
     required String eventKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -850,8 +829,7 @@ class ListApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -870,7 +848,6 @@ class ListApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltMap<String, TeamEventStatus>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -892,10 +869,10 @@ class ListApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a list of events in the given year.
-  Future<Response<BuiltList<Event>>> getEventsByYear({ 
+  Future<Response<BuiltList<Event>>> getEventsByYear({
     required int year,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -929,8 +906,7 @@ class ListApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -949,7 +925,6 @@ class ListApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<Event>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -971,10 +946,10 @@ class ListApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a list of event keys in the given year.
-  Future<Response<BuiltList<String>>> getEventsByYearKeys({ 
+  Future<Response<BuiltList<String>>> getEventsByYearKeys({
     required int year,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -1008,8 +983,7 @@ class ListApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -1028,7 +1002,6 @@ class ListApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<String>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1050,10 +1023,10 @@ class ListApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a short-form list of events in the given year.
-  Future<Response<BuiltList<EventSimple>>> getEventsByYearSimple({ 
+  Future<Response<BuiltList<EventSimple>>> getEventsByYearSimple({
     required int year,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -1087,8 +1060,7 @@ class ListApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -1107,7 +1079,6 @@ class ListApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<EventSimple>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1129,10 +1100,10 @@ class ListApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a key-value list of the event statuses for events this team has competed at in the given year.
-  Future<Response<BuiltMap<String, TeamEventStatus>>> getTeamEventsStatusesByYear({ 
+  Future<Response<BuiltMap<String, TeamEventStatus>>> getTeamEventsStatusesByYear({
     required String teamKey,
     required int year,
     String? ifModifiedSince,
@@ -1143,7 +1114,9 @@ class ListApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/team/{team_key}/events/{year}/statuses'.replaceAll('{' r'team_key' '}', teamKey.toString()).replaceAll('{' r'year' '}', year.toString());
+    final _path = r'/team/{team_key}/events/{year}/statuses'
+        .replaceAll('{' r'team_key' '}', teamKey.toString())
+        .replaceAll('{' r'year' '}', year.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -1167,8 +1140,7 @@ class ListApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -1187,7 +1159,6 @@ class ListApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltMap<String, TeamEventStatus>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1209,10 +1180,10 @@ class ListApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a list of `Team` objects, paginated in groups of 500.
-  Future<Response<BuiltList<Team>>> getTeams({ 
+  Future<Response<BuiltList<Team>>> getTeams({
     required int pageNum,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -1246,8 +1217,7 @@ class ListApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -1266,7 +1236,6 @@ class ListApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<Team>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1288,10 +1257,10 @@ class ListApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a list of `Team` objects that competed in the given year, paginated in groups of 500.
-  Future<Response<BuiltList<Team>>> getTeamsByYear({ 
+  Future<Response<BuiltList<Team>>> getTeamsByYear({
     required int year,
     required int pageNum,
     String? ifModifiedSince,
@@ -1302,7 +1271,9 @@ class ListApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/teams/{year}/{page_num}'.replaceAll('{' r'year' '}', year.toString()).replaceAll('{' r'page_num' '}', pageNum.toString());
+    final _path = r'/teams/{year}/{page_num}'
+        .replaceAll('{' r'year' '}', year.toString())
+        .replaceAll('{' r'page_num' '}', pageNum.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -1326,8 +1297,7 @@ class ListApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -1346,7 +1316,6 @@ class ListApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<Team>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1368,10 +1337,10 @@ class ListApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a list Team Keys that competed in the given year, paginated in groups of 500.
-  Future<Response<BuiltList<String>>> getTeamsByYearKeys({ 
+  Future<Response<BuiltList<String>>> getTeamsByYearKeys({
     required int year,
     required int pageNum,
     String? ifModifiedSince,
@@ -1382,7 +1351,9 @@ class ListApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/teams/{year}/{page_num}/keys'.replaceAll('{' r'year' '}', year.toString()).replaceAll('{' r'page_num' '}', pageNum.toString());
+    final _path = r'/teams/{year}/{page_num}/keys'
+        .replaceAll('{' r'year' '}', year.toString())
+        .replaceAll('{' r'page_num' '}', pageNum.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -1406,8 +1377,7 @@ class ListApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -1426,7 +1396,6 @@ class ListApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<String>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1448,10 +1417,10 @@ class ListApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a list of short form `Team_Simple` objects that competed in the given year, paginated in groups of 500.
-  Future<Response<BuiltList<TeamSimple>>> getTeamsByYearSimple({ 
+  Future<Response<BuiltList<TeamSimple>>> getTeamsByYearSimple({
     required int year,
     required int pageNum,
     String? ifModifiedSince,
@@ -1462,7 +1431,9 @@ class ListApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/teams/{year}/{page_num}/simple'.replaceAll('{' r'year' '}', year.toString()).replaceAll('{' r'page_num' '}', pageNum.toString());
+    final _path = r'/teams/{year}/{page_num}/simple'
+        .replaceAll('{' r'year' '}', year.toString())
+        .replaceAll('{' r'page_num' '}', pageNum.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -1486,8 +1457,7 @@ class ListApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -1506,7 +1476,6 @@ class ListApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<TeamSimple>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1528,10 +1497,10 @@ class ListApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a list of Team keys, paginated in groups of 500. (Note, each page will not have 500 teams, but will include the teams within that range of 500.)
-  Future<Response<BuiltList<String>>> getTeamsKeys({ 
+  Future<Response<BuiltList<String>>> getTeamsKeys({
     required int pageNum,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -1565,8 +1534,7 @@ class ListApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -1585,7 +1553,6 @@ class ListApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<String>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1607,10 +1574,10 @@ class ListApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a list of short form `Team_Simple` objects, paginated in groups of 500.
-  Future<Response<BuiltList<TeamSimple>>> getTeamsSimple({ 
+  Future<Response<BuiltList<TeamSimple>>> getTeamsSimple({
     required int pageNum,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -1644,8 +1611,7 @@ class ListApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -1664,7 +1630,6 @@ class ListApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<TeamSimple>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1685,5 +1650,4 @@ class ListApi {
       extra: _response.extra,
     );
   }
-
 }

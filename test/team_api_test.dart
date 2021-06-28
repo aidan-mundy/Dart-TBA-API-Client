@@ -1,7 +1,6 @@
 import 'package:test/test.dart';
 import 'package:tba_api_client/tba_api_client.dart';
 
-
 /// tests for TeamApi
 void main() {
   final instance = TbaApiClient().getTeamApi();
@@ -286,6 +285,5 @@ void main() {
     test('test getTeamsSimple', () async {
       // TODO
     });
-
   });
 }

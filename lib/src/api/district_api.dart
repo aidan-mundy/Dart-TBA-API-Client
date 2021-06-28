@@ -17,17 +17,16 @@ import 'package:tba_api_client/src/model/team.dart';
 import 'package:tba_api_client/src/model/team_simple.dart';
 
 class DistrictApi {
-
   final Dio _dio;
 
   final Serializers _serializers;
 
   const DistrictApi(this._dio, this._serializers);
 
-  /// 
+  ///
   ///
   /// Gets a list of events in the given district.
-  Future<Response<BuiltList<Event>>> getDistrictEvents({ 
+  Future<Response<BuiltList<Event>>> getDistrictEvents({
     required String districtKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -61,8 +60,7 @@ class DistrictApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -81,7 +79,6 @@ class DistrictApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<Event>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -103,10 +100,10 @@ class DistrictApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a list of event keys for events in the given district.
-  Future<Response<BuiltList<String>>> getDistrictEventsKeys({ 
+  Future<Response<BuiltList<String>>> getDistrictEventsKeys({
     required String districtKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -140,8 +137,7 @@ class DistrictApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -160,7 +156,6 @@ class DistrictApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<String>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -182,10 +177,10 @@ class DistrictApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a short-form list of events in the given district.
-  Future<Response<BuiltList<EventSimple>>> getDistrictEventsSimple({ 
+  Future<Response<BuiltList<EventSimple>>> getDistrictEventsSimple({
     required String districtKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -219,8 +214,7 @@ class DistrictApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -239,7 +233,6 @@ class DistrictApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<EventSimple>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -261,10 +254,10 @@ class DistrictApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a list of team district rankings for the given district.
-  Future<Response<BuiltList<DistrictRanking>>> getDistrictRankings({ 
+  Future<Response<BuiltList<DistrictRanking>>> getDistrictRankings({
     required String districtKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -298,8 +291,7 @@ class DistrictApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -318,7 +310,6 @@ class DistrictApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<DistrictRanking>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -340,10 +331,10 @@ class DistrictApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a list of `Team` objects that competed in events in the given district.
-  Future<Response<BuiltList<Team>>> getDistrictTeams({ 
+  Future<Response<BuiltList<Team>>> getDistrictTeams({
     required String districtKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -377,8 +368,7 @@ class DistrictApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -397,7 +387,6 @@ class DistrictApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<Team>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -419,10 +408,10 @@ class DistrictApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a list of `Team` objects that competed in events in the given district.
-  Future<Response<BuiltList<String>>> getDistrictTeamsKeys({ 
+  Future<Response<BuiltList<String>>> getDistrictTeamsKeys({
     required String districtKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -456,8 +445,7 @@ class DistrictApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -476,7 +464,6 @@ class DistrictApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<String>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -498,10 +485,10 @@ class DistrictApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a short-form list of `Team` objects that competed in events in the given district.
-  Future<Response<BuiltList<TeamSimple>>> getDistrictTeamsSimple({ 
+  Future<Response<BuiltList<TeamSimple>>> getDistrictTeamsSimple({
     required String districtKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -535,8 +522,7 @@ class DistrictApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -555,7 +541,6 @@ class DistrictApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<TeamSimple>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -577,10 +562,10 @@ class DistrictApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a list of districts and their corresponding district key, for the given year.
-  Future<Response<BuiltList<DistrictList>>> getDistrictsByYear({ 
+  Future<Response<BuiltList<DistrictList>>> getDistrictsByYear({
     required int year,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -614,8 +599,7 @@ class DistrictApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -634,7 +618,6 @@ class DistrictApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<DistrictList>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -656,10 +639,10 @@ class DistrictApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a list of team rankings for the Event.
-  Future<Response<EventDistrictPoints>> getEventDistrictPoints({ 
+  Future<Response<EventDistrictPoints>> getEventDistrictPoints({
     required String eventKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -693,8 +676,7 @@ class DistrictApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -713,7 +695,6 @@ class DistrictApi {
         _response.data!,
         specifiedType: _responseType,
       ) as EventDistrictPoints;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -735,10 +716,10 @@ class DistrictApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets an array of districts representing each year the team was in a district. Will return an empty array if the team was never in a district.
-  Future<Response<BuiltList<DistrictList>>> getTeamDistricts({ 
+  Future<Response<BuiltList<DistrictList>>> getTeamDistricts({
     required String teamKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -772,8 +753,7 @@ class DistrictApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -792,7 +772,6 @@ class DistrictApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<DistrictList>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -813,5 +792,4 @@ class DistrictApi {
       extra: _response.extra,
     );
   }
-
 }

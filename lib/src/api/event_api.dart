@@ -24,17 +24,16 @@ import 'package:tba_api_client/src/model/team_event_status.dart';
 import 'package:tba_api_client/src/model/team_simple.dart';
 
 class EventApi {
-
   final Dio _dio;
 
   final Serializers _serializers;
 
   const EventApi(this._dio, this._serializers);
 
-  /// 
+  ///
   ///
   /// Gets a list of events in the given district.
-  Future<Response<BuiltList<Event>>> getDistrictEvents({ 
+  Future<Response<BuiltList<Event>>> getDistrictEvents({
     required String districtKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -68,8 +67,7 @@ class EventApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -88,7 +86,6 @@ class EventApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<Event>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -110,10 +107,10 @@ class EventApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a list of event keys for events in the given district.
-  Future<Response<BuiltList<String>>> getDistrictEventsKeys({ 
+  Future<Response<BuiltList<String>>> getDistrictEventsKeys({
     required String districtKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -147,8 +144,7 @@ class EventApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -167,7 +163,6 @@ class EventApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<String>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -189,10 +184,10 @@ class EventApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a short-form list of events in the given district.
-  Future<Response<BuiltList<EventSimple>>> getDistrictEventsSimple({ 
+  Future<Response<BuiltList<EventSimple>>> getDistrictEventsSimple({
     required String districtKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -226,8 +221,7 @@ class EventApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -246,7 +240,6 @@ class EventApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<EventSimple>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -268,10 +261,10 @@ class EventApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets an Event.
-  Future<Response<Event>> getEvent({ 
+  Future<Response<Event>> getEvent({
     required String eventKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -305,8 +298,7 @@ class EventApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -325,7 +317,6 @@ class EventApi {
         _response.data!,
         specifiedType: _responseType,
       ) as Event;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -347,10 +338,10 @@ class EventApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a list of Elimination Alliances for the given Event.
-  Future<Response<BuiltList<EliminationAlliance>>> getEventAlliances({ 
+  Future<Response<BuiltList<EliminationAlliance>>> getEventAlliances({
     required String eventKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -384,8 +375,7 @@ class EventApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -404,7 +394,6 @@ class EventApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<EliminationAlliance>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -426,10 +415,10 @@ class EventApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a list of awards from the given event.
-  Future<Response<BuiltList<Award>>> getEventAwards({ 
+  Future<Response<BuiltList<Award>>> getEventAwards({
     required String eventKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -463,8 +452,7 @@ class EventApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -483,7 +471,6 @@ class EventApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<Award>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -505,10 +492,10 @@ class EventApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a list of team rankings for the Event.
-  Future<Response<EventDistrictPoints>> getEventDistrictPoints({ 
+  Future<Response<EventDistrictPoints>> getEventDistrictPoints({
     required String eventKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -542,8 +529,7 @@ class EventApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -562,7 +548,6 @@ class EventApi {
         _response.data!,
         specifiedType: _responseType,
       ) as EventDistrictPoints;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -584,10 +569,10 @@ class EventApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a set of Event-specific insights for the given Event.
-  Future<Response<EventInsights>> getEventInsights({ 
+  Future<Response<EventInsights>> getEventInsights({
     required String eventKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -621,8 +606,7 @@ class EventApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -641,7 +625,6 @@ class EventApi {
         _response.data!,
         specifiedType: _responseType,
       ) as EventInsights;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -663,10 +646,10 @@ class EventApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets an array of Match Keys for the given event key that have timeseries data. Returns an empty array if no matches have timeseries data. *WARNING:* This is *not* official data, and is subject to a significant possibility of error, or missing data. Do not rely on this data for any purpose. In fact, pretend we made it up. *WARNING:* This endpoint and corresponding data models are under *active development* and may change at any time, including in breaking ways.
-  Future<Response<BuiltList<String>>> getEventMatchTimeseries({ 
+  Future<Response<BuiltList<String>>> getEventMatchTimeseries({
     required String eventKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -700,8 +683,7 @@ class EventApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -720,7 +702,6 @@ class EventApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<String>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -742,10 +723,10 @@ class EventApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a list of matches for the given event.
-  Future<Response<BuiltList<Match>>> getEventMatches({ 
+  Future<Response<BuiltList<Match>>> getEventMatches({
     required String eventKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -779,8 +760,7 @@ class EventApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -799,7 +779,6 @@ class EventApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<Match>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -821,10 +800,10 @@ class EventApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a list of match keys for the given event.
-  Future<Response<BuiltList<String>>> getEventMatchesKeys({ 
+  Future<Response<BuiltList<String>>> getEventMatchesKeys({
     required String eventKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -858,8 +837,7 @@ class EventApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -878,7 +856,6 @@ class EventApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<String>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -900,10 +877,10 @@ class EventApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a short-form list of matches for the given event.
-  Future<Response<BuiltList<MatchSimple>>> getEventMatchesSimple({ 
+  Future<Response<BuiltList<MatchSimple>>> getEventMatchesSimple({
     required String eventKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -937,8 +914,7 @@ class EventApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -957,7 +933,6 @@ class EventApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<MatchSimple>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -979,10 +954,10 @@ class EventApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a set of Event OPRs (including OPR, DPR, and CCWM) for the given Event.
-  Future<Response<EventOPRs>> getEventOPRs({ 
+  Future<Response<EventOPRs>> getEventOPRs({
     required String eventKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -1016,8 +991,7 @@ class EventApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -1036,7 +1010,6 @@ class EventApi {
         _response.data!,
         specifiedType: _responseType,
       ) as EventOPRs;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1058,10 +1031,10 @@ class EventApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets information on TBA-generated predictions for the given Event. Contains year-specific information. *WARNING* This endpoint is currently under development and may change at any time.
-  Future<Response<JsonObject>> getEventPredictions({ 
+  Future<Response<JsonObject>> getEventPredictions({
     required String eventKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -1095,8 +1068,7 @@ class EventApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -1115,7 +1087,6 @@ class EventApi {
         _response.data!,
         specifiedType: _responseType,
       ) as JsonObject;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1137,10 +1108,10 @@ class EventApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a list of team rankings for the Event.
-  Future<Response<EventRanking>> getEventRankings({ 
+  Future<Response<EventRanking>> getEventRankings({
     required String eventKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -1174,8 +1145,7 @@ class EventApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -1194,7 +1164,6 @@ class EventApi {
         _response.data!,
         specifiedType: _responseType,
       ) as EventRanking;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1216,10 +1185,10 @@ class EventApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a short-form Event.
-  Future<Response<EventSimple>> getEventSimple({ 
+  Future<Response<EventSimple>> getEventSimple({
     required String eventKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -1253,8 +1222,7 @@ class EventApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -1273,7 +1241,6 @@ class EventApi {
         _response.data!,
         specifiedType: _responseType,
       ) as EventSimple;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1295,10 +1262,10 @@ class EventApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a list of `Team` objects that competed in the given event.
-  Future<Response<BuiltList<Team>>> getEventTeams({ 
+  Future<Response<BuiltList<Team>>> getEventTeams({
     required String eventKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -1332,8 +1299,7 @@ class EventApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -1352,7 +1318,6 @@ class EventApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<Team>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1374,10 +1339,10 @@ class EventApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a list of `Team` keys that competed in the given event.
-  Future<Response<BuiltList<String>>> getEventTeamsKeys({ 
+  Future<Response<BuiltList<String>>> getEventTeamsKeys({
     required String eventKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -1411,8 +1376,7 @@ class EventApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -1431,7 +1395,6 @@ class EventApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<String>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1453,10 +1416,10 @@ class EventApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a short-form list of `Team` objects that competed in the given event.
-  Future<Response<BuiltList<TeamSimple>>> getEventTeamsSimple({ 
+  Future<Response<BuiltList<TeamSimple>>> getEventTeamsSimple({
     required String eventKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -1490,8 +1453,7 @@ class EventApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -1510,7 +1472,6 @@ class EventApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<TeamSimple>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1532,10 +1493,10 @@ class EventApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a key-value list of the event statuses for teams competing at the given event.
-  Future<Response<BuiltMap<String, TeamEventStatus>>> getEventTeamsStatuses({ 
+  Future<Response<BuiltMap<String, TeamEventStatus>>> getEventTeamsStatuses({
     required String eventKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -1569,8 +1530,7 @@ class EventApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -1589,7 +1549,6 @@ class EventApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltMap<String, TeamEventStatus>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1611,10 +1570,10 @@ class EventApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a list of events in the given year.
-  Future<Response<BuiltList<Event>>> getEventsByYear({ 
+  Future<Response<BuiltList<Event>>> getEventsByYear({
     required int year,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -1648,8 +1607,7 @@ class EventApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -1668,7 +1626,6 @@ class EventApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<Event>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1690,10 +1647,10 @@ class EventApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a list of event keys in the given year.
-  Future<Response<BuiltList<String>>> getEventsByYearKeys({ 
+  Future<Response<BuiltList<String>>> getEventsByYearKeys({
     required int year,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -1727,8 +1684,7 @@ class EventApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -1747,7 +1703,6 @@ class EventApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<String>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1769,10 +1724,10 @@ class EventApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a short-form list of events in the given year.
-  Future<Response<BuiltList<EventSimple>>> getEventsByYearSimple({ 
+  Future<Response<BuiltList<EventSimple>>> getEventsByYearSimple({
     required int year,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -1806,8 +1761,7 @@ class EventApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -1826,7 +1780,6 @@ class EventApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<EventSimple>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1848,10 +1801,10 @@ class EventApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a list of awards the given team won at the given event.
-  Future<Response<BuiltList<Award>>> getTeamEventAwards({ 
+  Future<Response<BuiltList<Award>>> getTeamEventAwards({
     required String teamKey,
     required String eventKey,
     String? ifModifiedSince,
@@ -1862,7 +1815,9 @@ class EventApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/team/{team_key}/event/{event_key}/awards'.replaceAll('{' r'team_key' '}', teamKey.toString()).replaceAll('{' r'event_key' '}', eventKey.toString());
+    final _path = r'/team/{team_key}/event/{event_key}/awards'
+        .replaceAll('{' r'team_key' '}', teamKey.toString())
+        .replaceAll('{' r'event_key' '}', eventKey.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -1886,8 +1841,7 @@ class EventApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -1906,7 +1860,6 @@ class EventApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<Award>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -1928,10 +1881,10 @@ class EventApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a list of matches for the given team and event.
-  Future<Response<BuiltList<Match>>> getTeamEventMatches({ 
+  Future<Response<BuiltList<Match>>> getTeamEventMatches({
     required String teamKey,
     required String eventKey,
     String? ifModifiedSince,
@@ -1942,7 +1895,9 @@ class EventApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/team/{team_key}/event/{event_key}/matches'.replaceAll('{' r'team_key' '}', teamKey.toString()).replaceAll('{' r'event_key' '}', eventKey.toString());
+    final _path = r'/team/{team_key}/event/{event_key}/matches'
+        .replaceAll('{' r'team_key' '}', teamKey.toString())
+        .replaceAll('{' r'event_key' '}', eventKey.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -1966,8 +1921,7 @@ class EventApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -1986,7 +1940,6 @@ class EventApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<Match>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -2008,10 +1961,10 @@ class EventApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a list of match keys for matches for the given team and event.
-  Future<Response<BuiltList<String>>> getTeamEventMatchesKeys({ 
+  Future<Response<BuiltList<String>>> getTeamEventMatchesKeys({
     required String teamKey,
     required String eventKey,
     String? ifModifiedSince,
@@ -2022,7 +1975,9 @@ class EventApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/team/{team_key}/event/{event_key}/matches/keys'.replaceAll('{' r'team_key' '}', teamKey.toString()).replaceAll('{' r'event_key' '}', eventKey.toString());
+    final _path = r'/team/{team_key}/event/{event_key}/matches/keys'
+        .replaceAll('{' r'team_key' '}', teamKey.toString())
+        .replaceAll('{' r'event_key' '}', eventKey.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -2046,8 +2001,7 @@ class EventApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -2066,7 +2020,6 @@ class EventApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<String>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -2088,10 +2041,10 @@ class EventApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a short-form list of matches for the given team and event.
-  Future<Response<BuiltList<Match>>> getTeamEventMatchesSimple({ 
+  Future<Response<BuiltList<Match>>> getTeamEventMatchesSimple({
     required String teamKey,
     required String eventKey,
     String? ifModifiedSince,
@@ -2102,7 +2055,9 @@ class EventApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/team/{team_key}/event/{event_key}/matches/simple'.replaceAll('{' r'team_key' '}', teamKey.toString()).replaceAll('{' r'event_key' '}', eventKey.toString());
+    final _path = r'/team/{team_key}/event/{event_key}/matches/simple'
+        .replaceAll('{' r'team_key' '}', teamKey.toString())
+        .replaceAll('{' r'event_key' '}', eventKey.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -2126,8 +2081,7 @@ class EventApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -2146,7 +2100,6 @@ class EventApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<Match>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -2168,10 +2121,10 @@ class EventApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets the competition rank and status of the team at the given event.
-  Future<Response<TeamEventStatus>> getTeamEventStatus({ 
+  Future<Response<TeamEventStatus>> getTeamEventStatus({
     required String teamKey,
     required String eventKey,
     String? ifModifiedSince,
@@ -2182,7 +2135,9 @@ class EventApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/team/{team_key}/event/{event_key}/status'.replaceAll('{' r'team_key' '}', teamKey.toString()).replaceAll('{' r'event_key' '}', eventKey.toString());
+    final _path = r'/team/{team_key}/event/{event_key}/status'
+        .replaceAll('{' r'team_key' '}', teamKey.toString())
+        .replaceAll('{' r'event_key' '}', eventKey.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -2206,8 +2161,7 @@ class EventApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -2226,7 +2180,6 @@ class EventApi {
         _response.data!,
         specifiedType: _responseType,
       ) as TeamEventStatus;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -2248,10 +2201,10 @@ class EventApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a list of all events this team has competed at.
-  Future<Response<BuiltList<Event>>> getTeamEvents({ 
+  Future<Response<BuiltList<Event>>> getTeamEvents({
     required String teamKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -2285,8 +2238,7 @@ class EventApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -2305,7 +2257,6 @@ class EventApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<Event>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -2327,10 +2278,10 @@ class EventApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a list of events this team has competed at in the given year.
-  Future<Response<BuiltList<Event>>> getTeamEventsByYear({ 
+  Future<Response<BuiltList<Event>>> getTeamEventsByYear({
     required String teamKey,
     required int year,
     String? ifModifiedSince,
@@ -2341,7 +2292,9 @@ class EventApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/team/{team_key}/events/{year}'.replaceAll('{' r'team_key' '}', teamKey.toString()).replaceAll('{' r'year' '}', year.toString());
+    final _path = r'/team/{team_key}/events/{year}'
+        .replaceAll('{' r'team_key' '}', teamKey.toString())
+        .replaceAll('{' r'year' '}', year.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -2365,8 +2318,7 @@ class EventApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -2385,7 +2337,6 @@ class EventApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<Event>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -2407,10 +2358,10 @@ class EventApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a list of the event keys for events this team has competed at in the given year.
-  Future<Response<BuiltList<String>>> getTeamEventsByYearKeys({ 
+  Future<Response<BuiltList<String>>> getTeamEventsByYearKeys({
     required String teamKey,
     required int year,
     String? ifModifiedSince,
@@ -2421,7 +2372,9 @@ class EventApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/team/{team_key}/events/{year}/keys'.replaceAll('{' r'team_key' '}', teamKey.toString()).replaceAll('{' r'year' '}', year.toString());
+    final _path = r'/team/{team_key}/events/{year}/keys'
+        .replaceAll('{' r'team_key' '}', teamKey.toString())
+        .replaceAll('{' r'year' '}', year.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -2445,8 +2398,7 @@ class EventApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -2465,7 +2417,6 @@ class EventApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<String>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -2487,10 +2438,10 @@ class EventApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a short-form list of events this team has competed at in the given year.
-  Future<Response<BuiltList<EventSimple>>> getTeamEventsByYearSimple({ 
+  Future<Response<BuiltList<EventSimple>>> getTeamEventsByYearSimple({
     required String teamKey,
     required int year,
     String? ifModifiedSince,
@@ -2501,7 +2452,9 @@ class EventApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/team/{team_key}/events/{year}/simple'.replaceAll('{' r'team_key' '}', teamKey.toString()).replaceAll('{' r'year' '}', year.toString());
+    final _path = r'/team/{team_key}/events/{year}/simple'
+        .replaceAll('{' r'team_key' '}', teamKey.toString())
+        .replaceAll('{' r'year' '}', year.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -2525,8 +2478,7 @@ class EventApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -2545,7 +2497,6 @@ class EventApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<EventSimple>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -2567,10 +2518,10 @@ class EventApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a list of the event keys for all events this team has competed at.
-  Future<Response<BuiltList<String>>> getTeamEventsKeys({ 
+  Future<Response<BuiltList<String>>> getTeamEventsKeys({
     required String teamKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -2604,8 +2555,7 @@ class EventApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -2624,7 +2574,6 @@ class EventApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<String>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -2646,10 +2595,10 @@ class EventApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a short-form list of all events this team has competed at.
-  Future<Response<BuiltList<EventSimple>>> getTeamEventsSimple({ 
+  Future<Response<BuiltList<EventSimple>>> getTeamEventsSimple({
     required String teamKey,
     String? ifModifiedSince,
     CancelToken? cancelToken,
@@ -2683,8 +2632,7 @@ class EventApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -2703,7 +2651,6 @@ class EventApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltList<EventSimple>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -2725,10 +2672,10 @@ class EventApi {
     );
   }
 
-  /// 
+  ///
   ///
   /// Gets a key-value list of the event statuses for events this team has competed at in the given year.
-  Future<Response<BuiltMap<String, TeamEventStatus>>> getTeamEventsStatusesByYear({ 
+  Future<Response<BuiltMap<String, TeamEventStatus>>> getTeamEventsStatusesByYear({
     required String teamKey,
     required int year,
     String? ifModifiedSince,
@@ -2739,7 +2686,9 @@ class EventApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/team/{team_key}/events/{year}/statuses'.replaceAll('{' r'team_key' '}', teamKey.toString()).replaceAll('{' r'year' '}', year.toString());
+    final _path = r'/team/{team_key}/events/{year}/statuses'
+        .replaceAll('{' r'team_key' '}', teamKey.toString())
+        .replaceAll('{' r'year' '}', year.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -2763,8 +2712,7 @@ class EventApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -2783,7 +2731,6 @@ class EventApi {
         _response.data!,
         specifiedType: _responseType,
       ) as BuiltMap<String, TeamEventStatus>;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -2804,5 +2751,4 @@ class EventApi {
       extra: _response.extra,
     );
   }
-
 }

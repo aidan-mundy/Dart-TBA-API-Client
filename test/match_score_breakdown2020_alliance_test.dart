@@ -178,6 +178,5 @@ void main() {
     test('to test the property `totalPoints`', () async {
       // TODO
     });
-
   });
 }
