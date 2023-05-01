@@ -1,4 +1,7 @@
 # tba_api_client (EXPERIMENTAL)
+
+This repo hasn't been regenerated for some time. At some point i'll get around to reactivating this project, and hopefully setting up auto regeneration.
+
 # Overview 
 
  Information and statistics about FIRST Robotics Competition teams and events. 
